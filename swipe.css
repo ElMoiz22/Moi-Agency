@@ -1,0 +1,47 @@
+.swiper {
+  width: 85%;
+  height: auto; /* evita forzar altura fija */
+  margin-top: 15px;
+}
+
+.swiper p {
+  font-size: 15px;
+  color: #00526f;
+  font-family: "azo-sans-web", sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  display: block;
+  max-width: 100%; /* asegura que no se desborde */
+  height: auto;    /* mantiene proporciones */
+  object-fit: cover;
+}
+
+/* Móviles y tablets */
+@media (max-width: 768px) {
+  .swiper {
+    width: 95%;
+  }
+  .swiper p {
+    font-size: 12px; /* más legible en pantallas chicas */
+    font-weight: 400;
+  }
+}
+
+/* Extra pequeño (menos de 480px) */
+@media (max-width: 480px) {
+  .swiper p {
+    font-size: 10px;
+  }
+}
+
+:root{ --swiper-theme-color: #ffbd2f;}

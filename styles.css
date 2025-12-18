@@ -1,0 +1,183 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0; padding: 0; min-height: 200vh; /* para scroll */
+font-family: "azo-sans-web", sans-serif;
+	background-color: #fcf6ef;
+}
+
+/* Variables */
+:root {
+  --primary-color: #000423;
+  --submenu-color: #000a35;
+  --text-light: #ffffff;
+}
+
+
+/* moi*/
+
+.moi2 {
+    width: 90%; 
+    margin: 0 auto; /* Centrar horizontalmente */
+    display: grid;
+    grid-template-columns: 24.99% 24.99% 24.99% 24.99%;
+    justify-items: center; /* Centra las columnas horizontalmente */
+  }
+
+  .contenedoress-imagenesmoi {
+    position: relative;
+    width: 100%; /* Ancho del contenedor al 100% */
+    border-radius: 11px;
+    cursor: pointer;
+  }
+
+  .contenedoress-imagenesmoi img {
+    width: 100%; /* Imágenes al 100% del ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+        border-radius: 15px; /* Bordes redondeados */
+cursor: pointer;
+  }
+
+  .imagenesmoi-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: #0e1235;
+  }
+
+  .contenedoress-imagenesmoi:hover .imagenesmoi-hover {
+    opacity: 1;
+  }
+
+  .animacion-carga {
+    animation: aparecer 1s ease forwards;
+  }
+
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Media queries para ajustar el diseño en diferentes tamaños de pantalla */
+  @media (max-width: 1000px) {
+    .moi2 {
+      width: 98%;
+grid-template-columns: 49% 49%;
+    }
+  }
+
+    @media (max-width: 500px) {
+    .moi2 {
+      width: 98%;
+grid-template-columns: 100%;
+    }
+  }
+  
+  .post-body a {    color: #000423;
+  }
+  
+  
+  .boton-contrata {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00526f; /* Color de fondo del botón */
+    color: #faf6ef; /* Color del texto */
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0px;
+    width: 98%;
+  }
+
+  .boton-contrata:hover {
+    background-color: #009dd4; /* Color de fondo del botón al pasar el ratón */
+    color: #faf6ef; /* Color del texto */
+
+  }
+
+  /* Centrar texto verticalmente */
+  .boton-contrata span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+.btn-wsp {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        line-height: 74px;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 45px;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        transition: all 300ms ease;
+    }
+    .btn-wsp:hover {
+        background: #20ba5a;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        .btn-wsp {
+            width: 63px;
+            height: 63px;
+            line-height: 71px;
+        }
+    }
+
+.galeria {
+  display: flex; /* Utilizar flexbox para diseño flexible */
+  flex-wrap: wrap; /* Permitir que las imágenes se envuelvan cuando no quepan en una línea */
+  justify-content: center; /* Centrar las imágenes horizontalmente */
+}
+
+.imagen {
+  flex: 1 1 calc(25% ); /* Establecer el tamaño base de las imágenes y permitir crecimiento flexible */
+  max-width: calc(25% ); /* Ancho máximo de las imágenes */
+  overflow: hidden; /* Ocultar el desbordamiento para animación de desplazamiento */
+  position: relative; /* Establecer posición relativa para hijos absolutos */
+}
+
+.imagen img {
+  width: 100%; /* Asegurar que las imágenes ocupen todo el espacio disponible */
+  height: auto; /* Mantener la proporción de la imagen */
+  transition: transform 0.3s ease; /* Agregar una transición suave al desplazamiento */
+}
+
+.imagen img:hover {
+  opacity: 0.7; /* Opacidad al 50% al pasar el mouse */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .imagen {
+    flex: 1 1 calc(33.33% ); /* Ajustar el tamaño de las imágenes para pantallas más pequeñas */
+    max-width: calc(33.33% ); /* Ancho máximo de las imágenes en pantallas más pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .imagen {
+    flex: 1 1 calc(50% ); /* Ajustar el tamaño de las imágenes para pantallas muy pequeñas */
+    max-width: calc(50% ); /* Ancho máximo de las imágenes en pantallas muy pequeñas */
+  }
+}
+
+
