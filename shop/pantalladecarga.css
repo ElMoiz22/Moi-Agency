@@ -1,0 +1,73 @@
+
+/* Pantalla de carga */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, #00b185, #009dd4,#00b185, #0083b3, #00b185, #12765f);
+      background-size: 300% 300%; /* Aumenta el tamaño para animar */
+      animation: gradientMove 6s infinite alternate; /* Movimiento continuo */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loading-content {
+      text-align: center;
+    }
+
+    .loading-content img {
+      width: 100%;
+      height: 180px;
+      border-radius: 0%;
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Animación de pulsación */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    /* Animación del fondo */
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* Contenido principal */
+    .main-content {
+      display: none;
+    }
+
+    .main-content.loaded {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        background-color: #ffbd2f;
+        opacity: 0;
+      }
+      to {
+        background-color: #ffffff;
+        opacity: 1;
+      }
+    }

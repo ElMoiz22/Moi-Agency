@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proyecto Super Gallo</title>
+<link rel="stylesheet" href="pagesstyles.css" />	
+<link rel="stylesheet" href="../headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+</head>
+<body>
+	
+<div id="header"></div>
+
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+
+	<div id="header-container"></div>
+	
+	<div class="bannerpost">
+    <img alt="imgpost" class="imgpost" src="../images/fondoweb.png" />
+    <div class="txttitulopost">Proyecto Super Gallo</div>
+  </div>
+
+   <div id="botones">
+  <button class="boton2" id="boton1" onclick="mostrarContenido(1)">Torneo Apertura 2024</button>
+  <button class="boton2" id="boton2" onclick="mostrarContenido(2)">Torneo Clausura 2025</button>
+  <button class="boton2" id="boton3" onclick="mostrarContenido(3)">Torneo Apertura 2025</button>
+  <button class="boton2" id="boton4" onclick="mostrarContenido(4)">Torneo Clausura 2026</button>
+</div>
+
+  <div id="contenidos">
+    <div class="contenido" id="contenido1">
+<div class="post">
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBVKwMrvZHxoH__jH6zkaQ7FcIv6hIZsq3-h4e8mEENPFKbTD5aBm-qxEzgCsKc2nrPNZYKje4zIMoovQo4KglWgZ7wCvGN5XemVu-tVHaZZY2js5Yl8QmqzUtAs3hmDm9Z-fAo7mJ9Veltw0Dv155BvY1MpJyUsM6luyc5gXIRONvcCk8JEo7Vgn8EqoY/s1600/f422.png" style="display: block; padding: 1em 0px; text-align: center;"></a><a href="#" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7NEtTxbQD1vVpRa5-jlccfmxX837uQ_8Vdwk0S-zlXI0u_yiQZW1Y4XzplblRzwnGkiz1jC4dMj7-jn6Bmmse_fmQioyC9s7mQwhraH8UC-le4d-mpasBoSLCjDIjnge55btGEA2ecMo0YaU9HkP2lZRKgzjwSwuxB2HhDX7ReKXbOGCwIrY311Z4mmIH/w640-h640/portada.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsakZs7Oyx3jvK9Bxmfi1E3hnwbADk9Ylmc6xb-JlBKgakzjEoQTTXdZTsMQYj-nYDKBWTg30xsbyht8zaI6pPLSSWIbyMbhZzb-i5U4Dkag-w_nNT0iE4UbgKt_6AD1EO5NAzn8WoJRZpOq-GlSUZ0RfdzfFONhQCdBT9wS06OGB59NhnftGDPMGP79mt/w640-h640/isual.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiB-UJ6E8VWOUX4CfakWc0QMZrFJ06xNInC7HM1mwu1L7kY9FVN07gtQAU0q4-bnN3w2Ux7M9K2w5V6Z4D1szEgVAF00ko3fTZIyKC7oF7wUWczvhfqmXqi7No5V3w0N-w9JIdZ-so1ub1s2nQUzK8f6UmV8UTGwlVQ4GqjtvKp5UHRCsduJlT5Bsmi6S4A/w640-h640/conec.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEmDy_NvOyu5Bql3cS9421KeKKpht9YuksXpIsLjO6VIOXZJs1JdB1hTpZxXvToD5cDC3lkhlp75VhNmEx4UxJMM4koVQTpTmvQfnCB9j6zMMiFk6zeaRzXE09fkdoct9Xjb8FZ0344-p4kyZaEpg0gCal6h7oPmQOgKYdDEbfZaaI3ZWqydelh-oIA9d4/w640-h640/tu-pasion.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiAYkfn7t15Y3dMyxqTtkAPQMopVOTSvC6KgcIKpJAlbcfwou3eAGaBiysRDj4PCzN2prZ418q0a_xnrbxnOxCxuh6c7yIRiqtRG0PuUV6s8mCkAxd9LWYhiqSPDA-AEgNzlVM3-dDkkegW9CpArao9lfi6AawQ7C3rg_31wXeWA5jbrv9Y1-lhOnB6ewHm/w640-h640/agradecemos.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUKRoiOeVnwKYiqJgh92RVBuVpm8dZODKRRS8fr9l47lZNonfqNexkRDhLC_Ie-ZmPro4RmbdYrDgP-maalEQ2EAJkodoTxwzhJdQJbr4IAxAdS2GfKsakP_zvNqgCu2gfGhXSyy88dh7CFCRG6uMZ5uoK-Gb8lJHLhn_Q4zfpXTJ5VJTcHhnpbLV0-FnO/w640-h640/cumple.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvwFfa7EI6yRSUN0zNUJK3kHOKrEOvNq9QWU4gqLRAPlHJ-mct7-PEtRTIwz3HKpCYhlyVdjCLydK6iIiN1P4O7isfZHmWT7yVZmD2T2FZYAPOAVOkG1IXBcdL19fTC9QyIrS9mU-wLffEwgFPYDUxyWGNHjP_eIngwumSnI079KRpVfNwk0YPEVwTa0UU/w640-h640/disenos.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgR4lkd7hOwvDKO-ubmwQROz7sowrdNy_Iu5Ha6SvHdPije3ym5TmlZplG7HT2BR9r8FSyPvPByJB-rFj_v5ko-74ZvzBzE7SFrU1J1-gFFocF0eqCGje1pSWASNa6BO3Jz_mYn4f3J44F4M0RPBw2kBp6DDoZvSKaoTgOuly6vmyPNsB6UNZa-0NgDybiF/w640-h640/patros.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguyKXF55kH4lfX6YFB3e4vZu-1ZE7-AYxIfMiZ7JeaBDkxEfTkWN3stdw95n5V2t4786kirxkjdf98FSKDo7qc1Dnz8wc4AWsep9obsiXhhbONhYE_62RxDfOvyDkzyCmQDY8Dkyi37AzzmRVkiI5AnhXjGztOn0sILmt1UgFuM7PcJkwSdZZcjgFfkR5e/w640-h640/sf.png" width="640" /><img alt="" border="0" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBVKwMrvZHxoH__jH6zkaQ7FcIv6hIZsq3-h4e8mEENPFKbTD5aBm-qxEzgCsKc2nrPNZYKje4zIMoovQo4KglWgZ7wCvGN5XemVu-tVHaZZY2js5Yl8QmqzUtAs3hmDm9Z-fAo7mJ9Veltw0Dv155BvY1MpJyUsM6luyc5gXIRONvcCk8JEo7Vgn8EqoY/w640-h640/f422.png" width="640" /> <br /></a></div><br /><h2 data-end="437" data-start="358">Nuestro Compromiso con los Super Gallos: Una Alianza de Pasión y Creatividad</h2>
+	</div>      </div>
+      <div class="contenido" id="contenido2">
+
+  <div class="post" alt="Diseño de branding para equipos deportivos en Guatemala">
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBVKwMrvZHxoH__jH6zkaQ7FcIv6hIZsq3-h4e8mEENPFKbTD5aBm-qxEzgCsKc2nrPNZYKje4zIMoovQo4KglWgZ7wCvGN5XemVu-tVHaZZY2js5Yl8QmqzUtAs3hmDm9Z-fAo7mJ9Veltw0Dv155BvY1MpJyUsM6luyc5gXIRONvcCk8JEo7Vgn8EqoY/s1600/f422.png" style="display: block; padding: 1em 0px; text-align: center;"></a>
+  <a href="#" style="display: block; padding: 1em 0px; text-align: center;">
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p2.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p3.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p4.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p5.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p6.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p7.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p8.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p9.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p10.png" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="Proyecto Super Gallo 2/p11.png" width="640" />
+<br /></a>
+</div>
+</div>
+
+<br />      </div>
+      <div class="contenido" id="contenido3">
+<h2>En Proceso de Edición para su Presentación</h2>      
+      </div>
+      <div class="contenido" id="contenido4">
+<h2>Pendiente</h2>      
+      </div>
+</div>      
+
+<div class="post">
+<p data-end="879" data-start="439">Desde el <strong data-end="472" data-start="448">Torneo Apertura 2024</strong> hasta el actual <strong data-end="513" data-start="489">Torneo Apertura 2025</strong>, y proyectándonos hacia el <strong data-end="565" data-start="541">Torneo Clausura 2026</strong>, en <strong data-end="587" data-start="570">Moi Agency</strong> —también conocidos como <strong data-end="634" data-start="612">Moi Agency</strong>— hemos tenido el honor y el privilegio de ser la <strong data-end="773" data-start="684">agencia oficial encargada de la identidad visual y digital del Deportivo San Pedro FC</strong>, equipo de la Primera División de Fútbol de Guatemala, cariñosamente conocidos como los <strong data-end="878" data-start="862">Super Gallos</strong>.</p>
+<h3 data-end="944" data-start="881">Qué hacemos como agencia oficial del Deportivo San Pedro FC</h3>
+<p data-end="995" data-start="946">Durante esta alianza, hemos sido responsables de:</p>
+<ul data-end="1617" data-start="997"><li data-end="1116" data-start="997">
+<p data-end="1116" data-start="999">El desarrollo y mantenimiento del sitio web oficial: <a class="" data-end="1114" data-start="1052" href="https://www.deportivosanpedro.com" rel="noopener" target="_new">www.deportivosanpedro.com</a></p>
+</li><li data-end="1169" data-start="1117">
+<p data-end="1169" data-start="1119">La administración completa de sus redes sociales</p>
+</li><li data-end="1254" data-start="1170">
+<p data-end="1254" data-start="1172">La creación de contenido gráfico, visual y multimedia para plataformas digitales</p>
+</li><li data-end="1345" data-start="1255">
+<p data-end="1345" data-start="1257">El rediseño de su identidad visual para redes sociales, manteniendo siempre su esencia</p>
+</li><li data-end="1441" data-start="1346">
+<p data-end="1441" data-start="1348">Fotografías oficiales de partidos, afición, jugadores y resúmenes fotográficos post-jornada</p>
+</li><li data-end="1514" data-start="1442">
+<p data-end="1514" data-start="1444">Diseños móviles y adaptados a los nuevos formatos de consumo digital</p>
+</li><li data-end="1617" data-start="1515">
+<p data-end="1617" data-start="1517">Una línea gráfica coherente donde <strong data-end="1590" data-start="1551">jugadores, patrocinadores y afición</strong> se sienten representados</p>
+</li></ul>
+<p data-end="1886" data-start="1619">Todo este trabajo ha sido realizado bajo un <strong data-end="1699" data-start="1663">acuerdo de patrocinio tipo canje</strong>: ofrecemos nuestros servicios de diseño, fotografía, edición de video, administración de redes sociales y mantenimiento web a cambio de formar parte del grupo de patrocinadores del club.</p>
+<h3 data-end="1929" data-start="1888">Nuestro vínculo emocional con el club</h3>
+<p data-end="2383" data-start="1931">Nuestro compromiso con el Deportivo San Pedro no es casual. <strong data-end="2009" data-start="1991">Somos Shekanos</strong>, nacimos y crecimos en <strong data-end="2071" data-start="2033">San Pedro Sacatepéquez, San Marcos</strong>. Este equipo es el equipo de nuestra tierra, el equipo de nuestros amores. Desde que iniciamos como agencia, <strong data-end="2228" data-start="2181">soñábamos con diseñar para los Super Gallos</strong>. Queríamos crear los diseños que la afición vería y compartiría, capturar las fotos que quedarían en la historia del club, ser parte viva de su identidad.</p>
+<p data-end="2695" data-start="2385">Este sueño se hizo realidad el <strong data-end="2439" data-start="2416">26 de julio de 2024</strong>, cuando, después de presentar nuestra propuesta y tocar muchas puertas, <strong data-end="2556" data-start="2512">formalizamos nuestra alianza con el club</strong>. Fue un momento inolvidable y un punto de partida que nos llevó a asumir el reto con toda la pasión y profesionalismo que nos caracteriza.</p>
+<h3 data-end="2736" data-start="2697">Un año más junto a los Super Gallos</h3>
+<p data-end="3044" data-start="2738">En este 2025, con más experiencia a cuestas y tras haber trabajado con equipos de <strong data-end="2872" data-start="2820">Primera, Segunda y Tercera División de Guatemala</strong>, renovamos oficialmente nuestro patrocinio con el club. Esta alianza representa más que un proyecto profesional: es una responsabilidad emocional, cultural y comunitaria.</p>
+<p data-end="3341" data-start="3046">Nuestro enfoque creativo toma inspiración en elementos como la textura rugosa de la cresta de un gallo, símbolo de fuerza, coraje y orgullo. Cada torneo —ya sea Apertura o Clausura— rediseñamos con pequeños toques que refrescan la imagen, sin perder la esencia que representa al club y su gente.</p>
+<h3 data-end="3382" data-start="3343">Aclaración sobre el escudo del club</h3>
+<p data-end="3727" data-start="3384">Durante este proceso, también hemos adaptado el escudo del Deportivo San Pedro únicamente para fines de redes sociales, <strong data-end="3541" data-start="3504">sin alterar su identidad original</strong>. Cabe mencionar que el diseño original del logotipo del club <strong data-end="3634" data-start="3603">no tiene autor identificado</strong>, por lo que ninguna agencia pasada o presente (incluyéndonos) puede adjudicarse su creación.</p>
+<h3 data-end="3759" data-start="3729">Seguimos soñando en grande</h3>
+<p data-end="3990" data-start="3761">Seguimos comprometidos con <strong data-end="3839" data-start="3788">crear contenido digital profesional y emocional</strong>, donde cada publicación hable por sí sola. Y, sobre todo, seguimos <strong data-end="3967" data-start="3907">trabajando con el corazón puesto en la camiseta tricolor</strong> de los Super Gallos.</p>
+<p data-end="4133" data-start="3992">Gracias a toda la afición que nos apoya, comparte y siente cada publicación como propia. Este es solo el inicio de muchos más torneos juntos.</p>
+<p data-end="4256" data-start="4135"><strong data-end="4175" data-start="4135">Moi Agency</strong><br data-end="4178" data-start="4175" />
+<em data-end="4232" data-start="4178">Agencia oficial de diseño del Deportivo San Pedro FC</em><br data-end="4235" data-start="4232" />
+<em data-end="4256" data-start="4235">Temporada 2024–2026</em></p>
+	</div> 
+		
+<script src="script.js"></script>
+<script src="../footer.js"></script>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+<script>
+  // Mostrar contenido y activar el botón4 al inicio
+  document.addEventListener("DOMContentLoaded", function() {
+    // Mostrar contenido4
+    document.getElementById('contenido2').classList.add('mostrar');
+
+    // Activar el botón4
+    var botonActivo = document.getElementById('boton2');
+    botonActivo.classList.add('activo');
+  });
+
+  function mostrarContenido(numero) {
+    // Ocultar todos los contenidos
+    var contenidos = document.querySelectorAll('.contenido');
+    contenidos.forEach(function(item) {
+      item.classList.remove('mostrar');
+    });
+
+    // Mostrar el contenido del botón clickeado
+    var contenidoMostrar = document.getElementById('contenido' + numero);
+    contenidoMostrar.classList.add('mostrar');
+
+    // Desactivar todos los botones
+    var botones = document.querySelectorAll('.boton2');
+    botones.forEach(function(btn) {
+      btn.classList.remove('activo');
+    });
+
+    // Activar el botón clickeado
+    var botonActivo = document.getElementById('boton' + numero);
+    botonActivo.classList.add('activo');
+  }
+</script>
+
+	</body>
+</html>
+
+

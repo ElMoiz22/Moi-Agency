@@ -1,0 +1,708 @@
+<div class="separator" style="clear: both;"><a style="display: none; padding: 0px; text-align: center;"><img alt="" border="0" data-original-height="2362" data-original-width="2362" src="https://blogger.googleusercontent.com/img/a/AVvXsEiHUNf91wJUu4lQhKnGIkqWrIiNFz0lfHvF0u_JSKAaLM4JoJiOKBWOsh0BLz_1mp38js5vMVv4BUaGsgggTKhG7Y4F9jItZDIszdB4Rw0N-CDPtRLT2UoXCmfi1ZucGswMvktWMpuQ5s0ebBSdkiJMsZ4gkbP3x7n3Vt1ZJk_0EHAvVmtPJQ4cRdf_R0A=s1600" width="2" /></a></div>
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8"></meta>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+  <style>
+   
+   .containers {
+display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+    }
+
+    .card {
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+background-color: #17062d;
+      border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px 10px;
+  width: 300px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover  {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .card .info {
+      text-align: center;
+    }
+
+    .card .info .date {
+      font-size: 13px;
+      font-weight: 300;
+    }
+    
+      .date2 {
+      font-size: 10px;
+      font-weight: 300;
+    }
+
+    .card .info .result {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    
+    .card2 {
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #2C0A5E, #4a004d, #2C0A5E);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px 10px;
+  width: 300px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card2:hover  {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card2 img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .card2 .info {
+      text-align: center;
+    }
+
+    .card2 .info .date {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .card2 .info .result {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+        max-width: 100%;
+      }
+          .card img {
+      width: 42px;
+    }
+            .card2 {
+        width: 100%;
+        max-width: 100%;
+      }
+          .card2 img {
+      width: 42px;
+    }
+
+    }
+    
+    .boton-parpadeante {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    animation: parpadeo 1s infinite;
+    cursor: pointer;
+  }
+
+  @keyframes parpadeo {
+    0%, 100% {
+      background-color: red;
+    }
+    50% {
+      background-color: darkred;
+    }
+  }
+    
+    .post-body table td, .post-body table th {padding: 9px 25px;
+  border: 1px solid #161619;}
+    
+    .item-post .post-body{line-height: 16px;}
+    
+  </style>
+</head>
+<body>
+  
+   <button id="boton1" class="boton-tab" onclick="mostrarContenido(1)">Primera Vuelta</button>
+  <button id="boton2" class="boton-tab" onclick="mostrarContenido(2)">Segunda Vuelta</button>
+  
+    <div id="contenido1" class="contenido">
+  <h1 style="color: white; margin-top: 15px;">Calendario De Partidos</h1> 
+  <div class="containers" id="calendario-jornadas"></div>
+
+  </div>
+  
+    <div id="contenido2" class="contenido">
+        <h1 style="color: white; margin-top: 15px;">Calendario De Partidos</h1> 
+<div class="containers" id="calendario-jornadas2"></div>
+  </div>
+  
+
+
+  
+</body>
+</html>
+
+
+  <h1 style="color: white; margin-top: 15px;">Tabla de Posiciones Torneo Apertura 2025</h1>
+
+
+
+<!--Las filas se agregarán dinámicamente con JavaScript-->
+<div class="tabla-scroll">
+  <table id="tabla-posiciones">
+  <thead>
+    <tr>
+      <th>Equipos</th>
+      <th style="background-color: #49004e;" >Pts</th>
+      <th>J</th>
+      <th>V</th>
+      <th>E</th>
+      <th>D</th>
+      <th>GF</th>
+      <th>GC</th>
+      <th>DG</th>
+    </tr>
+  </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+        <!--<div class="boton-parpadeante">EN JUEGO</div>-->
+
+
+<script>
+  // Datos de los equipos
+  const equipos = [
+    { nombre: 'agua', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEic4-j92HQtXXwgsfTC1eHK_-MmZP391vT-0CM790i7F4dbCzy70gNp0fTRT_9NpteLoBWSfLjWmrYhL3HDRHk4lTnen-_cN12VGO6poX80Fgmld_bk4UmWpL2MAff_TwguvZ2i2uZPghw8pQnHnmAH5XffaWycpM2nc99hwECTN7HM075n9mUQPGcVStA/s320-rw/lo_0008_Capa-2.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'chichi', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMti_JUOROPWvJ5nWwLPd6xOM_L3Z2ZiBZPA_JBsmllIgYUUypu2EJBE75RFfF0Z1RCPx1t4g3lSq-TDi5AZEBS1k3-IHS4zBxmxCrtS3LOqCvBm2IEKyKJPQsojgyAlCoqIE2ERFlNVpdm66D2A3TehYBAtgmticuyNy7tr1tyD2XAjwDetyH2JSaXok/s320-rw/lo_0007_Capa-4.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'coate', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmp_8wUjDw34_FbWs1MomBprv2R9lFuI3iI6nGpb8yWU1-_6fNx-FhrWlflDowNyyZFzEUuJWw7KlvdWQlSqwL4cEW8YDxNVaNsNu0-HGcgYdRsInNYE-7pIa2KSW9yD5TBVjsYnK5sX-2q2VwFs9kjms0o1P_6qsodAy38TmkQ9XPEx_hVh7m53mprZY/s320-rw/lo_0006_Capa-6.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'gomera', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzrda9QAuos6tZW_8RISi2LSf5UxhEl_vzFbGqqInysks0-pDhlmLPAl0vUVvC9yAJfBvVZKbtCPvAMbQsRkfsgTvCEZHRg49iCw03jYpxRsvDVZALNL7E8n88d_0HkSV8hCb2-_iYhqfZdamcmN65tbqpdH8iOjfuviJpGOCRR_h2tlAkD9ILnLe3jO8/s320-rw/lo_0004_Capa-9.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'dsp', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoZxxmQ9RZmue-67X_pzNuY99nQfPSHk9fj_q-WNVepmHZqiwIFT9hgrK3j8ei8TykMEBXVkrKDOL_LnapISeJL6_uGpDVgpVT6uQH9aj1aKOtEfmEdPu6OKnsg4kvVi2MAk6YbpxzfUbQ-Se_lFE2fxIUFG-GVVZ2Hm1XJ88DP0WDjypIO8rKENRbldo/s320-rw/lo_0000_escudo-dep-san-pedro.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'huehue', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUOEV6x-Q3ZAsB69c8meM9ZSsApkE5BTS1TZG6zpjFogeITrVq7ErGngfe1UQLQFPRu-9hmc7ads0pT5NSSYveT1pkw0jtrmvN8AanVN4h7DwrwdbEZzYDrF7Tcyf0LB7XGAVu8K3JUZFqrWREGmV_s3OtmAm0IP-EZ14NsVhungjjbygZ9dpSyJyb2DM/s1600/lo_0003_Capa-10.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'copa', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivdwjX7U-U31jJkXHBXkgldBzvhK_4fz4psKUSq3ZIoyx86vSO7HZR3a9F5DsusT8zvkv1ywV56trjM_Lq77DD4ictQtbXI6HR0uQNmYRZvYrZn8qth-Qcwcfbj9zU9d3G4B7dbE2ajHuEoEhciBcUVn7ZKyAqvP6sZEN5zIzWGTMGyaZY_nJ3iF7bOLY/s320-rw/lo_0002_Capa-12.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'quiche', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhT9RSwz741vWsllF1jlC6nxleGI7FOysLfHrAlruPEEw05cqhK9qCMoE1Hi-bkiLi_aMJIbHz9x_ps6L92VvKg5eFepTTlD27dJa-lbtay5Yo93Cie9EM3bC4GzBvIqgMCkArOJwBtXQnRgu3omw58dtESlI9NhzvqH9c1ZHiPElzqq0PUdm6TPSPaayQ/s320-rw/lo_0001_Capa-13.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'suchi', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKgmiDcmjbgUQ2NqmOmrF9HuYEAOVwOHPa_jg9sT8wfX2GeP3iHlFSygLlXrRA5W8qcYvHNbmHVjYqJ_AE6nzoG3r_Nx-OxqBP-uLRDIbmxepiWEfGPTrYz5YtVqmG04j-uw0nE-pFyXXZ4cjZaoftubyHCwWADiJ2-CtyRvjqleE8uz7iOFYS8R9AxyQ/s320-rw/lo_0009_Capa-1.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+    { nombre: 'nueva', escudo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjx3oo-v-YBj02biLujEPTcbELwkElKjmFkIKk_9uSCa5Gq5Jsra0_wfRLSkqnnfpZJWhlvUvQH_umvYUeP-bwSWM13GkNhvNebqrh9XOeNrcQQ39IbGKIr0tASj81G0-EQSNT1CLaj5eVuFyTqxFMHEHyo8_-sNRr5pDxrjqcFPAFIXUERIvn49j_O4Xg/s320-rw/lo_0005_Capa-7.png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 }
+  ];
+
+  // Función para actualizar la tabla
+function actualizarTabla() {
+  const tabla = document.getElementById('tabla-posiciones').getElementsByTagName('tbody')[0];
+  tabla.innerHTML = ''; // Limpiar tabla antes de agregar nuevas filas
+
+  // Ordenar por puntos, luego diferencia de goles, luego goles a favor
+  equipos.sort((a, b) => {
+    const difA = a.golesAFavor - a.golesEnContra;
+    const difB = b.golesAFavor - b.golesEnContra;
+
+    return (
+      b.puntos - a.puntos || 
+      difB - difA ||
+      b.golesAFavor - a.golesAFavor
+    );
+  });
+
+  // Agregar filas a la tabla
+  equipos.forEach((equipo, index) => {
+    const fila = document.createElement('tr');
+
+    fila.innerHTML = `
+      <td><img src="${equipo.escudo}" alt="${equipo.nombre}" class="imgequip"></td>
+      <td>${equipo.puntos}</td>
+      <td>${equipo.jugados}</td>
+      <td>${equipo.victorias}</td>
+      <td>${equipo.empates}</td>
+      <td>${equipo.derrotas}</td>
+      <td>${equipo.golesAFavor}</td>
+      <td>${equipo.golesEnContra}</td>
+      <td>${equipo.golesAFavor - equipo.golesEnContra}</td> 
+    `;
+
+    tabla.appendChild(fila);
+  });
+}
+
+// Obtener equipo por nombre
+function obtenerEquipoPorNombre(nombre) {
+  return equipos.find(equipo => equipo.nombre === nombre);
+}
+
+// Calendario solo de dsp
+const calendarioSanPedro = [
+ {
+  jornada: 'Jornada 1', rival: 'huehue', local: true, fecha: 'Dom 27 Julio', hora: '15:00', estadio: 'Estadio Municipal Sampedrano'
+},
+{
+  jornada: 'Jornada 2', rival: 'chichi', local: false, fecha: 'Dom 3 Agosto', hora: '15:00', estadio: 'Estadio Municipal Tzocoma'
+},
+{
+  jornada: 'Jornada 3', rival: 'nueva', local: true, fecha: 'Dom 10 Agosto', hora: '15:00', estadio: 'Estadio Municipal Sampedrano'
+},
+{
+  jornada: 'Jornada 4', rival: 'quiche', local: false, fecha: 'Dom 17 Agosto', hora: '12:00', estadio: 'Estadio Santa Cruz'
+},
+{
+  jornada: 'Jornada 5', rival: 'coate', local: true, fecha: 'Mié 20 Agosto', hora: '15:00', estadio: 'Estadio Municipal Sampedrano'
+},
+{
+  jornada: 'Jornada 6', rival: 'suchi', local: false, fecha: 'Dom 24 Agosto', hora: '13:00', estadio: 'Estadio Carlos Salazar Hijo'
+},
+{
+  jornada: 'Jornada 7', rival: 'gomera', local: true, fecha: 'Dom 31 Agosto', hora: '15:00', estadio: 'Estadio Municipal Sampedrano'
+},
+{
+  jornada: 'Jornada 8', rival: 'copa', local: true, fecha: 'Dom 7 Septiembre', hora: '15:00', estadio: 'Estadio Municipal Sampedrano'
+},
+{
+  jornada: 'Jornada 9', rival: 'agua', local: false, fecha: 'Mié 10 Septiembre', hora: '15:30', estadio: 'Estadio David Herrera'
+},
+  
+
+];
+
+// Renderizar las tarjetas de jornadas
+function renderizarJornadas() {
+  const contenedor1 = document.getElementById('calendario-jornadas');
+  const contenedor2 = document.getElementById('calendario-jornadas2');
+
+  contenedor1.innerHTML = '';
+  contenedor2.innerHTML = '';
+
+  calendarioSanPedro.forEach((partido, index) => {
+    const equipo1 = partido.local ? 'dsp' : partido.rival;
+    const equipo2 = partido.local ? partido.rival : 'dsp';
+
+    const escudo1 = obtenerEquipoPorNombre(equipo1)?.escudo || '';
+    const escudo2 = obtenerEquipoPorNombre(equipo2)?.escudo || '';
+
+    const marcador = partido.resultado
+      ? `<div class="result">${partido.resultado.goles1} - ${partido.resultado.goles2}</div>`
+      : `<div class="date">${partido.jornada}</div>
+         <div class="date">${partido.fecha} - ${partido.hora} Hrs</div>
+         <div class="date2">${partido.estadio}</div>`;
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${escudo1}" alt="${equipo1}" />
+      <div class="info">${marcador}</div>
+      <img src="${escudo2}" alt="${equipo2}" />
+    `;
+
+    // Mostrar en el primer div (jornadas 1–9) o segundo (10–18)
+    if (index < 9) {
+      contenedor1.appendChild(card);
+    } else {
+      contenedor2.appendChild(card);
+    }
+  });
+}
+
+
+// Actualizar resultado en calendario de dsp
+function actualizarPartidoSanPedro(equipoA, equipoB, golesA, golesB) {
+  calendarioSanPedro.forEach(partido => {
+    const equipo1 = partido.local ? 'dsp' : partido.rival;
+    const equipo2 = partido.local ? partido.rival : 'dsp';
+
+    const mismoPartido =
+      (equipo1 === equipoA && equipo2 === equipoB) ||
+      (equipo1 === equipoB && equipo2 === equipoA);
+
+    if (mismoPartido) {
+      partido.resultado = {
+        goles1: equipoA === equipo1 ? golesA : golesB,
+        goles2: equipoA === equipo1 ? golesB : golesA
+      };
+    }
+  });
+}
+
+// Función para agregar partido y actualizar tabla y calendario
+function agregarPartido(nombreEquipo1, nombreEquipo2, golesEquipo1, golesEquipo2) {
+  // Actualizar tabla de posiciones
+  const equipo1 = obtenerEquipoPorNombre(nombreEquipo1);
+  const equipo2 = obtenerEquipoPorNombre(nombreEquipo2);
+
+  if (!equipo1 || !equipo2) {
+    console.error("Uno o ambos equipos no existen en la lista.");
+    return;
+  }
+
+  // Actualizar goles a favor y en contra
+  equipo1.golesAFavor += golesEquipo1;
+  equipo1.golesEnContra += golesEquipo2;
+  equipo2.golesAFavor += golesEquipo2;
+  equipo2.golesEnContra += golesEquipo1;
+
+  // Partidos jugados
+  equipo1.jugados++;
+  equipo2.jugados++;
+
+  // Victorias, derrotas, empates y puntos
+  if (golesEquipo1 > golesEquipo2) {
+    equipo1.victorias++;
+    equipo2.derrotas++;
+    equipo1.puntos += 3;
+  } else if (golesEquipo2 > golesEquipo1) {
+    equipo2.victorias++;
+    equipo1.derrotas++;
+    equipo2.puntos += 3;
+  } else {
+    equipo1.empates++;
+    equipo2.empates++;
+    equipo1.puntos++;
+    equipo2.puntos++;
+  }
+
+  // Actualizar calendario con resultado
+  actualizarPartidoSanPedro(nombreEquipo1, nombreEquipo2, golesEquipo1, golesEquipo2);
+
+  // Refrescar tabla y calendario
+  actualizarTabla();
+  renderizarJornadas();
+}
+
+// Render inicial
+actualizarTabla();
+renderizarJornadas();
+
+// Jornada 1
+ agregarPartido('nueva', 'chichi', 2, 1);
+ agregarPartido('suchi', 'gomera', 1, 2);
+ agregarPartido('coate', 'copa', 2, 0);
+ agregarPartido('agua', 'quiche', 1, 0);
+ agregarPartido('dsp', 'huehue', 4, 1);
+
+// Jornada 2
+ agregarPartido('quiche', 'huehue', 5, 1);
+ agregarPartido('gomera', 'nueva', 2, 1);
+ agregarPartido('chichi', 'dsp', 1, 2);
+ agregarPartido('copa', 'suchi', 1, 1);
+ agregarPartido('coate', 'agua', 1, 1);
+
+  // Jornada 3
+ agregarPartido('copa', 'gomera', 3, 2);
+ agregarPartido('dsp', 'nueva', 4, 0);
+ agregarPartido('chichi', 'quiche', 0, 3);
+ agregarPartido('agua', 'suchi', 1, 0);
+ agregarPartido('coate', 'huehue', 1, 2);
+  
+  // Jornada 4
+ agregarPartido('gomera', 'agua', 3, 0);
+ agregarPartido('nueva', 'copa', 1, 0);
+ agregarPartido('quiche', 'dsp', 0, 0);
+ agregarPartido('suchi', 'huehue', 2, 2);
+ agregarPartido('coate', 'chichi', 2, 1);
+  
+  // Jornada 5
+ agregarPartido('dsp', 'coate', 1, 0);
+ agregarPartido('nueva', 'quiche', 1, 1);
+ agregarPartido('chichi', 'suchi', 1, 1);
+ agregarPartido('copa', 'agua', 3, 1);
+ agregarPartido('gomera', 'huehue', 2, 2);
+
+  // Jornada 6
+ agregarPartido('quiche', 'coate', 4, 1);
+ agregarPartido('suchi', 'dsp', 1, 0);
+ agregarPartido('copa', 'huehue', 1, 0);
+ agregarPartido('chichi', 'gomera', 2, 5);
+ agregarPartido('agua', 'nueva', 2, 0);
+ 
+    // Jornada 7
+ agregarPartido('copa', 'chichi', 2, 0);
+ agregarPartido('dsp', 'gomera', 1, 2);
+ agregarPartido('coate', 'nueva', 1, 0);
+ agregarPartido('agua', 'huehue', 0, 0);
+ agregarPartido('quiche', 'suchi', 2, 0);
+  
+    // Jornada 8
+ agregarPartido('gomera', 'quiche', 2, 1);  
+ agregarPartido('suchi', 'coate', 0, 0);  
+ agregarPartido('chichi', 'agua', 1, 1);  
+ agregarPartido('dsp', 'copa', 2, 0);  
+ agregarPartido('nueva', 'huehue', 2, 0);  
+  
+  // Jornada 9
+ agregarPartido('agua', 'dsp', 3, 3);  
+ agregarPartido('huhutecos fc', 'chichi', 0, 0);   
+ agregarPartido('suchi', 'nueva', 3, 1);   
+ agregarPartido('coate', 'gomera', 2, 1);   
+ agregarPartido('quiche', 'copa', 2, 1);
+
+    // Jornada 10
+ agregarPartido('huehue', 'dsp', 4, 1);  
+ agregarPartido('copa', 'coate', 2, 0);  
+ agregarPartido('quiche', 'agua', 3, 0);  
+ agregarPartido('chichi', 'nueva', 3, 1);  
+ agregarPartido('gomera', 'suchi', 0, 3);  
+  
+    // Jornada 11
+ agregarPartido('huehue', 'quiche', 2, 3);
+ agregarPartido('suchi', 'copa', 2, 0);
+ agregarPartido('nueva', 'gomera', 1, 0);
+ agregarPartido('agua', 'coate', 3, 1);
+ agregarPartido('dsp', 'chichi', 3, 1);
+  
+</script>
+
+
+
+
+<style>
+  /* Estilos generales de la página */
+  
+    .imgequip {
+    width: 50px;
+  }
+  
+body {
+  font-family: 'alfarn', sans-serif;
+  background-color: #2d0a5d;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  padding: 0px;
+  margin-top: 2px;
+  font-size: 2.5em;
+}
+
+
+/* Estilos para la tabla con fondo degradado */
+table {
+  width: 100%;
+  max-width: 100%;
+
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: white; /* El texto en blanco para contrastar con el fondo oscuro */
+  border: 1px solid #ddd;
+}
+
+/* Encabezado de la tabla */
+th {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  background-color: transparent; /* Hacer que el encabezado sea transparente para que se vea el degradado */
+}
+
+/* Celdas de la tabla */
+td {
+  padding: 9px;
+  text-align: center;
+  font-size: 1em;
+  color: white; /* El texto en blanco para contrastar */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil en blanco */
+  transition: background-color 0.3s ease;
+vertical-align: middle;
+}
+
+/* Estilo para el nombre del equipo */
+.team-name {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Efecto hover en las filas */
+tr:hover td {
+  background-color: rgba(255, 255, 255, 0.1); /* Color suave de fondo al hacer hover */
+}
+
+/* Filas alternadas con fondo más oscuro */
+tr:nth-child(even) td {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para las imágenes de los escudos */
+td img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  th, td {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .imgequip {
+    width: 35px;
+    height: 30px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .imgequip {
+    width: 40px;
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  table {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  th, td {
+    padding: 6px;
+    font-size: 10px;
+  }
+
+  .imgequip {
+    width: 45px;
+    height: 20px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  table {
+    font-size: 9px;
+  }
+}
+  
+.tabla-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 10px;
+}
+
+table {
+  min-width: 600px; /* Esto asegura que haya algo de ancho que genere scroll si es necesario */
+}
+
+  
+  </style>
+
+
+
+<script>
+  let contenidoActivo = null; // Variable para rastrear el contenido visible
+
+  function mostrarContenido(numero) {
+    const contenido = document.getElementById('contenido' + numero);
+    const boton = document.getElementById('boton' + numero);
+
+    // Si ya está activo, ocultarlo y desactivar botón
+    if (contenidoActivo === numero) {
+      contenido.classList.remove('mostrar');
+      boton.classList.remove('activo');
+      contenidoActivo = null; // Nada activo
+    } else {
+      // Ocultar ambos contenidos
+      document.getElementById('contenido1').classList.remove('mostrar');
+      document.getElementById('contenido2').classList.remove('mostrar');
+
+      // Desactivar ambos botones
+      document.getElementById('boton1').classList.remove('activo');
+      document.getElementById('boton2').classList.remove('activo');
+
+      // Mostrar el contenido y activar botón
+      contenido.classList.add('mostrar');
+      boton.classList.add('activo');
+      contenidoActivo = numero; // Guardar como activo
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    mostrarContenido(1); // Mostrar la pestaña 1 por defecto
+  });
+</script>
+
+  
+<style>
+    .boton-tab {
+      padding: 10px 20px;
+      border: none;
+background-color: #49004e;
+      cursor: pointer;
+      width: 49%;
+      color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      font-family: 'alfarn', sans-serif;
+    }
+
+    .boton-tab.activo {
+      background-color: #FFE033;
+      color: #49004e;
+    }
+
+    .contenido {
+      display: none;
+      margin-top: 10px;
+    }
+
+.contenido.mostrar {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+  
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>

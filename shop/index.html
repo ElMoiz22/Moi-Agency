@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Moi Shop</title>
+<link rel="stylesheet" href="styles.css" />	
+<link rel="stylesheet" href="pantalladecarga.css" />	
+<link rel="stylesheet" href="swipe.css" />	
+<link rel="stylesheet" href="miheader.css" />	
+<link rel="stylesheet" href="politicas.css" />	
+<link rel="stylesheet" href="carritodecompras.css" />	
+<link rel="stylesheet" href="../headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+<link rel="stylesheet" href="siper.css" />
+</head>
+<body>
+
+  	
+<div id="header"></div>
+
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+	
+  <header class="mi-header" style="margin-top: 0px;">
+    <nav class="mi-navbar">
+        <div class="mi-logo">
+            <!-- Reemplaza 'logo.png' con la ruta de tu imagen -->
+            <a href="index.html"><img src="logos/moistore2.png" alt="Mi Logo"></a>
+        </div>
+      <div style="position: relative; display: inline-block;">
+  <a href="javascript:void(0);" class="btn-cart" id="openCartModal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="60%" height="100%" viewBox="0 0 24 24">
+      <path fill="currentColor" fill-rule="evenodd" d="M8 7V6a4 4 0 1 1 8 0v1h3c.552 0 1 .449 1 1.007v12.001c0 1.1-.895 1.992-1.994 1.992H5.994A1.994 1.994 0 0 1 4 20.008v-12C4 7.45 4.445 7 5 7zm1.2 0h5.6V6a2.8 2.8 0 0 0-5.6 0zM8 8.2H5.2v11.808c0 .436.356.792.794.792h12.012a.794.794 0 0 0 .794-.792V8.2H16V11h-1.2V8.2H9.2V11H8z"/>
+    </svg>
+    <span id="cart-count" class="cart-count" style="display: none;">0</span>
+  </a>
+</div>
+
+    </nav>
+</header>
+
+    <div class="caja-invisible" id="ventanaLegal">
+        <div class="contenedor-popup">
+            <div style="margin: 18px;display: flex;align-items: center;justify-content: center;/*! height: 100vh; *//*! background-color: #f3f3f3; */" class="image-container">
+    <img style="width: 71%;display: block;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisUMf5GF45NTfJr5UoZAMO8Am3yfMyyWWAILnz6I7JG-CHW_EhFRSNOhPDkyKr4MQndkiT1oM7Gq38ctBKZ8NB4QcNECvtcufz9uT2E1u4khqg88RfdKFMgr3LwzNkqy4D1JJOTo-8wxureEXZhNG1ELbNtqHF39SIEpOQiCI5uUdPpNVqqTHipui6ym1N/s1600/moistore2.png" alt="Imagen Responsiva">
+   </div>
+            <h3 style="color: #fff; font-size: 14px;" >En MOIDG STORE nos comprometemos con tu seguridad y privacidad. Acepta nuestros términos para disfrutar de una experiencia de compra confiable.</h3>
+            <div class="botones-container">
+                <button class="boton-opcion boton-terminos" onclick="leerTerminos()">Términos y Condiciones</button>
+                <button class="boton-opcion boton-privacidad" onclick="leerPrivacidad()">Politicas de Privacidad</button>
+            </div>
+            <div class="botones-container">
+                <button class="boton-opcion boton-aceptar" onclick="aceptarTodo()">Aceptar</button>
+                <button class="boton-opcion boton-rechazar" onclick="rechazarTodo()">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+<div id="notification-container"></div>
+  
+   <div id="botones">
+  <button class="boton2" id="boton1" onclick="mostrarContenido(1)">MoiDg Store</button>
+  <button class="boton2" id="boton2" onclick="mostrarContenido(2)">Barberena FC</button>
+  <button class="boton2" id="boton3" onclick="mostrarContenido(3)">Dep. San Pedro</button>
+  <button class="boton2" id="boton4" onclick="mostrarContenido(4)">Más</button>
+</div>
+
+  <div id="contenidos">
+    <div class="contenido" id="contenido1">
+
+        <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img style="width: 100%;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3qGfLMWIZ2wOn-fJ89Dk_h6iEc3CIOWfwUqlok3BRhjjaMMZp1LHzo1AtjIMJbyuVWK7uP39yFg5K_7d7FS3hX5tKVf8Lu9MCYyx3f1UbadSi70x82MBN7-miiK39NyZv3HSutzQhsc5xwCzwh1iuHgXT8sHdRPe7Vn14wWJXp5p_ZqsP5ZGvG9_c2duj/s1600/93gb.png" style="cursor: pointer;" onclick="mostrarContenido(3)"/></div>
+        <div class="swiper-slide"><img style="width: 100%;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-LufH8qNxjSX15tSCH4J2NcJ5gdmM7UDgz_ybiZ6h92fXRDRYjCM6DSVUZIBoboYhHWvI3sMdeYVRPy88aIiRCmH-V5hZJnxklegyqoRW9J7k4pywZSXb2nFGLCiUlmhjv7gSJcCcJ-D4phZhxg45sFjP_EpcrGRSyVTduWQArTHRfU8_uQqsRd3RXIA5/s1600/38gbrj.png" style="cursor: pointer;" onclick="mostrarContenido(2)"/></div>
+        <div class="swiper-slide"><img style="width: 100%;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBnbyejdHIol8tTuqEda6D6Fr7wGRhRYlNUBu1kR7FL0GXLcWWUpuQ6TD3L4sseUWFN-GS6XZ-qi1He5PRDQC7c4ShUqCVYEFpPJUg7Rz9AeZs4w8ELzCXSfulJSRgJRR16KYNrCakp8JNX37OvmN-Gg7RZ9-ux_PkST6XwXaTHjBX5m_SIY_SkwCzz_5W/s1600/8g3bgb.png"  style="cursor: pointer;" onclick="mostrarContenido(2)"/></div>
+    </div>
+    <div class="swiper-button-next" style="color: #faf6ef;"></div>
+    <div class="swiper-button-prev" style="color: #faf6ef;"></div>
+  </div>
+      
+      
+    <div class="full-screen-container">
+<div class="full-screen-section">
+    <img 
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJx8VSOE5mtIpPoyvoSoKnY8vKoe5NU7aZzILsH4PfB97vaO8tOEfOL2WtSlagdmj9VV6cPS3WFNijyR3IRzraFEyLCFCZg8KMDYugYhgjYehDaqpeS0LW89V82rJAhSFVA5It25oUKGp_ieY5NXS1Bq2oMmJHROww6dwsMkwcpdojoG6JleNIQ9ScaPVJ/s600/gorr.png" 
+        style="cursor: pointer;" 
+        onclick="showProductDetails(2.3)" />
+</div>
+
+<div class="full-screen-section">
+    <img 
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLYBpvw4juTExRmM4_UdHoCgyaLp707y0dOhnTf8s2OAe7GXElZI1SAiwpaYm67kz2EJA9ram0gs1OAKNr4JcfkoPd0j5z-U-ZSrlp7pMYBSWDd_4fPhWKRRnh0NXjO13JwU77pHzhUOdV6mS2b2MDmtTdAw41h-aRjG0v6m8o4z2TRhtzhcjKxs9KsgE5/s600/gorras.png" 
+        style="cursor: pointer;" 
+        onclick="showProductDetails(2.5)" />
+</div>
+      
+      <div class="full-screen-section">
+    <img 
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiV6VEhy-wQmT9qGIArH1vrum9a2lpmxLXHz70SuxEPAdRtp_h5kwfZedWIv31yTK_MSq7J-FZqPTp83mWFg9rErd1-WC-VPpYf-4TkAV0fA0ZN3R1tX23Rv4xwx-9SHC0b1AYSe6XQQl9awynj3_KP-VEU_w4ZtrDRNdI0Q-guf_60XtS9ho1YWXfuiN6T/s600/djksd.png" 
+        style="cursor: pointer;" 
+        onclick="showProductDetails(2.4)" />
+</div>
+      
+<div class="full-screen-section">
+    <img 
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJx8VSOE5mtIpPoyvoSoKnY8vKoe5NU7aZzILsH4PfB97vaO8tOEfOL2WtSlagdmj9VV6cPS3WFNijyR3IRzraFEyLCFCZg8KMDYugYhgjYehDaqpeS0LW89V82rJAhSFVA5It25oUKGp_ieY5NXS1Bq2oMmJHROww6dwsMkwcpdojoG6JleNIQ9ScaPVJ/s600/gorr.png" 
+        style="cursor: pointer;" 
+        onclick="showProductDetails(2.3)" />
+</div>
+      </div></div>
+   
+ <div class="contenido" id="contenido2">
+    
+<div id="category-barberenafc" class="product-category">
+    <div class="product-list"></div>
+</div>
+        
+    </div>
+
+    <div class="contenido" id="contenido3">
+    
+<div id="category-deportivo-san-pedro" class="product-category">
+    <div class="product-list"></div>
+</div>
+
+    </div>
+    
+    <div class="contenido" id="contenido4">
+
+      <div id="category-extramoi" class="product-category">
+    <div class="product-list"></div>
+</div>  
+      
+      <div id="category-moidg" class="product-category">
+    <div class="product-list"></div>
+</div>
+      
+    </div>
+
+  
+<div id="productModal" class="modal">
+    <div class="modal-content2">
+        <span class="close" onclick="closeProductModal()">&times;</span>
+<div class="modal-product-container">
+  <!-- Imagen a la izquierda -->
+  <img id="modalProductImage" src="" alt="">
+
+  <!-- Contenido a la derecha -->
+  <div class="modal-product-details">
+  <h3 id="modalProductName" class="product-button"></h3>
+        <p id="modalProductPrice" class="product"></p>
+        <div id="modalProductSizes" class="size-selector"></div>
+
+    <div class="quantity-selector">
+      <button onclick="changeModalQuantity(-1)">-</button>
+      <input class="quantity-input" type="number" id="modalQuantity" value="1" min="1">
+      <button onclick="changeModalQuantity(1)">+</button>
+    </div>
+
+ <button style="background-color: #00b185;color: #fff;height: 36px;font-weight: 900;" class="product-button" id="modalAddToCart" onclick="modalAddToCart()">Agregar al carrito</button>  </div>
+</div>
+
+    </div>
+</div>
+
+
+
+
+<!-- Modal del carrito de compras -->
+<!-- Modal de Carrito -->
+<div id="cartModal" class="modal">
+  <div class="modal-content2">
+    <span class="close" id="closeModal">&times;</span>
+    <div style="margin: 18px;display: flex;align-items: center;justify-content: center;" class="image-container">
+      <img style="width: 71%;display: block;" src="logos/moistore2.png" alt="Imagen Responsiva">
+    </div>
+    <div class="grid-container">
+      <div class="selected-products">
+        <h3>Carrito de Compras</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Prod.</th>
+              <th>Tall.</th>
+              <th>Can.</th>
+              <th>P/U</th>
+              <th>Sub t.</th>
+              <th></th> <!-- Columna vacía para el botón de eliminar -->
+            </tr>
+          </thead>
+          <tbody id="selectedProductsTable"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" id="total">Total a Pagar: Q0</td>
+            </tr>
+          </tfoot>
+        </table>
+        <!-- Botón que abre el modal de Datos para Envío -->
+        <button id="proceedToShipping" class="whatsapp-button">
+          <i></i> Continuar el Pedido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Datos Para Envío -->
+<div id="shippingModal" class="modal" style="display: none;">
+ 
+  <div class="modal-content2">
+        <span class="close" id="closeShippingModal">&times;</span>
+            <div style="margin: 18px;display: flex;align-items: center;justify-content: center;" class="image-container">
+      <img style="width: 71%;display: block;" src="logos/moistore2.png" alt="Imagen Responsiva">
+    </div>
+      <div class="shipping-info">
+    <h3>Datos Para Envío</h3>
+    <form id="shippingForm">
+      <label for="name">Nombre y Apellido:</label>
+      <input id="name" name="name" required type="text" />
+
+      <label for="email">Correo Electrónico:</label>
+      <input id="email" name="email" required type="email" />
+
+      <label for="address">Dirección:</label>
+      <input id="address" name="address" required type="text" />
+
+      <label for="reference">Referencia:</label>
+      <input id="reference" name="reference" required type="text" />
+
+      <label for="contact">Número de Contacto:</label>
+      <input id="contact" name="contact" required type="tel" />
+    </form>
+    </div>
+    <div class="grid-container">
+      <div class="selected-products">
+        <!-- Botón para realizar el pedido -->
+        <button class="whatsapp-button" onclick="makeOrder()">
+          <i></i> Hacer Pedido
+        </button>
+      </div>
+    </div>
+    <h2 style="padding: 5px; text-align: center;">Se enviará un correo electrónico para confirmar el pedido</h2>
+  </div>
+</div>
+
+
+
+  <div class="modal" id="orderSummaryModal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2 style="color: #009dd4; margin-top: 60px;">¡Gracias por tu compra!</h2>
+            <table id="orderSummaryTable">
+                <thead>
+                    <tr>
+                        <th>Prod.</th>
+                        <th>Tall.</th>
+                        <th>Can.</th>
+                        <th>P/U</th>
+                        <th>Sub t.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los productos se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+           <p id="orderNumber" style="display: inline; /*! margin-right: 10px; */padding: 9px;color: #009dd4;font-size: 18px;/*! margin: 15px; */top: 15px;" >Número de Pedido: </p>
+            <p id="totalAmount" style="display: inline; /*! margin-right: 10px; */padding: 9px;color: #009dd4;font-size: 18px;/*! margin: 15px; */top: 15px;font-weight: 900;" ></p>
+                      <p style="color: #ffc240;font-size: 18px;padding: 10px;">Por favor, toma una captura de pantalla de este resumen para confirmar tu pedido.</p>
+        </div>
+    </div>
+
+  <!-- Pantalla de carga -->
+ <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <img src="logos/moishoplogo.png" alt="Foto de Perfil">
+    </div>
+  </div>
+
+<script src="pantalladecarga.js"></script>
+<script src="carrito.js"></script>
+<script src="miheader.js"></script>
+<script src="politicas.js"></script>
+<script src="../footer.js"></script>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+          delay: 6500,
+          disableOnInteraction: false,
+        },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+	</body>
+</html>

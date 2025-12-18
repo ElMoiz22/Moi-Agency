@@ -1,0 +1,882 @@
+ .txttitulopost img {
+    width: 30%; /* Ajusta según sea necesario */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+    
+   /* Contenedor de productos */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
+  gap: 20px;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .grid-container2 {
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 0;
+  }
+}
+
+@media (max-width: 730px) {
+  .grid-container2 {
+    grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
+    gap: 0;
+  }
+}
+
+/* Estilo de producto */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+.product {
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f7f7f712;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Resalta el producto activo */
+.product:hover {
+    opacity: 1 !important;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+    
+    
+
+/* Para pantallas grandes */
+@media (max-width: 1200px) {
+.product-list {
+        grid-template-columns: repeat(4, 1fr); /* Tres productos por fila */
+    }
+}
+    
+    /* Para pantallas medianas */
+@media (max-width: 768px) {
+.product-list {
+        grid-template-columns: repeat(3, 1fr); /* Tres productos por fila */
+    }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 480px) {
+.product-list {
+        grid-template-columns: repeat(2, 1fr); /* Dos productos por fila */
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 320px) {
+.product-list {
+        grid-template-columns: 1fr; /* Un producto por fila */
+    }
+}
+
+    .post-body table {border: 0px solid var(--border-color);}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product h3 {
+    margin: 10px 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.product p {
+    margin: 5px 0;
+  font-weight: 900;
+  font-size: 30px;
+      color: #fff;
+}
+
+.product button {
+    background-color: #ffffff29;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+  height: 30px;
+  font-weight: 900;
+}
+
+.product button:hover {
+    background-color: #ffbd2f;
+    color: #0e1235;
+}
+
+/* Selector de cantidad */
+.quantity-selector {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:10px 0;
+    border:1px solid white;
+    border-radius:30px;
+    overflow:hidden;
+    width:100%;
+    background-color:#ffbd2f;
+}
+.quantity-selector input[type="number"] {
+    width:40px;
+    text-align:center;
+    border:none;
+    background-color:transparent;
+    color:#0e1235;
+    font-size:16px;
+    padding:5px 0;
+    margin:0;
+    -moz-appearance:textfield;
+}
+.quantity-selector input[type="number"]::-webkit-outer-spin-button,.quantity-selector input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+.quantity-selector input[type="number"]::-moz-appearance {
+    -moz-appearance:textfield;
+}
+.quantity-selector button {
+    background-color:transparent;
+    color:#0e1235;
+    border:none;
+    padding:5px 0px;
+    cursor:pointer;
+    font-size:16px;
+    border-radius:0;
+}
+.quantity-selector button:hover {
+    background-color:rgba(255,255,255,0.1);
+}
+
+
+/* Botones */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+button {
+background-color: #eae5dd;
+  color: #00526f;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+button:hover {
+    background-color: #ffbd2f;
+    color: #0e1235;
+}
+
+/* Carrito de productos seleccionados */
+.selected-products {
+max-width: 100%;
+  background-color: #faf6ef;
+  border-radius: 5px;
+  color: #009dd4;
+  margin: 5px;
+}
+
+.selected-products h3 {
+margin: 20px;
+  text-align: center;
+  font-size: 33px;
+  font-weight: 900;
+}
+
+.selected-products table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.selected-products table,
+.selected-products th,
+.selected-products td {
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffffff0a;
+  border-radius: 15px;
+}
+
+.selected-products th {
+background-color: #f2eee8;
+}
+
+.selected-products tfoot {
+  font-weight: bold;
+  background-color: #f2eee8;
+}
+
+.selected-products .whatsapp-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00b384;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.selected-products .whatsapp-button i {
+  margin-right: 10px;
+}
+
+.selected-products .whatsapp-button:hover {
+  background-color: #12765f;
+}
+
+/* Información de envío */
+.shipping-info {
+background-color: #faf6ef;
+  padding: 10px;
+  border-radius: 5px;
+  color: #009dd4;
+}
+
+.shipping-info form {
+  display: flex;
+  flex-direction: column;
+}
+
+.shipping-info label {
+  margin-top: 10px;
+}
+
+.shipping-info input {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.shipping-info h3 {
+color: #009dd4;
+  text-align: center;
+  font-size: 28px;
+}
+
+#paymentInfo {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+/* Selector de talla */
+.size-selector {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.size-selector select {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 30px;
+  background-color: #0004233d;
+  color: white;
+  text-align: center;
+  appearance: none;
+}
+
+.size-selector select option {
+  background-color: #919191;
+  color: white;
+}
+
+/* Estilo de post */
+.post-body h2 {
+  color: #fff;
+  font-size: 20px;
+}
+
+#post-body {
+  color: #ffbd2f;
+}
+
+/* Botón activado */
+.boton2 {
+  background-color: #eae5dd;
+  color: #00526f;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 24.50%;
+  transition: background-color 0.3s;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+.boton2:hover {
+  background-color: #00526f;
+  color: #eae5dd;}
+
+.boton2.activo {
+  background-color: #009dd4;
+  color: #eae5dd;
+}
+
+@media screen and (max-width: 768px) {
+  .boton2 {
+    width: 49%;
+  }
+}
+
+/* Contenido animado */
+.contenido {
+  display: none;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.6s ease forwards;
+}
+
+.contenido.mostrar {
+  display: block;
+  animation: fadeInDown 0.6s ease forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Notificación */
+.notification {
+  position: fixed;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #000423;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.notification.show {
+  bottom: 20px;
+  opacity: 1;
+  animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+/* Modal */
+.modal {
+            display: none; /* Oculta la ventana emergente por defecto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* Fondo oscuro */
+        }
+
+        .modal-content {
+background-color: #faf6ef;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 70%;
+  border-radius: 15px;
+        }
+
+        .close-button {
+            color: #ffc240;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #orderSummaryTable {
+            width: 100%;
+            border-collapse: collapse;
+          border: 10px solid rgba(155, 155, 155, 0);
+        }
+
+        #orderSummaryTable th, #orderSummaryTable td {
+border: 1px solid #eee;
+  padding: 6px;
+  text-align: left;
+  background-color: #ffffff17;
+  border-radius: 10px;
+  color: #003142;
+        }
+
+
+/* Contenedor de notificaciones */
+#notification-container {
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: auto;
+}
+
+/* Estilo base de la notificación */
+.notification {
+  position: relative;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1023px) {
+  #notification-container {
+top: 100%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Estilo de botón de carrito */
+.btn-cart {
+  color: #00b384;
+  border-radius: 50px;  
+  text-align: center;
+  font-size: 27px;
+  transition: all 300ms ease;
+  width: 75px;
+  display: inline-block; /* mantiene el orden horizontal */
+  vertical-align: middle; /* lo alinea con otros elementos */
+}
+
+.btn-cart:hover {
+  color: #12765f;
+}
+
+.cart-count {
+  position: absolute;
+  top: 15px;
+  right: 31px;
+  color: #ffc600;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+
+  /* Modal 2 */
+  .modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 2, 2, 0.7);
+    overflow: auto;
+    animation: fadeIn 0.5s ease; /* Animación de apertura del modal */
+  }
+
+  /* El modal cuando está visible */
+  .modal2.open {
+    display: block; /* Se hace visible cuando se le da la clase 'open' */
+    animation: fadeIn 0.5s ease; /* Animación de apertura */
+  }
+
+  /* El modal cuando se cierra */
+  .modal2.close {
+    animation: fadeOut 0.5s ease; /* Animación de cierre */
+  }
+
+  /* Contenido del modal */
+  .modal-content2 {
+position: relative;
+  background-color: #faf6ef;
+  padding: 2px;
+  width: 660px;
+  max-width: 487px;
+  border-radius: 8px;
+  animation: scaleIn 0.5s ease-out;
+  right: 0;
+  }
+
+  /* Animación de desvanecimiento para el modal */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Animación de cierre (desvanecimiento) */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Animación de escalado para el contenido del modal (apertura) */
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Animación de escalado para el contenido del modal (cierre) */
+  @keyframes scaleOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+  }
+
+    @media (max-width: 700px) {
+  .modal-content2 {
+    position: relative;
+    padding: 2px;
+    width: 92%;
+    max-width: 700px;
+    border-radius: 8px;
+    animation: scaleIn 0.5s ease-out; /* Animación de escalado para apertura */
+  }
+            .close-button {
+            color: #ffc240;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+}
+        .modal-content {
+background-color: #faf6ef;
+  padding: 25px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 15px;
+  height: 100%;
+        }
+}
+    
+
+  .close:hover {
+    color: #000000; /* Cambia el color al pasar el ratón sobre el botón */
+  }
+
+        #outer-wrapper {background-color: #000423;}
+    
+
+        
+   
+.full-screen-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas en desktop */
+  width: 100%;
+  height: 100%; /* ocupa toda la pantalla */
+  overflow: hidden;
+}
+
+.full-screen-section {
+  position: relative;
+  transition: filter 0.3s ease;
+}
+
+.full-screen-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Hover */
+.full-screen-section:hover img {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+
+
+/* Tablets → 3 columnas */
+@media (max-width: 1024px) {
+  .full-screen-container {
+    grid-template-columns: repeat(3, 1fr);
+    height: auto; /* deja que crezca */
+  }
+  .full-screen-section img {
+    height: auto;
+  }
+}
+
+/* Celulares → 2 columnas */
+@media (max-width: 600px) {
+  .full-screen-container {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+  .full-screen-section img {
+    height: auto;
+  }
+}
+
+
+
+
+/* Animación para la apertura del modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilo para el contenido del modal */
+.modal-content2 {
+position: initial;
+  padding: 6px;
+  border-radius: 8px;
+  animation: scaleIn 0.5s ease-out;
+  width: 100%;
+  height: 100%;
+}
+
+/* Animación para la entrada del modal */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+position: absolute;
+  top: 0px;
+  cursor: pointer;
+  color: #ffb100;
+    font-size: 63px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Estilo para la imagen del producto */
+#modalProductImage {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Títulos y detalles del producto */
+#modalProductName {
+  margin: 10px 0;
+  color: #00b384;
+  font-size: 24px;
+  text-align: center;
+}
+
+#modalProductPrice {
+margin: 5px 0;
+  font-weight: bold;
+  font-size: 30px;
+    color: #009dd4;
+}
+
+/* Estilo para el contenedor de cantidad */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  border: 1px solid white;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #ffbd2f;
+}
+
+/* Estilo para los botones de incremento y decremento */
+.quantity-selector button {
+  background-color: transparent;
+  color: #0e1235;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+/* Estilo para el input de cantidad */
+.quantity-selector input[type="number"] {
+  width: 50px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  color: #0e1235;
+  font-size: 16px;
+  padding: 5px 0;
+  margin: 0;
+  -moz-appearance: textfield; /* Evita los controles de aumento y disminución del navegador */
+  outline: none;
+}
+ 
+    @media (max-width: 750px) {
+  .modal-content2 {
+position: relative;
+    padding: 5px;
+    border-radius: 8px;
+    animation: scaleIn 0.5s ease-out;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+    }
+
+    
+    .modal-product-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.modal-product-container img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.modal-product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantity-input {
+  width: 60px;
+  text-align: center;
+  padding: 5px;
+}
+
+
+
+.modal-add-to-cart:hover {
+  background-color: #ffffff50;
+}
+
+/* ✅ Responsivo: en pantallas pequeñas apila los elementos */
+@media (max-width: 600px) {
+  .modal-product-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-product-details {
+    align-items: center;
+  }
+
+  .quantity-selector {
+    justify-content: center;
+  }
+
+  .modal-add-to-cart {
+    width: 100%;
+    max-width: 250px;
+  }
+}

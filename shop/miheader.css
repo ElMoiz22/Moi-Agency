@@ -1,0 +1,131 @@
+ /* Estilos del header */
+.mi-header {
+background-color: #ffffff0a;
+  padding: 15px;
+  border-radius: 224px;
+}
+
+/* Barra de navegación */
+.mi-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mi-logo a img {
+    width: 212px; /* Ajusta el tamaño de la imagen del logo */
+    height: auto;
+}
+
+.mi-nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.mi-nav-item {
+    margin-left: 20px;
+}
+
+.mi-nav-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mi-nav-item a:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Estilo para el dropdown */
+.mi-dropdown {
+    position: relative;
+}
+
+.mi-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.mi-dropdown:hover .mi-dropdown-menu {
+    display: block;
+}
+
+.mi-dropdown-menu li {
+    padding: 10px 15px;
+}
+
+.mi-dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.mi-dropdown-menu li a:hover {
+    background-color: #555;
+}
+
+/* Estilo para el ícono de menú en dispositivos móviles */
+.mi-menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mi-bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+}
+
+/* Media Query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .mi-nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+    }
+
+    .mi-nav-item {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .mi-nav-item a {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .mi-menu-icon {
+        display: flex;
+    }
+
+    .mi-nav-list.active {
+        display: flex;
+    }
+
+    .mi-dropdown-menu {
+        position: static;
+    }
+
+    .mi-dropdown:hover .mi-dropdown-menu {
+        display: block;
+    }
+}
