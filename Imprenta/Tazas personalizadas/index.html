@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tazas Personalizadas</title>
+<link rel="icon" class="icono" href="https://moidg.online/icons/web%20logo.ico" type="icono">
+<link rel="stylesheet" href="https://moidg.online/Imprenta/pagesstyles.css" />	
+<link rel="stylesheet" href="/headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+</head>
+<body>
+	
+<div id="header"></div>
+
+<script>
+fetch("/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+         
+        <div class="bannerpost">
+    <img alt="imgpost" class="imgpost" src="../../images/fondoweb2.png" />
+    <div class="txttitulopost">Tazas Personalizadas</div>
+  </div>
+
+
+
+
+<div class='galeria'>
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQPe-GZojXOjL4fp_StmutXWx1b4h5jy5Z5KylArnb1zShltPoZm3cZiOqDubeDByI6zQyGTY5nR25hKWJ2u0MWmmjaSUftYklY_pRlGou26FRBBmWxKSO0U8kMW3yVUAkdI2HKXubUE7LnW5GQgzWdVBNKK5qIY8F-tdTAhrO7Shc2LBU8asYz7GgQgQx/s1600/1.png'/><h3 class="pin GridTitle">TAZA BLANCA</h3></div>
+   
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-uO4A8dyaNW90w7hMGKdTYIiBvaO-oQq0FhlysLOfZpX-6Yh1_0TBqSxeWXRbmTG5sWN8mvcwtbJJfVq3vhaDhkGEJ8R-Mok4_In0yvevbfblah9lSeiuNhHfy8eeQ9u7rVVERicb-NRnNIVdpKKiQ630e7UyUBYjY7MAlB1jzpck9x-zX_D-R17SLEqj/s1600/22.png'/><h3 class="pin GridTitle">TAZAS MÁGICAS</h3></div>
+
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDkTb_OZcGNdGl32ycS9MnSGMR8scmlTAXB4DMz4crw7kcfC4TG9S9zTeGNC3Xb7c5-37tOjzOGeLmagdT9Q6t6x6AnmtRzhEDW3h_PlNZ4xQ97ioxyejlyZ6_rpI-C9pHMBWkELgiEgcmaKSZ_BGlE0qL20wLfY3cE_9qLqEO5sKk_9BhoqkAMlpLfKVN/s1600/6.png'/><h3 class="pin GridTitle">TAZA MÁGICA 3D</h3></div>
+
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJlR4X9iUJMBPthNinBVWmezgHqDcCkS2QaEwglli4bd7Ta6xc2PkEN0x7PCi5aPaA3ErLsgxHMsxV0tiHnqhv126c8OIPNVg4TZ8YaB_8F5pOKMWGH1TATVPxlWgrQhmB2EcPARiF32zzyVShE875Hk7KvICYej7ZjJdTq6A5DCJPF5yS45evt2p1Jf8A/s1600/33.png'/><h3 class="pin GridTitle">TAZA METALIZADA</h3></div>
+   
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6tNlk94VqpU2YJ1nLGsDOLzFHrypzC1UbZTD_SoBf3IQzrkk64Nb-dORWbWuVMwRSFtt6E8Tez3xfvQ7e-Ze3pE4NtJAdMGsdETVlw_DivxQTSL9IJ6rJyX31OyqJJtPW2vyGFxyJkWwzm6l_MIEQsvoi-1riAbF1U8mwNHWuRQIPjM4AxhzApT_VFZUc/s1600/5.png'/><h3 class="pin GridTitle">TAZA NEÓN</h3></div>
+
+   <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfNDnFz9ixJ2WURWVPdRCljDD5lSw5qH0vQO0_wH6V9vtLaUuZedEFqiAXAzdpvtUGkEItgadwytTHcGMS40aZ6QWwurRxYd2FmZq0HSAj3IynmrKgT69VUsdxwCX6UICszvk0YeJ_5AFRRF3iZ30SHu_sSq4gGXCrYWjHLGjqCdWJlacJ1CAkTRiN9Txd/s1600/7.png'/><h3 class="pin GridTitle">TAZA CON COLOR INTERNO</h3></div>
+  
+     <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKWpLxdwZZ0HbNxxQ-FOfY0fIu29SgbrLJf8nfmWjLdlY3Dcg_fJJuthB3C81Hem1zzfaIK6YR_-dC5rTacVjFxNdwrhW5UsPi89sEFcdfQUDjIrXRMMNyW8tDfR-MLpda2UNHpRssR9IOz0KYRZygAvdGPh_MBYy5e2y5HUmXQmiAO7gK8LM0bS5BRkiM/s1600/4.png'/><h3 class="pin GridTitle">TAZA METALIZADA DORADA</h3></div>
+  
+     <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTNtfg4OOpU5rfdwbwbqBsdk8aztFqeNGjGdYIruEjsmta0BIpkJHBf-V0JduK1hcqQe6OG62TzZzn-meOtY46wjovzhjd8mQpf-gEOCPHpwMLqHFMKYLseB0NWxEe5dYRkLxw59fU6zszN2Z07RZL6mMEHdeX4swmVZBa61YkFhuGxx6QKhOGW0NqUvYb/s1600/123.png'/><h3 class="pin GridTitle">TUMBLER DE CERAMICA</h3></div>
+  
+     <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMSIQrt7dcJBUB1o_nYtbtAX378qPOuwm8p0Tro4IXm1NwXXP-NqShgwFKKR7F1boRFjcAn1BTQhKuMx2uXPyZRpnEBmYj6_dO9MRadl-chezdJQuVJhnGW-iDeM6YWtdiU7n1fo7yi66dWxBY-6_QeegUoZMMIb3EYmZ4ErJmk0K2E73zrSIfflhG0Msk/s1600/gff.png'/><h3 class="pin GridTitle">TOMATODO DE ALUMINIO</h3></div>
+  
+     <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTzS0jHIcTOZaRg5ifZ2zb9Dfz5l08mfdHFL5irQEVfoYl1jtz_itcnWauIY-wCGZSsqa3G9JqbHQaHkmGVEkixqKrE4pNWLDHB2MSZAIsvAIfYcYstMu0KQ-ndMRkuVWvRL04b1uSRQ_CCPdlxsvzne9XjOitxJzxJ4-hFvK3eKOS1WdUOs930cLXow6m/s1600/3423f.png'/><h3 class="pin GridTitle">PACHON EN FORMA DE PINO DE BOLICHE</h3></div>
+  
+     <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbfUsHcd8rGCMg8aqkwXqZLdvh36sK6DGnHP7yeVtjBwFMZt4XdCepclt6TEFstxm73M2KgFLNEOtEJD8xbopw-nPssH0L9IIILMApERjKgSzRrAX5MVdnL699maWopii_pA7g6rTWDqgOIJ7dPS9-8AEHBJfXzuk5bALx1z6Mg8QANjFdweIbZIsqYHpH/s1600/3r23.png'/><h3 class="pin GridTitle">PACHON DE ALUMINIO BLANCO O GRIS</h3></div>
+
+
+</div>
+
+
+
+<style>
+.post-body h3 {
+    font-size: 20px;
+    color: #ffb100;
+    text-align: center;
+    margin: 10px 0 15px;
+}
+@media screen and (max-width: 768px) {
+    .post-body h3 {
+        font-size: 16px;
+    }
+}
+.imagen {
+    max-width: 20%;
+    background-color: #faf6ef;
+    margin: 4px;
+    border-radius: 10px;
+        cursor: pointer;
+
+}
+@media screen and (max-width: 1000px) {
+    .imagen {
+        max-width: 33%;
+        border-radius: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .imagen {
+        max-width: 45%;
+        border-radius: 10px;
+    }
+}
+</style>
+
+<script> var imagenes=document.getElementsByTagName("img"); for(var i=0;i<imagenes.length;i++){imagenes[i].addEventListener("click",function(){ var vistaPrevia=document.createElement("img");vistaPrevia.src=this.src; var capaVistaPrevia=document.createElement("div");capaVistaPrevia.style.position="fixed";capaVistaPrevia.style.top="0";capaVistaPrevia.style.left="0";capaVistaPrevia.style.width="100%";capaVistaPrevia.style.height="100%";capaVistaPrevia.style.backgroundColor="rgba(0,0,0,0.7)";capaVistaPrevia.style.display="flex";capaVistaPrevia.style.justifyContent="center";capaVistaPrevia.style.alignItems="center";capaVistaPrevia.appendChild(vistaPrevia); document.body.appendChild(capaVistaPrevia); capaVistaPrevia.addEventListener("click",function(){document.body.removeChild(capaVistaPrevia)})})}</script>
+
+<style>
+    .price {
+        color: #111b38;
+        font-size: 20px; 
+        font-weight: bold;
+text-align: center;   
+    text-align: center;
+font-weight: 900;
+}
+
+.galeria {
+  display: flex; /* Utilizar flexbox para diseño flexible */
+  flex-wrap: wrap; /* Permitir que las imágenes se envuelvan cuando no quepan en una línea */
+  justify-content: center; /* Centrar las imágenes horizontalmente */
+      text-align: center;
+
+}
+
+.imagen {
+  flex: 1 1 calc(24% ); /* Establecer el tamaño base de las imágenes y permitir crecimiento flexible */
+  max-width: calc(24% ); /* Ancho máximo de las imágenes */
+  overflow: hidden; /* Ocultar el desbordamiento para animación de desplazamiento */
+  position: relative; /* Establecer posición relativa para hijos absolutos */
+}
+
+.imagen img {
+  width: 100%; /* Asegurar que las imágenes ocupen todo el espacio disponible */
+  height: auto; /* Mantener la proporción de la imagen */
+  transition: transform 0.3s ease; /* Agregar una transición suave al desplazamiento */
+  border-radius: 15px;
+}
+
+.imagen img:hover {
+  opacity: 0.7; /* Opacidad al 50% al pasar el mouse */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .imagen {
+    flex: 1 1 calc(25%); /* Ajustar el tamaño de las imágenes para pantallas más pequeñas */
+    max-width: calc(50% ); /* Ancho máximo de las imágenes en pantallas más pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .imagen {
+    flex: 1 1 calc(40% ); /* Ajustar el tamaño de las imágenes para pantallas muy pequeñas */
+    max-width: calc(50% ); /* Ancho máximo de las imágenes en pantallas muy pequeñas */
+  }
+}
+
+.bannerpost {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .imgpost {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 0 15px;
+
+  }
+  .txttitulopost {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #111b38;
+    font-size: 70px;
+    font-weight: bold;
+    width: 80%;
+    line-height: 1;
+  }
+  @media screen and (max-width: 650px){
+    .txttitulopost {font-size: 35px;}}
+</style>
+
+<div id="footer"></div>
+
+<script>
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+	</body>
+</html>

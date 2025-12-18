@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proyecto Luciano</title>
+<link rel="stylesheet" href="../pagesstyles.css" />	
+<link rel="stylesheet" href="../headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+</head>
+<body>
+	
+<div id="header"></div>
+
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+
+	<div id="header-container"></div>
+	
+  <div class="bannerpost">
+    <img alt="imgpost" class="imgpost" src="../images/fondoweb.png" />
+    <div class="txttitulopost">Proyecto Luciano</div><div class="txttitulopost"> <br /></div>
+  </div>
+
+<div class="post">
+
+<div class="separator" style="clear: both;"><a href="#" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnxNWmGv3LH5LWtOvy-VDgqIJIucRT2f4sHD2pi6dwfhzvfCC5mdMyQTeSnQEndN0NO-1dasQjaIhwwfvHveOofc833uYFiN0E8y3P2R3QGKQ6u1wYFBNL_MvuMJVoYlW_LP_R6uvn-TtdV9OkubOZeDK7u1vRAjABO18NE_tqhS81A2KQVvbud0XE1aPc/w640-h640/s6.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgB2gZGAN9eNomTOxWGGTlgYkBSRzBXWo-Tmpp4T9LWjjApY2U0udzDhHTvGGe0olE5VKDsXMSpo29CSIHRL-Jm3FW_GxDexZjEG9jL5CFXp23JfAL_miAAQ72ai9UJoMxi-o3zNgubIllPRASL0TkKvYCx4kzxb5oL5Cbk3EW5wtYN8hhRrEUmYV4NaEos/w640-h640/sa2.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQQBfJCX43uaw0IZ3bJLxvqxfuMGLiBhkmjJ-K2qWT4XrakfAhz-_R12n0KR9NwtVcm2wVzJXyJ_6d1w1DW8XH4bil-Y15vkOlW4PIT_puyz6Apjmrzztnq1f3L0wiICkwDqcxXNgbmuQ4OXaHWAgEVv5Fbs7Rvn6auhbBm-KlOXwB-2pjfYFXTVURJfoU/w640-h640/sa1.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO2PMCVLmeBSupTVUs111N24C0QkpMzBjpU3ufkOJDFQb6hJbarX9-Jq9HppBpEzgGB4m3-OondnAqRq93l1Ioomu_WZOnlVOJd6RmNgsb1sej6dN0-9yBy228WlnAlB8MpZ5gBCYcBanJhv8S7Afb9XvO_I1QnJF_jTq0XvON-cf8xrZ7cQRJPGltGGMt/w640-h640/s7.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBWU5y4-2L_3TCfB0KZHDd7y-WiIl9EdnsLZB_P0u6_ab8-kpi4xIY8wNnlq2M5D4sggytlyl_q9bCY3EIMKyphScORWHl-ZF3fF__L2FwqNRBm503NAQk5RYA1V375hNnrcAr35agZWSKLXBJn_3vEWYUa25-Oo5KqDVlt5zNHu-jsHCgutUpjaZcrdmp/w640-h640/sa3.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNOd05Q3Mkuk1cK1DGMcfs_2fO-TknGjoiRwx7r_WYVctxSQnea4sR-9VRjAfnSPOn1tR_volvhejbSlEqB2HKO3uZVTPy0XC3TvpnhKHuG4mhhWU0xmRn2n92sfs5ZTQYTa-LSan2Kfuk5gLh3oN7g6c6h4VHv8lWeu2glTwu9XkTPWTjfA9v2M9jm6sC/w640-h640/sa5.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEO8qee-tPAPiazFv3xkEt6oT4-I0NzKm_BWrafZE39MMtgu7uQX6YVC5xtx_V0EdlNpULZzvG4Kd_nOPMdmCmHEL7l2FNNPBxmNaFJ-jBRJ1XQdY7GACmNuKILdcdXY8a6M2xOC-G6vno11GrkY_5sFIBorNYDS-7Fe4x0Q-1hl_1YnUBchHrGpm2IlUH/w640-h640/sa4.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhe1t47RLs9LpXC35oykAI1Qx10YGcDSSzGVvy9s-RaBbPbiOw_MLTf3UF5aS8S_E4rPvsbm9Tw9awKj_vT-oczYMrqDDOj3fagFNALG-vz4Z6D7GQDocbIwBFTWRfLINUN7FahhH7aQOqw4K0phyphenhyphennopS4aX8dZoSkahjPh_amvRkJ-MkwnhKdx7WkJf8a6/w640-h640/s8.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOY1qLXvUkIHcm6g-EjrlkhxWt8b7WyIwTkA46KCMFdYWwdG8mV68E7LhYVofGbs3WO3ohkn4BIWWNp9oU57xCeGGANUA3C4xRivba-DBeV1-CiyjCV_2PGGkrijZhYbwuwKyNO7AAsqUW1P4zPiFrC69yXFVeCLSZpyjC3c1RuLEIkpcBHkFpMrUts3fA/w640-h640/s9.png" width="640" /></a></div><br /><h2 data-end="276" data-start="195">Nuestro paso por FC Santa Lucía Cotzumalguapa: Identidad, innovación y respeto</h2>
+<p data-end="673" data-start="278">El <strong data-end="304" data-start="281">25 de enero de 2024</strong>, fuimos anunciados como <strong data-end="390" data-start="329">patrocinadores oficiales del FC Santa Lucía Cotzumalguapa</strong>, un histórico club guatemalteco que compite en la <strong data-end="481" data-start="441">Primera División del fútbol nacional</strong>. Desde ese momento, asumimos el compromiso de <strong data-end="599" data-start="528">apoyar al club con todo el material gráfico para sus redes sociales</strong> durante el <strong data-end="635" data-start="611">Torneo Clausura 2024</strong> y parte del <strong data-end="672" data-start="648">Torneo Apertura 2024</strong>.</p>
+<p data-end="1009" data-start="675">Durante este ciclo creativo, trabajamos intensamente para mantener <strong data-end="779" data-start="742">la esencia de los Jaguares Azules</strong>, nombre con el que la afición identifica a este gran equipo. Diseñamos piezas envolventes, modernas, con fuerte identidad visual, que conectaran con los aficionados, los jugadores y con la ciudad de <strong data-end="1008" data-start="979">Santa Lucía Cotzumalguapa</strong>.</p>
+<h3 data-end="1041" data-start="1011">La esencia del jaguar azul</h3>
+<p data-end="1389" data-start="1043">La identidad del equipo fue el centro de nuestro concepto gráfico. El <strong data-end="1128" data-start="1113">jaguar azul</strong>, símbolo de fuerza y determinación, fue protagonista en varios diseños, potenciando su presencia mediante el uso de <strong data-end="1262" data-start="1245">IA generativa</strong>. Esta tecnología nos permitió crear imágenes impactantes y originales, elevando la narrativa visual del club a un nuevo nivel.</p>
+<p data-end="1653" data-start="1391">Nos inspiramos en el <strong data-end="1441" data-start="1412">escudo del FC Santa Lucía</strong>, dándole una textura <strong data-end="1489" data-start="1463">metalizada y brillante</strong>, y utilizándolo como marco visual en muchas piezas gráficas. Los jugadores parecían surgir del escudo, reforzando su vínculo con la camiseta y el orgullo del club.</p>
+<p data-end="1884" data-start="1655">En todos los diseños mantuvimos elementos clave como los <strong data-end="1734" data-start="1712">hashtags oficiales</strong>:<br data-end="1738" data-start="1735" />
+<strong data-end="1753" data-start="1738">#VamosSanta</strong> y <strong data-end="1774" data-start="1756">#SomosLucianos</strong>, y colocamos a los patrocinadores principales <strong data-end="1856" data-start="1821">en la parte inferior y centrada</strong>, respetando su visibilidad.</p>
+<h3 data-end="1933" data-start="1886">Innovación, pasión y trabajo en tiempo real</h3>
+<p data-end="1963" data-start="1935">Durante esta etapa, también:</p>
+<ul data-end="2367" data-start="1965"><li data-end="2053" data-start="1965">
+<p data-end="2053" data-start="1967"><strong data-end="2005" data-start="1967">Innovamos en el uso de tipografías</strong>, creando estilos visuales únicos y dinámicos.</p>
+</li><li data-end="2235" data-start="2054">
+<p data-end="2235" data-start="2056"><strong data-end="2092" data-start="2056">Resaltamos a las fuerzas básicas</strong> del club, especialmente a las categorías juveniles, quienes lograron el bicampeonato bajo la dirección del técnico brasileño <strong data-end="2232" data-start="2218">Dimas Braz</strong>.</p>
+</li><li data-end="2367" data-start="2236">
+<p data-end="2367" data-start="2238">Creamos contenido <strong data-end="2294" data-start="2256">en tiempo real los días de partido</strong>, gracias a la excelente comunicación con el equipo de prensa del club.</p>
+</li></ul>
+<p data-end="2724" data-start="2369">Tuvimos la dicha de <strong data-end="2434" data-start="2389">acompañar visualmente momentos históricos</strong>, cuando el equipo luchaba con fuerza por ascender nuevamente a Liga Nacional. También colaboramos en la cobertura de encuentros especiales, como los <strong data-end="2624" data-start="2584">duelos contra el Deportivo Marquense</strong>, a los que bautizamos como <strong data-end="2670" data-start="2652">"Duelo Felino"</strong>, un enfrentamiento simbólico entre jaguares y leones.</p>
+<p data-end="2979" data-start="2726">Incluso cuando el equipo visitó <strong data-end="2796" data-start="2758">San Pedro Sacatepéquez, San Marcos</strong>, para enfrentar al Deportivo San Pedro, pudimos capturar fotografías que alimentaron las redes del club, demostrando una vez más nuestro compromiso con cada proyecto que emprendemos.</p>
+<h3 data-end="3018" data-start="2981">Un cierre respetuoso y agradecido</h3>
+<p data-end="3499" data-start="3020">El <strong data-end="3051" data-start="3023">22 de septiembre de 2024</strong>, durante el Torneo Apertura, y debido a decisiones institucionales ajenas a nuestra agencia, <strong data-end="3217" data-start="3145">cerramos oficialmente nuestro ciclo con FC Santa Lucía Cotzumalguapa</strong> como patrocinadores gráficos. Aunque fue una etapa corta, fue significativa. Nos despedimos con el mayor respeto y profundo agradecimiento hacia <strong data-end="3385" data-start="3363">la afición luciana</strong>, quienes siempre valoraron nuestro trabajo, nos recibieron con cariño y nos hicieron sentir parte de su historia.</p>
+<h3 data-end="3570" data-start="3501">Un proyecto, una experiencia, una ciudad más en nuestro recorrido</h3>
+<p data-end="3822" data-start="3572">Santa Lucía Cotzumalguapa es ahora parte de nuestro mapa emocional y creativo. Nos llevamos no solo el aprendizaje técnico y visual, sino <strong data-end="3765" data-start="3710">la cercanía con personas, jugadores y profesionales</strong> que nos abrieron las puertas y nos trataron con calidez.</p>
+<p data-end="4106" data-start="3824">Gracias por permitirnos <strong data-end="3877" data-start="3848">ser parte del rugido azul</strong>, de la historia de los <strong data-end="3920" data-start="3901">Jaguares Azules</strong> y de una tierra apasionada por el fútbol. Seguimos adelante, con el corazón lleno de gratitud y con la misión intacta: <strong data-end="4106" data-start="4040">crear identidad visual con alma, orgullo y visión profesional.</strong></p>
+<p data-end="4224" data-start="4108"><strong data-end="4148" data-start="4108">Moi Agency</strong><br data-end="4151" data-start="4148" />
+<em data-end="4224" data-start="4151">Diseñadores oficiales del FC Santa Lucía Cotzumalguapa – Temporada 2024</em></p>
+
+	</div>
+		
+<script src="script.js"></script>
+<script src="../footer.js"></script>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+	</body>
+</html>

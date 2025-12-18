@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proyecto Ariga</title>
+<link rel="stylesheet" href="../pagesstyles.css" />	
+<link rel="stylesheet" href="../headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+</head>
+<body>
+	
+<div id="header"></div>
+
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+
+	<div id="header-container"></div>
+	
+  <div class="bannerpost">
+    <img alt="imgpost" class="imgpost" src="../images/fondoweb.png" />
+    <div class="txttitulopost">Proyecto Ariga</div><div class="txttitulopost"> <br /></div>
+  </div>
+
+<div class="post">
+
+<div class="separator" style="clear: both;"><br /><a href="#" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiJgDGAAe_FD6xldKMqFcw9b09AKhw836PdltdAjih0okQqFlFWDPj7pOGsR4WbgrGFqkPVPnJweJppGaHdwi4ymXKfv2FJyYmyrwuOlZO9rK0mrY6ofMBepVZFfUdfTsllfjQv5rnIwtI9aUGePjiVdue3oT0AB84ZrltRHUJf3ltDvCDBYKBk1xfM1jfr/w640-h640/ariga-2.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwx1BH1GLnJD1t894r2k0zOHsvd8zA_v-9_u-PU9dxlX_Lgf1-CQQZ024wedHyS0R84Op5IuMRLIjy_m3mgcouIhyphenhypheniSXmPmNbt3En2hEeHHpBXp0_9XgM21tXx22fX_7K41n-td7PawvSpPgBGajTRCOIFE9prC65JLlQYe61x7yAG7W3uNDrNQiKmt-C/w640-h640/ariga3.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpJuasR7Tcy5NZ0798aVc9UuYPC1YWRMNokxRIjSvyFKQ_swTGQ2xAT7g0-tnBZO-x8m5iHsHqvoPpVgglxuKGETIRksCH6zf_FSayVBslFKDopYHU-ots2GfnjIrysIUSjqaTuSVKxHWyHj1X6UDvFYHYxL9rvgFcpte5-L2ObznchWYFVT9wXKtJNWCg/w640-h640/ariga-4.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6Whg_nwxDV9sdszlfoS9C6CDbuT9Tib2yuj9WuaK35aYHjI9d58POYqvb9vG5PpsSHYkZvZ4goIvvUPvC1eeY6I9FqB_KP3Rv3MoOEaxry1A0s2OhiU82GW32JHmuuScQrCHpij9SmLueehA3JKxtVtcLPnZeR1TkRo6B7kOI1U6iM3sfsmMhcLtS5bUl/w640-h640/ariga-6.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcvLqrIBX-4hM3EVUTs0srox34RXHKUp2_m38YuITCf9S0WQOP_q0K-zlgXZfl74RemVEr2W6eoY-z7BYHqjeFuwgu-3ImKdV808xR2Z2Va9KpsyDIIy3eY3YIJlncQXKW-MKSu9aPMI1eM0dFuBTNqBd_dwSCI6WPQhIlFn8QwEwiTug4ebkMMiLwUwOS/w640-h640/ariga-5.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9XmqZi6KKNdQPDe6hSQE6ehRBCHj14pPfHc-wrpIQi0-9_WXTufJxoKfdNRI3VUqzy_5Cklm2MotGWlM0nGV-0Kc78weEJLh5gzBPRIoRtDajMOfibw-U2fKB6ywsDGhmaLLS6OUIPTwWmsMP5chvl1NCPIeMzQYuwTcfYDeQRMLvZHl6-Y_PKUqIlsQR/w640-h640/ariga-1.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq4TVsrtqMtwfNJat8Ynp7fWnkibRW3NlSuJhHyFx7n3dPI32-S8aAkpaO2mJR4koxzUMtJ8dPUL2Dz-uQKIlJJyMZ-j8wtQlyElWofPEht3CSp5kcS9nAEgJW6Ikt3NBTxvYLfEEL_FW6qmI0Fm678itjjUF8stnAJfNg65DnAB2lHfQAVdzRnq1kT-QP/w640-h640/ariga-7.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgX0Wy7uWWCI9l9TqUYZmeCzlh3jRH-HP3XC6xP_mYkQtnt7F29NRXP0QY3NUe5uje68U0qJjOird4Y7r4gN1vViP31gIl9YPQKf9ChuvxTyi_E5GNKVgkLKXZAJB93uRqY_h-VZ8kGj6-8hMnMWlu4TJ1OMCV68RDzB4wTtvGppJUpag9j2hwsyQhfMHQe/w640-h640/ariga-9.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkf4b0NSst9e6jVZ9NUtIcag-UA3HV8c4Zdp10jSkDhpDpJx_XBFzkwEv8VykaurCxdAptaeP565OEufFLSfHBnbYTCgdjqzqVHeVUWd3kLeCip_TfMbgQmXTNr0F65FB8r9VUxgsU566IqUpgC8kPadXvouMTXRjW2X5kS1GF4Cec9udt6Nz_h7e73fQc/w640-h640/ariga-8.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIi-WMfl6DonnTm_GBrkYwWJzhLBNERuXpzjgjMzC78vgcPcFFQFeQotExsORGWZFg9sTvDz6Zb6pEGr3fTHQc0Aq1nws2zRhwXxD5m12o4FBkExcyzgtjZtjWH_uXSZx83SgCWbpKY5O7gb8tw5kS_o41vr98s36L3VMGL4dBfW6SyifYNdBfo3kwMQZI/w640-h640/ariga-10.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXTbbarD8DDXSdwS1w9OCwfbNbcdZ-xLtsPCcfMiyQJ_gepGgxFmo1PkW8SK22FMgQ54xGvfV_MpE_GMsA3wA0KGX-zUVEE_qiDzR62V_byE5TtKTJ8RNuT-y-OSBQHBxPZNOb2KMv6t7hkpYai1ZHtiYPcybWQ_c6QfwplVjoUYRWm3PygTVH1cutm9lB/w640-h640/ariga-11.png" width="640" /><img alt="" border="0" data-original-height="2000" data-original-width="2000" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiegY_2tjn42yRkLJoj-v4EhW7tdS3KuoMi7hKFPjnQgtmUz4Sx0lT53PLHsutnp2fM56LBMbdf0l4uXuWFrEuHJLPbWvQM_taCIjHGDyvc1SSANMmycSAtRAq2PBqEx7NZGdNnLGTlVaBFBp1-UBeej-HpY30XhsJ4ULRq-hXqBXWJb3nPGR_M-AdYT6Z3/w640-h640/ari.png" width="640" /></a></div><br /><h2 data-end="394" data-start="301">✨ Proyecto ARIGA – "Las Joyas" del Atlético ARIGA: Identidad, Ascenso y Diseño con Esencia</h2>
+<h3 data-end="434" data-start="396">Nuestro aporte al sueño capitalino</h3>
+<p data-end="819" data-start="436">El <strong data-end="462" data-start="439">23 de enero de 2024</strong>, fuimos presentados oficialmente como <strong data-end="538" data-start="501">patrocinadores del Atlético ARIGA</strong>, un club joven, valiente y con sede en la <strong data-end="604" data-start="581">Ciudad de Guatemala</strong>, que en ese momento ya había sido <strong data-end="673" data-start="639">campeón de la Tercera División</strong> y contaba con <strong data-end="721" data-start="688">el 50 % del boleto al ascenso</strong>. Nuestra llegada al club marcó el inicio de uno de los proyectos más especiales que hemos vivido.</p>
+<p data-end="1241" data-start="821">Bajo nuestro lema <strong data-end="888" data-start="839">“Actualizamos tu marca sin perder tu esencia”</strong>, nos sumamos al <strong data-end="926" data-start="905">sueño del ascenso</strong>, colaborando como patrocinadores tipo canje con la <strong data-end="1043" data-start="978">creación de diseños gráficos para las redes sociales del club</strong>, mientras que el contenido (fotografías, textos y datos) era <strong data-end="1165" data-start="1105">enviado por el equipo de comunicación del Atlético ARIGA</strong>, quienes además eran los encargados de las publicaciones y gestión digital.</p>
+<h3 data-end="1281" data-start="1243">Forjando la identidad de las joyas</h3>
+<p data-end="1446" data-start="1283">Desde el inicio, nos propusimos <strong data-end="1365" data-start="1315">fortalecer la imagen visual del Atlético ARIGA</strong>, también conocidos como <strong data-end="1405" data-start="1390">"Las Joyas"</strong>, con una propuesta moderna y distintiva:</p>
+<ul data-end="1978" data-start="1448"><li data-end="1531" data-start="1448">
+<p data-end="1531" data-start="1450">En la primera etapa, trabajamos con <strong data-end="1530" data-start="1486">tipografía como recurso visual dominante</strong>.</p>
+</li><li data-end="1636" data-start="1532">
+<p data-end="1636" data-start="1534">Luego, evolucionamos hacia <strong data-end="1603" data-start="1561">diseños protagonizados por fotografías</strong>, siempre entregadas por el club.</p>
+</li><li data-end="1769" data-start="1637">
+<p data-end="1769" data-start="1639">Creamos una <strong data-end="1680" data-start="1651">línea gráfica minimalista</strong>, donde el <strong data-end="1705" data-start="1691">verde jade</strong> —símbolo de suerte y gloria— se convirtió en el color insignia.</p>
+</li><li data-end="1978" data-start="1770">
+<p data-end="1978" data-start="1772">Combinamos este verde con <strong data-end="1829" data-start="1798">fondos blancos texturizados</strong>, fotografías en escala de grises y transparencias, dando vida a un estilo elegante, fresco y alineado con el lema del club: <strong data-end="1977" data-start="1954">“Un club diferente”</strong>.</p>
+</li></ul>
+<p data-end="2104" data-start="1980">Cada diseño contaba una historia de esfuerzo, pasión y crecimiento. Cada pieza buscaba quedarse en el corazón de la afición.</p>
+<h3 data-end="2149" data-start="2106">El ascenso y la camiseta de la historia</h3>
+<p data-end="2309" data-start="2151">Durante las fases finales, diseñamos la <strong data-end="2245" data-start="2191">identidad gráfica de la etapa llamada "El Ascenso"</strong>, en la que el club consolidó su estilo visual con mayor fuerza.</p>
+<p data-end="2747" data-start="2311">El <strong data-end="2337" data-start="2314">29 de junio de 2024</strong>, el Atlético ARIGA logró el <strong data-end="2406" data-start="2366">soñado ascenso a la Segunda División</strong> del fútbol guatemalteco. Para celebrar ese momento histórico, diseñamos una <strong data-end="2504" data-start="2483">camisola especial</strong> que marcó nuestra huella en la historia del club. En el centro, con forma circular, se leía con orgullo:<br data-end="2612" data-start="2609" />
+<strong data-end="2669" data-start="2612">“Somos de Segunda División. Las joyas van a segunda.”</strong><br data-end="2672" data-start="2669" />
+En el centro: el escudo de Atlético ARIGA, el símbolo de un sueño cumplido.</p>
+<h3 data-end="2781" data-start="2749">Renovación y cierre de ciclo</h3>
+<p data-end="3105" data-start="2783">El <strong data-end="2809" data-start="2786">5 de agosto de 2024</strong>, renovamos nuestro patrocinio para el <strong data-end="2872" data-start="2848">Torneo Apertura 2024</strong>, continuando nuestra labor como diseñadores oficiales. Sin embargo, el <strong data-end="2970" data-start="2944">2 de noviembre de 2024</strong>, por razones internas de nuestra agencia, cerramos este hermoso ciclo en diálogo directo y respetuoso con la junta directiva del club.</p>
+<p data-end="3183" data-start="3107">Ese día, compartimos nuestro <strong data-end="3171" data-start="3136">comunicado oficial de despedida</strong>, que decía:</p>
+<blockquote data-end="3457" data-start="3185">
+<p data-end="3457" data-start="3187">“Un honor haber sido parte del glorioso ascenso del club. Hoy cerramos nuestro patrocinio con el club, pero no dejamos de ser joyas de corazón. Nos llevamos con nosotros recuerdos increíbles y grandes momentos vividos junto al Atlético ARIGA. Esta siempre será su casa.”</p></blockquote><p>&nbsp;</p><p data-end="4373" data-start="4110">Este fue un proyecto al que le tuvimos un cariño muy especial. Nos emocionamos con cada paso que el club dio, celebramos su ascenso, y quedamos agradecidos por la confianza que nos brindaron para representar visualmente a un club tan único como el Atlético ARIGA.</p>
+<p data-end="4433" data-start="4375"><strong data-end="4433" data-start="4375">Gracias por permitirnos formar parte de esta historia.</strong></p>
+<p data-end="4544" data-start="4435"><strong data-end="4475" data-start="4435">Moi Agency</strong><br data-end="4478" data-start="4475" />
+<em data-end="4544" data-start="4478">Diseñadores oficiales del Atlético ARIGA – Proyecto ARIGA (2024)</em></p><p>&nbsp;</p>
+
+	</div>
+		
+<script src="script.js"></script>
+<script src="../footer.js"></script>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+	</body>
+</html>
