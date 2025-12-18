@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0; padding: 0; min-height: 200vh; /* para scroll */
+font-family: "azo-sans-web", sans-serif;
+	background-color: #fcf6ef;
+}
+
+img { 
+max-width: 100%;
+  height: auto;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.bannerpost {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    margin-top: 50px;
+  }
+  
+  .imgpost {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 100%;
+    margin: 0 0 15px;
+  }
+  .txttitulopost {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #00526f;
+    font-size: 70px;
+    font-weight: bold;
+    width: 80%;
+    line-height: 1;
+  }
+  @media screen and (max-width: 650px){
+    .txttitulopost {font-size: 35px;}}
+
+
+.post-body h3 {
+    font-size:20px;
+    color:#ffb100;
+    text-align:center;
+    margin:10px 0 15px;
+}
+@media screen and (max-width:768px) {
+    .post-body h3 {
+        font-size:16px;
+    }
+}
+.imagen {
+    max-width:20%;
+    margin:4px;
+    border-radius:10px;
+}
+@media screen and (max-width:1000px) {
+    .imagen {
+        max-width:33%;
+        margin:4px;
+        border-radius:10px;
+    }
+}
+@media screen and (max-width:768px) {
+    .imagen {
+        max-width:100%;
+        margin:4px;
+        border-radius:10px;
+    }
+}
+  
+.video-container {
+    position: relative;
+    padding-bottom: 200%;
+    border-radius: 20px;
+}
+
+.video-gallery {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* flexible base */
+}
+
+/* Ajustes progresivos según el ancho */
+@media (max-width: 1200px) {
+  .video-gallery {
+    grid-template-columns: repeat(3, 1fr); /* hasta 3 columnas */
+  }
+}
+
+@media (max-width: 900px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 1 columna en celulares */
+  }
+}
+
+
+.galeria {
+  display: flex; /* Utilizar flexbox para diseño flexible */
+  flex-wrap: wrap; /* Permitir que las imágenes se envuelvan cuando no quepan en una línea */
+  justify-content: center; /* Centrar las imágenes horizontalmente */
+}
+
+.imagen {
+  flex: 1 1 calc(24% ); /* Establecer el tamaño base de las imágenes y permitir crecimiento flexible */
+  max-width: calc(24% ); /* Ancho máximo de las imágenes */
+  overflow: hidden; /* Ocultar el desbordamiento para animación de desplazamiento */
+  position: relative; /* Establecer posición relativa para hijos absolutos */
+}
+
+.imagen img {
+  width: 100%; /* Asegurar que las imágenes ocupen todo el espacio disponible */
+  height: auto; /* Mantener la proporción de la imagen */
+  transition: transform 0.3s ease; /* Agregar una transición suave al desplazamiento */
+}
+
+.imagen img:hover {
+  opacity: 0.7; /* Opacidad al 50% al pasar el mouse */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .imagen {
+    flex: 1 1 calc(30% ); /* Ajustar el tamaño de las imágenes para pantallas más pequeñas */
+    max-width: calc(33% ); /* Ancho máximo de las imágenes en pantallas más pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .imagen {
+    flex: 1 1 calc(100% ); /* Ajustar el tamaño de las imágenes para pantallas muy pequeñas */
+    max-width: calc(100% ); /* Ancho máximo de las imágenes en pantallas muy pequeñas */
+  }
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Logos Realizados</title>
+<link rel="stylesheet" href="../pagesstyles.css" />	
+<link rel="stylesheet" href="../headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+</head>
+<style>
+  body {
+    background-color: #fef6ef;
+  }
+.txttitulopost {
+  color: #00526f;
+}
+  .post {
+      display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 12px;
+  padding: 10px;
+  }
+
+  img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;  /* opcional */
+  object-fit: cover;  }
+
+#previewOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;              /* oculto al inicio */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Imagen en grande */
+#previewOverlay img {
+  max-width: 50%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Botón de cerrar */
+#previewOverlay span {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.separator {
+  background-color: #00526f0f;
+  border-radius: 21px;
+}
+
+</style>
+<body>
+	
+<div id="header"></div>
+
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+
+      <div id="previewOverlay">
+  <span>&times;</span>
+  <img id="previewImage" src="">
+</div>
+
+	<div id="header-container"></div>
+	
+  <div class="bannerpost">
+    <div class="txttitulopost">Logos Realizados</div><div class="txttitulopost"> <br /></div>
+  </div>
+
+<div class="post">
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidvGZac4BbeozIg2SmOlSIYTpKhD9ZlLk2NHcudsFX9y5aW0kZsUIyRrPPcEEboRCgty_UyFTFYgR5dvp8__qfh6iLSfBB8YapcAJWLI_HjXQK0kkmSpP5s8RLLCDmdUVVRtmil_ujl9hdUp7CoekRim9OiA0zGjKQVIRsq0iKmKuGyUfOOdiQxmdyqLgt/s1600/p.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidvGZac4BbeozIg2SmOlSIYTpKhD9ZlLk2NHcudsFX9y5aW0kZsUIyRrPPcEEboRCgty_UyFTFYgR5dvp8__qfh6iLSfBB8YapcAJWLI_HjXQK0kkmSpP5s8RLLCDmdUVVRtmil_ujl9hdUp7CoekRim9OiA0zGjKQVIRsq0iKmKuGyUfOOdiQxmdyqLgt/s1600/p.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQTbD_-nXv0tF5EFasOb5UO6kbAjFABHYNLG23xCIW4-eEkbAXTi_cp1ZygxupX4sdJPhJqmPCUdJjXjUoTbtbDfwfOC5zstUoKRMcZTga9QFOlqDWLklapAgfLpD5c1TlYQQ-6CNOG5KC2eALh0NE2RXD374Z4ep9Dn8wRtKVLHKSNnRR-APGBgcrhiWc/s1600/sanluis.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQTbD_-nXv0tF5EFasOb5UO6kbAjFABHYNLG23xCIW4-eEkbAXTi_cp1ZygxupX4sdJPhJqmPCUdJjXjUoTbtbDfwfOC5zstUoKRMcZTga9QFOlqDWLklapAgfLpD5c1TlYQQ-6CNOG5KC2eALh0NE2RXD374Z4ep9Dn8wRtKVLHKSNnRR-APGBgcrhiWc/s1600/sanluis.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhibZdmRe_weeF3F0U8w75KlQlOyrNS4BapUIY-XwH6JC-jRyWJehPBZFBFlx6JtpcTMvUGa_IVQqYfc16wqrf8h_FNTUxGpsmTCX3Q9YnOU-NQxA5FTiA-y1PQdo4mia5e9x7kB_WaFUZKRN7P2eh4Vs5Q0EA-Yg4rZ7S-s5E8pVFFnKJBaWGacCp_YqnM/s1600/p.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhibZdmRe_weeF3F0U8w75KlQlOyrNS4BapUIY-XwH6JC-jRyWJehPBZFBFlx6JtpcTMvUGa_IVQqYfc16wqrf8h_FNTUxGpsmTCX3Q9YnOU-NQxA5FTiA-y1PQdo4mia5e9x7kB_WaFUZKRN7P2eh4Vs5Q0EA-Yg4rZ7S-s5E8pVFFnKJBaWGacCp_YqnM/s1600/p.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFfN9mOVWm2Y9902cm6rWEhImkkR3HiUsZQpmUIqWit9QQ-BRikZGTzS5ulxbO0KYS6iBztydAD21WGNMFYja8_wqlmfaE8m2G_ZMhjpJcDJ3mWx0G93aD4KYbf2TzYDrOEgK6z2gldhG0os1SFhUsZZpGFK90ybedmcB2UH_-E2jvHse5LBfBYNeW71Uo/s1600/logo-socca-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFfN9mOVWm2Y9902cm6rWEhImkkR3HiUsZQpmUIqWit9QQ-BRikZGTzS5ulxbO0KYS6iBztydAD21WGNMFYja8_wqlmfaE8m2G_ZMhjpJcDJ3mWx0G93aD4KYbf2TzYDrOEgK6z2gldhG0os1SFhUsZZpGFK90ybedmcB2UH_-E2jvHse5LBfBYNeW71Uo/s1600/logo-socca-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkJhRQIOMA-VduROfoQVSoaH8_-o0IS1pu7_2Tzhovv0f0drgHe3BjcsQGuV0Z92DSibu0Mqh8FDW_CEMqO_fdKx1pksbi3YCgrrkskpsRUqPbMEu0XNrqWjl3VKswWeKzjMYL2ZrfFO4B9Ke8VNg4TrrUdkW7cNNrzOsR2WcLV5w5hkcseej7tpqY84He/s1600/logo-socca2-we.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkJhRQIOMA-VduROfoQVSoaH8_-o0IS1pu7_2Tzhovv0f0drgHe3BjcsQGuV0Z92DSibu0Mqh8FDW_CEMqO_fdKx1pksbi3YCgrrkskpsRUqPbMEu0XNrqWjl3VKswWeKzjMYL2ZrfFO4B9Ke8VNg4TrrUdkW7cNNrzOsR2WcLV5w5hkcseej7tpqY84He/s1600/logo-socca2-we.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpgRuuLZ0JbM55ZWhapfMAObRsXwz3leqzUysFsljJRl-hGWQTb2WSeaJhwGfXm3DFaqjoy3715HFz7i5DDonaOXW-hBkusPpEm8C2gwtNRMe9SufZOnj3AxwDZSZNZhavooiROAWR1RGX4y3zV-Kd1FnLOPe73DdRCSHVjSaMNso4zQsZgeWpABXpKP6h/s1600/tayad.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpgRuuLZ0JbM55ZWhapfMAObRsXwz3leqzUysFsljJRl-hGWQTb2WSeaJhwGfXm3DFaqjoy3715HFz7i5DDonaOXW-hBkusPpEm8C2gwtNRMe9SufZOnj3AxwDZSZNZhavooiROAWR1RGX4y3zV-Kd1FnLOPe73DdRCSHVjSaMNso4zQsZgeWpABXpKP6h/s1600/tayad.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik-ylTpJZNaT7HlMA8ecSTH7pR1ZdHBLAbFG8CtNf9XBJlciPQSELP5JU20zDAGZFB2cxNe6nyDQO3eSgWkiNBSRGgWfA7ODHRklDIFJF5ZQsZBwggkqh2xp5W7pMiwukXDqbm9I6PnR_PnBRvhmAFwpmg__fV7v3yZ7VWGiNCFMkBWgPagZnj_9LrLsi2/s1600/logo-barberena-fc.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik-ylTpJZNaT7HlMA8ecSTH7pR1ZdHBLAbFG8CtNf9XBJlciPQSELP5JU20zDAGZFB2cxNe6nyDQO3eSgWkiNBSRGgWfA7ODHRklDIFJF5ZQsZBwggkqh2xp5W7pMiwukXDqbm9I6PnR_PnBRvhmAFwpmg__fV7v3yZ7VWGiNCFMkBWgPagZnj_9LrLsi2/s1600/logo-barberena-fc.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgustgyjVwCr6kLCg3MSc6nf8V4MdT1KJ2AzWNe_jWMSdZePxWtXvwI4OSJZJZYi7cxRcbdTOYfs8FnQEoeLc7-gsJ696rdS1k3iAfmr8CMc2iSIZK-rRRQh7oZ53o7pNUMxgYMzg5oM5d7KeKpM1AeTJv87AKPHTQZrOGkAHmIj18VKSgF19synZaURRC3/s1600/solucuiones-logo-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgustgyjVwCr6kLCg3MSc6nf8V4MdT1KJ2AzWNe_jWMSdZePxWtXvwI4OSJZJZYi7cxRcbdTOYfs8FnQEoeLc7-gsJ696rdS1k3iAfmr8CMc2iSIZK-rRRQh7oZ53o7pNUMxgYMzg5oM5d7KeKpM1AeTJv87AKPHTQZrOGkAHmIj18VKSgF19synZaURRC3/s1600/solucuiones-logo-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQNZH9YUnxpRX4Ya7tYNJ48G0dL2ao3t5Qzl3Cg2_AxN7UPIE82cg4CxqB4ZDFPyQiEHiL-eb9yc-ixBJd5ml4CpsupbB9BzLZE7iJT4g0Jc-3Mtul0Bq0gZEx-mBzxOogshKQit3aNtUUp4Gez8ujy_q5Hgt8Ak-IXhEOO14em5sFfyNuxAy7eDBTT5tg/s1600/gana.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQNZH9YUnxpRX4Ya7tYNJ48G0dL2ao3t5Qzl3Cg2_AxN7UPIE82cg4CxqB4ZDFPyQiEHiL-eb9yc-ixBJd5ml4CpsupbB9BzLZE7iJT4g0Jc-3Mtul0Bq0gZEx-mBzxOogshKQit3aNtUUp4Gez8ujy_q5Hgt8Ak-IXhEOO14em5sFfyNuxAy7eDBTT5tg/s1600/gana.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLze9TKDF047olCTgQ83YEfqR5tMe-kgtHtQdImaCpX0o20nsOgjS8LS8-Am2SJ7RSJm9Rw8BfMUmcy2rpslqPhMw6OZyk4LbN08esahBhqRCEE8RqRsE945Wh5f2YLOO5lYyy_fSACie5ylDUsOx-zriw8E3HECJJQt99RKe_sbCrA4DJCO25CckKly7K/s1600/jm12.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLze9TKDF047olCTgQ83YEfqR5tMe-kgtHtQdImaCpX0o20nsOgjS8LS8-Am2SJ7RSJm9Rw8BfMUmcy2rpslqPhMw6OZyk4LbN08esahBhqRCEE8RqRsE945Wh5f2YLOO5lYyy_fSACie5ylDUsOx-zriw8E3HECJJQt99RKe_sbCrA4DJCO25CckKly7K/s1600/jm12.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWlC8l5y9kQQNC-2wGt1UnGCUSZ5gI3KlDzzAwFV79XHPnOuERhtVeykgQTyOoWaOW1LVBrLHAKMQeQR0OkSWtIlhLKAKQeNx_GTzr7C1h1-Yo-h1rXs_jLGD5RvPa_o0hPIswjOq_Z5a0MJqKGs0_ESI6-psKBhFqwPvlPma_aRf3qIbXpEgP-hmolKHI/s1600/atl.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWlC8l5y9kQQNC-2wGt1UnGCUSZ5gI3KlDzzAwFV79XHPnOuERhtVeykgQTyOoWaOW1LVBrLHAKMQeQR0OkSWtIlhLKAKQeNx_GTzr7C1h1-Yo-h1rXs_jLGD5RvPa_o0hPIswjOq_Z5a0MJqKGs0_ESI6-psKBhFqwPvlPma_aRf3qIbXpEgP-hmolKHI/s1600/atl.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6SgOpF0_jbtd58qVzkq3_6wkhMX854GIWFa7d5rpqx2N8W1ABjwau8JBwNKL53szAv8-xawWYAZfWBzid344kZsipKYdI6Dg3nIS7cwkgtQAOBZGrdFib0H1e_ynL_fFFMoFuygQX12lhS8W-tasypHQkyZEYPpPNNrpEfq9dlC_-kkUKtSWfIRpVNaJ3/s1600/cons.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6SgOpF0_jbtd58qVzkq3_6wkhMX854GIWFa7d5rpqx2N8W1ABjwau8JBwNKL53szAv8-xawWYAZfWBzid344kZsipKYdI6Dg3nIS7cwkgtQAOBZGrdFib0H1e_ynL_fFFMoFuygQX12lhS8W-tasypHQkyZEYPpPNNrpEfq9dlC_-kkUKtSWfIRpVNaJ3/s1600/cons.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1xQyEdEg4Q5VGxaBTJmVNhFG0_xbKTFgNA6OZpr3hcstf5eZMNw0vkCyEPGOLlLXgzMIgxHRjPbDjfu7UqgQwHSXFO6Do0eEqOaREaAxV3sFX2Jp8cLleNyppHe8K4Vxr-CZ9mwp_YdT6ZuVspLQc0_19xdkZfCPdmLp80f6o1gH5x_K0wl_S8zMWqPJe/s1600/imperio.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1xQyEdEg4Q5VGxaBTJmVNhFG0_xbKTFgNA6OZpr3hcstf5eZMNw0vkCyEPGOLlLXgzMIgxHRjPbDjfu7UqgQwHSXFO6Do0eEqOaREaAxV3sFX2Jp8cLleNyppHe8K4Vxr-CZ9mwp_YdT6ZuVspLQc0_19xdkZfCPdmLp80f6o1gH5x_K0wl_S8zMWqPJe/s1600/imperio.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxX671sg-a3RqIw7Ukl-KnmymsS6p98U6evCkN6H87ER5iMCG39gUx0q-ky7ZBdaBV0GZOW3gfOVvTxfJ88gIxyxJYwIDS0mSJ1Y11aW3b7dVejzWU7GLSZvhnk0JWO0hv7VZmwl-7_az_jXUJXKszJ2Ur5U8PJ9BjJUc99N8L5ikfyt8ZN9pfzG3hKNca/s1600/liga.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxX671sg-a3RqIw7Ukl-KnmymsS6p98U6evCkN6H87ER5iMCG39gUx0q-ky7ZBdaBV0GZOW3gfOVvTxfJ88gIxyxJYwIDS0mSJ1Y11aW3b7dVejzWU7GLSZvhnk0JWO0hv7VZmwl-7_az_jXUJXKszJ2Ur5U8PJ9BjJUc99N8L5ikfyt8ZN9pfzG3hKNca/s1600/liga.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDw-FrvcXqJJZfu5i0tjNIgmfNqSgeSSI-amuCIszyqoZ5nny_ThF1n9VdJIPbkHWQlIYdBVIt33SHxx7j9aK-mvWoaoZc5IRqSMyCzri0tyaddZj8V7bHZm_aITfaaS-vYg8uMdA9IKuTMn9tEq1s4wRhq5ogC-l9IDyr9gJ5yepDe8_DTnjtx62mwZIZ/s1600/logo-kiara-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDw-FrvcXqJJZfu5i0tjNIgmfNqSgeSSI-amuCIszyqoZ5nny_ThF1n9VdJIPbkHWQlIYdBVIt33SHxx7j9aK-mvWoaoZc5IRqSMyCzri0tyaddZj8V7bHZm_aITfaaS-vYg8uMdA9IKuTMn9tEq1s4wRhq5ogC-l9IDyr9gJ5yepDe8_DTnjtx62mwZIZ/s1600/logo-kiara-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgx9BgjMCQxpEGr9itgM-Nbwetk5OHvwxoEErKG48rd9_f91tDtB8WROB5jMknuKHI1RmnL-zE0hyAOml3QpqoAOZUtxUHLzIGBOGaSlga61QLfAm97OWYKoGUYx8E-wshhsHmDuz2Zph9nYihKPNUZuGOxUXty5Oph5eELAYU_w5IZfgrpxLEqJGPbKKpJ/s1600/logo-mateos-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgx9BgjMCQxpEGr9itgM-Nbwetk5OHvwxoEErKG48rd9_f91tDtB8WROB5jMknuKHI1RmnL-zE0hyAOml3QpqoAOZUtxUHLzIGBOGaSlga61QLfAm97OWYKoGUYx8E-wshhsHmDuz2Zph9nYihKPNUZuGOxUXty5Oph5eELAYU_w5IZfgrpxLEqJGPbKKpJ/s1600/logo-mateos-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGl-gHaUxc5xqbL6CrD209FEvfnupHeqtkSdRvoL0bpfNXFNHghc31kvDIW2JzlTZG1rPUBw7YIU-V9-yoCm31k3bZQE5HBGvlUgqUvYWdbU2yF8bL4zT1HxuA2-tF-wRLstOWuezIj09QvuNooQxxWkrHztTwzHo3QJUGAOPCaEE2JR2O1Gzgv5keg8fh/s1600/logo-naturista-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGl-gHaUxc5xqbL6CrD209FEvfnupHeqtkSdRvoL0bpfNXFNHghc31kvDIW2JzlTZG1rPUBw7YIU-V9-yoCm31k3bZQE5HBGvlUgqUvYWdbU2yF8bL4zT1HxuA2-tF-wRLstOWuezIj09QvuNooQxxWkrHztTwzHo3QJUGAOPCaEE2JR2O1Gzgv5keg8fh/s1600/logo-naturista-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxJN5hg45lL5s4xSfnhPZi25WmK0FexRilJ_CRJSqVRmJOuq0Vp8rhWenpJcgFkJsYLXeUQlsWlO8nlPdHN1nVXDCqt33HIhgFyzgQeio3adnQ6b6zO32gvHhakwxi_6-jpTTU5qv14O3ivokSR_vrYcQMzJHvCIoHJV-sCdkJaRqZQKINXEeMY0FWBhp6/s1600/logo-nazareth-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxJN5hg45lL5s4xSfnhPZi25WmK0FexRilJ_CRJSqVRmJOuq0Vp8rhWenpJcgFkJsYLXeUQlsWlO8nlPdHN1nVXDCqt33HIhgFyzgQeio3adnQ6b6zO32gvHhakwxi_6-jpTTU5qv14O3ivokSR_vrYcQMzJHvCIoHJV-sCdkJaRqZQKINXEeMY0FWBhp6/s1600/logo-nazareth-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPE1orUvfUF3pySWPzLw1hluq6eSlPn5OHN-hCZtr3UDLE6PCThxnENARiPe65psuzODmEPNZ7MdIEQzsRKJPjE_ifkor2TbGyBG_sWZpm66vDgpW9Z6nOPDfCCXkvW0ACbNY96anztB0o-1cGIYNd3puMWkduNRO_2iJoXy7j8fOhzqVVqEUWb_kpTKq-/s1600/logo-scan.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPE1orUvfUF3pySWPzLw1hluq6eSlPn5OHN-hCZtr3UDLE6PCThxnENARiPe65psuzODmEPNZ7MdIEQzsRKJPjE_ifkor2TbGyBG_sWZpm66vDgpW9Z6nOPDfCCXkvW0ACbNY96anztB0o-1cGIYNd3puMWkduNRO_2iJoXy7j8fOhzqVVqEUWb_kpTKq-/s1600/logo-scan.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOv4-MLv15Tz-yI9C_IEg4Y5wJcmz-WKHV0PmVYicnHKrVUMWMBKc77E9a2-OHFGZDiIBH-QbxtC_j0VuX5zF0V7s7I1mILwMNpQhndaiRI70CgsXLN-RU7uwISgf07n2QSkDTQZREGEl-j7At4JoRTGWZSMnda_7RwJ3O_Dx6J6R3hrk1KC5ZrbOLtAG8/s1600/logo-semibold-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOv4-MLv15Tz-yI9C_IEg4Y5wJcmz-WKHV0PmVYicnHKrVUMWMBKc77E9a2-OHFGZDiIBH-QbxtC_j0VuX5zF0V7s7I1mILwMNpQhndaiRI70CgsXLN-RU7uwISgf07n2QSkDTQZREGEl-j7At4JoRTGWZSMnda_7RwJ3O_Dx6J6R3hrk1KC5ZrbOLtAG8/s1600/logo-semibold-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQjHPc9Cxc4eLuDb41xJceGWV0T0wz47_gKpgZpUO3FSc9YNB8sBjQm5LDttSAKVIS3-4-gN-SXZF2-ZQdEF7v9EpPt-_gXGkX9i7nojUHWKUs6UNw0h8FOsSyxU69uyNKaCyUh2BwFsG1M7yZCoV7bp5MU-CEhhoe844A5IRXFjIqj3_PobRhkAWqsHE3/s1600/logo-agro-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQjHPc9Cxc4eLuDb41xJceGWV0T0wz47_gKpgZpUO3FSc9YNB8sBjQm5LDttSAKVIS3-4-gN-SXZF2-ZQdEF7v9EpPt-_gXGkX9i7nojUHWKUs6UNw0h8FOsSyxU69uyNKaCyUh2BwFsG1M7yZCoV7bp5MU-CEhhoe844A5IRXFjIqj3_PobRhkAWqsHE3/s1600/logo-agro-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisD99RWxqdOl7Pf6wokgn-9EhJTzLzE5OF1UZ9vlUziQxV-Mb4XvoFFEKhmDjtjYPZ3NbPyKf05hPlXATu4j8ItEP9PA7g7IzMQ3LqCh1nHPFjo1lVz3RnD0SDH5KKu4nT1kB_ImXTMA3RJ7aXuId3WuA-vkt-r9zc_PGv4zs7xCY9FmquvqL4VwObpoKy/s1600/logo-anderson-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisD99RWxqdOl7Pf6wokgn-9EhJTzLzE5OF1UZ9vlUziQxV-Mb4XvoFFEKhmDjtjYPZ3NbPyKf05hPlXATu4j8ItEP9PA7g7IzMQ3LqCh1nHPFjo1lVz3RnD0SDH5KKu4nT1kB_ImXTMA3RJ7aXuId3WuA-vkt-r9zc_PGv4zs7xCY9FmquvqL4VwObpoKy/s1600/logo-anderson-web.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbvatI_5l0qdC6R6C1UFSQZ8AGpJYt57jgc7JJdCPbwvCdSqse6Moj8znwWBbzyWVuVOFP9ZrTTmlW2fCqVoHCM4vo6rHftVrpNOby1je7nhjTgw9YiDxLFbiGq7CURnz_21dSse0AwHFpPTsXFrfFjeUIb1DMiBA_8VVlE7ltAejePQAaZYsMZWtmpEn8/s1600/recre.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbvatI_5l0qdC6R6C1UFSQZ8AGpJYt57jgc7JJdCPbwvCdSqse6Moj8znwWBbzyWVuVOFP9ZrTTmlW2fCqVoHCM4vo6rHftVrpNOby1je7nhjTgw9YiDxLFbiGq7CURnz_21dSse0AwHFpPTsXFrfFjeUIb1DMiBA_8VVlE7ltAejePQAaZYsMZWtmpEn8/s1600/recre.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj95JbY52FdNjsXrGTNc5yRgMGC3WPPO8V932M7bmOkOhckgOGJekwLuwV3n4Li9taJcTnwZN2R6DPgSnTL9MIXAxdRn7cq5vx9LMl28GExOgi_GmodbZXH6b6A67BhIA1yeF0cob9r06kkOaHDpk2NI7c3_k2e1Iva9Yusi2nRTAVduLZ9wdAubjmnJ2td/s1600/logo-de-leon-web.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="1200" data-original-width="1200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj95JbY52FdNjsXrGTNc5yRgMGC3WPPO8V932M7bmOkOhckgOGJekwLuwV3n4Li9taJcTnwZN2R6DPgSnTL9MIXAxdRn7cq5vx9LMl28GExOgi_GmodbZXH6b6A67BhIA1yeF0cob9r06kkOaHDpk2NI7c3_k2e1Iva9Yusi2nRTAVduLZ9wdAubjmnJ2td/s1600/logo-de-leon-web.png"/></a></div>
+
+	</div>
+		
+  <script>
+// Selecciona todas las imágenes PNG
+const images = document.querySelectorAll('img[src$=".png"]');
+const overlay = document.getElementById('previewOverlay');
+const previewImage = document.getElementById('previewImage');
+const closeBtn = overlay.querySelector('span');
+
+// Al hacer click en cualquier imagen PNG
+images.forEach(img => {
+  img.addEventListener('click', e => {
+    e.preventDefault(); // evita que se comporte como enlace
+    previewImage.src = img.src; // muestra la misma imagen
+    overlay.style.display = 'flex';
+  });
+});
+
+// Cerrar al hacer click en la X
+closeBtn.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
+
+// Cerrar al hacer click fuera de la imagen
+overlay.addEventListener('click', e => {
+  if (e.target === overlay) {
+    overlay.style.display = 'none';
+  }
+});
+</script>
+
+<script src="script.js"></script>
+<script src="../footer.js"></script>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+	</body>
+</html>

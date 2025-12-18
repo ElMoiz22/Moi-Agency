@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proyecto Barberena</title>
+<link rel="stylesheet" href="../pagesstyles.css" />	
+<link rel="stylesheet" href="../headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+</head>
+<body>
+	
+<div id="header"></div>
+
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+
+	<div id="header-container"></div>
+	
+  <div class="bannerpost">
+    <img alt="imgpost" class="imgpost" src="../images/fondoweb.png" />
+    <div class="txttitulopost">Proyecto Barberena</div><div class="txttitulopost"> <br /></div>
+  </div>
+
+  <div class="post" alt="Diseño de branding para equipos deportivos en Guatemala">
+
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBVKwMrvZHxoH__jH6zkaQ7FcIv6hIZsq3-h4e8mEENPFKbTD5aBm-qxEzgCsKc2nrPNZYKje4zIMoovQo4KglWgZ7wCvGN5XemVu-tVHaZZY2js5Yl8QmqzUtAs3hmDm9Z-fAo7mJ9Veltw0Dv155BvY1MpJyUsM6luyc5gXIRONvcCk8JEo7Vgn8EqoY/s1600/f422.png" style="display: block; padding: 1em 0px; text-align: center;"></a>
+  <a href="#" style="display: block; padding: 1em 0px; text-align: center;">
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjd3X0UpUpoHQ8fuvdAN_hpEJUzn9-oXNGaoxtaNW8bbksZc6-VZuS1ekhI8KMJYIf8BeLsV2tUNWxkoK3_bm939D5SmrxfYPJhxiw9P7tbVkfrNbqWxPxkEIaNk586CvhRbmrjxF9-2JhsDyLe8NsNk9me2Cb9g363gE8QkP5RrQ_FCOV3tWxWmW4yeA1V/s1600/1.png?utm_source=chatgpt.com" width="640" />
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrEkGxJgU0Ky4Ceis9zR40BG4MoukMoNG2dAAg9xSI80IMn62lBN6y5k9moXSE_oBOppswNQCYHdPQmVjD6NCUdAVigr65h2M_PnQQ5OP553hpF-SE95CSA3q0rXbUdBt2BfY5zTDBzIFKg8Tw722ohfOOUFghf6efCOnrJYfWkXuKVlQjEMtkZjoTjgim/s1600/3.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCdsWkNO84bg3CPTgTj8PpFeY7ITamKKPQk5j5f6aJsGXnaJJNUJaAReL27i0EGgQ9mo1dGO_ZGeh6bhn0ZwY-ieTto9OhMWcHuldEpe_CMA__uXvU4oZELpyY8VdTvC_9-5yULRhze6neKMnFtWi-3Hr_WiEJseKea7VGzux_TBLW6ap_ZgFMMjXOmdYu/s1600/4.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqP7SRl8npBXsHdXH34xZdod-e-z59QW4MfvMDHoGk-jYOLDO-mlGp49b1HWJsOeDMWEvaVBcfP2ImmGMSpry0R6dgeOjeaQN7iyYyQc0hRWPE9_ufDPe6BAMGZEJfzk-HnGrhExVIoGnXQ8Z8vNpepqZ6DxMAfM6PxOeL33xyvsSkAitIrnUT2-mzRooW/s1600/5.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhva348HOVAzPLHGjLqvtPC3CFTk_9sSn1egZjmBPPXPI9yc49udeQlgs9HHuM296-4LLV8viynw7hqyuoHgpUR4v7-TVUlgyRhGrDGCxcECzjSGxWXS9gy7nF9b6ltSFdZmWvUeB_Yb6DjxI1q2HNSoHtwuIiwoBqxBQBkdCaYeGGQu7wsnZNk73x04VYj/s1600/6.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgueMAeWdnm4i3afc5_ONBo7eZf4NK7g9_hvarXHQSamXvrgN8CsqXqEjNoQALDXlgAXU61Kj_hHVYt5ZvptoS0voE-Kro8UiciNyvzKGSCZM7vwl736bqVzFvt4FHJAQCXi8CcOOYflJDk1cbHvNJPgMtD30CsKqAc01G8cx9vSCvimJGVo0M2OkwSYqr8/s1600/7.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfLsSNSDPLD_uX_JDZ-nmUSo67WL4fQTQ4keUn2ar8RKEBDPxNFoRowj77t8g-fbD0sPFKNcpdWkH0FssLylzbEBbXtQf-l3zMYGTo5gWZyhCLhyphenhyphen3K1cdFpdqiXdKZZsGbMOxQefTA_7r-Z3379a8bS51DhVTykkBSHRhLVUosL1JJ3TzNxrkGip45jOpw/s1600/8.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAwycYnQUwZdeVTSKf9dw4Jz7TU96HAxy50lTXPQZSDw8GibxdYJK_LbFPVse5MWDWf_MdGb1OSnzwOhetw9z62GGPc9ukllTQHUzfvNBAh4NfnUT3zI7Llrv4_XNZTmEZyNBv3UwYKdskBczh9H2poDqr6sdUFFp4KJ1X0Msgr7-QsO295-kcRlkRu0TR/s1600/9.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiedw7llbkvb303v1TC1Z0q15vX_d1xXkl9wiUHTmf0RgKb6GtopE2v2JeYCLNTH_kqbrReaGaKDHWo-fX0_vE8ZSpkb8uB81IYOqLiuWrZ9k9BH3q2sgHXPojEvSl4mvpx02W9DiL8n7vwBWdAVRTUTTT9K6tiClxRrLSefgApzyQs8ANp25Jtscf2WyoK/s1600/10.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrL2OyBJse6BRkBnmDHd_h_3h6kh5coLYvyrQhfdWPA5LVrfqw8bEQ49KZ6GSDRDRKmq8C6lWXe_4mlvZzowU81KdHHa932y-u3DsDl4PEIg9Iybr3e7LJgDNd1mOKUDYdg-9HUdf9NesjhKXGKK9_QLqvp8uM13u3eRNfEDM2rgk24wycOqmSEKnmpzCR/s1600/11.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3Yxn3zWSSy9MtNl5TQ5LOYcheRa7xeZpPjw6YFi4auJh0Xg7l-CQQBKa2B2FTPCUFlrXEwApQnOrmQ_eAN0f2tWX5315UMoWN0Hse6FJrU8pbFDWwkiByjGavPAG5qjXNE0hdAkYdH3j0T1iRJc6lsyWvVDo1KVH9v5iKAY-uCoEl6uj3V6oaiimDvLlN/s1600/12.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheFGku_nyBZA6N3JosLlJeSgpxfWjrYmk5kAzpEFovg9ZTo9K9DoQ3S2NrJJXytsFypxDBOc7uwqaz9L4OOpdW2QZ9krYiFofsuo0TfvpisIs-kbtePXFSeRuH-s4v9yulpRug5kXAfYQakyuV-c5sENPkarS6qWoL8383IhKa3yYodfty31mlzlWtyEr9/s1600/13.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRiu15vjMYYS5hUg3xLjWvFNldxWI6vM_rSz83y-qtzDQwe9ULI5BlVFwsFt3iRDxTwZD1b4Pq1melqsmO3lYA3_vXWfFpfYfeDaKx_vD_Y7vcpu-WFqZnWajRFk7YMdv-_1DIPn33kOUZQsEffzWatnKRhnqwefDt7UjqnrS0uk3_iUdQbNTVlAlEw99W/s1600/14.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinycJ17bLa5TaBJ4d-OL4iTi67U2kJuU4vuK3t9NR5mq9nSWLFR9eXlXjznpbM83b2AuvbrW42azpcWysHPt5zbz65JxrEkGYkvrOdw-ufT3FctkzssTmECrvpCKdK-liw2AtpT2sHCMHq2AP0-s5eQAuDQfyscSLlXNiPflvR_1l7qsRNOTbL53qFtcu1/s1600/15.png?utm_source=chatgpt.com" width="640" /> 
+    <img alt="" data-original-height="1200" data-original-width="1200" height="640" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfwngsT2cPOj0BRN_bidkr0R6YII8ZAVvWcpuVqcP9HTX0cwtd3d-0LbHTADuRzCq5yRO4bvc4iwHvZ5Q17z1nCQq7Z5lM_kvOlmb1wS1BbUqrxowgjS0JsPjee_4llVi5q1cuVUH5SjLuAYsjzogsJX39ind6wzHg6ObeZ8Rj97SMcCNbDq-GfE3scyt2/s1600/16.png?utm_source=chatgpt.com" width="640" /> 
+<br /></a>
+</div>
+<br />
+
+
+
+<h2 data-end="303" data-start="251">&nbsp;</h2><h3 data-end="277" data-start="244"> “Soy Tishudo desde la cuna”</h3>
+<p data-end="339" data-start="278"><b data-end="339" data-start="278">Pasión, identidad y diseño para el Deportivo Barberena FC</b></p>
+<p data-end="748" data-start="341">El <b data-end="367" data-start="344">24 de junio de 2023</b>, quedará marcado para siempre en la historia de nuestra agencia: <b data-end="563" data-start="433">Moi Agency fue anunciada como la ganadora oficial del concurso para diseñar el nuevo escudo del Deportivo Barberena FC</b>. No participamos con la intención de ganar, sino con el compromiso de crear un trabajo ejemplar y profesional que reflejara con fidelidad el alma y la identidad del pueblo de barberena.</p>
+<blockquote data-end="885" data-start="750">
+<p data-end="885" data-start="752">“Tu creatividad y habilidad para capturar el espíritu de Barberena… nos ha impresionado a todos.”<br data-end="852" data-start="849" />
+— <i data-end="885" data-start="856">Comunicado oficial del club</i></p>
+</blockquote>
+<p data-end="1128" data-start="887">Ese reconocimiento dio paso a un vínculo profundo con el club y su gente. El <b data-end="987" data-start="964">10 de julio de 2023</b>, oficializamos nuestra entrada como <b data-end="1069" data-start="1024">patrocinadores del Deportivo Barberena FC</b>, siendo recibidos con orgullo por la gran familia Tishuda.</p>
+<h3 data-end="1199" data-start="1135">🎨 <b data-end="1199" data-start="1142">El escudo que diseñamos: un emblema con alma y raíces</b></h3>
+<p data-end="1367" data-start="1201"><b data-end="1288" data-start="1201">Como creadores y diseñadores oficiales del escudo actual del Deportivo Barberena FC</b>, dimos vida a un símbolo que une tradición, espiritualidad, historia y futuro:</p>
+<ul data-end="1908" data-start="1369"><li data-end="1441" data-start="1369">
+<p data-end="1441" data-start="1371"><b data-end="1392" data-start="1371">El Templo Minerva</b>, al centro, ícono arquitectónico de la ciudad.</p>
+</li><li data-end="1516" data-start="1442">
+<p data-end="1516" data-start="1444"><b data-end="1483" data-start="1444">La corona de la Virgen de la Merced</b>, guía espiritual y protectora.</p>
+</li><li data-end="1628" data-start="1517">
+<p data-end="1628" data-start="1519"><b data-end="1537" data-start="1519">Tres estrellas</b>: dos por los Reyes Magos (patronos del municipio), y una tercera como promesa de gloria.</p>
+</li><li data-end="1704" data-start="1629">
+<p data-end="1704" data-start="1631"><b data-end="1648" data-start="1631">Hojas de café</b>, en honor al trabajo agrícola que impulsa a su gente.</p>
+</li><li data-end="1908" data-start="1705">
+<p data-end="1908" data-start="1707">En la base: <b data-end="1741" data-start="1719">el balón de fútbol</b>, el nombre <b data-end="1781" data-start="1753">“Deportivo Barberena FC”</b> y una <b data-end="1815" data-start="1788">tipografía con carácter</b>, juvenil, acompañada de la frase que le da vida a todo:<br data-end="1874" data-start="1871" />
+<b data-end="1908" data-start="1876">“Soy Tishudo desde la cuna”.</b></p>
+</li></ul>
+<p data-end="2100" data-start="1910">Este escudo no es solo una imagen: es el pilar de una <b data-end="2008" data-start="1964">identidad visual auténtica y con sentido</b>, hecha para representar la pasión tishuda en cada cancha, cada camiseta y cada corazón.</p>
+<h3 data-end="2173" data-start="2107">💻 <b data-end="2173" data-start="2114">Nuestro rol como diseñadores y patrocinadores oficiales</b></h3>
+<p data-end="2361" data-start="2175">Durante el <b data-end="2210" data-start="2186">Torneo Apertura 2023</b> y parte del <b data-end="2240" data-start="2223">Apertura 2024</b>, colaboramos activamente con el club en todo el desarrollo visual, aportando diseño, fotografía y contenido profesional:</p>
+<ul data-end="3070" data-start="2363"><li data-end="2476" data-start="2363">
+<p data-end="2476" data-start="2365">Diseñamos <b data-end="2404" data-start="2375">todas las piezas gráficas</b>: alineaciones, resultados, fichajes, homenajes y campañas especiales.</p>
+</li><li data-end="2609" data-start="2477">
+<p data-end="2609" data-start="2479">Realizamos <b data-end="2512" data-start="2490">viajes a Barberena</b> para sesiones fotográficas exclusivas, incluyendo partidos clave como el clásico ante Cuilapa.</p>
+</li><li data-end="2765" data-start="2610">
+<p data-end="2765" data-start="2612">Acompañamos al club en instancias finales (cuartos de final ante San Benito), generando cobertura visual en el estadio y contenido especial para redes.</p>
+</li><li data-end="2926" data-start="2766">
+<p data-end="2926" data-start="2768">Aunque no administrábamos las plataformas digitales, <b data-end="2877" data-start="2821">cada diseño fue entregado con precisión y compromiso</b> al equipo de comunicación para su publicación.</p>
+</li><li data-end="3070" data-start="2927">
+<p data-end="3070" data-start="2929">Producimos <b data-end="2992" data-start="2940">playeras institucionales firmadas por el plantel</b>, camisetas conmemorativas, merch oficial y materiales para puntos de venta.</p>
+</li></ul>
+<p data-end="3230" data-start="3072">Fuimos también honrados con una <b data-end="3163" data-start="3104">valla publicitaria en el Complejo Polideportivo de Barberena</b>, testimonio de la confianza que el club depositó en nuestra labor.</p>
+<h3 data-end="3295" data-start="3237">✨ <b data-end="3295" data-start="3243">Una identidad gráfica viva, vibrante y evolutiva</b></h3>
+<p data-end="3365" data-start="3297">Creamos un estilo visual único y coherente con el espíritu del club:</p>
+<ul data-end="3765" data-start="3367"><li data-end="3457" data-start="3367">
+<p data-end="3457" data-start="3369">Paleta de colores basada en el <b data-end="3427" data-start="3400">naranja, verde y blanco</b>, con texturas tipo bandera.</p>
+</li><li data-end="3554" data-start="3458">
+<p data-end="3554" data-start="3460">Frases como <b data-end="3488" data-start="3472">“Dale Barbe”</b>, escudo al centro y patrocinadores integrados estratégicamente.</p>
+</li><li data-end="3649" data-start="3555">
+<p data-end="3649" data-start="3557">Fotografías tipo “cabezas flotantes” de los jugadores como protagonistas de cada historia.</p>
+</li><li data-end="3765" data-start="3650">
+<p data-end="3765" data-start="3652">Diseños específicos para categorías juveniles, partidos de local/visita y activaciones con marcas patrocinadoras.</p>
+</li></ul>
+<h3 data-end="3807" data-start="3772">🔚 <b data-end="3807" data-start="3779">Un ciclo que deja huella</b></h3>
+<p data-end="3961" data-start="3809">El <b data-end="3838" data-start="3812">4 de noviembre de 2024</b>, por razones internas, dimos cierre a nuestro ciclo como patrocinadores. Nos despedimos con un mensaje cargado de emoción:</p>
+<blockquote data-end="4124" data-start="3963">
+<p data-end="4124" data-start="3965">“Hoy cerramos un ciclo, pero nos quedamos con el alma teñida de esos colores que vibran en cada gol y cada esfuerzo. ¡Porque una vez Tishudo, siempre Tishudo!”</p>
+</blockquote>
+<ul data-end="4397" data-start="4131"><li data-end="4201" data-start="4131">
+<p data-end="4201" data-start="4133">El escudo que diseñamos <b data-end="4198" data-start="4157">sigue vigente como símbolo de orgullo</b>.</p>
+</li><li data-end="4292" data-start="4202">
+<p data-end="4292" data-start="4204">La identidad visual que creamos <b data-end="4289" data-start="4236">sigue viva en cada aficionado, jugador y camiseta</b>.</p>
+</li><li data-end="4397" data-start="4293">
+<p data-end="4397" data-start="4295">Nuestro aprendizaje como agencia <b data-end="4396" data-start="4328">nos sigue impulsando a nuevos proyectos con más fuerza y corazón</b>.</p>
+</li></ul>
+<p data-end="4553" data-start="4399">Este fue <b data-end="4440" data-start="4408">nuestro primer gran proyecto</b>. El que nos lanzó al mundo del diseño deportivo.<br data-end="4492" data-start="4489" />
+El que nos enseñó que un escudo no solo representa… <b data-end="4552" data-start="4544">late</b>.</p>
+<p data-end="4732" data-start="4560"><b data-end="4599" data-start="4560">Moi Agency</b><br data-end="4602" data-start="4599" />
+<i data-end="4698" data-start="4602">Ganadores del concurso oficial y diseñadores del escudo del Deportivo Barberena FC (2023–2024)</i><br data-end="4701" data-start="4698" />
+<b data-end="4732" data-start="4701">“Soy TISHUDO desde la cuna”</b></p><p data-end="4732" data-start="4560"><b data-end="4732" data-start="4701">&nbsp;</b></p><p data-end="4732" data-start="4560">#BarberenaFC logo<b data-end="4732" data-start="4701">&nbsp;</b></p>
+
+	</div>
+		
+<script src="script.js"></script>
+<script src="../footer.js"></script>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+	</body>
+</html>
