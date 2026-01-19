@@ -3,28 +3,28 @@
 ===================== */
 const equipos = [
   // GRUPO A
-  { id: 'aguacatan', grupo: 'A', nombre: 'aguacatan fc', escudo: 'https://moidg.online/Escudos/LNG/cap (12).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'chichicasteco', grupo: 'A', nombre: 'chichicasteco fc', escudo: 'https://moidg.online/Escudos/LNG/cap (13).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'coatepeque', grupo: 'A', nombre: 'dep. coatepeque', escudo: 'https://moidg.online/Escudos/LNG/cap (14).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'copalera', grupo: 'A', nombre: 'juv. copalera', escudo: 'https://moidg.online/Escudos/LNG/cap (17).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'gomerano', grupo: 'A', nombre: 'Dep. gomerano', escudo: 'https://moidg.online/Escudos/LNG/cap (16).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'huehuetecos', grupo: 'A', nombre: 'huehuetecos fc', escudo: 'https://moidg.online/Escudos/LNG/cap (8).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'nueva_concepcion', grupo: 'A', nombre: 'Nueva Concepción', escudo: 'https://moidg.online/Escudos/LNG/cap (15).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'quiche', grupo: 'A', nombre: 'quiché fc', escudo: 'https://moidg.online/Escudos/LNG/cap (18).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'san_pedro', grupo: 'A', nombre: 'dep. san pedro fc', escudo: 'https://moidg.online/Escudos/LNG/cap (10).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'suchitepequez', grupo: 'A', nombre: 'csd suchitepequez', escudo: 'https://moidg.online/Escudos/LNG/cap (11).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'aguacatan', grupo: 'A', nombre: 'aguacatan fc', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (12).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'chichicasteco', grupo: 'A', nombre: 'chichicasteco fc', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (13).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'coatepeque', grupo: 'A', nombre: 'dep. coatepeque', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (14).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'copalera', grupo: 'A', nombre: 'juv. copalera', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (17).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'gomerano', grupo: 'A', nombre: 'Dep. gomerano', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (16).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'huehuetecos', grupo: 'A', nombre: 'huehuetecos fc', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (8).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'nueva_concepcion', grupo: 'A', nombre: 'Nueva Concepción', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (15).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'quiche', grupo: 'A', nombre: 'quiché fc', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (18).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'san_pedro', grupo: 'A', nombre: 'dep. san pedro fc', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (10).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'suchitepequez', grupo: 'A', nombre: 'csd suchitepequez', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (11).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
 
   // GRUPO B
-  { id: 'aff', grupo: 'B', nombre: 'aff guatemala', escudo: 'https://moidg.online/Escudos/LNG/cap (7).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'carcha', grupo: 'B', nombre: 'dep. carchá', escudo: 'https://moidg.online/Escudos/LNG/cap (1).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'chimaltenango', grupo: 'B', nombre: 'chimaltenango fc', escudo: 'https://moidg.online/Escudos/LNG/cap (3).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'chiquimulilla', grupo: 'B', nombre: 'csd Chiquimulilla', escudo: 'https://moidg.online/Escudos/LNG/cap (20).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'ipala', grupo: 'B', nombre: 'csd ipala', escudo: 'https://moidg.online/Escudos/LNG/cap (2).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'iztapa', grupo: 'B', nombre: 'dep. iztapa', escudo: 'https://moidg.online/Escudos/LNG/cap (4).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'sacachispas', grupo: 'B', nombre: 'csd sacachispas', escudo: 'https://moidg.online/Escudos/LNG/cap (19).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'san_benito', grupo: 'B', nombre: 'san benito fc', escudo: 'https://moidg.online/Escudos/LNG/cap (6).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'santa_lucia', grupo: 'B', nombre: 'FC santa lucia', escudo: 'https://moidg.online/Escudos/LNG/cap (5).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
-  { id: 'santa_rosa', grupo: 'B', nombre: 'n. santa rosa', escudo: 'https://moidg.online/Escudos/LNG/cap (9).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 }
+  { id: 'aff', grupo: 'B', nombre: 'aff guatemala', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (7).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'carcha', grupo: 'B', nombre: 'dep. carchá', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (1).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'chimaltenango', grupo: 'B', nombre: 'chimaltenango fc', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (3).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'chiquimulilla', grupo: 'B', nombre: 'csd Chiquimulilla', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (20).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'ipala', grupo: 'B', nombre: 'csd ipala', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (2).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'iztapa', grupo: 'B', nombre: 'dep. iztapa', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (4).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'sacachispas', grupo: 'B', nombre: 'csd sacachispas', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (19).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'san_benito', grupo: 'B', nombre: 'san benito fc', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (6).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'santa_lucia', grupo: 'B', nombre: 'FC santa lucia', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (5).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
+  { id: 'santa_rosa', grupo: 'B', nombre: 'n. santa rosa', escudo: 'https://moidg.online/apps/tabla futura primera div/Escudos/LNG/cap (9).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 }
 ];
 
 /* =====================
