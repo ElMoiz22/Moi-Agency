@@ -1,0 +1,178 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8"></meta>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script src="https://moidg.online/apps/clausuranacioal.js"></script>
+<link rel="stylesheet" href="https://use.typekit.net/ejy4yds.css">
+  <link rel="stylesheet" href="caratula.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="splash-screen"></div>
+        </div>
+
+  <div class="hero-container">
+        <img src="caratula.png" alt="Paisaje" class="hero-image">
+
+        <div class="scroll-arrow" id="scrollBtn">
+            <svg viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </svg>
+        </div>
+    </div>
+
+<div class="contenedor-flex">
+
+  <div class="columna">
+<h2 style="color: rgb(255, 255, 255); text-align: center;">Torneo clausura 2026 - Grupo A</h2>
+<div class="tabla-scroll">
+<table id="tabla-grupo-A">
+    <thead> 
+      <tr>
+        <th style="width: 2px;"></th> <th>#</th>
+        <th>Equipo</th> <th>J</th> <th>V</th> <th>E</th> <th>D</th> <th>DG</th>
+        <th style="background-color: #ffffff; color: #101d83;">Pts</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+<button class="boton-tab" data-tabla=".tabla-scroll" data-nombre="tabla_Grupo_A_LPDG.png" style="width: 100%;background-color: #ffe033;color: #101d83;">Descargar Tabla Grupo A</button>
+
+  </div>
+
+   <div class="columna">
+      <h2 style="color: rgb(255, 255, 255); text-align: center;">Torneo clausura 2026 - Grupo B</h2>
+<div class="tabla-scroll2">
+<table id="tabla-grupo-B" >
+    <thead> 
+      <tr>
+        <th style="width: 2px;"></th> <th>#</th>
+        <th>Equipo</th> <th>J</th> <th>V</th> <th>E</th> <th>D</th> <th>DG</th>
+        <th style="background-color: #ffffff; color: #101d83;">Pts</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+    <button class="boton-tab" data-tabla=".tabla-scroll2" data-nombre="tabla_Grupo_B_LPDG.png" style="width: 100%;background-color: #ffe033;color: #101d83;">Descargar Tabla Grupo B</button>        
+    </div>
+
+</div>
+
+      <h2 style="color: #ffffff; text-align: center;">Jornadas Torneo Clausura 2026</h2>
+
+
+       <!--<div class="boton-parpadeante">EN JUEGO</div>-->
+<button id="boton1" class="boton-tab" onclick="mostrarContenido(1)">Jornada 1</button>
+<button id="boton2" class="boton-tab" onclick="mostrarContenido(2)">Jornada 2</button>
+<button id="boton3" class="boton-tab" onclick="mostrarContenido(3)">Jornada 3</button>
+<button id="boton4" class="boton-tab" onclick="mostrarContenido(4)">Jornada 4</button>
+<button id="boton5" class="boton-tab" onclick="mostrarContenido(5)">Jornada 5</button>
+<button id="boton6" class="boton-tab" onclick="mostrarContenido(6)">Jornada 6</button>
+<button id="boton7" class="boton-tab" onclick="mostrarContenido(7)">Jornada 7</button>
+<button id="boton8" class="boton-tab" onclick="mostrarContenido(8)">Jornada 8</button>
+<button id="boton9" class="boton-tab" onclick="mostrarContenido(9)">Jornada 9</button>
+<button id="boton10" class="boton-tab" onclick="mostrarContenido(10)">Jornada 10</button>
+<button id="boton11" class="boton-tab" onclick="mostrarContenido(11)">Jornada 11</button>
+<button id="boton12" class="boton-tab" onclick="mostrarContenido(12)">Jornada 12</button>
+<button id="boton13" class="boton-tab" onclick="mostrarContenido(13)">Jornada 13</button>
+<button id="boton14" class="boton-tab" onclick="mostrarContenido(14)">Jornada 14</button>
+<button id="boton15" class="boton-tab" onclick="mostrarContenido(15)">Jornada 15</button>
+<button id="boton16" class="boton-tab" onclick="mostrarContenido(16)">Jornada 16</button>
+<button id="boton17" class="boton-tab" onclick="mostrarContenido(17)">Jornada 17</button>
+<button id="boton18" class="boton-tab" onclick="mostrarContenido(18)">Jornada 18</button>
+
+<div id="contenido1" class="contenido"></div>
+<div id="contenido2" class="contenido"></div>
+<div id="contenido3" class="contenido"></div>
+<div id="contenido4" class="contenido"></div>
+<div id="contenido5" class="contenido"></div>
+<div id="contenido6" class="contenido"></div>
+<div id="contenido7" class="contenido"></div>
+<div id="contenido8" class="contenido"></div>
+<div id="contenido9" class="contenido"></div>
+<div id="contenido10" class="contenido"></div>
+<div id="contenido11" class="contenido"></div>
+<div id="contenido12" class="contenido"></div>
+<div id="contenido13" class="contenido"></div>
+<div id="contenido14" class="contenido"></div>
+<div id="contenido15" class="contenido"></div>
+<div id="contenido16" class="contenido"></div>
+<div id="contenido17" class="contenido"></div>
+<div id="contenido18" class="contenido"></div>
+
+<div class="contenedor-flex">
+
+  <div class="columna">
+      <h2 style="color: rgb(255, 255, 255); text-align: center;">Acumulado 2025-2026</h2>
+<div class="tabla-scroll3">
+  <table id="tabla-acumulada-a">
+  <thead>
+    <tr>
+      <th style="width: 2px;"></th> <th>#</th>
+      <th>Equipo</th>
+      <th>J</th>
+      <th>V</th>
+      <th>E</th>
+      <th>D</th>
+      <th>DG</th>
+      <th style="background-color: #ffffff; color: #101d83;">Pts</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+    <button class="boton-tab" data-tabla=".tabla-scroll3" data-nombre="tabla_Acumulada_LPDG_GrupoA.png" style="width: 100%;background-color: #ffe033;color: #101d83;">Descargar Tabla Acumulada 2025 - 2026 / Grupo A</button>        
+    </div>
+
+      <div class="columna">
+      <h2 style="color: rgb(255, 255, 255); text-align: center;">Acumulado 2025-2026</h2>
+<div class="tabla-scroll4">
+  <table id="tabla-acumulada-b">
+  <thead>
+    <tr>
+      <th style="width: 2px;"></th> <th>#</th>
+      <th>Equipo</th>
+      <th>J</th>
+      <th>V</th>
+      <th>E</th>
+      <th>D</th>
+      <th>DG</th>
+      <th style="background-color: #ffffff; color: #101d83;">Pts</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+    <button class="boton-tab" data-tabla=".tabla-scroll4" data-nombre="tabla_Acumulada_LPDG_GrupoB.png" style="width: 100%;background-color: #ffe033;color: #101d83;">Descargar Tabla Acumulada 2025 - 2026 / Grupo B</button>        
+    </div>
+    </div>
+    
+<script src="renderer.js"></script>
+<script src="descargartabla.js"></script>
+<script src="descargartabla2.js"></script>
+<script src="jornadasbotones.js"></script>
+<script src="tablaacumuladanacional.js"></script>
+  
+  <div class="hero-container">
+        <img src="caratula2.png" alt="Paisaje" class="hero-image">
+    </div>
+
+    <script>
+        // Script para quitar la portada después de 3 segundos
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                splash.classList.add('fade-out');
+            }, 3000); // 3000ms = 3 segundos
+        });
+    </script>
+
+</body>
+</html>
