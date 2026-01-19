@@ -1,0 +1,56 @@
+        /* Contenedor principal de la imagen */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: auto; /* 100% del alto de la pantalla */
+            overflow: hidden;
+        }
+
+        /* Estilos de la imagen responsiva */
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover; /* Mantiene la proporción sin deformar */
+            display: block;
+        }
+
+        /* Contenedor de la flecha */
+        .scroll-arrow {
+            position: absolute;
+            bottom: 30px; /* Distancia desde el fondo */
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            text-align: center;
+            z-index: 10;
+        }
+
+        /* Dibujo de la flecha (SVG para que sea nítido) */
+        .scroll-arrow svg {
+            width: 100px;
+            height: 50px;
+            fill: rgb(255, 0, 157); /* Color de la flecha */
+            animation: bounce 2s infinite; /* Aplicamos la animación */ 
+        }
+
+        /* Animación de rebote */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
+
+        /* Sección de contenido extra para probar el scroll */
+        .content {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }

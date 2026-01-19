@@ -4,7 +4,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-<script src="https://moidg.online/apps/clausuranacioal.js"></script>
+<script src="https://moidg.online/apps/tabla futura primera div/clausuranacioal.js"></script>
+<script src="https://moidg.online/apps/tabla futura primera div/tablaacumuladanacional.js"></script>
 <link rel="stylesheet" href="https://use.typekit.net/ejy4yds.css">
   <link rel="stylesheet" href="caratula.css" />
   <link rel="stylesheet" href="styles.css" />
@@ -15,7 +16,7 @@
         </div>
 
   <div class="hero-container">
-        <img src="caratula.png" alt="Paisaje" class="hero-image">
+        <img src="https://moidg.online/apps/tabla futura primera div/caratula.png" alt="Paisaje" class="hero-image">
 
         <div class="scroll-arrow" id="scrollBtn">
             <svg viewBox="0 0 24 24">
@@ -108,7 +109,7 @@
 <div class="contenedor-flex">
 
   <div class="columna">
-      <h2 style="color: rgb(255, 255, 255); text-align: center;">Acumulado 2025-2026</h2>
+      <h2 style="color: rgb(255, 255, 255); text-align: center;">Acumulado Grupo "A" 2025-2026</h2>
 <div class="tabla-scroll3">
   <table id="tabla-acumulada-a">
   <thead>
@@ -131,7 +132,7 @@
     </div>
 
       <div class="columna">
-      <h2 style="color: rgb(255, 255, 255); text-align: center;">Acumulado 2025-2026</h2>
+      <h2 style="color: rgb(255, 255, 255); text-align: center;">Acumulado Grupo "B"  2025-2026</h2>
 <div class="tabla-scroll4">
   <table id="tabla-acumulada-b">
   <thead>
@@ -154,14 +155,34 @@
     </div>
     </div>
     
-<script src="renderer.js"></script>
-<script src="descargartabla.js"></script>
-<script src="descargartabla2.js"></script>
-<script src="jornadasbotones.js"></script>
-<script src="tablaacumuladanacional.js"></script>
+      <h2 style="color: rgb(255, 255, 255); text-align: center;">Acumulado 2025-2026</h2>
+<div class="tabla-scroll5">
+  <table id="tabla-acumulada-general">
+  <thead>
+    <tr>
+      <th style="width: 2px;"></th> <th>#</th>
+      <th>Equipo</th>
+      <th>J</th>
+      <th>V</th>
+      <th>E</th>
+      <th>D</th>
+      <th>DG</th>
+      <th style="background-color: #ffffff; color: #101d83;">Pts</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+    <button class="boton-tab" data-tabla=".tabla-scroll4" data-nombre="tabla_Acumulada_LPDG.png" style="width: 100%;background-color: #ffe033;color: #101d83;">Descargar Tabla Acumulada 2025 - 2026</button>     
+    
+<script src="https://moidg.online/apps/tabla futura primera div/renderer.js"></script>
+<script src="https://moidg.online/apps/tabla futura primera div/descargartabla.js"></script>
+<script src="https://moidg.online/apps/tabla futura primera div/descargartabla2.js"></script>
+<script src="https://moidg.online/apps/tabla futura primera div/jornadasbotones.js"></script>
   
   <div class="hero-container">
-        <img src="caratula2.png" alt="Paisaje" class="hero-image">
+        <img src="https://moidg.online/apps/tabla futura primera div/caratula2.png" alt="Paisaje" class="hero-image">
     </div>
 
     <script>
@@ -176,3 +197,64 @@
 
 </body>
 </html>
+
+
+<div id="status-indicator" class="status-online">
+    <span id="status-dot"></span>
+    <span id="status-text">Online / Conectado al servidor</span>
+</div>
+
+<style>
+    #status-indicator {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 8px 15px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 9999;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    #status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 10px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    /* Estados */
+    .status-online { color: #40ff40; border-color: #40ff40 !important; }
+    .status-online #status-dot { background-color: #40ff40; box-shadow: 0 0 10px #40ff40; }
+
+    .status-offline { color: #ff4040; border-color: #ff4040 !important; }
+    .status-offline #status-dot { background-color: #ff4040; box-shadow: 0 0 10px #ff4040; }
+</style>
+
+<script>
+    const indicator = document.getElementById('status-indicator');
+    const statusText = document.getElementById('status-text');
+
+    function updateStatus() {
+        if (navigator.onLine) {
+            indicator.className = 'status-online';
+            statusText.innerText = 'Online / Conectado al servidor';
+        } else {
+            indicator.className = 'status-offline';
+            statusText.innerText = 'Offline / Sin conexión a internet';
+        }
+    }
+
+    // Escuchar cambios de red
+    window.addEventListener('online', updateStatus);
+    window.addEventListener('offline', updateStatus);
+
+    // Ejecutar al cargar la página
+    updateStatus();
+</script>

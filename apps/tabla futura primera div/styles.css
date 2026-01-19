@@ -1,0 +1,458 @@
+ 
+   .containers {
+display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+    }
+
+    .card {
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+background-color: #17062d;
+      border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px 10px;
+  width: 300px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover  {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .card .info {
+      text-align: center;
+    }
+
+    .card .info .date {
+      font-size: 13px;
+      font-weight: 300;
+    }
+    
+      .date2 {
+      font-size: 10px;
+      font-weight: 300;
+    }
+
+    .card .info .result {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    
+    .card2 {
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #2C0A5E, #4a004d, #2C0A5E);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px 10px;
+  width: 300px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card2:hover  {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card2 img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .card2 .info {
+      text-align: center;
+    }
+
+    .card2 .info .date {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .card2 .info .result {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+        max-width: 100%;
+      }
+          .card img {
+      width: 42px;
+    }
+            .card2 {
+        width: 100%;
+        max-width: 100%;
+      }
+          .card2 img {
+      width: 42px;
+    }
+
+    }
+    
+    .boton-parpadeante {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    animation: parpadeo 1s infinite;
+    cursor: pointer;
+  }
+
+  @keyframes parpadeo {
+    0%, 100% {
+      background-color: red;
+    }
+    50% {
+      background-color: darkred;
+    }
+  }
+    
+    .post-body table td, .post-body table th {
+      padding: 9px 25px;
+  border: 1px solid #161619;}
+    
+    .item-post .post-body{line-height: 16px;}
+    
+/* CONTENEDOR DEL PARTIDO */
+
+
+.partido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 10px 14px;
+  margin-bottom: 8px;
+
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+}
+
+/* ESCUDOS */
+.partido img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* INPUT DE GOLES */
+.partido input {
+  width: 42px;
+  height: 34px;
+
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  outline: none;
+
+  background: #fafafa;
+}
+
+/* QUITAR FLECHAS EN INPUT NUMBER */
+.partido input::-webkit-inner-spin-button,
+.partido input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.partido input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* SEPARADOR */
+.partido span {
+  font-size: 14px;
+  color: #777;
+  user-select: none;
+}
+
+.contenedor-flex {
+  display: flex; /* Activa Flexbox */
+  gap: 10px; /* Espacio entre columnas */
+      max-width: 100%;
+}
+
+.columna {
+  flex: 1; /* Hace que ambas columnas ocupen el mismo espacio */
+width: 50%;
+}
+
+  /* Estilos generales de la página */
+  
+    .imgequip {
+    width: 40px;
+  }
+  
+  
+body {
+  font-family: 'alfarn', sans-serif;
+  background-image: url('fondo.png'); /* Este es tu fondo de trabajo */
+  background-size: cover;
+  margin: 0;
+  color: #333;
+  overflow-x: hidden; /* Evita scroll horizontal innecesario */
+}
+
+
+/* Capa de la Portada de Inicio */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('app-portada.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 9999; /* Siempre encima de todo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease; /* Efecto de desvanecido */
+}
+
+/* Clase para ocultar la portada */
+.fade-out {
+  opacity: 0;
+  pointer-events: none; /* Permite hacer clic en lo que hay debajo */
+}
+
+h1 {
+  text-align: center;
+  color: #153f87;
+  padding: 0px;
+  margin-top: 2px;
+  font-size: 2.5em;
+}
+
+
+/* Estilos para la tabla con fondo degradado */
+table {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Encabezado de la tabla */
+th {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  background-color: transparent; /* Hacer que el encabezado sea transparente para que se vea el degradado */
+  width: 35px;
+  color: #fff;
+}
+
+/* Celdas de la tabla */
+td {
+  padding: 9px;
+  text-align: center;
+  font-size: 25px;
+  color: #ffffff; /* El texto en blanco para contrastar */
+  transition: background-color 0.3s ease;
+vertical-align: middle;
+}
+
+tr:nth-child(even) {
+  background-color: #101d83;
+}
+
+/* Estilo para el nombre del equipo */
+.team-name {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Efecto hover en las filas */
+tr:hover td {
+  background-color: rgba(255, 255, 255, 0.1); /* Color suave de fondo al hacer hover */
+}
+
+/* Estilo para las imágenes de los escudos */
+td img {
+  width: 40px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  th, td {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .imgequip {
+    width: 35px;
+    height: 30px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .imgequip {
+    width: 40px;
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  table {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  th, td {
+    padding: 6px;
+    font-size: 10px;
+  }
+
+  .imgequip {
+    width: 45px;
+    height: 20px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  table {
+    font-size: 9px;
+  }
+}
+  
+.tabla-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 15px;
+}
+
+.tabla-scroll2 {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 15px;
+}
+
+table {
+  min-width: 600px; /* Esto asegura que haya algo de ancho que genere scroll si es necesario */
+}
+
+  /* Columna de posición */
+.posicion {
+  font-weight: bold;
+  text-align: center;
+  width: 35px;
+}
+
+/* Clasificados */
+.pos-verde {
+  background-color: #28a745; /* Verde */
+  color: white;
+}
+
+.pos-amarillo {
+  background-color: #ffc107; /* Amarillo */
+  color: black;
+}
+
+.pos-desciende {
+  background-color: #dc3545; /* Rojo */
+  color: white;
+}
+
+    .boton-tab {
+      padding: 10px 20px;
+      border: none;
+background-color: #101d83;
+      cursor: pointer;
+      width: 10.8%;
+      color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      font-family: 'alfarn', sans-serif;
+      margin-top: 5px;
+    }
+
+    .boton-tab.activo {
+      background-color: #FFE033;
+      color: #49004e;
+    }
+
+/* 1. ESTADO OCULTO (Por defecto) */
+.contenido {
+  display: none;    /* <--- ESTA LÍNEA ES LA CLAVE */
+  margin-top: 10px;
+}
+
+/* 2. ESTADO VISIBLE (Cuando se presiona el botón) */
+.contenido.mostrar {
+  display: grid;    /* Al añadir 'mostrar', cambia de 'none' a 'grid' */
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 12px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.equipo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.equipo img {
+  width: 40px;
+  height: auto;
+}
+
+.equipo .nombre {
+  font-weight: bold;
+}
+
+.equipo .puntos {
+  font-weight: bold;
+}
