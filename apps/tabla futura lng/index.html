@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8"></meta>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script src="https://moidg.online/apps/tabla futura lng/clausuranacioal.js"></script>
+<script src="https://moidg.online/apps/tabla futura lng/tablaacumuladanacional.js"></script>
+<link rel="stylesheet" href="https://use.typekit.net/ejy4yds.css">
+  <link rel="stylesheet" href="https://moidg.online/apps/tabla futura lng/caratula.css" />
+  <link rel="stylesheet" href="https://moidg.online/apps/tabla futura lng/styles.css" />
+</head>
+<body>
+
+  <div id="splash-screen"></div>
+        </div>
+
+  <div class="hero-container">
+        <img src="https://moidg.online/apps/tabla futura lng/caratula.png" alt="Paisaje" class="hero-image">
+
+        <div class="scroll-arrow" id="scrollBtn">
+            <svg viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            </svg>
+        </div>
+    </div>
+
+<div class="contenedor-flex">
+
+  <div class="columna">
+<h2 style="color: #1aaae7; text-align: center;">Tabla de posiciones / Torneo clausura 2026</h2>
+<div class="tabla-scroll">
+  <table id="tabla-posiciones">
+<thead> 
+  <tr>
+    <th style="width: 2px;"></th> <th>#</th>
+      <th>Equipo</th>
+    <th>J</th>
+    <th>V</th>
+    <th>E</th>
+    <th>D</th>
+    <th>DG</th>
+    <th style="background-color: #0e004e; color: white;">Pts</th>
+  </tr>
+</thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<button class="boton-tab" data-tabla=".tabla-scroll" data-nombre="tabla_Clausura_LNG.png" style="width: 100%;">Descargar Tabla de posicioones / Clausura 2026</button>
+
+  </div>
+
+
+  <div class="columna">
+      <h2 style="color: #1aaae7; text-align: center;">Tabla Acumulada 2025-2026</h2>
+<div class="tabla-scroll2">
+  <table id="tabla-acumulada">
+  <thead>
+    <tr>
+      <th style="width: 2px;"></th> <th>#</th>
+      <th>Equipo</th>
+      <th>J</th>
+      <th>V</th>
+      <th>E</th>
+      <th>D</th>
+      <th>DG</th>
+      <th style="background-color: #0e004e; color: white;">Pts</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+    <button class="boton-tab" data-tabla=".tabla-scroll2" data-nombre="tabla_Acumulada_LNG.png" style="width: 100%;">Descargar Tabla Acumulada 2025 - 2026</button>        
+    </div>
+</div>
+
+      <h2 style="color: #1aaae7; text-align: center;">Jornadas Torneo Clausura 2026</h2>
+
+       <!--<div class="boton-parpadeante">EN JUEGO</div>-->
+<button id="boton1" class="boton-tab" onclick="mostrarContenido(1)">Jornada 1</button>
+<button id="boton2" class="boton-tab" onclick="mostrarContenido(2)">Jornada 2</button>
+<button id="boton3" class="boton-tab" onclick="mostrarContenido(3)">Jornada 3</button>
+<button id="boton4" class="boton-tab" onclick="mostrarContenido(4)">Jornada 4</button>
+<button id="boton5" class="boton-tab" onclick="mostrarContenido(5)">Jornada 5</button>
+<button id="boton6" class="boton-tab" onclick="mostrarContenido(6)">Jornada 6</button>
+<button id="boton7" class="boton-tab" onclick="mostrarContenido(7)">Jornada 7</button>
+<button id="boton8" class="boton-tab" onclick="mostrarContenido(8)">Jornada 8</button>
+<button id="boton9" class="boton-tab" onclick="mostrarContenido(9)">Jornada 9</button>
+<button id="boton10" class="boton-tab" onclick="mostrarContenido(10)">Jornada 10</button>
+<button id="boton11" class="boton-tab" onclick="mostrarContenido(11)">Jornada 11</button>
+<button id="boton12" class="boton-tab" onclick="mostrarContenido(12)">Jornada 12</button>
+<button id="boton13" class="boton-tab" onclick="mostrarContenido(13)">Jornada 13</button>
+<button id="boton14" class="boton-tab" onclick="mostrarContenido(14)">Jornada 14</button>
+<button id="boton15" class="boton-tab" onclick="mostrarContenido(15)">Jornada 15</button>
+<button id="boton16" class="boton-tab" onclick="mostrarContenido(16)">Jornada 16</button>
+<button id="boton17" class="boton-tab" onclick="mostrarContenido(17)">Jornada 17</button>
+<button id="boton18" class="boton-tab" onclick="mostrarContenido(18)">Jornada 18</button>
+<button id="boton19" class="boton-tab" onclick="mostrarContenido(19)">Jornada 19</button>
+<button id="boton20" class="boton-tab" onclick="mostrarContenido(20)">Jornada 20</button>
+<button id="boton21" class="boton-tab" onclick="mostrarContenido(21)">Jornada 21</button>
+<button id="boton22" class="boton-tab" onclick="mostrarContenido(22)">Jornada 22</button>
+
+<div id="contenido1" class="contenido"></div>
+<div id="contenido2" class="contenido"></div>
+<div id="contenido3" class="contenido"></div>
+<div id="contenido4" class="contenido"></div>
+<div id="contenido5" class="contenido"></div>
+<div id="contenido6" class="contenido"></div>
+<div id="contenido7" class="contenido"></div>
+<div id="contenido8" class="contenido"></div>
+<div id="contenido9" class="contenido"></div>
+<div id="contenido10" class="contenido"></div>
+<div id="contenido11" class="contenido"></div>
+<div id="contenido12" class="contenido"></div>
+<div id="contenido13" class="contenido"></div>
+<div id="contenido14" class="contenido"></div>
+<div id="contenido15" class="contenido"></div>
+<div id="contenido16" class="contenido"></div>
+<div id="contenido17" class="contenido"></div>
+<div id="contenido18" class="contenido"></div>
+<div id="contenido19" class="contenido"></div>
+<div id="contenido20" class="contenido"></div>
+<div id="contenido21" class="contenido"></div>
+<div id="contenido22" class="contenido"></div>
+
+<script src="https://moidg.online/apps/tabla futura lng/renderer.js"></script>
+<script src="https://moidg.online/apps/tabla futura lng/descargartabla.js"></script>
+<script src="https://moidg.online/apps/tabla futura lng/descargartabla2.js"></script>
+<script src="https://moidg.online/apps/tabla futura lng/jornadasbotones.js"></script>
+
+  <div class="hero-container">
+        <img src="https://moidg.online/apps/tabla futura lng/caratula2.png" alt="Paisaje" class="hero-image">
+    </div>
+
+    <script>
+        // Script para quitar la portada después de 3 segundos
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                splash.classList.add('fade-out');
+            }, 3000); // 3000ms = 3 segundos
+        });
+    </script>
+
+</body>
+</html>
+
+
+<div id="status-indicator" class="status-online">
+    <span id="status-dot"></span>
+    <span id="status-text">Online / Conectado al servidor</span>
+</div>
+
+<style>
+    #status-indicator {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 8px 15px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 9999;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    #status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 10px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    /* Estados */
+    .status-online { color: #40ff40; border-color: #40ff40 !important; }
+    .status-online #status-dot { background-color: #40ff40; box-shadow: 0 0 10px #40ff40; }
+
+    .status-offline { color: #ff4040; border-color: #ff4040 !important; }
+    .status-offline #status-dot { background-color: #ff4040; box-shadow: 0 0 10px #ff4040; }
+</style>
+
+<script>
+    const indicator = document.getElementById('status-indicator');
+    const statusText = document.getElementById('status-text');
+
+    function updateStatus() {
+        if (navigator.onLine) {
+            indicator.className = 'status-online';
+            statusText.innerText = 'Online / Conectado al servidor';
+        } else {
+            indicator.className = 'status-offline';
+            statusText.innerText = 'Offline / Sin conexión a internet';
+        }
+    }
+
+    // Escuchar cambios de red
+    window.addEventListener('online', updateStatus);
+    window.addEventListener('offline', updateStatus);
+
+    // Ejecutar al cargar la página
+    updateStatus();
+</script>

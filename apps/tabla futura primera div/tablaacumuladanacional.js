@@ -24,6 +24,23 @@ const DATOS_APERTURA_BASE = [
   { id: 'sacachispas', j: 18, v: 9, e: 4, d: 5, gf: 25, gc: 12, pts: 28 },
 ];
 
+// === POSICIÓN FINAL DEL APERTURA ===
+const RANKING_APERTURA = [...DATOS_APERTURA_BASE]
+  .sort((a, b) => {
+    const dgA = a.gf - a.gc;
+    const dgB = b.gf - b.gc;
+    return b.pts - a.pts || dgB - dgA || b.gf - a.gf;
+  })
+  .map((e, index) => ({
+    id: e.id,
+    pos: index + 1
+  }));
+
+function posicionApertura(id) {
+  const e = RANKING_APERTURA.find(r => r.id === id);
+  return e ? e.pos : 999; // si no existe, lo manda al fondo
+}
+
 let equiposAcumulada = [];
 
 /* ============================================================
