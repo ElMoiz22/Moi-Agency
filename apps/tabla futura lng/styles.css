@@ -358,17 +358,7 @@ td img {
   }
 }
   
-.tabla-scroll {
-    overflow-x: auto;
-    max-width: 100%;
-    padding: 15px;
-}
 
-.tabla-scroll2 {
-    overflow-x: auto;
-    max-width: 100%;
-    padding: 15px;
-}
 
 table {
   min-width: 600px; /* Esto asegura que haya algo de ancho que genere scroll si es necesario */
