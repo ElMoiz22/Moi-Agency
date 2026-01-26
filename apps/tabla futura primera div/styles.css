@@ -212,7 +212,7 @@ width: 50%;
   
 body {
   font-family: 'alfarn', sans-serif;
-  background-image: url('fondo.png'); /* Este es tu fondo de trabajo */
+  background-image: url('https://moidg.online/apps/tabla futura primera div/fondo.png'); /* Este es tu fondo de trabajo */
   background-size: cover;
   margin: 0;
   color: #333;
@@ -361,17 +361,7 @@ td img {
     font-size: 9px;
   }
 }
-  
-.tabla-scroll {
-    overflow-x: auto;
-    max-width: 100%;
-    padding: 15px;
-}
 
-.tabla-scroll2 {
-    overflow-x: auto;
-    max-width: 100%;
-}
 
 table {
   min-width: 600px; /* Esto asegura que haya algo de ancho que genere scroll si es necesario */
