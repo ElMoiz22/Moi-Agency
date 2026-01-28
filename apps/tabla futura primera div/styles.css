@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'AlfarnExport';
-  src: url(data:font/woff2;base64,AAA...) format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-
-
    .containers {
 display: flex;
   flex-wrap: wrap;
@@ -219,7 +211,7 @@ width: 50%;
   
   
 body {
-  font-family: 'alfarn', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-image: url('https://moidg.online/apps/tabla futura primera div/fondo.png'); /* Este es tu fondo de trabajo */
   background-size: cover;
   margin: 0;
@@ -289,7 +281,7 @@ td {
   color: #ffffff; /* El texto en blanco para contrastar */
   transition: background-color 0.3s ease;
 vertical-align: middle;
-    font-weight: normal;
+    font-weight: 900;
 }
 
 tr:nth-child(even) {
@@ -319,7 +311,7 @@ td img {
   th, td {
     padding: 12px;
     font-size: 14px;
-    font-weight: normal;
+    font-weight: 900;
   }
 
   .imgequip {
@@ -336,7 +328,7 @@ td img {
   th, td {
     padding: 8px;
     font-size: 12px;
-    font-weight: normal;
+    font-weight: 900;
   }
 
   .imgequip {
@@ -357,7 +349,7 @@ td img {
   th, td {
     padding: 6px;
     font-size: 10px;
-    font-weight: normal;
+    font-weight: 900;
   }
 
   .imgequip {
@@ -411,7 +403,7 @@ background-color: #101d83;
       color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-radius: 12px;
-      font-family: 'alfarn', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       margin-top: 5px;
     }
 
