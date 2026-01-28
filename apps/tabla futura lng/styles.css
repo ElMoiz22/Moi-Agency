@@ -209,12 +209,13 @@ width: 50%;
   
   
 body {
-  font-family: 'alfarn', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-image: url('https://moidg.online/apps/tabla futura lng/fondo.png'); /* Este es tu fondo de trabajo */
   background-size: cover;
   margin: 0;
   color: #333;
   overflow-x: hidden; /* Evita scroll horizontal innecesario */
+  font-weight: 900;
 }
 
 /* Capa de la Portada de Inicio */
@@ -396,7 +397,7 @@ background-color: #49004e;
       color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-radius: 12px;
-      font-family: 'alfarn', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       margin-top: 5px;
     }
 
