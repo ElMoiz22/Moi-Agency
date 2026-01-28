@@ -1,7 +1,7 @@
 /* =====================
-   DATOS DE LOS EQUIPOS (Con Grupo Asignado)
+   DATOS DE LOS PD_equipos (Con Grupo Asignado)
 ===================== */
-const equipos = [
+const PD_equipos = [
   // GRUPO A
   { id: 'aguacatan', grupo: 'A', nombre: 'aguacatan fc', escudo: 'Escudos/LNG/cap (12).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
   { id: 'chichicasteco', grupo: 'A', nombre: 'chichicasteco fc', escudo: 'Escudos/LNG/cap (13).png', jugados: 0, golesAFavor: 0, golesEnContra: 0, victorias: 0, derrotas: 0, empates: 0, puntos: 0 },
@@ -29,32 +29,32 @@ const equipos = [
 
 
 /* =====================
-   JORNADAS
+   PD_jornadas
 ===================== */
-const jornadas = {
+const PD_jornadas = {
   1: [
-    { local: 'huehuetecos', visita: 'chichicasteco' },
-    { local: 'gomerano', visita: 'copalera' },
-    { local: 'coatepeque', visita: 'aguacatan' },
-    { local: 'quiche', visita: 'san_pedro' },
-    { local: 'suchitepequez', visita: 'nueva_concepcion' },
-    { local: 'chiquimulilla', visita: 'san_benito' },
-    { local: 'aff', visita: 'ipala' },
-    { local: 'iztapa', visita: 'carcha' },
-    { local: 'santa_rosa', visita: 'santa_lucia' },
-    { local: 'sacachispas', visita: 'chimaltenango' },
+    { local: 'huehuetecos', visita: 'chichicasteco', gl: 1, gv: 0 },
+    { local: 'gomerano', visita: 'copalera', gl: 1, gv: 0 },
+    { local: 'coatepeque', visita: 'aguacatan', gl: 1, gv: 0 },
+    { local: 'quiche', visita: 'san_pedro', gl: 0, gv: 1 },
+    { local: 'suchitepequez', visita: 'nueva_concepcion', gl: 1, gv: 1 },
+    { local: 'chiquimulilla', visita: 'san_benito', gl: 3, gv: 2 },
+    { local: 'aff', visita: 'ipala', gl: 1, gv: 0 },
+    { local: 'iztapa', visita: 'carcha', gl: 1, gv: 1 },
+    { local: 'santa_rosa', visita: 'santa_lucia' , gl: 0, gv: 0},
+    { local: 'sacachispas', visita: 'chimaltenango' , gl: 1, gv: 0},
   ],
   2: [
-    { local: 'copalera', visita: 'huehuetecos' },
-    { local: 'san_pedro', visita: 'suchitepequez' },
-    { local: 'aguacatan', visita: 'quiche' },
-    { local: 'chichicasteco', visita: 'coatepeque' },
-    { local: 'nueva_concepcion', visita: 'gomerano' },
-    { local: 'ipala', visita: 'chiquimulilla' },
-    { local: 'santa_lucia', visita: 'sacachispas' },
-    { local: 'carcha', visita: 'santa_rosa' },
-    { local: 'san_benito', visita: 'iztapa' },
-    { local: 'chimaltenango', visita: 'aff' },
+    { local: 'copalera', visita: 'huehuetecos' , gl: 1, gv: 1},
+    { local: 'san_pedro', visita: 'suchitepequez', gl: 0, gv: 0 },
+    { local: 'aguacatan', visita: 'quiche' , gl: 2, gv: 2},
+    { local: 'chichicasteco', visita: 'coatepeque', gl: 3, gv: 2 },
+    { local: 'nueva_concepcion', visita: 'gomerano', gl: 2, gv: 0 },
+    { local: 'ipala', visita: 'chiquimulilla' , gl: 2, gv: 1},
+    { local: 'santa_lucia', visita: 'sacachispas', gl: 3, gv: 0 },
+    { local: 'carcha', visita: 'santa_rosa' , gl: 2, gv: 0},
+    { local: 'san_benito', visita: 'iztapa' , gl: 3, gv: 0},
+    { local: 'chimaltenango', visita: 'aff' , gl: 1, gv: 1},
   ],
   3: [
     { local: 'huehuetecos', visita: 'nueva_concepcion' },
@@ -254,11 +254,11 @@ const jornadas = {
    UTILIDADES
 ===================== */
 function obtenerEquipoPorId(id) {
-  return equipos.find(e => e.id === id);
+  return PD_equipos.find(e => e.id === id);
 }
 
-function resetearTabla() {
-  equipos.forEach(e => {
+function PD_resetearTabla() {
+  PD_equipos.forEach(e => {
     e.jugados = 0;
     e.golesAFavor = 0;
     e.golesEnContra = 0;
@@ -269,7 +269,7 @@ function resetearTabla() {
   });
 }
 
-function aplicarPartido(local, visita, gl, gv) {
+function PD_aplicarPartido(local, visita, gl, gv) {
   const L = obtenerEquipoPorId(local);
   const V = obtenerEquipoPorId(visita);
   if (!L || !V) return;
@@ -296,7 +296,7 @@ function aplicarPartido(local, visita, gl, gv) {
 /* =====================
    ACTUALIZAR TABLA (MODIFICADA)
 ===================== */
-function actualizarTabla() {
+function PD_actualizarTabla() {
     // Procesamos cada grupo por separado
     renderizarGrupo('A', '#tabla-grupo-A tbody');
     renderizarGrupo('B', '#tabla-grupo-B tbody');
@@ -307,10 +307,10 @@ function renderizarGrupo(nombreGrupo, selectorTbody) {
     if (!tbody) return;
     tbody.innerHTML = '';
 
-    // Filtrar equipos por grupo y ordenar
-    const equiposFiltrados = equipos.filter(e => e.grupo === nombreGrupo);
+    // Filtrar PD_equipos por grupo y ordenar
+    const PD_equiposFiltrados = PD_equipos.filter(e => e.grupo === nombreGrupo);
 
-equiposFiltrados.sort((a, b) => {
+PD_equiposFiltrados.sort((a, b) => {
   const difA = a.golesAFavor - a.golesEnContra;
   const difB = b.golesAFavor - b.golesEnContra;
 
@@ -323,12 +323,12 @@ equiposFiltrados.sort((a, b) => {
 });
 
 
-    equiposFiltrados.forEach((equipo, index) => {
+    PD_equiposFiltrados.forEach((equipo, index) => {
         const tr = document.createElement('tr');
         const posicion = index + 1;
         let clasePosicion = '';
 
-        // Lógica de colores ajustada a 9 equipos
+        // Lógica de colores ajustada a 9 PD_equipos
         if (posicion <= 2) {
             clasePosicion = 'pos-verde';      // Clasificados directos
         } else if (posicion <= 6) {
@@ -342,7 +342,7 @@ equiposFiltrados.sort((a, b) => {
     <td class="posicion">${posicion}</td> 
     <td style="display:flex; align-items:center; gap:8px;">
         <img src="${equipo.escudo}" class="imgequip">
-        <span style="font-size: 14px; text-align: left;">
+        <span style="font-size: 15px; text-align: left;">
             ${equipo.nombre.toUpperCase()}
         </span>
     </td>
@@ -360,27 +360,30 @@ equiposFiltrados.sort((a, b) => {
 /* =====================
    RECALCULAR DESDE STORAGE
 ===================== */
-function recalcularTablaDesdeStorage() {
-  resetearTabla();
+function PD_recalcularTablaDesdeStorage() {
+  PD_resetearTabla();
 
   Object.keys(localStorage).forEach(key => {
-    if (!key.startsWith('j')) return;
+    if (!key.startsWith('pd_j')) return;
     const p = JSON.parse(localStorage.getItem(key));
     if (p && p.gl !== null && p.gv !== null) {
-      aplicarPartido(p.local, p.visita, p.gl, p.gv);
+      PD_aplicarPartido(p.local, p.visita, p.gl, p.gv);
     }
   });
 
-  actualizarTabla();
+  PD_actualizarTabla();
 }
 
 /* =====================
    GUARDAR RESULTADO
 ===================== */
-function guardarResultado(id, local, visita, gl, gv) {
-  let partido = JSON.parse(localStorage.getItem(id));
+function PD_guardarResultado(id, local, visita, gl, gv) {
 
-  // Si no existe, crearlo correctamente
+  // 🔑 Forzamos prefijo único
+  const storageId = id.startsWith('pd_') ? id : `pd_${id}`;
+
+  let partido = JSON.parse(localStorage.getItem(storageId));
+
   if (!partido) {
     partido = {
       local,
@@ -390,65 +393,77 @@ function guardarResultado(id, local, visita, gl, gv) {
     };
   }
 
-  // Asegurar que siempre existan
   partido.local = local;
   partido.visita = visita;
 
- if (gl !== null) {
-  partido.gl = gl === '' ? null : Number(gl);
+  if (gl !== null) {
+    partido.gl = gl === '' ? null : Number(gl);
+  }
+
+  if (gv !== null) {
+    partido.gv = gv === '' ? null : Number(gv);
+  }
+
+  localStorage.setItem(storageId, JSON.stringify(partido));
+
+  PD_recalcularTablaDesdeStorage();
 }
 
-if (gv !== null) {
-  partido.gv = gv === '' ? null : Number(gv);
-}
 
 
-  localStorage.setItem(id, JSON.stringify(partido));
-
-  recalcularTablaDesdeStorage();
-}
-
-
-/* =====================
-   MOSTRAR JORNADA
-===================== */
 function renderizarJornada(jornada) {
   const contenedor = document.getElementById('contenido' + jornada);
-  if (!contenedor || !jornadas[jornada]) return; // Seguridad por si la jornada no existe aún
+  if (!contenedor || !PD_jornadas[jornada]) return;
 
   contenedor.innerHTML = '';
 
-  jornadas[jornada].forEach((p, i) => {
+  PD_jornadas[jornada].forEach((p, i) => {
     const id = `j${jornada}_p${i}`;
-    const guardado = JSON.parse(localStorage.getItem(id)) || {};
+    const storageId = `pd_${id}`;
+
+    // 🔹 Inicializar resultado fijo SOLO si no existe en storage
+    let guardado = JSON.parse(localStorage.getItem(storageId));
+
+    if (!guardado && p.gl !== undefined && p.gv !== undefined) {
+      guardado = {
+        local: p.local,
+        visita: p.visita,
+        gl: p.gl,
+        gv: p.gv
+      };
+      localStorage.setItem(storageId, JSON.stringify(guardado));
+    }
+
+    guardado = guardado || {};
 
     contenedor.innerHTML += `
       <div class="partido">
         <div class="equipo">
-            <img src="${obtenerEquipoPorId(p.local).escudo}" alt="${p.local}">
-            <span>${p.local.toUpperCase()}</span>
+          <img src="${obtenerEquipoPorId(p.local).escudo}">
+          <span>${p.local.toUpperCase()}</span>
         </div>
-        
+
         <div class="marcador">
-            <input type="number" min="0" placeholder="0"
-              value="${guardado.gl ?? ''}"
-              onchange="guardarResultado('${id}','${p.local}','${p.visita}',this.value,null)">
-            <span>-</span>
-            <input type="number" min="0" placeholder="0"
-              value="${guardado.gv ?? ''}"
-              onchange="guardarResultado('${id}','${p.local}','${p.visita}',null,this.value)">
+          <input type="number" min="0" placeholder="0"
+            value="${guardado.gl ?? ''}"
+            onchange="PD_guardarResultado('${id}','${p.local}','${p.visita}',this.value,null)">
+          <span>-</span>
+          <input type="number" min="0" placeholder="0"
+            value="${guardado.gv ?? ''}"
+            onchange="PD_guardarResultado('${id}','${p.local}','${p.visita}',null,this.value)">
         </div>
 
         <div class="equipo">
-            <span>${p.visita.toUpperCase()}</span>
-            <img src="${obtenerEquipoPorId(p.visita).escudo}" alt="${p.visita}">
+          <span>${p.visita.toUpperCase()}</span>
+          <img src="${obtenerEquipoPorId(p.visita).escudo}">
         </div>
       </div>
     `;
   });
 }
 
-// BLOQUE NUEVO: Generador automático de las 22 jornadas
+
+// BLOQUE NUEVO: Generador automático de las 22 PD_jornadas
 function inicializarCalendario() {
   const principal = document.getElementById('contenedor-principal');
   
@@ -464,7 +479,7 @@ function inicializarCalendario() {
     principal.appendChild(seccionJornada);
 
     // 2. Renderizar los partidos si existen datos para esa jornada
-    if (jornadas[i]) {
+    if (PD_jornadas[i]) {
       renderizarJornada(i);
     }
   }
@@ -475,6 +490,6 @@ function inicializarCalendario() {
    INICIO
 ===================== */
 document.addEventListener('DOMContentLoaded', () => {
-  recalcularTablaDesdeStorage();
+  PD_recalcularTablaDesdeStorage();
   mostrarContenido(1);
 });

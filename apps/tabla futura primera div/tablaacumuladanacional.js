@@ -41,15 +41,15 @@ function posicionApertura(id) {
   return e ? e.pos : 999; // si no existe, lo manda al fondo
 }
 
-let equiposAcumulada = [];
+let PD_equiposAcumulada = [];
 
 /* ============================================================
    2. FUNCIÓN PRINCIPAL DE SINCRONIZACIÓN
 ============================================================ */
-function sincronizarAcumulada() {
-  // Combinar datos Apertura (fijos) con Clausura (dinámicos del array 'equipos')
-  equiposAcumulada = DATOS_APERTURA_BASE.map(d => {
-    const infoEquipo = equipos.find(e => e.id === d.id);
+function PD_sincronizarAcumulada() {
+  // Combinar datos Apertura (fijos) con Clausura (dinámicos del array 'PD_equipos')
+  PD_equiposAcumulada = DATOS_APERTURA_BASE.map(d => {
+    const infoEquipo = PD_equipos.find(e => e.id === d.id);
     if (!infoEquipo) return null;
 
     return {
@@ -84,7 +84,7 @@ function dibujarTablaGrupo(selectorTbody, grupoLetra) {
   if (!tbody) return;
   tbody.innerHTML = '';
 
-  const listaGrupo = equiposAcumulada
+  const listaGrupo = PD_equiposAcumulada
     .filter(e => e.grupo === grupoLetra)
     .sort((a, b) => b.pts - a.pts || b.dg - a.dg);
 
@@ -113,7 +113,7 @@ function dibujarTablaGrupo(selectorTbody, grupoLetra) {
 }
 
 /* ============================================================
-   4. DIBUJAR TABLA GENERAL UNIFICADA (Los 20 equipos)
+   4. DIBUJAR TABLA GENERAL UNIFICADA (Los 20 PD_equipos)
 ============================================================ */
 function dibujarTablaGeneralUnificada(selectorTbody) {
   const tbody = document.querySelector(selectorTbody);
@@ -121,7 +121,7 @@ function dibujarTablaGeneralUnificada(selectorTbody) {
   tbody.innerHTML = '';
 
   // Ordenar a TODOS por puntos y DG
-  const listaGeneral = [...equiposAcumulada].sort((a, b) => b.pts - a.pts || b.dg - a.dg);
+  const listaGeneral = [...PD_equiposAcumulada].sort((a, b) => b.pts - a.pts || b.dg - a.dg);
 
   listaGeneral.forEach((e, i) => {
     const tr = document.createElement('tr');
@@ -151,21 +151,21 @@ function dibujarTablaGeneralUnificada(selectorTbody) {
 
 // Esta función debe llamarse al final de recalcularTablaDesdeStorage
 
-function recalcularTablaDesdeStorage() {
-  resetearTabla();
+function PD_recalcularTablaDesdeStorage() {
+  PD_resetearTabla();
 
   Object.keys(localStorage).forEach(key => {
-    if (!key.startsWith('j')) return;
+    if (!key.startsWith('pd_j')) return; // 🔑 clave correcta
     const p = JSON.parse(localStorage.getItem(key));
     if (p && p.gl !== null && p.gv !== null) {
-      aplicarPartido(p.local, p.visita, p.gl, p.gv);
+      PD_aplicarPartido(p.local, p.visita, p.gl, p.gv);
     }
   });
 
-  actualizarTabla(); 
-  
-  // --- AGREGA ESTA LÍNEA AQUÍ ---
-  if (typeof sincronizarAcumulada === "function") {
-    sincronizarAcumulada();
+  PD_actualizarTabla();
+
+  // 🔁 AQUÍ se redibujan las 3 tablas acumuladas
+  if (typeof PD_sincronizarAcumulada === "function") {
+    PD_sincronizarAcumulada();
   }
 }
