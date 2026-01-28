@@ -4,24 +4,23 @@ botones.forEach(btn => {
   btn.addEventListener('click', async () => {
     const selector = btn.getAttribute('data-tabla');
     const nombreArchivo = btn.getAttribute('data-nombre');
+
     const tabla = document.querySelector(selector);
 
-    if (!tabla) return;
-
-    // Activar modo exportación
-    tabla.classList.add('exportando');
-
-    // Esperar que el CSS se aplique
-    await new Promise(r => requestAnimationFrame(r));
-
-    try {
-      const dataUrl = await domtoimage.toPng(tabla, { bgcolor: null });
-      window.electronAPI.guardarImagen(dataUrl, nombreArchivo);
-    } catch (err) {
-      console.error(err);
+    if (!tabla) {
+      console.error('No se encontró la tabla con selector:', selector);
+      return;
     }
 
-    // Restaurar estilos
-    tabla.classList.remove('exportando');
+    try {
+      // Genera PNG con fondo transparente
+      const dataUrl = await domtoimage.toPng(tabla, { bgcolor: null });
+
+      // Enviar al main process para guardar
+      window.electronAPI.guardarImagen(dataUrl, nombreArchivo);
+
+    } catch (error) {
+      console.error('Error generando imagen transparente:', error);
+    }
   });
 });
