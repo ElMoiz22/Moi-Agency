@@ -212,7 +212,7 @@ width: 50%;
   
 body {
   font-family: "azo-sans-web", sans-serif;
-  background-image: url('https://moidg.online/apps/tabla futura primera div/fondo.png'); /* Este es tu fondo de trabajo */
+  background-image: url('fondo.png'); /* Este es tu fondo de trabajo */
   background-size: cover;
   margin: 0;
   color: #333;
@@ -483,4 +483,32 @@ background-color: #101d83;
 
 .equipo .puntos {
   font-weight: bold;
+}
+
+
+
+
+
+.exportando {
+  overflow: hidden !important;
+}
+
+.exportando .tabla-scroll,
+.exportando .tabla-scroll2,
+.exportando .tabla-scroll3,
+.exportando .tabla-scroll4,
+.exportando .tabla-scroll5 {
+  overflow: hidden !important;
+}
+
+.exportando table {
+  min-width: 0 !important;
+}
+
+.exportando .equipo {
+  white-space: nowrap;
+}
+
+.exportando img {
+  image-rendering: auto;
 }
