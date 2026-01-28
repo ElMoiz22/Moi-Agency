@@ -174,7 +174,7 @@ display: flex;
 
   text-align: center;
   font-size: 15px;
-  font-weight: 900;
+  font-weight: normal;
 
   border: 1px solid #d0d0d0;
   border-radius: 6px;
@@ -275,7 +275,7 @@ th {
   font-size: 1.1em;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: normal;
   background-color: transparent; /* Hacer que el encabezado sea transparente para que se vea el degradado */
   width: 35px;
   color: #fff;
@@ -319,7 +319,7 @@ td img {
   th, td {
     padding: 12px;
     font-size: 14px;
-    font-weight: 900;
+    font-weight: normal;
   }
 
   .imgequip {
@@ -336,7 +336,7 @@ td img {
   th, td {
     padding: 8px;
     font-size: 12px;
-    font-weight: 900;
+    font-weight: normal;
   }
 
   .imgequip {
@@ -357,7 +357,7 @@ td img {
   th, td {
     padding: 6px;
     font-size: 10px;
-    font-weight: 900;
+    font-weight: normal;
   }
 
   .imgequip {
