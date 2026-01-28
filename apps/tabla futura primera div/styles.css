@@ -1,4 +1,11 @@
- 
+@font-face {
+  font-family: 'AlfarnExport';
+  src: url(data:font/woff2;base64,AAA...) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
    .containers {
 display: flex;
   flex-wrap: wrap;
@@ -131,7 +138,8 @@ display: flex;
     
     .post-body table td, .post-body table th {
       padding: 9px 25px;
-  border: 1px solid #161619;}
+  border: 1px solid #161619;
+font-weight: 900;}
     
     .item-post .post-body{line-height: 16px;}
     
@@ -281,6 +289,7 @@ td {
   color: #ffffff; /* El texto en blanco para contrastar */
   transition: background-color 0.3s ease;
 vertical-align: middle;
+font-weight: 900;
 }
 
 tr:nth-child(even) {
@@ -310,6 +319,7 @@ td img {
   th, td {
     padding: 12px;
     font-size: 14px;
+    font-weight: 900;
   }
 
   .imgequip {
@@ -326,6 +336,7 @@ td img {
   th, td {
     padding: 8px;
     font-size: 12px;
+    font-weight: 900;
   }
 
   .imgequip {
@@ -346,6 +357,7 @@ td img {
   th, td {
     padding: 6px;
     font-size: 10px;
+    font-weight: 900;
   }
 
   .imgequip {
