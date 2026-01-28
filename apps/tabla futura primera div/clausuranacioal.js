@@ -342,7 +342,7 @@ equiposFiltrados.sort((a, b) => {
     <td class="posicion">${posicion}</td> 
     <td style="display:flex; align-items:center; gap:8px;">
         <img src="${equipo.escudo}" class="imgequip">
-        <span style="font-size: 15px; text-align: left;">
+        <span style="font-size: 14px; text-align: left;">
             ${equipo.nombre.toUpperCase()}
         </span>
     </td>
