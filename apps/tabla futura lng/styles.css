@@ -277,6 +277,7 @@ td {
   color: #153f87; /* El texto en blanco para contrastar */
   transition: background-color 0.3s ease;
 vertical-align: middle;
+font-weight: 100;
 }
 
 tr:nth-child(even) {
@@ -306,6 +307,7 @@ td img {
   th, td {
     padding: 12px;
     font-size: 14px;
+    font-weight: 100;
   }
 
   .imgequip {
@@ -322,6 +324,7 @@ td img {
   th, td {
     padding: 8px;
     font-size: 12px;
+    font-weight: 100;
   }
 
   .imgequip {
@@ -342,6 +345,7 @@ td img {
   th, td {
     padding: 6px;
     font-size: 10px;
+    font-weight: 100;
   }
 
   .imgequip {
