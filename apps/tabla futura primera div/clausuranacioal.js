@@ -253,44 +253,29 @@ const jornadas = {
 /* =====================
    UTILIDADES
 ===================== */
-function obtenerEquipoPorId(id) {
+function obtenerEquipoPorId(id){
   return equipos.find(e => e.id === id);
 }
 
-function resetearTabla() {
-  equipos.forEach(e => {
-    e.jugados = 0;
-    e.golesAFavor = 0;
-    e.golesEnContra = 0;
-    e.victorias = 0;
-    e.derrotas = 0;
-    e.empates = 0;
-    e.puntos = 0;
+function resetearTabla(){
+  equipos.forEach(e=>{
+    e.jugados=0; e.golesAFavor=0; e.golesEnContra=0;
+    e.victorias=0; e.derrotas=0; e.empates=0; e.puntos=0;
   });
 }
 
-function aplicarPartido(local, visita, gl, gv) {
+function aplicarPartido(local, visita, gl, gv){
   const L = obtenerEquipoPorId(local);
   const V = obtenerEquipoPorId(visita);
-  if (!L || !V) return;
+  if(!L || !V) return;
 
   L.jugados++; V.jugados++;
+  L.golesAFavor+=gl; L.golesEnContra+=gv;
+  V.golesAFavor+=gv; V.golesEnContra+=gl;
 
-  L.golesAFavor += gl;
-  L.golesEnContra += gv;
-  V.golesAFavor += gv;
-  V.golesEnContra += gl;
-
-  if (gl > gv) {
-    L.victorias++; L.puntos += 3;
-    V.derrotas++;
-  } else if (gv > gl) {
-    V.victorias++; V.puntos += 3;
-    L.derrotas++;
-  } else {
-    L.empates++; V.empates++;
-    L.puntos++; V.puntos++;
-  }
+  if(gl>gv){ L.victorias++; L.puntos+=3; V.derrotas++; }
+  else if(gv>gl){ V.victorias++; V.puntos+=3; L.derrotas++; }
+  else{ L.empates++; V.empates++; L.puntos++; V.puntos++; }
 }
 
 /* =====================
@@ -358,54 +343,34 @@ equiposFiltrados.sort((a, b) => {
 }
 
 /* =====================
-   RECALCULAR DESDE STORAGE
+   STORAGE
 ===================== */
-function recalcularTablaDesdeStorage() {
+function recalcularTablaDesdeStorage(){
   resetearTabla();
 
-  Object.keys(localStorage).forEach(key => {
-    if (!key.startsWith('j')) return;
-    const p = JSON.parse(localStorage.getItem(key));
-    if (p && p.gl !== null && p.gv !== null) {
+  Object.keys(localStorage).forEach(k=>{
+    if(!k.startsWith('j')) return;
+    const p = JSON.parse(localStorage.getItem(k));
+    if(p && p.gl !== null && p.gv !== null){
       aplicarPartido(p.local, p.visita, p.gl, p.gv);
     }
   });
 
   actualizarTabla();
+  if(typeof sincronizarAcumulada === "function") sincronizarAcumulada();
 }
 
-/* =====================
-   GUARDAR RESULTADO
-===================== */
-function guardarResultado(id, local, visita, gl, gv) {
-  let partido = JSON.parse(localStorage.getItem(id));
+function guardarResultado(id, local, visita, gl, gv){
+  const p = JSON.parse(localStorage.getItem(id)) || { local, visita, gl:null, gv:null };
 
-  // Si no existe, crearlo correctamente
-  if (!partido) {
-    partido = {
-      local,
-      visita,
-      gl: null,
-      gv: null
-    };
+  if(gl !== null) p.gl = gl === '' ? null : Number(gl);
+  if(gv !== null) p.gv = gv === '' ? null : Number(gv);
+
+  localStorage.setItem(id, JSON.stringify(p));
+
+  if(p.gl !== null && p.gv !== null){
+    recalcularTablaDesdeStorage();
   }
-
-  // Asegurar que siempre existan
-  partido.local = local;
-  partido.visita = visita;
-
- if (gl !== null) {
-  partido.gl = gl === '' ? null : Number(gl);
-}
-
-if (gv !== null) {
-  partido.gv = gv === '' ? null : Number(gv);
-}
-
-
-  localStorage.setItem(id, JSON.stringify(partido));
-
-  recalcularTablaDesdeStorage();
 }
 
 

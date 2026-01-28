@@ -282,7 +282,6 @@ td {
   color: #ffffff; /* El texto en blanco para contrastar */
   transition: background-color 0.3s ease;
 vertical-align: middle;
-    font-weight: 900;
 }
 
 tr:nth-child(even) {
