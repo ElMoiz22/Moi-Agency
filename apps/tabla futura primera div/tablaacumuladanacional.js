@@ -149,8 +149,23 @@ function dibujarTablaGeneralUnificada(selectorTbody) {
   });
 }
 
+// Esta función debe llamarse al final de recalcularTablaDesdeStorage
+
+function recalcularTablaDesdeStorage() {
+  resetearTabla();
+
+  Object.keys(localStorage).forEach(key => {
+    if (!key.startsWith('j')) return;
+    const p = JSON.parse(localStorage.getItem(key));
+    if (p && p.gl !== null && p.gv !== null) {
+      aplicarPartido(p.local, p.visita, p.gl, p.gv);
+    }
+  });
+
+  actualizarTabla(); 
   
   // --- AGREGA ESTA LÍNEA AQUÍ ---
   if (typeof sincronizarAcumulada === "function") {
     sincronizarAcumulada();
   }
+}
