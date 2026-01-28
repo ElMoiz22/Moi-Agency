@@ -289,7 +289,7 @@ td {
   color: #ffffff; /* El texto en blanco para contrastar */
   transition: background-color 0.3s ease;
 vertical-align: middle;
-font-weight: 900;
+    font-weight: normal;
 }
 
 tr:nth-child(even) {
@@ -456,4 +456,22 @@ background-color: #101d83;
 
 .equipo .puntos {
   font-weight: bold;
+}
+
+
+/* ====== AJUSTES SOLO PARA EXPORTAR PNG ====== */
+.exportando * {
+  line-height: 1 !important;
+}
+
+.exportando .celda,
+.exportando td,
+.exportando .texto,
+.exportando span {
+  align-items: flex-start !important;
+}
+
+/* Si tus filas tienen altura fija */
+.exportando tr {
+  height: auto !important;
 }
