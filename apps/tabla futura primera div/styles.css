@@ -1,3 +1,4 @@
+ 
    .containers {
 display: flex;
   flex-wrap: wrap;
@@ -35,12 +36,12 @@ background-color: #17062d;
 
     .card .info .date {
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 800;
     }
     
       .date2 {
       font-size: 10px;
-      font-weight: bold;
+      font-weight: 800;
     }
 
     .card .info .result {
@@ -78,7 +79,7 @@ display: flex;
 
     .card2 .info .date {
       font-size: 1rem;
-      font-weight: bold;
+      font-weight: 800;
     }
 
     .card2 .info .result {
@@ -121,17 +122,16 @@ display: flex;
 
   @keyframes parpadeo {
     0%, 100% {
-      background-color: red;
+      background-color: rgb(255, 255, 255);
     }
     50% {
-      background-color: darkred;
+      background-color: rgb(255, 255, 255);
     }
   }
     
     .post-body table td, .post-body table th {
       padding: 9px 25px;
-  border: 1px solid #161619;
-}
+  border: 1px solid #161619;}
     
     .item-post .post-body{line-height: 16px;}
     
@@ -166,7 +166,7 @@ display: flex;
 
   text-align: center;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 500;
 
   border: 1px solid #d0d0d0;
   border-radius: 6px;
@@ -211,13 +211,14 @@ width: 50%;
   
   
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "azo-sans-web", sans-serif;
   background-image: url('https://moidg.online/apps/tabla futura primera div/fondo.png'); /* Este es tu fondo de trabajo */
   background-size: cover;
   margin: 0;
   color: #333;
   overflow-x: hidden; /* Evita scroll horizontal innecesario */
-  font-weight: bold;
+  font-weight: 900;
+  text-align: center;
 }
 
 
@@ -252,6 +253,10 @@ h1 {
   font-size: 2.5em;
 }
 
+h2 {
+font-weight: 900;
+}
+
 
 /* Estilos para la tabla con fondo degradado */
 table {
@@ -259,6 +264,7 @@ table {
   max-width: 100%;
   border-radius: 8px;
   overflow: hidden;
+  font-weight: 900;
 }
 
 /* Encabezado de la tabla */
@@ -268,10 +274,11 @@ th {
   font-size: 1.1em;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: bold;
+  font-weight: 600;
   background-color: transparent; /* Hacer que el encabezado sea transparente para que se vea el degradado */
   width: 35px;
   color: #fff;
+  font-weight: 900;
 }
 
 /* Celdas de la tabla */
@@ -311,7 +318,6 @@ td img {
   th, td {
     padding: 12px;
     font-size: 14px;
-    font-weight: bold;
   }
 
   .imgequip {
@@ -328,7 +334,6 @@ td img {
   th, td {
     padding: 8px;
     font-size: 12px;
-    font-weight: bold;
   }
 
   .imgequip {
@@ -349,7 +354,6 @@ td img {
   th, td {
     padding: 6px;
     font-size: 10px;
-    font-weight: bold;
   }
 
   .imgequip {
@@ -364,6 +368,36 @@ td img {
   table {
     font-size: 9px;
   }
+}
+  
+.tabla-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 15px;
+}
+
+.tabla-scroll2 {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 15px;
+}
+
+.tabla-scroll3 {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 15px;
+}
+
+.tabla-scroll4 {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 15px;
+}
+
+.tabla-scroll5 {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 15px;
 }
 
 
@@ -403,8 +437,9 @@ background-color: #101d83;
       color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-radius: 12px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "azo-sans-web", sans-serif;
       margin-top: 5px;
+      font-weight: 900;
     }
 
     .boton-tab.activo {
@@ -449,4 +484,3 @@ background-color: #101d83;
 .equipo .puntos {
   font-weight: bold;
 }
-
