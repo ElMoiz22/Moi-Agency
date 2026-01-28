@@ -278,7 +278,7 @@ th {
   font-weight: 600;
   background-color: transparent; /* Hacer que el encabezado sea transparente para que se vea el degradado */
   width: 35px;
-  color: #fff;
+  color: #153f87;
   font-weight: 600;
 }
 
@@ -287,13 +287,13 @@ td {
   padding: 9px;
   text-align: center;
   font-size: 25px;
-  color: #ffffff; /* El texto en blanco para contrastar */
+  color: #153f87; /* El texto en blanco para contrastar */
   transition: background-color 0.3s ease;
 vertical-align: middle;
 }
 
 tr:nth-child(even) {
-  background-color: #101d83;
+  background-color: #bdf1f8;
 }
 
 /* Estilo para el nombre del equipo */
@@ -406,47 +406,47 @@ table {
   min-width: 600px; /* Esto asegura que haya algo de ancho que genere scroll si es necesario */
 }
 
-  /* Columna de posición */
-.posicion {
-  font-weight: bold;
-  text-align: center;
-  width: 35px;
-}
+    /* Columna de posición */
+  .posicion {
+    font-weight: bold;
+    text-align: center;
+    width: 35px;
+  }
 
-/* Clasificados */
-.pos-verde {
-  background-color: #28a745; /* Verde */
-  color: white;
-}
+  /* Clasificados */
+  .pos-verde {
+    background-color: #44e269; /* Verde */
+    color: white;
+  }
 
-.pos-amarillo {
-  background-color: #ffc107; /* Amarillo */
-  color: black;
-}
+  .pos-amarillo {
+    background-color: #ffc107; /* Amarillo */
+    color: black;
+  }
 
-.pos-desciende {
-  background-color: #dc3545; /* Rojo */
-  color: white;
-}
+  .pos-desciende {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+  }
 
-    .boton-tab {
-      padding: 10px 20px;
-      border: none;
-background-color: #101d83;
-      cursor: pointer;
-      width: 10.8%;
-      color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 12px;
-      font-family: "Montserrat", sans-serif;
-      margin-top: 5px;
-      font-weight: 600;
-    }
+      .boton-tab {
+        padding: 10px 20px;
+        border: none;
+  background-color: #101d83;
+        cursor: pointer;
+        width: 10.8%;
+        color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        font-family: "Montserrat", sans-serif;
+        margin-top: 5px;
+        font-weight: 600;
+      }
 
-    .boton-tab.activo {
-      background-color: #FFE033;
-      color: #49004e;
-    }
+      .boton-tab.activo {
+        background-color: #FFE033;
+        color: #49004e;
+      }
 
 /* 1. ESTADO OCULTO (Por defecto) */
 .contenido {

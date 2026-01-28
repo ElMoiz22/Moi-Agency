@@ -269,7 +269,7 @@ equipos.sort((a, b) => {
 
     let clasePosicion = '';
     if (posicion <= 8) {
-      clasePosicion = 'pos-clasifica'; // Color para los primeros 8
+      clasePosicion = 'pos-verde'; // Color para los primeros 8
     }
 
     tr.innerHTML = `
