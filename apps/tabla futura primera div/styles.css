@@ -458,20 +458,3 @@ background-color: #101d83;
   font-weight: bold;
 }
 
-
-/* ====== AJUSTES SOLO PARA EXPORTAR PNG ====== */
-.exportando * {
-  line-height: 1 !important;
-}
-
-.exportando .celda,
-.exportando td,
-.exportando .texto,
-.exportando span {
-  align-items: flex-start !important;
-}
-
-/* Si tus filas tienen altura fija */
-.exportando tr {
-  height: auto !important;
-}
