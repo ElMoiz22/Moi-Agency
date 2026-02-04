@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Responsivo PD</title>
+    <style>
+        /* CSS: Estructura y Responsividad */
+        body { margin: 0; padding: 0;
+        background-color: transparent; }
+
+        .PD_container {
+            position: relative;
+            width: 100%;
+            height: auto; /* Ajusta la altura a tu gusto */
+            overflow: hidden;
+        }
+
+        .PD_wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .PD_slide {
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .PD_slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Mantiene la proporción sin deformar */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="PD_container">
+        <div class="PD_wrapper" id="PD_slider">
+            <div class="PD_slide"><img src="patrocinadores cintillos/p (1).png" alt="Lote 1"></div>
+            <div class="PD_slide"><img src="patrocinadores cintillos/p (2).png" alt="Lote 2"></div>
+            <div class="PD_slide"><img src="patrocinadores cintillos/p (3).png" alt="Lote 3"></div>
+                <div class="PD_slide"><img src="patrocinadores cintillos/p (4).png" alt="Lote 1"></div>
+            <div class="PD_slide"><img src="patrocinadores cintillos/p (5).png" alt="Lote 2"></div>
+            <div class="PD_slide"><img src="patrocinadores cintillos/p (6).png" alt="Lote 3"></div>
+                <div class="PD_slide"><img src="patrocinadores cintillos/p (7).png" alt="Lote 1"></div>
+            <div class="PD_slide"><img src="patrocinadores cintillos/p (8).png" alt="Lote 2"></div>
+            <div class="PD_slide"><img src="patrocinadores cintillos/p (9).png" alt="Lote 3"></div>
+                <div class="PD_slide"><img src="patrocinadores cintillos/p (10).png" alt="Lote 1"></div>
+        </div>
+    </div>
+
+    <script>
+        // Configuración con prefijo PD para evitar conflictos
+        const PD_slider = document.getElementById('PD_slider');
+        const PD_slides = document.querySelectorAll('.PD_slide');
+        let PD_currentIndex = 0;
+        const PD_intervalTime = 15000; // 15 segundos
+
+        // Intentar recuperar el último índice guardado (opcional)
+        const PD_savedIndex = localStorage.getItem('PD_current_slide_index');
+        if (PD_savedIndex) {
+            PD_currentIndex = parseInt(PD_savedIndex);
+            PD_updateSlider(false); // Mover al inicio sin animación brusca
+        }
+
+        function PD_updateSlider(animate = true) {
+            if (!animate) PD_slider.style.transition = 'none';
+            PD_slider.style.transform = `translateX(-${PD_currentIndex * 100}%)`;
+            if (!animate) {
+                // Forzar reflujo para reactivar la transición después
+                PD_slider.offsetHeight; 
+                PD_slider.style.transition = 'transform 0.8s ease-in-out';
+            }
+            
+            // Guardar progreso en Local Storage
+            localStorage.setItem('PD_current_slide_index', PD_currentIndex);
+        }
+
+        function PD_nextSlide() {
+            PD_currentIndex = (PD_currentIndex + 1) % PD_slides.length;
+            PD_updateSlider();
+        }
+
+        // Iniciar el temporizador
+        setInterval(PD_nextSlide, PD_intervalTime);
+    </script>
+</body>
+</html>
