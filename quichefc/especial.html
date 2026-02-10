@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fotos Quiche FC - Especial</title>
-<link rel="stylesheet" href="https://moidg.onine/pagesstyles.css" />	
-<link rel="stylesheet" href="https://moidg.onine/headerstyles.css" />	
-<link rel="stylesheet" href="https://moidg.onine/galeria.css" />	
+<title>Fotos Quiche FC - especial</title>
+<link rel="stylesheet" href="https://moidg.online/pagesstyles.css" />	
+<link rel="stylesheet" href="https://moidg.online/headerstyles.css" />	
+<link rel="stylesheet" href="https://moidg.online/galeria.css" />	
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 <div id="header"></div>
 
 <script>
-fetch("https://moidg.onine/header.html")
+fetch("https://moidg.online/header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
@@ -83,7 +83,7 @@ fetch("https://moidg.onine/header.html")
   const images = [];
 
   // Generar nombres desde foto (1).png hasta foto (59).png
-  for (let i = 1; i <= 59; i++) {
+  for (let i = 1; i <= 84; i++) {
     images.push(`foto (${i}).png`);
   }
 
@@ -98,7 +98,7 @@ fetch("https://moidg.onine/header.html")
     card.className = "card";
 
     const imageElement = document.createElement("img");
-    imageElement.src = `sub13j1/thumbs/${img}`;  // Miniatura
+    imageElement.src = `especial/thumbs/${img}`;  // Miniatura
     imageElement.alt = img;
     imageElement.loading = "lazy";
     imageElement.style.cursor = "pointer";
@@ -106,8 +106,8 @@ fetch("https://moidg.onine/header.html")
     // Al hacer click en la miniatura, abrir lightbox
     imageElement.addEventListener("click", () => {
       lightbox.style.display = "flex";
-      lightboxImg.src = `sub13j1/thumbs/${img}`;            // Imagen original
-      lightboxDownload.href = `sub13j1/${img}`;      // Descarga solo en la vista previa
+      lightboxImg.src = `especial/thumbs/${img}`;            // Imagen original
+      lightboxDownload.href = `especial/${img}`;      // Descarga solo en la vista previa
     });
 
     card.appendChild(imageElement);
@@ -132,7 +132,7 @@ fetch("https://moidg.onine/header.html")
   
   
 <script src="script.js"></script>
-<script src="https://moidg.onine/footer.js"></script>
+<script src="https://moidg.online/footer.js"></script>
 
 <div id="footer"></div>
 
