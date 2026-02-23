@@ -10,7 +10,7 @@ height: auto;
 }
 
 .header {
-  background-color: #00526f;
+background: radial-gradient(circle at 20% 80%, rgba(20, 30, 180, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(10, 20, 100, 0.3) 0%, transparent 50%), linear-gradient(135deg, #02040f 0%, #050a30 40%, #000c66 100%);
   color: fcf6ef;
   padding: 0 20px;
   font-family: "azo-sans-web", sans-serif;
@@ -124,10 +124,10 @@ background: #fcf6ef;
 }
 
 .submenu li a {
-color: #00526f;
+color: #111b38;
 }
   .nav-item {
-  background: #00465f;
+background: radial-gradient(circle at 20% 80%, rgba(20, 30, 180, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(10, 20, 100, 0.3) 0%, transparent 50%), linear-gradient(135deg, #02040f 0%, #050a30 40%, #000c66 100%);
 }
 
   .nav-link {
@@ -139,7 +139,7 @@ color: #00526f;
     position: absolute;
     top: 64px;
     left: -100%;
-    background-color: #00526f;
+background: radial-gradient(circle at 20% 80%, rgba(20, 30, 180, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(10, 20, 100, 0.3) 0%, transparent 50%), linear-gradient(135deg, #02040f 0%, #050a30 40%, #000c66 100%);
     width: 100%;
     transition: left 0.3s ease;
   }
@@ -183,7 +183,7 @@ color: #00526f;
     left: -100%;
     width: 100%;
     height: calc(100% - 64px);
-    background: #00526f;
+background: radial-gradient(circle at 20% 80%, rgba(20, 30, 180, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(10, 20, 100, 0.3) 0%, transparent 50%), linear-gradient(135deg, #02040f 0%, #050a30 40%, #000c66 100%);
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -207,7 +207,7 @@ h2.hero-title {
 	display: block;
 font-family: "azo-sans-web", sans-serif;
   font-size: 33px;
-  color: #00526f;
+  color: #faf6ef;
   font-weight: 600;
   line-height: 1.3em;
   margin: 0;
@@ -258,7 +258,7 @@ background-image:url(images/fondoweb.png)
 
 /* Footer general */
 .footer {
-  background: #00526f;
+background: radial-gradient(circle at 20% 80%, rgba(20, 30, 180, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(10, 20, 100, 0.3) 0%, transparent 50%), linear-gradient(135deg, #02040f 0%, #050a30 40%, #000c66 100%);
   color: #fcf6ef;
   padding-top: 25px;
   font-family: Arial, sans-serif;
@@ -312,7 +312,7 @@ background-image:url(images/fondoweb.png)
 
 /* Derechos reservados */
 .footer-bottom {
-  background: #004057;
+  background: #0c0833;
   text-align: center;
   padding: 10px;
   font-size: 13px;
