@@ -7,9 +7,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8912829457952801"
      crossorigin="anonymous"></script>
      <link rel="icon" class="icono" href="icons/web logo.ico" type="icono">
-<link rel="stylesheet" href="/styles.css" />
-<link rel="stylesheet" href="/headerstyles.css" />
-<link rel="stylesheet" href="/swipe.css" />
+<link rel="stylesheet" href="https://moidg.online/styles.css" />
+<link rel="stylesheet" href="https://moidg.online/headerstyles.css" />
+<link rel="stylesheet" href="https://moidg.online/swipe.css" />
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
@@ -18,7 +18,7 @@
 <div id="header"></div>
 
 <script>
-fetch("/header.html")
+fetch("https://moidg.online/header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
@@ -68,23 +68,49 @@ fetch("/header.html")
   });
 </script>
 
+<style>
+        /* Contenedor principal */
+        .PD-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        /* La magia de la responsividad */
+        .PD-responsive-img {
+            max-width: 100%; /* No permite que la imagen sea más grande que su padre */
+            height: auto;    /* Mantiene la proporción original */
+            display: block;  /* Elimina espacios en blanco extra bajo la imagen */
+            margin: 0 auto;  /* Centra la imagen */
+            border-radius: 8px; /* Opcional: bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .PD-caption {
+            margin-top: 10px;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
 
 	    <!-- desde aqui agrega el contenido -->
+<div class="PD-container">        
+        <img src="aoi404.png" 
+             alt="Ejemplo responsivo" 
+             class="PD-responsive-img">
+        
+    </div>
 
-<div class="post">
-  <h4 style="text-align: center; font-size: 96px;">404</h4>
-  <p style="text-align: center; font-size: 55px; color: #009dd4;">Oops...</p>
-  <p style="text-align: center; font-size: 25px;">la página que buscas no existe.</p>
-  <a style="text-align: center; font-size: 25px; color: #009dd4; display: flex; justify-content: center;" href="/">Volver al inicio</a>
-	</div>
 
-<script src="/script.js"></script>
-<script src="/footer.js"></script>
+<script src="https://moidg.online/script.js"></script>
+<script src="https://moidg.online/footer.js"></script>
 
 <div id="footer"></div>
 
 <script>
-  fetch("/footer.html")
+  fetch("https://moidg.online/footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer").innerHTML = data;
