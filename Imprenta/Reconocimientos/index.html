@@ -6,7 +6,7 @@
 <title>Reconocimientos</title>
 <link rel="icon" class="icono" href="https://moidg.online/icons/web%20logo.ico" type="icono">
 <link rel="stylesheet" href="../pagesstyles.css" />	
-<link rel="stylesheet" href="/headerstyles.css" />	
+<link rel="stylesheet" href="https://moidg.online/headerstyles.css" />	
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 <div id="header"></div>
 
 <script>
-fetch("/header.html")
+fetch("https://moidg.online/header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
@@ -67,12 +67,8 @@ fetch("/header.html")
 	    <!-- desde aqui agrega el contenido -->
          
         
-        <div class="bannerpost">
-    <img alt="imgpost" class="imgpost" src="../../images/fondoweb2.png" />
-    <div class="txttitulopost">Reconocimientos </div>
-  </div>
 
-
+<h2>Reconocimientos</h2>
 
 <div class="galeria">
   
@@ -89,133 +85,17 @@ fetch("/header.html")
 </div>
 
 
-
-
-<style>
-.post-body h3 {
-    font-size: 20px;
-    color: #ffb100;
-    text-align: center;
-    margin: 10px 0 15px;
-}
-@media screen and (max-width: 768px) {
-    .post-body h3 {
-        font-size: 16px;
-    }
-}
-.imagen {
-    max-width: 20%;
-    background-color: #faf6ef;
-    margin: 4px;
-    border-radius: 10px;
-        cursor: pointer;
-
-}
-@media screen and (max-width: 1000px) {
-    .imagen {
-        max-width: 33%;
-        border-radius: 10px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .imagen {
-        max-width: 45%;
-        border-radius: 10px;
-    }
-}
-</style>
-
-<script> var imagenes=document.getElementsByTagName("img"); for(var i=0;i<imagenes.length;i++){imagenes[i].addEventListener("click",function(){ var vistaPrevia=document.createElement("img");vistaPrevia.src=this.src; var capaVistaPrevia=document.createElement("div");capaVistaPrevia.style.position="fixed";capaVistaPrevia.style.top="0";capaVistaPrevia.style.left="0";capaVistaPrevia.style.width="100%";capaVistaPrevia.style.height="100%";capaVistaPrevia.style.backgroundColor="rgba(0,0,0,0.7)";capaVistaPrevia.style.display="flex";capaVistaPrevia.style.justifyContent="center";capaVistaPrevia.style.alignItems="center";capaVistaPrevia.appendChild(vistaPrevia); document.body.appendChild(capaVistaPrevia); capaVistaPrevia.addEventListener("click",function(){document.body.removeChild(capaVistaPrevia)})})}</script>
-
-<style>
-    .price {
-        color: #111b38;
-        font-size: 20px; 
-        font-weight: bold;
-text-align: center;   
-    text-align: center;
-font-weight: 900;
-}
-
-.galeria {
-  display: flex; /* Utilizar flexbox para diseño flexible */
-  flex-wrap: wrap; /* Permitir que las imágenes se envuelvan cuando no quepan en una línea */
-  justify-content: center; /* Centrar las imágenes horizontalmente */
-      text-align: center;
-
-}
-
-.imagen {
-  flex: 1 1 calc(24% ); /* Establecer el tamaño base de las imágenes y permitir crecimiento flexible */
-  max-width: calc(24% ); /* Ancho máximo de las imágenes */
-  overflow: hidden; /* Ocultar el desbordamiento para animación de desplazamiento */
-  position: relative; /* Establecer posición relativa para hijos absolutos */
-}
-
-.imagen img {
-  width: 100%; /* Asegurar que las imágenes ocupen todo el espacio disponible */
-  height: auto; /* Mantener la proporción de la imagen */
-  transition: transform 0.3s ease; /* Agregar una transición suave al desplazamiento */
-  border-radius: 15px;
-}
-
-.imagen img:hover {
-  opacity: 0.7; /* Opacidad al 50% al pasar el mouse */
-}
-
-/* Media queries para pantallas más pequeñas */
-@media screen and (max-width: 768px) {
-  .imagen {
-    flex: 1 1 calc(25%); /* Ajustar el tamaño de las imágenes para pantallas más pequeñas */
-    max-width: calc(50% ); /* Ancho máximo de las imágenes en pantallas más pequeñas */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .imagen {
-    flex: 1 1 calc(40% ); /* Ajustar el tamaño de las imágenes para pantallas muy pequeñas */
-    max-width: calc(50% ); /* Ancho máximo de las imágenes en pantallas muy pequeñas */
-  }
-}
-
-.bannerpost {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
-  .imgpost {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 0 15px;
-
-  }
-  .txttitulopost {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #111b38;
-    font-size: 70px;
-    font-weight: bold;
-    width: 80%;
-    line-height: 1;
-  }
-  @media screen and (max-width: 650px){
-    .txttitulopost {font-size: 35px;}}
-</style>
-
 <div id="footer"></div>
 
 <script>
-  fetch("/footer.html")
+  fetch("https://moidg.online/footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer").innerHTML = data;
     });
 </script>
+
+<script src="../script.js"></script>  
 
 
 	</body>
