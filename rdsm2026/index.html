@@ -71,12 +71,66 @@ fetch("https://moidg.online/header.html")
 
 <body>
 
+<img src="img/cbanner.jpg" style="width: 100%;" alt="Banner de Votación" class="banner-respon"/>
 
-<h1>👑 REINA DEPARTAMENTAL DE PRIMAVERA 👑</h1>
-<h1>¿Cuál es la Favorita del Público?</h1>
+<h1> 20 CANDIDATAS A REINA DEPARTAMENTAL DE PRIMAVERA </h1>
+<h1> SAN MARCOS 2026 </h1>
+<P>Votación No oficial del Certamen / Votación de Medios</P>
 <div id="estadoVoto"></div>
 <div class="grid" id="candidatas"></div>
 
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+<div class="swiper-slide">
+  <a href="https://www.facebook.com/profile.php?id=100091850130616">
+    <img src="img/p1.png" />
+    <p></p>
+  </a>
+</div>
+<div class="swiper-slide">
+  <a href="https://www.facebook.com/profile.php?id=100075859906235">
+    <img src="img/p2.png" />
+    <p></p>
+  </a>
+</div>
+<div class="swiper-slide">
+  <a href="https://www.facebook.com/moidg.online">
+    <img src="img/p3.png" />
+    <p></p>
+  </a>
+</div>
+<div class="swiper-slide">
+  <a href="https://www.facebook.com/farmuniversal">
+    <img src="img/p4.png" />
+    <p></p>
+  </a>
+</div>
+<div class="swiper-slide">
+  <a href="https://www.facebook.com/profile.php?id=100091850130616">
+    <img src="img/p1.png" />
+    <p></p>
+  </a>
+</div>
+<div class="swiper-slide">
+  <a href="https://www.facebook.com/profile.php?id=100075859906235">
+    <img src="img/p2.png" />
+    <p></p>
+  </a>
+</div>
+<div class="swiper-slide">
+  <a href="https://www.facebook.com/moidg.online">
+    <img src="img/p3.png" />
+    <p></p>
+  </a>
+</div>
+<div class="swiper-slide">
+  <a href="https://www.facebook.com/farmuniversal">
+    <img src="img/p4.png" />
+    <p></p>
+  </a>
+</div>
+    </div>
+  </div>
 
 </body>
 
@@ -97,25 +151,24 @@ fetch("https://moidg.online/header.html")
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      autoplay: {
-          delay: 6500,
-          disableOnInteraction: false,
-        },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 7,
+    spaceBetween: 5,
+    loop: true,
+    speed: 6000,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      1024: { slidesPerView: 4 }, // pantallas grandes
+      768: { slidesPerView: 4 },  // tablets
+      480: { slidesPerView: 4 },  // móviles medianos
+      320: { slidesPerView: 4 }   // móviles pequeños
+    }
+  });
+</script>
 
 	</body>
 </html>

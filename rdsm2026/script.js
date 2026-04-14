@@ -52,7 +52,7 @@ function votar(id) {
 
   if (ultimoVoto && (Date.now() - ultimoVoto < TIEMPO_ESPERA)) {
     mostrarTiempoRestante();
-    alert("Ya votaste, espera para volver a votar");
+    alert(" 👑 Ya votaste, Espera para volver a votar 👑");
     return;
   }
 
@@ -67,7 +67,7 @@ function votar(id) {
 
   localStorage.setItem("ultimo_voto", Date.now());
 
-  alert("Voto enviado 👑");
+  alert("👑 Voto enviado 👑");
 
   verificarEstado();
 }
@@ -89,7 +89,7 @@ function mostrarTiempoRestante() {
     const restante = TIEMPO_ESPERA - (Date.now() - ultimoVoto);
 
     if (restante <= 0) {
-      estado.innerHTML = "✅ Ya puedes volver a votar";
+      estado.innerHTML = "✅ Ya puedes volver a votar 👑";
       bloquearBotones(false);
       return;
     }
@@ -111,13 +111,13 @@ function verificarEstado() {
   const ultimoVoto = localStorage.getItem("ultimo_voto");
 
   if (!ultimoVoto) {
-    estado.innerHTML = "🟢 Puedes votar ahora";
+    estado.innerHTML = "🟢 Puedes votar ahora 👑";
     bloquearBotones(false);
   } else {
     const restante = TIEMPO_ESPERA - (Date.now() - ultimoVoto);
 
     if (restante <= 0) {
-      estado.innerHTML = "🟢 Puedes votar ahora";
+      estado.innerHTML = "🟢 Puedes votar ahora 👑";
       bloquearBotones(false);
     } else {
       bloquearBotones(true);
