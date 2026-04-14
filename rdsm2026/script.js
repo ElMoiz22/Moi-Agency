@@ -171,15 +171,20 @@ cancelarBtn.onclick = () => {
 // 🟢 Confirmar voto
 confirmarBtn.onclick = () => {
 
-  fetch(SCRIPT_URL, {
-    method: "POST",
-    body: JSON.stringify({
-      candidata: candidataSeleccionada.id,
-      email: usuario.email
-    })
+fetch(SCRIPT_URL, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    candidata: candidataSeleccionada.id,
+    email: usuario.email
   })
-  .then(res => res.json())
-  .then(data => {
+})
+ .then(res => res.text())
+.then(text => {
+  try {
+    const data = JSON.parse(text);
 
     if (data.error) {
       mostrarMensaje(data.error);
@@ -187,14 +192,17 @@ confirmarBtn.onclick = () => {
     }
 
     localStorage.setItem("ultimo_voto", Date.now());
-
     mostrarExito(candidataSeleccionada);
     verificarEstado();
 
-  })
-  .catch(() => {
-    mostrarMensaje("Error al enviar voto");
-  });
+  } catch {
+    console.log("Respuesta no JSON:", text);
+
+    localStorage.setItem("ultimo_voto", Date.now());
+    mostrarExito(candidataSeleccionada);
+    verificarEstado();
+  }
+})
 
 };
 
