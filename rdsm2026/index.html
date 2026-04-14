@@ -72,7 +72,18 @@ fetch("https://moidg.online/header.html")
 
 <body>
 
-<div id="loginContainer" style="text-align:center; margin:20px;">
+
+<img src="img/cbanner.jpg" style="width: 100%;" alt="Banner de Votación" class="banner-respon"/>
+
+<h1> 20 CANDIDATAS A REINA DEPARTAMENTAL DE PRIMAVERA </h1>
+<h1> SAN MARCOS 2026 </h1>
+<P>Votación No oficial del Certamen / Votación de Medios</P>
+
+<div id="loginContainer">
+
+  <h2 class="titulo-login">Inicia sesión para tener acceso a votación</h2>
+
+  <!-- GOOGLE LOGIN -->
   <div id="g_id_onload"
        data-client_id="935762093290-4gsom3jseingt54dlp4ihihgetfvurqg.apps.googleusercontent.com"
        data-callback="handleCredentialResponse">
@@ -86,17 +97,17 @@ fetch("https://moidg.online/header.html")
        data-shape="pill">
   </div>
 
-  <p id="usuarioLogueado" style="color:white;"></p>
+  <!-- USUARIO LOGUEADO -->
+  <p id="usuarioLogueado"></p>
+
+  <!-- ESTADO DE VOTO -->
+  <div id="estadoVoto"></div>
+
 </div>
 
-<img src="img/cbanner.jpg" style="width: 100%;" alt="Banner de Votación" class="banner-respon"/>
+	    <!-- Candidatas-->
 
-<h1> 20 CANDIDATAS A REINA DEPARTAMENTAL DE PRIMAVERA </h1>
-<h1> SAN MARCOS 2026 </h1>
-<P>Votación No oficial del Certamen / Votación de Medios</P>
-<div id="estadoVoto"></div>
 <div class="grid" id="candidatas"></div>
-
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
 <div class="swiper-slide">
@@ -165,6 +176,13 @@ fetch("https://moidg.online/header.html")
       <button id="cancelarBtn">Cancelar</button>
     </div>
   </div>
+</div>
+
+
+<div id="loginContainer">
+
+  <h2 class="titulo-login">Sistema Diseñado por Moi Agency</h2>
+
 </div>
 
 </body>

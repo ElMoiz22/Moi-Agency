@@ -171,3 +171,57 @@ button:hover {
   from {opacity: 1; transform: scale(1);}
   to {opacity: 0; transform: scale(0.9);}
 }   
+
+#loginContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    gap: 20px;
+
+}
+
+/* título */
+.titulo-login {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* login Google centrado */
+#loginContainer > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* usuario */
+#usuarioLogueado {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+  #loginContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .titulo-login,
+  #usuarioLogueado,
+  #estadoVoto {
+    width: 100%;
+    text-align: center;
+  }
+}
