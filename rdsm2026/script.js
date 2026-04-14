@@ -1,6 +1,5 @@
-const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeCElgftfm9J6ZIuQoKSNTYWdbxGmHhtVlkSD3Rrvoy2YBPCQ/formResponse";
-const ENTRY = "entry.1622234111";
-const TIEMPO_ESPERA = 5 * 60 * 60 * 1000;
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbycHcClZt5iL4cSp-QvjdwFagJz5DscVeIatXMGqxjACpFZ8hPOn4iTnVbdcARxlKyZWQ/exec";
+const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
 
 // 🧠 candidatas (igual que antes)
 const candidatas = [
@@ -14,7 +13,7 @@ const candidatas = [
   {id:"Candidata 8", nombre:"Sol Almudena Vásquez Rabanales", lugar:"Río Blanco", img:"img/c8.png"},
   {id:"Candidata 9", nombre:"Luz Patricia Izaguirre Maldonado", lugar:"San José El Rodeo", img:"img/c9.png"},
   {id:"Candidata 10", nombre:"Emily Daniela Escobar Ríos", lugar:"San Pablo", img:"img/c10.png"},
-  {id:"Candidata 11", nombre:"Emelin María Ruíz Miranda", lugar:"El Quetzal, San Marcos", img:"img/c11.png"},
+  {id:"Candidata 11", nombre:"Emelin María Ruíz Miranda", lugar:"El Quetzal", img:"img/c11.png"},
   {id:"Candidata 12", nombre:"Alexia Elizabeth Gonzáles Arguello", lugar:"Tacaná", img:"img/c12.png"},
   {id:"Candidata 13", nombre:"Andrea Liseth de León Castillo", lugar:"Catarina", img:"img/c13.png"},
   {id:"Candidata 14", nombre:"Angela Giselle Miranda Feliciano", lugar:"Comitancillo", img:"img/c14.png"},
@@ -22,7 +21,7 @@ const candidatas = [
   {id:"Candidata 16", nombre:"Gilma Corina Arreaga Cifuentes", lugar:"Nuevo Progreso", img:"img/c16.png"},
   {id:"Candidata 17", nombre:"Elisa Yarleth de León Roblero", lugar:"San José Ojetenam", img:"img/c17.png"},
   {id:"Candidata 18", nombre:"Ester Aisha Englentón Maldonado", lugar:"Malacatán", img:"img/c18.png"},
-  {id:"Candidata 19", nombre:"Elizabeth Abigail Godínez Velásquez", lugar:"San Pedro Sacatepéquez, San Marcos", img:"img/c19.png"},
+  {id:"Candidata 19", nombre:"Elizabeth Abigail Godínez Velásquez", lugar:"San Pedro Sacatepéquez", img:"img/c19.png"},
   {id:"Candidata 20", nombre:"Angélica Maribel Martínez Coronado", lugar:"Esquipulas Palo Gordo", img:"img/c20.png"}
 ];
 
@@ -46,30 +45,32 @@ candidatas.forEach(c => {
   contenedor.appendChild(div);
 });
 
+function obtenerFingerprint() {
+  return btoa(
+    navigator.userAgent +
+    screen.width +
+    screen.height +
+    navigator.language +
+    navigator.platform
+  );
+}
+
 // 🗳️ Votar
+let candidataSeleccionada = null;
+
 function votar(id) {
   const ultimoVoto = localStorage.getItem("ultimo_voto");
 
   if (ultimoVoto && (Date.now() - ultimoVoto < TIEMPO_ESPERA)) {
     mostrarTiempoRestante();
-    alert(" 👑 Ya votaste, Espera para volver a votar 👑");
+    mostrarMensaje("👑 Ya votaste, espera para volver a votar");
     return;
   }
 
-  const formData = new FormData();
-  formData.append(ENTRY, id);
+  const candidata = candidatas.find(c => c.id === id);
+  candidataSeleccionada = candidata;
 
-  fetch(FORM_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
-  });
-
-  localStorage.setItem("ultimo_voto", Date.now());
-
-  alert("👑 Voto enviado 👑");
-
-  verificarEstado();
+  abrirModalConfirmacion(candidata);
 }
 
 // 🔒 Bloquear / desbloquear botones
@@ -98,7 +99,7 @@ function mostrarTiempoRestante() {
     const m = Math.floor((restante % 3600000) / 60000);
     const s = Math.floor((restante % 60000) / 1000);
 
-    estado.innerHTML = `⏳ Podrás votar en: ${h}h ${m}m ${s}s`;
+    estado.innerHTML = `⏳ Podrás Volver a Votar en: ${h}h ${m}m ${s}s`;
 
     requestAnimationFrame(actualizar);
   }
@@ -128,3 +129,98 @@ function verificarEstado() {
 
 // 🚀 iniciar
 verificarEstado();
+
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+const modalNombre = document.getElementById("modalNombre");
+const modalTexto = document.getElementById("modalTexto");
+const confirmarBtn = document.getElementById("confirmarBtn");
+const cancelarBtn = document.getElementById("cancelarBtn");
+
+// 🟡 Abrir confirmación
+function abrirModalConfirmacion(c) {
+  modal.style.display = "flex";
+
+  modalImg.src = c.img;
+  modalNombre.innerText = c.nombre;
+  modalTexto.innerText = `¿Estás segur@ de votar por?`;
+}
+
+// 🔴 Cancelar
+cancelarBtn.onclick = () => {
+  cerrarModal();
+};
+
+// 🟢 Confirmar voto
+confirmarBtn.onclick = () => {
+
+  fetch(SCRIPT_URL, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    candidata: candidataSeleccionada.id,
+    fingerprint: obtenerFingerprint()
+  })
+})
+.then(res => res.text()) // 👈 cambio clave
+.then(() => {
+
+  localStorage.setItem("ultimo_voto", Date.now());
+
+  mostrarExito(candidataSeleccionada);
+  verificarEstado();
+
+})
+.catch((err) => {
+  console.log(err);
+  mostrarMensaje("Error al enviar voto");
+});
+
+};
+
+// 🎉 Mensaje de éxito
+function mostrarExito(c) {
+  modal.style.display = "flex";
+
+  modalImg.src = c.img;
+  modalNombre.innerText = "👑 Voto registrado 👑";
+  modalTexto.innerText = `Has votado por ${c.nombre}`;
+
+  confirmarBtn.style.display = "none";
+  cancelarBtn.style.display = "none";
+
+  // ⏱️ autocierre en 5 segundos
+  setTimeout(() => {
+    cerrarModal();
+  }, 5000);
+}
+
+// ⚠️ Mensaje simple
+function mostrarMensaje(msg) {
+  modal.style.display = "flex";
+
+  modalImg.style.display = "none";
+  modalNombre.innerText = "Aviso";
+  modalTexto.innerText = msg;
+
+  confirmarBtn.style.display = "none";
+  cancelarBtn.style.display = "block";
+  cancelarBtn.innerText = "Cerrar";
+}
+
+function cerrarModal() {
+  modal.classList.add("hide");
+
+  setTimeout(() => {
+    modal.style.display = "none";
+    modal.classList.remove("hide");
+
+    // reset UI
+    confirmarBtn.style.display = "block";
+    cancelarBtn.innerText = "Cancelar";
+    modalImg.style.display = "block";
+  }, 400);
+}
+
