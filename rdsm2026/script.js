@@ -25,7 +25,6 @@ if (usuarioGuardado) {
 }
 
 function getEmail() {
-  if (usuario) return "usuario.email";
   return usuario?.email || null;
 }
 
