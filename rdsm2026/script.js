@@ -4,26 +4,26 @@ const TIEMPO_ESPERA = 5 * 60 * 60 * 1000;
 
 // 🧠 candidatas (igual que antes)
 const candidatas = [
-  {id:"Candidata 1", nombre:"Cristtel Anayté Miranda Fuentes", lugar:"San Marcos", img:"img/c1.jpg"},
-  {id:"Candidata 2", nombre:"Sasha Analí López Cifuentes", lugar:"San Rafael Pie de la Cuesta", img:"img/c2.jpg"},
-  {id:"Candidata 3", nombre:"Samantha Mishell Díaz Citalán", lugar:"Tejutla", img:"img/c3.jpg"},
+  {id:"Candidata 1", nombre:"Cristtel Anayté Miranda Fuentes", lugar:"San Marcos", img:"img/c1.png"},
+  {id:"Candidata 2", nombre:"Sasha Analí López Cifuentes", lugar:"San Rafael Pie de la Cuesta", img:"img/c2.png"},
+  {id:"Candidata 3", nombre:"Samantha Mishell Díaz Citalán", lugar:"Tejutla", img:"img/c3.png"},
   {id:"Candidata 4", nombre:"Victoria Berenice Pérez López", lugar:"El Tumbador", img:"img/c4.png"},
-  {id:"Candidata 5", nombre:"Alisson Mirella González Ochoa", lugar:"San Lorenzo", img:"img/c5.jpg"},
-  {id:"Candidata 6", nombre:"Sugeily Patricia Escobar Zamora", lugar:"Pajapita", img:"img/c6.jpg"},
-  {id:"Candidata 7", nombre:"Kristel Galilea López Cifuentes", lugar:"Ayutla", img:"img/c7.jpg"},
-  {id:"Candidata 8", nombre:"Sol Almudena Vásquez Rabanales", lugar:"Río Blanco", img:"img/c8.jpg"},
-  {id:"Candidata 9", nombre:"Luz Patricia Izaguirre Maldonado", lugar:"San José El Rodeo", img:"img/c9.jpg"},
-  {id:"Candidata 10", nombre:"Emily Daniela Escobar Ríos", lugar:"San Pablo", img:"img/c10.jpg"},
-  {id:"Candidata 11", nombre:"Emelin María Ruíz Miranda", lugar:"El Quetzal, San Marcos", img:"img/c11.jpg"},
-  {id:"Candidata 12", nombre:"Alexia Elizabeth Gonzáles Arguello", lugar:"Tacaná", img:"img/c12.jpg"},
-  {id:"Candidata 13", nombre:"Andrea Liseth de León Castillo", lugar:"Catarina", img:"img/c13.jpg"},
-  {id:"Candidata 14", nombre:"Angela Giselle Miranda Feliciano", lugar:"Comitancillo", img:"img/c14.jpg"},
-  {id:"Candidata 15", nombre:"Graciela Ileana Davila Morales", lugar:"Ocós", img:"img/c15.jpg"},
-  {id:"Candidata 16", nombre:"Gilma Corina Arreaga Cifuentes", lugar:"Nuevo Progreso", img:"img/c16.jpg"},
-  {id:"Candidata 17", nombre:"Elisa Yarleth de León Roblero", lugar:"San José Ojetenam", img:"img/c17.jpg"},
-  {id:"Candidata 18", nombre:"Ester Aisha Englentón Maldonado", lugar:"Malacatán", img:"img/c18.jpg"},
-  {id:"Candidata 19", nombre:"Elizabeth Abigail Godínez Velásquez", lugar:"San Pedro Sacatepéquez, San Marcos", img:"img/c19.jpg"},
-  {id:"Candidata 20", nombre:"Angélica Maribel Martínez Coronado", lugar:"Esquipulas Palo Gordo", img:"img/c20.jpg"}
+  {id:"Candidata 5", nombre:"Alisson Mirella González Ochoa", lugar:"San Lorenzo", img:"img/c5.png"},
+  {id:"Candidata 6", nombre:"Sugeily Patricia Escobar Zamora", lugar:"Pajapita", img:"img/c6.png"},
+  {id:"Candidata 7", nombre:"Kristel Galilea López Cifuentes", lugar:"Ayutla", img:"img/c7.png"},
+  {id:"Candidata 8", nombre:"Sol Almudena Vásquez Rabanales", lugar:"Río Blanco", img:"img/c8.png"},
+  {id:"Candidata 9", nombre:"Luz Patricia Izaguirre Maldonado", lugar:"San José El Rodeo", img:"img/c9.png"},
+  {id:"Candidata 10", nombre:"Emily Daniela Escobar Ríos", lugar:"San Pablo", img:"img/c10.png"},
+  {id:"Candidata 11", nombre:"Emelin María Ruíz Miranda", lugar:"El Quetzal, San Marcos", img:"img/c11.png"},
+  {id:"Candidata 12", nombre:"Alexia Elizabeth Gonzáles Arguello", lugar:"Tacaná", img:"img/c12.png"},
+  {id:"Candidata 13", nombre:"Andrea Liseth de León Castillo", lugar:"Catarina", img:"img/c13.png"},
+  {id:"Candidata 14", nombre:"Angela Giselle Miranda Feliciano", lugar:"Comitancillo", img:"img/c14.png"},
+  {id:"Candidata 15", nombre:"Graciela Ileana Davila Morales", lugar:"Ocós", img:"img/c15.png"},
+  {id:"Candidata 16", nombre:"Gilma Corina Arreaga Cifuentes", lugar:"Nuevo Progreso", img:"img/c16.png"},
+  {id:"Candidata 17", nombre:"Elisa Yarleth de León Roblero", lugar:"San José Ojetenam", img:"img/c17.png"},
+  {id:"Candidata 18", nombre:"Ester Aisha Englentón Maldonado", lugar:"Malacatán", img:"img/c18.png"},
+  {id:"Candidata 19", nombre:"Elizabeth Abigail Godínez Velásquez", lugar:"San Pedro Sacatepéquez, San Marcos", img:"img/c19.png"},
+  {id:"Candidata 20", nombre:"Angélica Maribel Martínez Coronado", lugar:"Esquipulas Palo Gordo", img:"img/c20.png"}
 ];
 
 const contenedor = document.getElementById("candidatas");
