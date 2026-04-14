@@ -2,7 +2,6 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwKIF9Wp_hgL_DxWkhKo
 const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
 const modalLoading = document.getElementById("modalLoading");
 
-
 let usuario = null;
 
 // 🔐 recuperar sesión guardada
@@ -23,6 +22,11 @@ if (usuarioGuardado) {
     usuario = null;
     localStorage.removeItem("usuario");
   }
+}
+
+function getEmail() {
+  if (usuario) return "usuario.email";
+  return usuario?.email || null;
 }
 
 // 🔑 Google Login
@@ -97,10 +101,12 @@ let candidataSeleccionada = null;
 
 function votar(id) {
 
-  if (!usuario) {
-    mostrarMensaje("⚠️ Debes iniciar sesión con Google");
-    return;
-  }
+const email = getEmail();
+
+if (!email) {
+  mostrarMensaje("⚠️ Debes iniciar sesión con Google");
+  return;
+}
 
   const ultimoVoto = localStorage.getItem("ultimo_voto");
 
@@ -212,39 +218,38 @@ confirmarBtn.onclick = () => {
     method: "POST",
     body: JSON.stringify({
       candidata: candidataSeleccionada.id,
-      email: emailFinal
+      email: getEmail()
     })
   })
   .then(res => res.text())
   .then(text => {
 
-    modalLoading.style.display = "none";
+  loadingVoto.classList.remove("active");
+  modalLoading.style.display = "none";
 
-    try {
-      const data = JSON.parse(text);
+  try {
+    const data = JSON.parse(text);
 
-      if (data.error) {
-        mostrarMensaje(data.error);
-        return;
-      }
-
-      localStorage.setItem("ultimo_voto", Date.now());
-      mostrarExito(candidataSeleccionada);
-      verificarEstado();
-
-    } catch (e) {
-      console.log("Respuesta no JSON:", text);
-
-      localStorage.setItem("ultimo_voto", Date.now());
-      mostrarExito(candidataSeleccionada);
-      verificarEstado();
+    if (data.error) {
+      mostrarMensaje(data.error);
+      return;
     }
 
-  })
-  .catch(() => {
-    modalLoading.style.display = "none";
-    mostrarMensaje("Error al enviar el voto");
-  });
+    localStorage.setItem("ultimo_voto", Date.now());
+    mostrarExito(candidataSeleccionada);
+    verificarEstado();
+
+  } catch (e) {
+    localStorage.setItem("ultimo_voto", Date.now());
+    mostrarExito(candidataSeleccionada);
+    verificarEstado();
+  }
+
+})
+.catch(() => {
+  modalLoading.style.display = "none";
+  mostrarMensaje("Error al enviar el voto");
+});
 
 };
 

@@ -13,45 +13,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
-<style>
-  .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 26px;
-background: linear-gradient(135deg, #e982fe, #c32324);
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.35);
-  transition: all 0.25s ease;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-/* Hover */
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(24, 119, 242, 0.45);
-}
-
-/* Click */
-.btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 6px 15px rgba(24, 119, 242, 0.3);
-}
-
-/* Efecto de brillo suave */
-.btn::after {
-  content: "";
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-</style>
 <body>
 
 <div id="header"></div>
@@ -115,26 +76,40 @@ fetch("https://moidg.online/header.html")
 <img src="img/cbanner.jpg" style="width: 100%;" alt="Banner de Votación" class="banner-respon"/>
 
 <h1> 20 CANDIDATAS A REINA DEPARTAMENTAL DE PRIMAVERA </h1>
+<h1> SAN MARCOS 2026 </h1>
+<P>Votación No oficial del Certamen / Votación de Medios</P>
+
+<div id="loginContainer">
+
+  <h2 class="titulo-login">Inicia sesión para tener acceso a votación</h2>
+
+  <!-- GOOGLE LOGIN -->
+  <div id="g_id_onload"
+       data-client_id="935762093290-4gsom3jseingt54dlp4ihihgetfvurqg.apps.googleusercontent.com"
+       data-callback="handleCredentialResponse">
+  </div>
+
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="pill">
+  </div>
+
+  <!-- USUARIO LOGUEADO -->
+  <p id="usuarioLogueado"></p>
+
+  <!-- ESTADO DE VOTO -->
+  <div id="estadoVoto"></div>
+
+</div>
 
 <h1> ¿Cuál es la Favorita del Público? </h1>
 
-    	     <a  class="btn" id="openBtn" href="https://moidg.online/rdsm2026/">VOTA AHORA</a>
-  <p class="small">
-    Si no funciona, toca los 3 puntos y selecciona “Abrir en navegador”
-  </p>
+	    <!-- Candidatas-->
 
-   <script>
-    // 👉 Cambia este link por el destino final
-    const destino = "https://moidg.online/rdsm2026/vota.html";
-
-    document.getElementById("openBtn").href = destino;
-
-    // intento automático (a veces funciona)
-    setTimeout(() => {
-      window.location.href = destino;
-    }, 1500);
-  </script>
-
+<div class="grid" id="candidatas"></div>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
 <div class="swiper-slide">
@@ -189,6 +164,40 @@ fetch("https://moidg.online/header.html")
   </div>
 
 
+<div id="modal" class="modal">
+  <div class="modal-content">
+
+    <p id="modalTexto" style="
+      color: #ff4e96;
+      font-size: 23px;
+      font-weight: 900;
+    "></p>
+
+    <img id="modalImg" src="">
+    <h3 id="modalNombre"></h3>
+
+    <div class="modal-buttons">
+      <button id="confirmarBtn">Confirmar</button>
+      <button id="cancelarBtn">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div id="modalLoading" class="modal-loading">
+  <div class="modal-loading-content">
+
+    <div class="loader"></div>
+    <h3>Ingresando tu voto...</h3>
+    <p>Por favor espera</p>
+
+  </div>
+</div>
+
+<div id="loginContainer">
+
+  <h2 class="titulo-login">Sistema Diseñado por Moi Agency</h2>
+
+</div>
 
 </body>
 
