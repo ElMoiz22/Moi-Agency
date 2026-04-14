@@ -197,31 +197,35 @@ cancelarBtn.onclick = () => {
 // 🟢 Confirmar voto
 confirmarBtn.onclick = () => {
 
-  modalLoading.style.display = "flex";
-
-  fetch(SCRIPT_URL, {
-    method: "POST",
-    body: JSON.stringify({
-      candidata: candidataSeleccionada?.id,
-      email: usuario?.email || "prueba@test.com"
-    })
+fetch(SCRIPT_URL, {
+  method: "POST",
+  body: JSON.stringify({
+    candidata: candidataSeleccionada.id,
+    email: usuario.email
   })
-  .then(res => res.text())
-  .then(text => {
+})
+ .then(res => res.text())
+.then(text => {
+  try {
+    const data = JSON.parse(text);
 
-    modalLoading.style.display = "none";
+    if (data.error) {
+      mostrarMensaje(data.error);
+      return;
+    }
 
     localStorage.setItem("ultimo_voto", Date.now());
-
-    // ❌ QUITAMOS cerrarModal()
     mostrarExito(candidataSeleccionada);
     verificarEstado();
 
-  })
-  .catch(() => {
-    modalLoading.style.display = "none";
-    mostrarMensaje("Error al enviar el voto");
-  });
+  } catch {
+    console.log("Respuesta no JSON:", text);
+
+    localStorage.setItem("ultimo_voto", Date.now());
+    mostrarExito(candidataSeleccionada);
+    verificarEstado();
+  }
+})
 
 };
 
