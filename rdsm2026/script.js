@@ -1,8 +1,29 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzELhOBQdvBIFgzyoc3LYUxAk5JXNV1Bxi1CzEeGofnn5LqDFKiq7sBVdLS8XdUMbqcEA/exec"; // Apps Script deployado
-let usuario = null;
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzELhOBQdvBIFgzyoc3LYUxAk5JXNV1Bxi1CzEeGofnn5LqDFKiq7sBVdLS8XdUMbqcEA/exec";
 const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
 
+let usuario = null;
 
+// 🔐 recuperar sesión guardada
+const usuarioGuardado = localStorage.getItem("usuario");
+
+if (usuarioGuardado) {
+  try {
+    usuario = JSON.parse(usuarioGuardado);
+
+    if (usuario?.nombre && usuario?.email) {
+      document.getElementById("usuarioLogueado").innerText =
+        "👤 " + usuario.nombre;
+    } else {
+      usuario = null;
+      localStorage.removeItem("usuario");
+    }
+  } catch (e) {
+    usuario = null;
+    localStorage.removeItem("usuario");
+  }
+}
+
+// 🔑 Google Login
 function handleCredentialResponse(response) {
   const data = parseJwt(response.credential);
 
@@ -11,10 +32,13 @@ function handleCredentialResponse(response) {
     email: data.email
   };
 
+  localStorage.setItem("usuario", JSON.stringify(usuario));
+
   document.getElementById("usuarioLogueado").innerText =
     "👤 " + usuario.nombre;
 }
 
+// 🧠 decode JWT
 function parseJwt(token) {
   const base64Url = token.split('.')[1];
   const base64 = atob(base64Url);
@@ -173,9 +197,6 @@ confirmarBtn.onclick = () => {
 
 fetch(SCRIPT_URL, {
   method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
   body: JSON.stringify({
     candidata: candidataSeleccionada.id,
     email: usuario.email
