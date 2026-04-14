@@ -1,43 +1,111 @@
-/* Reset básico */
-* {
-  box-sizing: border-box;
-}
 body {
-  margin: 0; padding: 0; min-height: 200vh; /* para scroll */
-font-family: "azo-sans-web", sans-serif;
-text-align: center;
-	background-color: #1e1217;
+  margin: 0;
+  padding: 0;
+  font-family: "azo-sans-web", sans-serif;
+  text-align: center;
+  background-color: #02040f;
 }
 
 h1 {
   margin-top: 20px;
-
-color: aliceblue;
+  color: aliceblue;
+  font-weight: 900;
 }
 
+/* 🔥 GRID BASE (desktop) */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
   padding: 20px;
 }
 
+/* 💻 Tablets */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 📱 Móviles */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 👈 lo que querías */
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .card img {
+    height: 160px; /* 👈 mejor proporción en móvil */
+  }
+
+  .info h3 {
+    font-size: 14px;
+  }
+
+  .info p {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
 .card {
-  background: white;
+  background: #ffffff1f;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding-top: 9px;
+}
+
+.info {
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: #fff;
+}
+
+.info h3 {
+  margin: 5px 0;
+  color: #fff;
+
+}
+
+.info p {
+  margin: 0;
+  color: rgb(192, 192, 192);
+  font-size: 14px;
 }
 
 button {
-  background: #ff4081;
-  color: white;
-  border: none;
+  margin-top: 10px;
   padding: 10px;
-  border-radius: 5px;
+  width: 100%;
+  border: none;
+  background: linear-gradient(45deg, #ff4081, #ff6ec4);
+  color: white;
+  font-weight: bold;
   cursor: pointer;
+      border-radius: 150px;
 }
 
 button:hover {
-  background: #e73370;
+  opacity: 0.9;
+}
+
+#estadoVoto {
+  margin: 15px;
+  font-weight: bold;
+  color: #fff;
 }
