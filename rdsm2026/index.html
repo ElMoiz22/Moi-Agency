@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://moidg.online/bannerrespon.css" />
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 
@@ -70,6 +71,23 @@ fetch("https://moidg.online/header.html")
 	    <!-- desde aqui agrega el contenido -->
 
 <body>
+
+<div id="loginContainer" style="text-align:center; margin:20px;">
+  <div id="g_id_onload"
+       data-client_id="935762093290-4gsom3jseingt54dlp4ihihgetfvurqg.apps.googleusercontent.com"
+       data-callback="handleCredentialResponse">
+  </div>
+
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="pill">
+  </div>
+
+  <p id="usuarioLogueado" style="color:white;"></p>
+</div>
 
 <img src="img/cbanner.jpg" style="width: 100%;" alt="Banner de Votación" class="banner-respon"/>
 
