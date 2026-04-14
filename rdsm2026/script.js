@@ -1,5 +1,6 @@
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwKIF9Wp_hgL_DxWkhKoAxKw1NTO9jz7OLxqPUjsESI80ebxWOtZiK12lzSMVymvljUzQ/exec";
 const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
+const loadingVoto = document.getElementById("loadingVoto");
 
 let usuario = null;
 
@@ -195,35 +196,44 @@ cancelarBtn.onclick = () => {
 // 🟢 Confirmar voto
 confirmarBtn.onclick = () => {
 
-fetch(SCRIPT_URL, {
-  method: "POST",
-  body: JSON.stringify({
-    candidata: candidataSeleccionada.id,
-    email: usuario.email
-  })
-})
- .then(res => res.text())
-.then(text => {
-  try {
-    const data = JSON.parse(text);
+  // 🔵 mostrar loading
+  loadingVoto.classList.add("active");
 
-    if (data.error) {
-      mostrarMensaje(data.error);
-      return;
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: JSON.stringify({
+      candidata: candidataSeleccionada.id,
+      email: usuario.email
+    })
+  })
+  .then(res => res.text())
+  .then(text => {
+
+    loadingVoto.classList.remove("active");
+
+    try {
+      const data = JSON.parse(text);
+
+      if (data.error) {
+        mostrarMensaje(data.error);
+        return;
+      }
+
+      localStorage.setItem("ultimo_voto", Date.now());
+      mostrarExito(candidataSeleccionada);
+      verificarEstado();
+
+    } catch {
+      localStorage.setItem("ultimo_voto", Date.now());
+      mostrarExito(candidataSeleccionada);
+      verificarEstado();
     }
 
-    localStorage.setItem("ultimo_voto", Date.now());
-    mostrarExito(candidataSeleccionada);
-    verificarEstado();
-
-  } catch {
-    console.log("Respuesta no JSON:", text);
-
-    localStorage.setItem("ultimo_voto", Date.now());
-    mostrarExito(candidataSeleccionada);
-    verificarEstado();
-  }
-})
+  })
+  .catch(() => {
+    loadingVoto.classList.remove("active");
+    mostrarMensaje("Error al enviar el voto");
+  });
 
 };
 
