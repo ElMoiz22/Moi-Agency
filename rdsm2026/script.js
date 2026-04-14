@@ -6,7 +6,7 @@ const TIEMPO_ESPERA = 5 * 60 * 60 * 1000;
 const candidatas = [
   {id:"Candidata 1", nombre:"Cristtel Anayté Miranda Fuentes", lugar:"San Marcos", img:"img/c1.png"},
   {id:"Candidata 2", nombre:"Sasha Analí López Cifuentes", lugar:"San Rafael Pie de la Cuesta", img:"img/c2.png"},
-  {id:"Candidata 3", nombre:"Samantha Mishell Díaz Citalán", lugar:"Tejutla", img:"img/c3.png"},
+  {id:"Candidata 3", nombre:"Samantha Mishell Díaz Catalán", lugar:"Tejutla", img:"img/c3.png"},
   {id:"Candidata 4", nombre:"Victoria Berenice Pérez López", lugar:"El Tumbador", img:"img/c4.png"},
   {id:"Candidata 5", nombre:"Alisson Mirella González Ochoa", lugar:"San Lorenzo", img:"img/c5.png"},
   {id:"Candidata 6", nombre:"Sugeily Patricia Escobar Zamora", lugar:"Pajapita", img:"img/c6.png"},
@@ -29,7 +29,7 @@ const candidatas = [
 const contenedor = document.getElementById("candidatas");
 const estado = document.getElementById("estadoVoto");
 
-// 🎴 Render tarjetas
+// 🎴 Render tarjetas 
 candidatas.forEach(c => {
   const div = document.createElement("div");
   div.className = "card";
