@@ -1,51 +1,7 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwKIF9Wp_hgL_DxWkhKoAxKw1NTO9jz7OLxqPUjsESI80ebxWOtZiK12lzSMVymvljUzQ/exec";
-const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
-
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeCElgftfm9J6ZIuQoKSNTYWdbxGmHhtVlkSD3Rrvoy2YBPCQ/formResponse";
+const ENTRY = "entry.1622234111";
 const modalLoading = document.getElementById("modalLoading");
-let usuario = null;
-
-// 🔐 recuperar sesión guardada
-const usuarioGuardado = localStorage.getItem("usuario");
-
-if (usuarioGuardado) {
-  try {
-    usuario = JSON.parse(usuarioGuardado);
-
-    if (usuario?.nombre && usuario?.email) {
-      document.getElementById("usuarioLogueado").innerText =
-        "Sesión Iniciada 👤 " + usuario.nombre;
-    } else {
-      usuario = null;
-      localStorage.removeItem("usuario");
-    }
-  } catch (e) {
-    usuario = null;
-    localStorage.removeItem("usuario");
-  }
-}
-
-// 🔑 Google Login
-function handleCredentialResponse(response) {
-  const data = parseJwt(response.credential);
-
-  usuario = {
-    nombre: data.name,
-    email: data.email
-  };
-
-  localStorage.setItem("usuario", JSON.stringify(usuario));
-
-  document.getElementById("usuarioLogueado").innerText =
-    "👤 " + usuario.nombre;
-}
-
-// 🧠 decode JWT
-function parseJwt(token) {
-  const base64Url = token.split(".")[1];
-  const base64 = atob(base64Url);
-  return JSON.parse(base64);
-}
-
+const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
 
 // 🧠 candidatas (igual que antes)
 const candidatas = [
@@ -74,7 +30,7 @@ const candidatas = [
 const contenedor = document.getElementById("candidatas");
 const estado = document.getElementById("estadoVoto");
 
-// 🎴 Render tarjetas
+// 🎴 Render tarjetas 
 candidatas.forEach(c => {
   const div = document.createElement("div");
   div.className = "card";
@@ -95,11 +51,6 @@ candidatas.forEach(c => {
 let candidataSeleccionada = null;
 
 function votar(id) {
-  if (!usuario) {
-    mostrarMensaje("⚠️ Debes iniciar sesión con Google");
-    return;
-  }
-
   const ultimoVoto = localStorage.getItem("ultimo_voto");
 
   if (ultimoVoto && (Date.now() - ultimoVoto < TIEMPO_ESPERA)) {
@@ -110,10 +61,11 @@ function votar(id) {
 
   const candidata = candidatas.find(c => c.id === id);
   candidataSeleccionada = candidata;
+
   abrirModalConfirmacion(candidata);
 }
 
-// 🔒 Bloquear botones
+// 🔒 Bloquear / desbloquear botones
 function bloquearBotones(bloquear) {
   document.querySelectorAll("button").forEach(btn => {
     btn.disabled = bloquear;
@@ -122,7 +74,7 @@ function bloquearBotones(bloquear) {
   });
 }
 
-// ⏳ contador
+// ⏳ Contador
 function mostrarTiempoRestante() {
   const ultimoVoto = parseInt(localStorage.getItem("ultimo_voto"));
 
@@ -139,7 +91,7 @@ function mostrarTiempoRestante() {
     const m = Math.floor((restante % 3600000) / 60000);
     const s = Math.floor((restante % 60000) / 1000);
 
-    estado.innerHTML = `⏳ Podrás volver a votar en: ${h}h ${m}m ${s}s`;
+    estado.innerHTML = `⏳ Podrás Volver a Votar en: ${h}h ${m}m ${s}s`;
 
     requestAnimationFrame(actualizar);
   }
@@ -147,30 +99,29 @@ function mostrarTiempoRestante() {
   actualizar();
 }
 
-// 🧠 estado inicial
+// 🧠 Verificador inicial
 function verificarEstado() {
   const ultimoVoto = localStorage.getItem("ultimo_voto");
 
   if (!ultimoVoto) {
     estado.innerHTML = "🟢 Puedes votar ahora 👑";
     bloquearBotones(false);
-    return;
-  }
-
-  const restante = TIEMPO_ESPERA - (Date.now() - ultimoVoto);
-
-  if (restante <= 0) {
-    estado.innerHTML = "🟢 Puedes votar ahora 👑";
-    bloquearBotones(false);
   } else {
-    bloquearBotones(true);
-    mostrarTiempoRestante();
+    const restante = TIEMPO_ESPERA - (Date.now() - ultimoVoto);
+
+    if (restante <= 0) {
+      estado.innerHTML = "🟢 Puedes votar ahora 👑";
+      bloquearBotones(false);
+    } else {
+      bloquearBotones(true);
+      mostrarTiempoRestante();
+    }
   }
 }
 
+// 🚀 iniciar
 verificarEstado();
 
-// 🪟 modal
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 const modalNombre = document.getElementById("modalNombre");
@@ -178,61 +129,55 @@ const modalTexto = document.getElementById("modalTexto");
 const confirmarBtn = document.getElementById("confirmarBtn");
 const cancelarBtn = document.getElementById("cancelarBtn");
 
-// 🟡 abrir modal
+// 🟡 Abrir confirmación
 function abrirModalConfirmacion(c) {
   modal.style.display = "flex";
+
   modalImg.src = c.img;
   modalNombre.innerText = c.nombre;
-  modalTexto.innerText = "¿Estás segur@ de votar por?";
+  modalTexto.innerText = `¿Estás segur@ de votar por?`;
 }
 
-// 🔴 cancelar
-cancelarBtn.onclick = cerrarModal;
-
-// 🟢 confirmar voto
-confirmarBtn.onclick = () => {
-  modalLoading.style.display = "flex";
-
-  const emailFinal = usuario?.email;
-
-  if (!emailFinal) {
-    modalLoading.style.display = "none";
-    mostrarMensaje("⚠️ Debes iniciar sesión con Google para votar");
-    return;
-  }
-
-  fetch(SCRIPT_URL, {
-    method: "POST",
-    body: JSON.stringify({
-      candidata: candidataSeleccionada.id,
-      email: emailFinal
-    })
-  })
-  .then(res => res.text())
-  .then(text => {
-    modalLoading.style.display = "none";
-
-    try {
-      const data = JSON.parse(text);
-      if (data.error) {
-        mostrarMensaje(data.error);
-        return;
-      }
-    } catch (e) {}
-
-    localStorage.setItem("ultimo_voto", Date.now());
-    mostrarExito(candidataSeleccionada);
-    verificarEstado();
-  })
-  .catch(() => {
-    modalLoading.style.display = "none";
-    mostrarMensaje("Error al enviar el voto");
-  });
+// 🔴 Cancelar
+cancelarBtn.onclick = () => {
+  cerrarModal();
 };
 
-// 🎉 éxito
+// 🟢 Confirmar voto
+confirmarBtn.onclick = () => {
+
+  // 🟡 mostrar loading
+  modalLoading.style.display = "flex";
+  modal.style.display = "none";
+
+  const formData = new FormData();
+  formData.append(ENTRY, candidataSeleccionada.id);
+
+  fetch(FORM_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData
+  });
+
+  // ⏳ simulación de tiempo de envío (porque no-cors no permite leer respuesta)
+  setTimeout(() => {
+
+    modalLoading.style.display = "none";
+
+    localStorage.setItem("ultimo_voto", Date.now());
+
+    mostrarExito(candidataSeleccionada);
+
+    verificarEstado();
+
+  }, 1200); // puedes subirlo a 2000 si quieres más efecto
+
+};
+
+// 🎉 Mensaje de éxito
 function mostrarExito(c) {
   modal.style.display = "flex";
+
   modalImg.src = c.img;
   modalNombre.innerText = "👑 Voto registrado 👑";
   modalTexto.innerText = `Has votado por ${c.nombre}`;
@@ -240,12 +185,16 @@ function mostrarExito(c) {
   confirmarBtn.style.display = "none";
   cancelarBtn.style.display = "none";
 
-  setTimeout(cerrarModal, 5000);
+  // ⏱️ autocierre en 5 segundos
+  setTimeout(() => {
+    cerrarModal();
+  }, 5000);
 }
 
-// ⚠️ mensaje
+// ⚠️ Mensaje simple
 function mostrarMensaje(msg) {
   modal.style.display = "flex";
+
   modalImg.style.display = "none";
   modalNombre.innerText = "Aviso";
   modalTexto.innerText = msg;
@@ -262,8 +211,10 @@ function cerrarModal() {
     modal.style.display = "none";
     modal.classList.remove("hide");
 
+    // reset UI
     confirmarBtn.style.display = "block";
     cancelarBtn.innerText = "Cancelar";
     modalImg.style.display = "block";
   }, 400);
 }
+
