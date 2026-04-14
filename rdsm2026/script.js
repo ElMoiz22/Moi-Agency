@@ -197,35 +197,54 @@ cancelarBtn.onclick = () => {
 // 🟢 Confirmar voto
 confirmarBtn.onclick = () => {
 
-fetch(SCRIPT_URL, {
-  method: "POST",
-  body: JSON.stringify({
-    candidata: candidataSeleccionada.id,
-    email: usuario.email
-  })
-})
- .then(res => res.text())
-.then(text => {
-  try {
-    const data = JSON.parse(text);
+  modalLoading.style.display = "flex";
 
-    if (data.error) {
-      mostrarMensaje(data.error);
-      return;
+  const emailFinal = usuario?.email;
+
+  // 🔐 seguridad básica: si no hay login, no permitir voto real
+  if (!emailFinal) {
+    modalLoading.style.display = "none";
+    mostrarMensaje("⚠️ Debes iniciar sesión con Google para votar");
+    return;
+  }
+
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: JSON.stringify({
+      candidata: candidataSeleccionada.id,
+      email: emailFinal
+    })
+  })
+  .then(res => res.text())
+  .then(text => {
+
+    modalLoading.style.display = "none";
+
+    try {
+      const data = JSON.parse(text);
+
+      if (data.error) {
+        mostrarMensaje(data.error);
+        return;
+      }
+
+      localStorage.setItem("ultimo_voto", Date.now());
+      mostrarExito(candidataSeleccionada);
+      verificarEstado();
+
+    } catch (e) {
+      console.log("Respuesta no JSON:", text);
+
+      localStorage.setItem("ultimo_voto", Date.now());
+      mostrarExito(candidataSeleccionada);
+      verificarEstado();
     }
 
-    localStorage.setItem("ultimo_voto", Date.now());
-    mostrarExito(candidataSeleccionada);
-    verificarEstado();
-
-  } catch {
-    console.log("Respuesta no JSON:", text);
-
-    localStorage.setItem("ultimo_voto", Date.now());
-    mostrarExito(candidataSeleccionada);
-    verificarEstado();
-  }
-})
+  })
+  .catch(() => {
+    modalLoading.style.display = "none";
+    mostrarMensaje("Error al enviar el voto");
+  });
 
 };
 
