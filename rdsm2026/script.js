@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzELhOBQdvBIFgzyoc3LYUxAk5JXNV1Bxi1CzEeGofnn5LqDFKiq7sBVdLS8XdUMbqcEA/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwKIF9Wp_hgL_DxWkhKoAxKw1NTO9jz7OLxqPUjsESI80ebxWOtZiK12lzSMVymvljUzQ/exec";
 const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
 
 let usuario = null;
