@@ -1,26 +1,24 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwKIF9Wp_hgL_DxWkhKoAxKw1NTO9jz7OLxqPUjsESI80ebxWOtZiK12lzSMVymvljUzQ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzELhOBQdvBIFgzyoc3LYUxAk5JXNV1Bxi1CzEeGofnn5LqDFKiq7sBVdLS8XdUMbqcEA/exec";
 const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
 
 let usuario = null;
-let envioEnProceso = false; // 🧠 ANTI-SPAM
 
 // 🔐 recuperar sesión guardada
 const usuarioGuardado = localStorage.getItem("usuario");
 
 if (usuarioGuardado) {
   try {
-    const temp = JSON.parse(usuarioGuardado);
+    usuario = JSON.parse(usuarioGuardado);
 
-    if (temp?.email && temp?.nombre) {
-      usuario = temp;
-
+    if (usuario?.nombre && usuario?.email) {
       document.getElementById("usuarioLogueado").innerText =
-        "👤 " + usuario.nombre;
+        "Sesión Iniciada 👤 " + usuario.nombre;
     } else {
+      usuario = null;
       localStorage.removeItem("usuario");
     }
-
-  } catch {
+  } catch (e) {
+    usuario = null;
     localStorage.removeItem("usuario");
   }
 }
@@ -31,30 +29,13 @@ function handleCredentialResponse(response) {
 
   usuario = {
     nombre: data.name,
-    email: data.email,
-    sub: data.sub // 🧠 ID único de Google (IMPORTANTE)
+    email: data.email
   };
 
   localStorage.setItem("usuario", JSON.stringify(usuario));
 
   document.getElementById("usuarioLogueado").innerText =
-    " Sesión Iniciada 👤 " + usuario.nombre;
-}
-
-function generarToken() {
-  if (!usuario) return null;
-
-  const base = usuario.email + "|" + Date.now();
-  return btoa(base);
-}
-
-function puedeEnviar() {
-  if (envioEnProceso) return false;
-
-  const ultimo = localStorage.getItem("lock_envio");
-  if (ultimo && Date.now() - ultimo < 5000) return false; // 5s anti spam
-
-  return true;
+    "👤 " + usuario.nombre;
 }
 
 // 🧠 decode JWT
@@ -119,14 +100,10 @@ function votar(id) {
     return;
   }
 
-  if (!puedeEnviar()) {
-    mostrarMensaje("⛔ Espera unos segundos...");
-    return;
-  }
-
   const ultimoVoto = localStorage.getItem("ultimo_voto");
 
   if (ultimoVoto && (Date.now() - ultimoVoto < TIEMPO_ESPERA)) {
+    mostrarTiempoRestante();
     mostrarMensaje("👑 Ya votaste, espera para volver a votar");
     return;
   }
@@ -216,55 +193,38 @@ cancelarBtn.onclick = () => {
 };
 
 // 🟢 Confirmar voto
-confirmarBtn.onclick = async () => {
+confirmarBtn.onclick = () => {
 
-  if (envioEnProceso) return;
-
-  envioEnProceso = true;
-  localStorage.setItem("lock_envio", Date.now());
-
-  const token = generarToken();
-
+fetch(SCRIPT_URL, {
+  method: "POST",
+  body: JSON.stringify({
+    candidata: candidataSeleccionada.id,
+    email: usuario.email
+  })
+})
+ .then(res => res.text())
+.then(text => {
   try {
-
-    const res = await fetch(SCRIPT_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        candidata: candidataSeleccionada.id,
-        email: usuario.email,
-        sub: usuario.sub,
-        token: token
-      })
-    });
-
-    const text = await res.text();
-
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      data = { success: true };
-    }
+    const data = JSON.parse(text);
 
     if (data.error) {
       mostrarMensaje(data.error);
-      envioEnProceso = false;
       return;
     }
 
     localStorage.setItem("ultimo_voto", Date.now());
-
     mostrarExito(candidataSeleccionada);
     verificarEstado();
 
-  } catch (err) {
-    mostrarMensaje("Error al enviar voto");
-  }
+  } catch {
+    console.log("Respuesta no JSON:", text);
 
-  envioEnProceso = false;
+    localStorage.setItem("ultimo_voto", Date.now());
+    mostrarExito(candidataSeleccionada);
+    verificarEstado();
+  }
+})
+
 };
 
 // 🎉 Mensaje de éxito
