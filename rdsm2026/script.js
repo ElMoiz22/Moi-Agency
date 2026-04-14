@@ -1,7 +1,7 @@
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwKIF9Wp_hgL_DxWkhKoAxKw1NTO9jz7OLxqPUjsESI80ebxWOtZiK12lzSMVymvljUzQ/exec";
 const TIEMPO_ESPERA = 1 * 60 * 60 * 1000; // 1 hora
-const modalLoading = document.getElementById("modalLoading");
 
+const modalLoading = document.getElementById("modalLoading");
 let usuario = null;
 
 // 🔐 recuperar sesión guardada
@@ -24,10 +24,6 @@ if (usuarioGuardado) {
   }
 }
 
-function getEmail() {
-  return usuario?.email || null;
-}
-
 // 🔑 Google Login
 function handleCredentialResponse(response) {
   const data = parseJwt(response.credential);
@@ -45,7 +41,7 @@ function handleCredentialResponse(response) {
 
 // 🧠 decode JWT
 function parseJwt(token) {
-  const base64Url = token.split('.')[1];
+  const base64Url = token.split(".")[1];
   const base64 = atob(base64Url);
   return JSON.parse(base64);
 }
@@ -78,7 +74,7 @@ const candidatas = [
 const contenedor = document.getElementById("candidatas");
 const estado = document.getElementById("estadoVoto");
 
-// 🎴 Render tarjetas 
+// 🎴 Render tarjetas
 candidatas.forEach(c => {
   const div = document.createElement("div");
   div.className = "card";
@@ -99,13 +95,10 @@ candidatas.forEach(c => {
 let candidataSeleccionada = null;
 
 function votar(id) {
-
-const email = getEmail();
-
-if (!email) {
-  mostrarMensaje("⚠️ Debes iniciar sesión con Google");
-  return;
-}
+  if (!usuario) {
+    mostrarMensaje("⚠️ Debes iniciar sesión con Google");
+    return;
+  }
 
   const ultimoVoto = localStorage.getItem("ultimo_voto");
 
@@ -117,11 +110,10 @@ if (!email) {
 
   const candidata = candidatas.find(c => c.id === id);
   candidataSeleccionada = candidata;
-
   abrirModalConfirmacion(candidata);
 }
 
-// 🔒 Bloquear / desbloquear botones
+// 🔒 Bloquear botones
 function bloquearBotones(bloquear) {
   document.querySelectorAll("button").forEach(btn => {
     btn.disabled = bloquear;
@@ -130,7 +122,7 @@ function bloquearBotones(bloquear) {
   });
 }
 
-// ⏳ Contador
+// ⏳ contador
 function mostrarTiempoRestante() {
   const ultimoVoto = parseInt(localStorage.getItem("ultimo_voto"));
 
@@ -147,7 +139,7 @@ function mostrarTiempoRestante() {
     const m = Math.floor((restante % 3600000) / 60000);
     const s = Math.floor((restante % 60000) / 1000);
 
-    estado.innerHTML = `⏳ Podrás Volver a Votar en: ${h}h ${m}m ${s}s`;
+    estado.innerHTML = `⏳ Podrás volver a votar en: ${h}h ${m}m ${s}s`;
 
     requestAnimationFrame(actualizar);
   }
@@ -155,29 +147,30 @@ function mostrarTiempoRestante() {
   actualizar();
 }
 
-// 🧠 Verificador inicial
+// 🧠 estado inicial
 function verificarEstado() {
   const ultimoVoto = localStorage.getItem("ultimo_voto");
 
   if (!ultimoVoto) {
     estado.innerHTML = "🟢 Puedes votar ahora 👑";
     bloquearBotones(false);
-  } else {
-    const restante = TIEMPO_ESPERA - (Date.now() - ultimoVoto);
+    return;
+  }
 
-    if (restante <= 0) {
-      estado.innerHTML = "🟢 Puedes votar ahora 👑";
-      bloquearBotones(false);
-    } else {
-      bloquearBotones(true);
-      mostrarTiempoRestante();
-    }
+  const restante = TIEMPO_ESPERA - (Date.now() - ultimoVoto);
+
+  if (restante <= 0) {
+    estado.innerHTML = "🟢 Puedes votar ahora 👑";
+    bloquearBotones(false);
+  } else {
+    bloquearBotones(true);
+    mostrarTiempoRestante();
   }
 }
 
-// 🚀 iniciar
 verificarEstado();
 
+// 🪟 modal
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 const modalNombre = document.getElementById("modalNombre");
@@ -185,28 +178,23 @@ const modalTexto = document.getElementById("modalTexto");
 const confirmarBtn = document.getElementById("confirmarBtn");
 const cancelarBtn = document.getElementById("cancelarBtn");
 
-// 🟡 Abrir confirmación
+// 🟡 abrir modal
 function abrirModalConfirmacion(c) {
   modal.style.display = "flex";
-
   modalImg.src = c.img;
   modalNombre.innerText = c.nombre;
-  modalTexto.innerText = `¿Estás segur@ de votar por?`;
+  modalTexto.innerText = "¿Estás segur@ de votar por?";
 }
 
-// 🔴 Cancelar
-cancelarBtn.onclick = () => {
-  cerrarModal();
-};
+// 🔴 cancelar
+cancelarBtn.onclick = cerrarModal;
 
-// 🟢 Confirmar voto
+// 🟢 confirmar voto
 confirmarBtn.onclick = () => {
-
   modalLoading.style.display = "flex";
 
   const emailFinal = usuario?.email;
 
-  // 🔐 seguridad básica: si no hay login, no permitir voto real
   if (!emailFinal) {
     modalLoading.style.display = "none";
     mostrarMensaje("⚠️ Debes iniciar sesión con Google para votar");
@@ -217,45 +205,34 @@ confirmarBtn.onclick = () => {
     method: "POST",
     body: JSON.stringify({
       candidata: candidataSeleccionada.id,
-      email: getEmail()
+      email: emailFinal
     })
   })
   .then(res => res.text())
   .then(text => {
+    modalLoading.style.display = "none";
 
-  loadingVoto.classList.remove("active");
-  modalLoading.style.display = "none";
-
-  try {
-    const data = JSON.parse(text);
-
-    if (data.error) {
-      mostrarMensaje(data.error);
-      return;
-    }
+    try {
+      const data = JSON.parse(text);
+      if (data.error) {
+        mostrarMensaje(data.error);
+        return;
+      }
+    } catch (e) {}
 
     localStorage.setItem("ultimo_voto", Date.now());
     mostrarExito(candidataSeleccionada);
     verificarEstado();
-
-  } catch (e) {
-    localStorage.setItem("ultimo_voto", Date.now());
-    mostrarExito(candidataSeleccionada);
-    verificarEstado();
-  }
-
-})
-.catch(() => {
-  modalLoading.style.display = "none";
-  mostrarMensaje("Error al enviar el voto");
-});
-
+  })
+  .catch(() => {
+    modalLoading.style.display = "none";
+    mostrarMensaje("Error al enviar el voto");
+  });
 };
 
-// 🎉 Mensaje de éxito
+// 🎉 éxito
 function mostrarExito(c) {
   modal.style.display = "flex";
-
   modalImg.src = c.img;
   modalNombre.innerText = "👑 Voto registrado 👑";
   modalTexto.innerText = `Has votado por ${c.nombre}`;
@@ -263,16 +240,12 @@ function mostrarExito(c) {
   confirmarBtn.style.display = "none";
   cancelarBtn.style.display = "none";
 
-  // ⏱️ autocierre en 5 segundos
-  setTimeout(() => {
-    cerrarModal();
-  }, 5000);
+  setTimeout(cerrarModal, 5000);
 }
 
-// ⚠️ Mensaje simple
+// ⚠️ mensaje
 function mostrarMensaje(msg) {
   modal.style.display = "flex";
-
   modalImg.style.display = "none";
   modalNombre.innerText = "Aviso";
   modalTexto.innerText = msg;
@@ -289,10 +262,8 @@ function cerrarModal() {
     modal.style.display = "none";
     modal.classList.remove("hide");
 
-    // reset UI
     confirmarBtn.style.display = "block";
     cancelarBtn.innerText = "Cancelar";
     modalImg.style.display = "block";
   }, 400);
 }
-
