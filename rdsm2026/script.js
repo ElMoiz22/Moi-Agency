@@ -35,7 +35,7 @@ function handleCredentialResponse(response) {
   localStorage.setItem("usuario", JSON.stringify(usuario));
 
   document.getElementById("usuarioLogueado").innerText =
-    "👤 " + usuario.nombre;
+    " Sesión Iniciada 👤 " + usuario.nombre;
 }
 
 // 🧠 decode JWT
