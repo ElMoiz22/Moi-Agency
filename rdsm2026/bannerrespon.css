@@ -1,0 +1,48 @@
+.banner-container .banner{
+    display: flex;
+    align-items: stretch; /* 🔥 iguala altura */
+    width: 100%;
+    background-image: url(img/cfondo3.png);
+}
+
+/* cada imagen */
+.banner-container .banner .item{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* imágenes */
+.banner-container .banner .item img{
+    height: auto;   /* 🔥 misma altura */
+    width: 100%;    /* mantiene proporción */
+    max-width: 100%;
+}
+
+/* 📱 TABLET */
+@media (max-width: 900px){
+    .banner-container .banner{
+        flex-wrap: wrap;
+    }
+
+    .banner-container .banner .item{
+        flex: 1 1 50%; /* 2 por fila */
+    }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px){
+    .banner-container .banner{
+        flex-direction: column; /* 🔥 invierte orden */
+    }
+
+    .banner-container .banner .item{
+        width: 100%;
+    }
+
+    .banner-container .banner .item img{
+        width: 100%;
+        height: auto;
+    }
+}
