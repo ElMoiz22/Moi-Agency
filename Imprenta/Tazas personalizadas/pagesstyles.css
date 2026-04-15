@@ -110,7 +110,7 @@ color: #ffffff;
 }
 
   .price {
-        color: #ffbb00;
+        color: #ffffff;
         font-size: 40px; 
         font-weight: bold;
 text-align: center;   
@@ -187,7 +187,3 @@ font-weight: 900;
   }
   @media screen and (max-width: 650px){
     .txttitulopost {font-size: 35px;}}
-
-    svg {
-color: #fff;
-    }

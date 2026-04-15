@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cobertura de Eventos</title>
+<link rel="icon" class="icono" href="https://moidg.online/icons/web%20logo.ico" type="icono">
+<link rel="stylesheet" href="https://moidg.online/Imprenta/pagesstyles.css" />	
+<link rel="stylesheet" href="https://moidg.online/headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+</head>
+<body>
+	
+<div id="header"></div>
+
+<script>
+fetch("https://moidg.online/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+         
+        
+
+<h2>Cobertura de Eventos</h2>
+
+
+
+<div class='galeria'>
+  <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 32"><g fill="currentColor"><path d="M39.5 6H32c-1.927 0-1.998-1.797-2-2V3c0-1.258-1.39-3-4-3h-9.969c-2.935 0-4 1.794-4 3v.994C12.03 4.076 11.983 6 10 6H2.5A2.503 2.503 0 0 0 0 8.5v18C0 27.878 1.121 29 2.5 29h6a.5.5 0 0 0 0-1h-6c-.827 0-1.5-.673-1.5-1.5V14h8a12.93 12.93 0 0 0-1 5c0 7.168 5.832 13 13 13s13-5.832 13-13c0-1.771-.359-3.46-1.003-5H41v12.5c0 .827-.673 1.5-1.5 1.5h-7a.5.5 0 0 0 0 1h7c1.379 0 2.5-1.122 2.5-2.5v-18C42 7.122 40.879 6 39.5 6M21 31c-6.617 0-12-5.383-12-12S14.383 7 21 7s12 5.383 12 12s-5.383 12-12 12m11.75-18a.49.49 0 0 0-.206.047C30.38 8.868 26.022 6 21 6s-9.38 2.868-11.544 7.047A.49.49 0 0 0 9.25 13H1V8.5C1 7.673 1.673 7 2.5 7H10c2.368 0 3.019-1.958 3.031-3V3c0-.804.799-2 3-2H26c2.094 0 3 1.324 3 2v1c0 1.038.627 3 3 3h7.5c.827 0 1.5.673 1.5 1.5V13z"/><path d="M9.5 5a.5.5 0 0 0 .5-.5v-1C10 2.673 9.327 2 8.5 2h-4C3.673 2 3 2.673 3 3.5v1a.5.5 0 0 0 1 0v-1a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 0 .5.5M21 10c-4.963 0-9 4.038-9 9s4.037 9 9 9s9-4.038 9-9s-4.037-9-9-9m0 17c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8"/></g></svg>
+    <h3 class="pin GridTitle">Fotografía Deportiva</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m9.4 10.5l4.77-8.26a9.984 9.984 0 0 0-8.49 2.01l3.66 6.35zM21.54 9c-.92-2.92-3.15-5.26-6-6.34L11.88 9zm.26 1h-7.49l.29.5l4.76 8.25A9.91 9.91 0 0 0 22 12c0-.69-.07-1.35-.2-2M8.54 12l-3.9-6.75A9.958 9.958 0 0 0 2.2 14h7.49zm-6.08 3c.92 2.92 3.15 5.26 6 6.34L12.12 15zm11.27 0l-3.9 6.76a9.984 9.984 0 0 0 8.49-2.01l-3.66-6.35z"/></svg>
+    <h3 class="pin GridTitle">Fotografía para eventos</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m9.4 10.5l4.77-8.26a9.984 9.984 0 0 0-8.49 2.01l3.66 6.35zM21.54 9c-.92-2.92-3.15-5.26-6-6.34L11.88 9zm.26 1h-7.49l.29.5l4.76 8.25A9.91 9.91 0 0 0 22 12c0-.69-.07-1.35-.2-2M8.54 12l-3.9-6.75A9.958 9.958 0 0 0 2.2 14h7.49zm-6.08 3c.92 2.92 3.15 5.26 6 6.34L12.12 15zm11.27 0l-3.9 6.76a9.984 9.984 0 0 0 8.49-2.01l-3.66-6.35z"/></svg>
+    <h3 class="pin GridTitle">Fotógrafo para Bodas</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 32"><g fill="currentColor"><path d="M39.5 6H32c-1.927 0-1.998-1.797-2-2V3c0-1.258-1.39-3-4-3h-9.969c-2.935 0-4 1.794-4 3v.994C12.03 4.076 11.983 6 10 6H2.5A2.503 2.503 0 0 0 0 8.5v18C0 27.878 1.121 29 2.5 29h6a.5.5 0 0 0 0-1h-6c-.827 0-1.5-.673-1.5-1.5V14h8a12.93 12.93 0 0 0-1 5c0 7.168 5.832 13 13 13s13-5.832 13-13c0-1.771-.359-3.46-1.003-5H41v12.5c0 .827-.673 1.5-1.5 1.5h-7a.5.5 0 0 0 0 1h7c1.379 0 2.5-1.122 2.5-2.5v-18C42 7.122 40.879 6 39.5 6M21 31c-6.617 0-12-5.383-12-12S14.383 7 21 7s12 5.383 12 12s-5.383 12-12 12m11.75-18a.49.49 0 0 0-.206.047C30.38 8.868 26.022 6 21 6s-9.38 2.868-11.544 7.047A.49.49 0 0 0 9.25 13H1V8.5C1 7.673 1.673 7 2.5 7H10c2.368 0 3.019-1.958 3.031-3V3c0-.804.799-2 3-2H26c2.094 0 3 1.324 3 2v1c0 1.038.627 3 3 3h7.5c.827 0 1.5.673 1.5 1.5V13z"/><path d="M9.5 5a.5.5 0 0 0 .5-.5v-1C10 2.673 9.327 2 8.5 2h-4C3.673 2 3 2.673 3 3.5v1a.5.5 0 0 0 1 0v-1a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 0 .5.5M21 10c-4.963 0-9 4.038-9 9s4.037 9 9 9s9-4.038 9-9s-4.037-9-9-9m0 17c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8"/></g></svg>
+    <h3 class="pin GridTitle">Fotógrafo para XV Años</h3>
+  </div>
+  
+  <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m9.4 10.5l4.77-8.26a9.984 9.984 0 0 0-8.49 2.01l3.66 6.35zM21.54 9c-.92-2.92-3.15-5.26-6-6.34L11.88 9zm.26 1h-7.49l.29.5l4.76 8.25A9.91 9.91 0 0 0 22 12c0-.69-.07-1.35-.2-2M8.54 12l-3.9-6.75A9.958 9.958 0 0 0 2.2 14h7.49zm-6.08 3c.92 2.92 3.15 5.26 6 6.34L12.12 15zm11.27 0l-3.9 6.76a9.984 9.984 0 0 0 8.49-2.01l-3.66-6.35z"/></svg>
+    <h3 class="pin GridTitle">Fotografía de Producto</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 32"><g fill="currentColor"><path d="M39.5 6H32c-1.927 0-1.998-1.797-2-2V3c0-1.258-1.39-3-4-3h-9.969c-2.935 0-4 1.794-4 3v.994C12.03 4.076 11.983 6 10 6H2.5A2.503 2.503 0 0 0 0 8.5v18C0 27.878 1.121 29 2.5 29h6a.5.5 0 0 0 0-1h-6c-.827 0-1.5-.673-1.5-1.5V14h8a12.93 12.93 0 0 0-1 5c0 7.168 5.832 13 13 13s13-5.832 13-13c0-1.771-.359-3.46-1.003-5H41v12.5c0 .827-.673 1.5-1.5 1.5h-7a.5.5 0 0 0 0 1h7c1.379 0 2.5-1.122 2.5-2.5v-18C42 7.122 40.879 6 39.5 6M21 31c-6.617 0-12-5.383-12-12S14.383 7 21 7s12 5.383 12 12s-5.383 12-12 12m11.75-18a.49.49 0 0 0-.206.047C30.38 8.868 26.022 6 21 6s-9.38 2.868-11.544 7.047A.49.49 0 0 0 9.25 13H1V8.5C1 7.673 1.673 7 2.5 7H10c2.368 0 3.019-1.958 3.031-3V3c0-.804.799-2 3-2H26c2.094 0 3 1.324 3 2v1c0 1.038.627 3 3 3h7.5c.827 0 1.5.673 1.5 1.5V13z"/><path d="M9.5 5a.5.5 0 0 0 .5-.5v-1C10 2.673 9.327 2 8.5 2h-4C3.673 2 3 2.673 3 3.5v1a.5.5 0 0 0 1 0v-1a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 0 .5.5M21 10c-4.963 0-9 4.038-9 9s4.037 9 9 9s9-4.038 9-9s-4.037-9-9-9m0 17c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8"/></g></svg>
+    <h3 class="pin GridTitle">Fotografía de paisajes y naturaleza</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 32"><g fill="currentColor"><path d="M39.5 6H32c-1.927 0-1.998-1.797-2-2V3c0-1.258-1.39-3-4-3h-9.969c-2.935 0-4 1.794-4 3v.994C12.03 4.076 11.983 6 10 6H2.5A2.503 2.503 0 0 0 0 8.5v18C0 27.878 1.121 29 2.5 29h6a.5.5 0 0 0 0-1h-6c-.827 0-1.5-.673-1.5-1.5V14h8a12.93 12.93 0 0 0-1 5c0 7.168 5.832 13 13 13s13-5.832 13-13c0-1.771-.359-3.46-1.003-5H41v12.5c0 .827-.673 1.5-1.5 1.5h-7a.5.5 0 0 0 0 1h7c1.379 0 2.5-1.122 2.5-2.5v-18C42 7.122 40.879 6 39.5 6M21 31c-6.617 0-12-5.383-12-12S14.383 7 21 7s12 5.383 12 12s-5.383 12-12 12m11.75-18a.49.49 0 0 0-.206.047C30.38 8.868 26.022 6 21 6s-9.38 2.868-11.544 7.047A.49.49 0 0 0 9.25 13H1V8.5C1 7.673 1.673 7 2.5 7H10c2.368 0 3.019-1.958 3.031-3V3c0-.804.799-2 3-2H26c2.094 0 3 1.324 3 2v1c0 1.038.627 3 3 3h7.5c.827 0 1.5.673 1.5 1.5V13z"/><path d="M9.5 5a.5.5 0 0 0 .5-.5v-1C10 2.673 9.327 2 8.5 2h-4C3.673 2 3 2.673 3 3.5v1a.5.5 0 0 0 1 0v-1a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 0 .5.5M21 10c-4.963 0-9 4.038-9 9s4.037 9 9 9s9-4.038 9-9s-4.037-9-9-9m0 17c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8"/></g></svg>
+    <h3 class="pin GridTitle">Fotografía de mascotas</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M24 8V7h-7v1h3v1h-1v2h-3.3l-1.501-2.6H9.855l-1.5 2.6H5V9H4V8h3V7H0v1h3v1H2v5h3v-1h3.167l.216.374A8.002 8.002 0 0 0 4 20.5a.5.5 0 0 0 1 0a7.001 7.001 0 0 1 3.883-6.259l.972 1.683h4.344l.96-1.663A7.002 7.002 0 0 1 19 20.5a.5.5 0 0 0 1 0a8.003 8.003 0 0 0-4.34-7.106l.227-.394H19v1h3V9h-1V8Z"/></svg>
+    <h3 class="pin GridTitle">Fotografía aérea con Drone</h3>
+  </div>
+  
+  <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 32"><g fill="currentColor"><path d="M39.5 6H32c-1.927 0-1.998-1.797-2-2V3c0-1.258-1.39-3-4-3h-9.969c-2.935 0-4 1.794-4 3v.994C12.03 4.076 11.983 6 10 6H2.5A2.503 2.503 0 0 0 0 8.5v18C0 27.878 1.121 29 2.5 29h6a.5.5 0 0 0 0-1h-6c-.827 0-1.5-.673-1.5-1.5V14h8a12.93 12.93 0 0 0-1 5c0 7.168 5.832 13 13 13s13-5.832 13-13c0-1.771-.359-3.46-1.003-5H41v12.5c0 .827-.673 1.5-1.5 1.5h-7a.5.5 0 0 0 0 1h7c1.379 0 2.5-1.122 2.5-2.5v-18C42 7.122 40.879 6 39.5 6M21 31c-6.617 0-12-5.383-12-12S14.383 7 21 7s12 5.383 12 12s-5.383 12-12 12m11.75-18a.49.49 0 0 0-.206.047C30.38 8.868 26.022 6 21 6s-9.38 2.868-11.544 7.047A.49.49 0 0 0 9.25 13H1V8.5C1 7.673 1.673 7 2.5 7H10c2.368 0 3.019-1.958 3.031-3V3c0-.804.799-2 3-2H26c2.094 0 3 1.324 3 2v1c0 1.038.627 3 3 3h7.5c.827 0 1.5.673 1.5 1.5V13z"/><path d="M9.5 5a.5.5 0 0 0 .5-.5v-1C10 2.673 9.327 2 8.5 2h-4C3.673 2 3 2.673 3 3.5v1a.5.5 0 0 0 1 0v-1a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 0 .5.5M21 10c-4.963 0-9 4.038-9 9s4.037 9 9 9s9-4.038 9-9s-4.037-9-9-9m0 17c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8"/></g></svg>
+    <h3 class="pin GridTitle">Fotografía de conciertos y espectáculos</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m9.4 10.5l4.77-8.26a9.984 9.984 0 0 0-8.49 2.01l3.66 6.35zM21.54 9c-.92-2.92-3.15-5.26-6-6.34L11.88 9zm.26 1h-7.49l.29.5l4.76 8.25A9.91 9.91 0 0 0 22 12c0-.69-.07-1.35-.2-2M8.54 12l-3.9-6.75A9.958 9.958 0 0 0 2.2 14h7.49zm-6.08 3c.92 2.92 3.15 5.26 6 6.34L12.12 15zm11.27 0l-3.9 6.76a9.984 9.984 0 0 0 8.49-2.01l-3.66-6.35z"/></svg>
+    <h3 class="pin GridTitle">Fotografía Familiar</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m9.4 10.5l4.77-8.26a9.984 9.984 0 0 0-8.49 2.01l3.66 6.35zM21.54 9c-.92-2.92-3.15-5.26-6-6.34L11.88 9zm.26 1h-7.49l.29.5l4.76 8.25A9.91 9.91 0 0 0 22 12c0-.69-.07-1.35-.2-2M8.54 12l-3.9-6.75A9.958 9.958 0 0 0 2.2 14h7.49zm-6.08 3c.92 2.92 3.15 5.26 6 6.34L12.12 15zm11.27 0l-3.9 6.76a9.984 9.984 0 0 0 8.49-2.01l-3.66-6.35z"/></svg>
+    <h3 class="pin GridTitle">Fotografía de retrato corporativo</h3>
+  </div>
+  
+    <div class='imagen'>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 32"><g fill="currentColor"><path d="M39.5 6H32c-1.927 0-1.998-1.797-2-2V3c0-1.258-1.39-3-4-3h-9.969c-2.935 0-4 1.794-4 3v.994C12.03 4.076 11.983 6 10 6H2.5A2.503 2.503 0 0 0 0 8.5v18C0 27.878 1.121 29 2.5 29h6a.5.5 0 0 0 0-1h-6c-.827 0-1.5-.673-1.5-1.5V14h8a12.93 12.93 0 0 0-1 5c0 7.168 5.832 13 13 13s13-5.832 13-13c0-1.771-.359-3.46-1.003-5H41v12.5c0 .827-.673 1.5-1.5 1.5h-7a.5.5 0 0 0 0 1h7c1.379 0 2.5-1.122 2.5-2.5v-18C42 7.122 40.879 6 39.5 6M21 31c-6.617 0-12-5.383-12-12S14.383 7 21 7s12 5.383 12 12s-5.383 12-12 12m11.75-18a.49.49 0 0 0-.206.047C30.38 8.868 26.022 6 21 6s-9.38 2.868-11.544 7.047A.49.49 0 0 0 9.25 13H1V8.5C1 7.673 1.673 7 2.5 7H10c2.368 0 3.019-1.958 3.031-3V3c0-.804.799-2 3-2H26c2.094 0 3 1.324 3 2v1c0 1.038.627 3 3 3h7.5c.827 0 1.5.673 1.5 1.5V13z"/><path d="M9.5 5a.5.5 0 0 0 .5-.5v-1C10 2.673 9.327 2 8.5 2h-4C3.673 2 3 2.673 3 3.5v1a.5.5 0 0 0 1 0v-1a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 0 .5.5M21 10c-4.963 0-9 4.038-9 9s4.037 9 9 9s9-4.038 9-9s-4.037-9-9-9m0 17c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8"/></g></svg>
+    <h3 class="pin GridTitle">Fotografía de arte corporal y tatuajes</h3>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script>
+  fetch("https://moidg.online/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+<script src="../script.js"></script>  
+
+
+	</body>
+</html>
+

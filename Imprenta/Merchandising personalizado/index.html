@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Merchandising Personalizado</title>
+<link rel="icon" class="icono" href="https://moidg.online/icons/web%20logo.ico" type="icono">
+<link rel="stylesheet" href="https://moidg.online/Imprenta/pagesstyles.css" />	
+<link rel="stylesheet" href="https://moidg.online/headerstyles.css" />	
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+</head>
+<body>
+	
+<div id="header"></div>
+
+<script>
+fetch("https://moidg.online/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
+
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
+      });
+    });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
+</script>
+
+	    <!-- desde aqui agrega el contenido -->
+         
+        
+
+<h2>Merchandising Personalizado</h2>
+
+
+<div class='galeria'>
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisMyd6GIworSVbK6vMxRroGdX6ELSclY5zBybCqfN1uRQtA1Of58Pe6gEoKkIRYf9jcO0TY5LGt9Ck8dOcAxlDImzTSWWuq83Roui3XhtOuXKTfyf83E0GBDldMcTzfb1Hni-UXSH6mkBATt_K5zRyOLtwo0uhUw8IVRL_BK6k01AgwjHXyXsNOCyl1w/s1600/imagen_2023-06-04_051138071.png'/><h3 class="pin GridTitle">Playera Sublimada</h3></div>
+   
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaO5UHZUuMFh1ixaAUDO6iULU6hbk7_3ddJuLg0X1BsGtQ1cL6odgqUWQwUyZfnoOkAGG-zUO0IzcCgGp2EZ6BMGFldjjSJYA7fmLjLeY30X5nig17N2Ml5Wr007EmDuqT8IoOtFnxc9HGiE_6UAtTcd3-a2JUl93PlMFMnmll8qTteiE2k2vfDNP-8Q/s1600/imagen_2023-06-04_050943069.png'/><h3 class="pin GridTitle">Playera Estampada</h3></div>
+
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhc7i8wEx5gasWtvpn6nr8TiPN6nTSzlMWgDGs6BCU1k728Jo5-NzIeHAicwLwblEMSokMYnr02gLgOMxF4dnOxnJRVM3s-qS2AiDtE317Tz-yNxmDr5-MLb6itWE0W4Gw3bDqaGE-3pK-3F6o-09yt_XD1jncnk5iNBIrYORb0TjwE4FN8WH_rC_SosLt7/s1600/imagen_2023-07-10_133915435.png'/><h3 class="pin GridTitle">Sudadera Personalizada</h3></div>
+
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-CVEuGLvviiUcKkX8PQnXXSJDM8u6r_VgnB4FIKgcGJL47hQJe3yFnPiDA5xrMBWhIPn57pPYuqZ7wZFJhLW0qA4xnsIIXNULI6tU1_-kAACXf5iwnA5kJnbsjgn2-HJuZvIYXj8mzP5GxrXln_GwXmoTMqfhdsGuo8yROGOjzcVrDJ9uhrSHiHQ8fA/s1600/imagen_2023-06-04_051306660.png'/><h3 class="pin GridTitle">Playera Polo</h3></div>
+   
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBI7emuDAzrwLLxv2DbOssEp16VlkciRiF9_ez27o-DGrH-B1YUhb9o1L4IRTR1H2NdO9GWBWAqbBI9FGhQ4f4FJeP3DZrGGqIOPoXm1L3US2JmmQqwRJSCs0Z4DcKgElBGxGFJvSDKNTXaX22Ctb67vQAbxJmpYNPuLPEA75_7GhV5JDUPmUovneTyg/s1600/imagen_2023-06-04_051333142.png'/><h3 class="pin GridTitle">JERSEY TANK</h3></div>
+
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixs-lsxEaAU_5WW812ENiWpi1My18iBPTdraWdo85u0k-3krMnk6cXPT06bfvW3YJjKJJjd22ZfXaskL3k3qkbdalxbYKc7WjrybJkRfnOAkRZRfOnwaUehTPDhfklXW6BHunrUeAQZxiDqlpg6Y6ajYU3moZZ-vAsxWbU78cdioCqojkM0LFneit1cQ/s1600/imagen_2023-06-04_051400991.png'/><h3 class="pin GridTitle">Camisas Estampadas</h3></div>
+
+   <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiO6Z62ysd8Zp0x86A0HYRNiD_A9aV0h25gjKnTcw68vNJVfG4B75HeDhcnw7S91wUR8eiK0bMjC4rQYZuLUxM43jmFgltsz4iC9HXxiGHUrZfDQAiDnOTZzJiLeuuxtcN5CU2LaIYb4iBtyhepXEcX3epuK5RqyVzo3gzKCUuzHO-ELYwyLaK-s5GC7Q/s1600/imagen_2023-06-04_051811021.png'/><h3 class="pin GridTitle">BODY PARA BEBÉ</h3></div>
+ <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRYYO4TJgH-b9Rq7p39RYFTMUo3crDxOQ8m5sbHm1lAb5Bq1BwHUMLb0V2wRLSiodv4N1YEcsjsQg7tgTOo3PSstiiP9kqbsgA7rgBtOMXdrScGw1wQbGKwcHxaRUjCLjK6i9ChEHtR8yJBY4Dsz5DNC4TFzpLkT54J-MR7w4NrrYDQhx_xOmXN4nI7OSB/s1600/gf.png'/><h3 class="pin GridTitle">MOUSEPAD</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgd_ItRhEbnDVolkLty8AHszp4mjUkZr88t3A0x572FpyPZwU1pbb9NNNk6c4ooUWKwRgC9HJ_z0bxcVKhFIcHC1Y9WOLaof9sf0MFi7Gk9D7VdBXlrIv92plZHP_vrZWgjTadyipBIZkO4OQKAcNa48lCUZDgx5DioaLHzcRUNOhdxW5n-Ve7ZvXK2G_R0/s1600/we.png'/><h3 class="pin GridTitle">GORRAS ACRÍLICAS</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHKODhUwDKgp-ZI7FeWO1oc-UuKks59tg0p2pGbiBGFahN8Skv83tmJcMw2QlQZ13kjUxvQkEBp1m7uC8bmsxxa0f__iaYFK-ijwgW4Qm8XXqjCvaVCHDZcc-xaUCSxolDBWlhu3wEyw4GiTT1k7DT5mgk3Jo8lUn_wrrSHlcSVJKp4hcl7oBkXfglkXBe/s1600/f7f.png'/><h3 class="pin GridTitle">GORRAS PROMOCIONALES</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXLA5O_fLVO_T-HCM5waPhtUGA2oeQ_6pmxyXCU1oefOgv-i6tA37V1uTepwwvTi-nnFyqToNi5BsrDqrQw0O_cJSENekt3wOMFZP5OltwJXADIlzOo4zpy-03QIGKxBopuHiWGfMvBOYj5h66trcXd2q7D1I06AHWDKUR_mPtptaX47XDG4VC3KCtMbAh/s1600/tgbfdc.png'/><h3 class="pin GridTitle">GORRAS DE GABARDINA</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZBht5YUkgWegz7GwpQf3_Hexo4U0fWmz-faEI6v5bYxbQ3bWdjWeUR0FYw7DZLPmpEQLlylnYtMRWT3LGtILnrEdL8iKyadtiKrsuU8_yUcnhoA4zmHemeG5JgsmSjj-ldFeW8Jw34dhPuwIo889LC58Nd8L38aRxowgz-wOC_rfxe_AbNlJ_S9Lparfr/s1600/2hb.png'/><h3 class="pin GridTitle">LANYARD</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhReJuN4KxPJhhbmP09BG0mdkno1QWByLeChx6ylmTjLYAeki8QhkvS3rKer2krWJOPuiVgPj_wKAqUjs__CQqBCoIKLnuP9CMfoeBMjJ1zVu3rB-DP1VGhsUtAcuoJaBa7Fxf_bk9tZGYNsGiFXToRbBN9U5fxALb2FcevbuwqY78cGSuTFERW5wRy8BKy/s1600/23243.png'/><h3 class="pin GridTitle">BOTONES PUBLICITARIOS</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdSVUwpTd0mYw7nsYVqZ9t_N93W0OkIUdfmSh28t9mynkdK-_beAJhvkJKbvrHyNBkoB0W1QU14nnlYhPC_EubQuvR24ZM7Z39P2PGkLHZLX3HFGlg4q3W2vzn-zOoDa-QSsPf6lGduLSDiJZGObtHw1NNjqfaF98aw8WnLLI8mbIpxpQVH0Njn_XVyqmr/s1600/2132123.png'/><h3 class="pin GridTitle">ROMPECABEZAS</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgl3hHoKlmuLi4bHX3OBC97_t5cVQ5c6VGw1UyEwm-baoAaUUpsu1G_YGElFr3qC6CBIVoOMeA2Jaj5HDOg5XHcznRsrjedLIChqaVax0s2u27MhJNsJoGCX6BDZzf6b-RDBSE9b-Rq9zciXjyo3AJKkHO6FG-0ENiv0SexeHKj1FsFxIh3IL_opicFTWr0/s1600/32423.png'/><h3 class="pin GridTitle">LLAVEROS MDF</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlZN7zsZCwDMYDjiI6Di3UKH5OGbLJ_-tiiDr_WUHgkjR2MTFYwJxsTYBVESbo-E7Dn0EXZeeOBYoHawGGLVWbmbJuoRcVwl5iCry6CVlw0LVvmJou5CaEVFVys8rt_k1QXKXtCL-cIsSDLHFCHsQSWo0XB8qgR04o1agHCtpdGJQghmBnjQx08qQa_EuK/s1600/4g.png'/><h3 class="pin GridTitle">GABACHAS</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgacJUtoQ1jZyAEJbXExsgEHjS3DfGOZC0m4e8_Ls5jjJBOEcmfnZhliKMH4mJFkZVo9YphED5SGx1tBTczPmpKR0BACmfm6X0GSSCynaNeKUlj9Gl2SeSrzGbSEEasTvaGUyaVFRA5-Gk_j8l7T5rVaWcErNY8w7xSHgQtuicTYIfmyvJTLV82asv0Dob_/s1600/gtgt.png'/><h3 class="pin GridTitle">LLAVERO RECTANGULAR DE METAL DOBLE CARA</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieueIFW4D3F8EASEJvU9VvUEPochpN2EitkWilqIBSwncu56Tt4r-Xq65VMkxrsHhlwZhaG3o8t2AQYmu8HFdfcJBTYSUHAdC0Bghyphenhyphenm-c5nyyerMNS4-rgh0ZZ0RzLKDq3OumN0yoTnjzXChGJj105wIVBRak8W3yth0GvE4MYPLDZsAugyGUmpebkbte3/s1600/3543ed.png'/><h3 class="pin GridTitle">CARNETS EN PVC</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrp0xeuwqLwb35oM45mrT9nOd5UqDrIOswnPzdLCH1TM3N9LyAWxzEen39KNa1NovTG1Y9HkIXPEybFUoeS8ZfHXHA_maNY7WCoMd831p9NuQfYVxOzU3aWF4R6fNpmotRPr4TZRRYf0lXKsUZC7B_qk0TGdrP7b_uQ4YjWzywrvih4EhY9iK2PcSNWyB4/s1600/ewerwe.png'/><h3 class="pin GridTitle">BRAZALETES DE TELA</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiB7XKfg3A8kBRjVkICV6ytmxtlgV0r3l2jbDB4c1nsmcX2lqXiB1nwmB7DjN1l-T3iKtkLr-rB0MMzKUIpf2iZ_5J_bgInPZKKy8Zr3jGqSiowFetW1wMDrahk_s4ZvjHVIBRZK828t4gNnIwN2obekkdfScaQL-xJkrXPqw9GcAqJn8QSwekF1Z9NcNGs/s1600/efwe.png'/><h3 class="pin GridTitle">BOLSAS PROMOCIONALES</h3></div>
+    
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgklzyrjfqIfxyjhZmqK-pdggi-AsxTQcudcW8rqJoDUaREa7cmH0t6VLB94lAZzRrW3tFs-_fyDYY8w7JX5cWcoAzMH8YWT-b4vgzv3I8t2xyqknjjVlz_CexQGdoMWrmiRMdnyw8alYBxgZ2ukPYlEiKevWP50S3YuBKKTVgLty4RBRoXQVMfMZaTY3Vc/s1600/4fd.png'/><h3 class="pin GridTitle">POP SOCKET BLANCO O NEGRO</h3></div>
+  
+  <div class='imagen'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAIMpsrCyqP0ASl_HItCLkrXKyHgnccVNPXH0XvQ8VY6j4YKJHhdIE_-VWEMAF_NHgYuPoQB4bexDWYa_xYp2oTBAC04sO4U8HooWI_BU6YM8JzrE0iZo_IxGSiArOUBzWegOIcMBc6gdaTAny0E4Aug54Z-fSfh7Kr2Btc7buSn3HRlaPauod9TY3SrWM/s1600/werwe.png'/><h3 class="pin GridTitle">LLAVERO RECTANGULAR DE METAL</h3></div>
+
+</div>
+
+
+<div id="footer"></div>
+
+<script>
+  fetch("https://moidg.online/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+<script src="../script.js"></script>  
+
+
+	</body>
+</html>

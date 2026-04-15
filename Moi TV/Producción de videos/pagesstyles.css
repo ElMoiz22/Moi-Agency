@@ -188,6 +188,31 @@ font-weight: 900;
   @media screen and (max-width: 650px){
     .txttitulopost {font-size: 35px;}}
 
-    svg {
-color: #fff;
+    
+.video-container {
+    position: relative;
+    padding-bottom: 200%;
+    border-radius: 20px;
+}
+
+.video-gallery {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(6, minmax(166px, 1fr)); /* 3 videos en fila para PC */
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(4, minmax(200px, 1fr)); /* 2 videos en fila para tablet */
     }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, minmax(55px, 1fr)); /* 1 video en fila para celular */
+    }
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+}
