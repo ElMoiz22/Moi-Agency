@@ -172,6 +172,15 @@ ul{
     );
 
 }
+.hero-logo2{
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+    margin:20px 0;
+
+}
 
 .hero-logo{
 
@@ -183,7 +192,7 @@ ul{
 
 }
 
-.hero-logo span{
+.hero-logo .hero-logo2span{
 
     color:rgba(255,255,255,.85);
 
@@ -197,11 +206,17 @@ ul{
 
 }
 
-.hero-logo img{
+.hero-logo .hero-logo2 img{
 
     width:180px;
 
     height:auto;
+
+}
+
+.hero-logo2{
+
+    align-items:center;
 
 }
 
@@ -238,6 +253,12 @@ ul{
 }
 
 .hero-logo{
+
+    align-items:center;
+
+}
+
+.hero-logo2{
 
     align-items:center;
 
@@ -1199,9 +1220,9 @@ font-size:38px;
 
 .benefits li{
 
-padding:20px 20px 20px 62px;
+padding:5px 5px 5px 32px;
 
-font-size:17px;
+font-size:12px;
 
 }
 
@@ -1316,9 +1337,9 @@ padding:8px 55px;
 
 .benefits li{
 
-font-size:15px;
+padding:5px 5px 5px 55px;
 
-padding:18px 18px 18px 55px;
+font-size:12px;
 
 }
 
