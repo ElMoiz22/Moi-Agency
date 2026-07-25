@@ -1,87 +1,509 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Logos Realizados</title>
-<link rel="stylesheet" href="https://moidg.online/headerstyles.css" />	
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MOI TV | MOI Agency</title>
+
+<link rel="stylesheet" href="https://moidg.online/headerstyles.css">
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+
+<!-- CSS exclusivo -->
+<link rel="stylesheet" href="patrocinio.css">
+
 </head>
 
 <body>
-	
+
 <div id="header"></div>
 
 <script>
 fetch("https://moidg.online/header.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
+.then(res => res.text())
+.then(data => {
 
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+document.getElementById("header").innerHTML = data;
 
-    // Toggle menú principal
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-    });
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
 
-    // Submenús en móviles: solo uno abierto a la vez
-    subMenuParents.forEach(span => {
-      span.addEventListener("click", function (e) {
-        if (window.innerWidth <= 1200) {
-          e.preventDefault(); // evita que haga scroll o busque un link
-          const parentLi = this.parentElement;
+hamburger.addEventListener("click", () => {
+hamburger.classList.toggle("active");
+navMenu.classList.toggle("active");
+});
 
-          // Cierra otros submenús abiertos
-          subMenuParents.forEach(other => {
-            if (other !== this) {
-              other.parentElement.classList.remove("open");
-            }
-          });
+subMenuParents.forEach(span => {
 
-          // Alterna el submenú del click actual
-          parentLi.classList.toggle("open");
-        }
-      });
-    });
+span.addEventListener("click", function(e){
 
-    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
-    document.querySelectorAll(".submenu a").forEach(link => {
-      link.addEventListener("click", function () {
-        if (window.innerWidth <= 1200) {
-          hamburger.classList.remove("active");
-          navMenu.classList.remove("active");
+if(window.innerWidth <= 1200){
 
-          // Cierra todos los submenús
-          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
-        }
-      });
-    });
-  });
+e.preventDefault();
+
+const parentLi = this.parentElement;
+
+subMenuParents.forEach(other => {
+
+if(other != this){
+
+other.parentElement.classList.remove("open");
+
+}
+
+});
+
+parentLi.classList.toggle("open");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".submenu a").forEach(link=>{
+
+link.addEventListener("click",function(){
+
+if(window.innerWidth <=1200){
+
+hamburger.classList.remove("active");
+navMenu.classList.remove("active");
+
+subMenuParents.forEach(span=>span.parentElement.classList.remove("open"));
+
+}
+
+});
+
+});
+
+});
 </script>
 
-	    <!-- desde aqui agrega el contenido -->
 
-    <div class="contenedor-imagen">
-  <img style="width: 100%;" src="webi1.jpg" alt="" class="img-responsiva">
+
+
+
+<!-- ====================================================== -->
+<!-- ==================== HERO ============================ -->
+<!-- ====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <!-- Texto -->
+
+        <div class="hero-text">
+
+            <h1>
+                <span>MÁS</span>
+                <span>QUE</span>
+                <strong>DISEÑO</strong>
+            </h1>
+
+            <div class="hero-logo">
+
+                <img src="moitvsl.png" alt="MOI TV Sports Live">
+
+            </div>
+
+            <h2>APOYA NUESTRO CONTENIDO</h2>
+
+        </div>
+
+        <!-- Mascota -->
+
+        <div class="hero-image">
+
+            <img src="aoi.png" alt="Mascota MOI">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ====================================================== -->
+<!-- ==================== PAQUETES ========================= -->
+<!-- ====================================================== -->
+
+<section class="packages">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>PAQUETES DE PATROCINIO</h2>
+
+<p>
+Elige el paquete que mejor se adapte a tu marca.
+</p>
+
 </div>
 
-<script src="script.js"></script>
+<div class="package-grid">
+
+
+
+
+<!-- ================== PAQUETE 1 =================== -->
+
+<div class="package-card">
+
+    <h3>Paquete #1</h3>
+
+    <div class="price">
+        Q250<span>/mes</span>
+    </div>
+
+    <div class="package-content">
+
+        <p class="package-description">
+            Una excelente opción para que su marca comience a tener presencia en nuestras transmisiones deportivas mediante publicidad integrada de forma natural.
+        </p>
+
+        <h4>¿Qué incluye?</h4>
+
+        <ul class="package-list">
+            <li>Logo en formato vertical.</li>
+            <li>Aparición en los cintillos rotativos.</li>
+            <li>Presencia durante las transmisiones deportivas.</li>
+            <li>Integración respetando el diseño de la transmisión.</li>
+        </ul>
+
+        <div class="package-target">
+            <strong>Ideal para:</strong>
+            Emprendimientos, pequeños negocios y marcas que desean comenzar a promocionarse.
+        </div>
+
+    </div>
+
+    <img src="img/patrocinio/paquete1.webp" alt="Paquete 1">
+
+    <a href="#" class="btn-package">
+        Solicitar este paquete
+    </a>
+
+</div>
+
+
+<!-- ================== PAQUETE 2 =================== -->
+
+<div class="package-card">
+
+    <h3>Paquete #2</h3>
+
+    <div class="price">
+        Q450<span>/mes</span>
+    </div>
+
+    <div class="package-content">
+
+        <p class="package-description">
+            <strong>Incluye todo lo del Paquete #1</strong>, además de una mayor visibilidad utilizando un logotipo horizontal con mejor aprovechamiento del espacio.
+        </p>
+
+        <h4>¿Qué incluye?</h4>
+
+        <ul class="package-list">
+            <li>Todo lo incluido en el Paquete #1.</li>
+            <li>Logo horizontal de mayor tamaño.</li>
+            <li>Mayor protagonismo dentro de los cintillos.</li>
+            <li>Mejor visibilidad durante las transmisiones.</li>
+        </ul>
+
+        <div class="package-target">
+            <strong>Ideal para:</strong>
+            Empresas que buscan destacar más durante los eventos.
+        </div>
+
+    </div>
+
+    <img src="img/patrocinio/paquete2.webp" alt="Paquete 2">
+
+    <a href="#" class="btn-package">
+        Solicitar este paquete
+    </a>
+
+</div>
+
+<!-- ================== PAQUETE 3 =================== -->
+
+<div class="package-card">
+
+    <h3>Paquete #3</h3>
+
+    <div class="price">
+        Q700<span>/mes</span>
+    </div>
+
+    <div class="package-content">
+
+        <p class="package-description">
+            <strong>Incluye todo lo del Paquete #2</strong>, agregando una presencia permanente mediante un logotipo fijo durante toda la transmisión.
+        </p>
+
+        <h4>¿Qué incluye?</h4>
+
+        <ul class="package-list">
+            <li>Todo lo del Paquete #2.</li>
+            <li>Logo fijo durante la transmisión.</li>
+            <li>Mayor tiempo de exposición.</li>
+            <li>Mayor recordación de marca.</li>
+        </ul>
+
+        <div class="package-target">
+            <strong>Ideal para:</strong>
+            Empresas que desean mantener una presencia constante frente a la audiencia.
+        </div>
+
+    </div>
+
+    <img src="img/patrocinio/paquete3.webp" alt="Paquete 3">
+
+    <a href="#" class="btn-package">
+        Solicitar este paquete
+    </a>
+
+</div>
+
+<!-- ================== PAQUETE 4 =================== -->
+
+<div class="package-card destacado">
+
+    <span class="badge">
+        RECOMENDADO
+    </span>
+
+    <h3>Paquete #4</h3>
+
+    <div class="price">
+        Q1,000<span>/mes</span>
+    </div>
+
+    <div class="package-content">
+
+        <p class="package-description">
+            <strong>Incluye todos los beneficios del Paquete #3</strong>, además de una mayor presencia en nuestras redes sociales y espacios exclusivos de patrocinio.
+        </p>
+
+        <h4>¿Qué incluye?</h4>
+
+        <ul class="package-list">
+            <li>Todo lo del Paquete #3.</li>
+            <li>Presencia en Reels.</li>
+            <li>Logo destacado en las primeras fotografías de las galerías.</li>
+            <li>Mayor prioridad dentro de nuestros espacios publicitarios.</li>
+            <li>Mayor exposición de la marca durante el mes.</li>
+        </ul>
+
+        <div class="package-target">
+            <strong>Ideal para:</strong>
+            Empresas que buscan la máxima visibilidad y fortalecer su posicionamiento de marca.
+        </div>
+
+    </div>
+
+    <img src="img/patrocinio/paquete4.webp" alt="Paquete 4">
+
+    <a href="#" class="btn-package">
+        Solicitar este paquete
+    </a>
+
+</div>
+
+
+</div>
+<p class="package-note">
+    ✔ Adaptamos su logotipo sin costo adicional para integrarlo correctamente en nuestras transmisiones y publicaciones.
+</p>
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- ================= BENEFICIOS ========================== -->
+<!-- ====================================================== -->
+
+<section class="benefits">
+
+<div class="container">
+
+<div class="benefits-grid">
+
+    <!-- Tarjeta 1 -->
+
+    <article class="benefit-card">
+
+        <h2>¿Cómo impulsamos su marca?</h2>
+
+        <ul>
+
+            <li>Su marca aparecerá en transmisiones deportivas.</li>
+
+            <li>Publicaciones, historias y galerías.</li>
+
+            <li>Etiquetamos su página cuando corresponda.</li>
+
+            <li>Publicidad integrada de forma natural.</li>
+
+            <li>Mayor paquete = mayor exposición.</li>
+
+        </ul>
+
+    </article>
+
+
+
+    <!-- Tarjeta 2 -->
+
+    <article class="benefit-card">
+
+        <h2>¿Cómo funciona?</h2>
+
+        <ul>
+
+            <li>Los paquetes tienen duración mensual.</li>
+
+            <li>La publicidad inicia al confirmar el pago.</li>
+
+            <li>Solicitaremos su logotipo.</li>
+
+            <li>Programamos su publicidad en nuestras plataformas.</li>
+
+        </ul>
+
+    </article>
+
+
+
+    <!-- Tarjeta 3 -->
+
+    <article class="benefit-card">
+
+        <h2>Condiciones</h2>
+
+        <ul>
+
+            <li>Pago mensual por adelantado.</li>
+
+            <li>La publicidad se suspende tras 5 días de atraso.</li>
+
+            <li>Al recibir el pago se reactiva.</li>
+
+            <li>Espacios sujetos a disponibilidad.</li>
+
+        </ul>
+
+    </article>
+
+
+
+    <!-- Tarjeta 4 -->
+
+    <article class="benefit-card">
+
+        <h2>Preguntas frecuentes</h2>
+
+        <ul>
+
+            <li>¿Cuándo inicia? Al confirmar el pago.</li>
+
+            <li>¿Puedo cambiar de paquete? Sí.</li>
+
+            <li>¿Existe contrato? No.</li>
+
+            <li>¿Cómo envío mi logotipo? PNG, SVG, AI o PDF.</li>
+
+        </ul>
+
+    </article>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- ===================== CTA ============================= -->
+<!-- ====================================================== -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+
+GRACIAS POR APOYAR NUESTRO CONTENIDO
+
+</h2>
+
+<p> 
+
+Su apoyo nos permite seguir creando fotografías, transmisiones, contenido social, cultural y deportivo de calidad.
+
+</p>
+
+<div class="cta-buttons">
+
+<a href="https://api.whatsapp.com/send?phone=56952056" class="btn-primary">
+
+Solicitar Información
+
+</a>
+
+<a href="https://www.facebook.com/moidg.online" class="btn-secondary">
+
+Visitar Facebook
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<script src="patrocinio.js"></script>
+
 <script src="../footer.js"></script>
 
 <div id="footer"></div>
 
 <script>
-  fetch("https://moidg.online/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    });
+fetch("https://moidg.online/footer.html")
+.then(res => res.text())
+.then(data => {
+document.getElementById("footer").innerHTML = data;
+});
 </script>
 
+</body>
 
-	</body>
 </html>
