@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fotografía - Graduaciones</title>
+
+<link rel="stylesheet" href="https://moidg.online/headerstyles.css">
+<link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+
+<!-- CSS exclusivo -->
+<link rel="stylesheet" href="patrocinio.css">
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("https://moidg.online/header.html")
+.then(res => res.text())
+.then(data => {
+
+document.getElementById("header").innerHTML = data;
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+hamburger.addEventListener("click", () => {
+hamburger.classList.toggle("active");
+navMenu.classList.toggle("active");
+});
+
+subMenuParents.forEach(span => {
+
+span.addEventListener("click", function(e){
+
+if(window.innerWidth <= 1200){
+
+e.preventDefault();
+
+const parentLi = this.parentElement;
+
+subMenuParents.forEach(other => {
+
+if(other != this){
+
+other.parentElement.classList.remove("open");
+
+}
+
+});
+
+parentLi.classList.toggle("open");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".submenu a").forEach(link=>{
+
+link.addEventListener("click",function(){
+
+if(window.innerWidth <=1200){
+
+hamburger.classList.remove("active");
+navMenu.classList.remove("active");
+
+subMenuParents.forEach(span=>span.parentElement.classList.remove("open"));
+
+}
+
+});
+
+});
+
+});
+</script>
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- ==================== HERO ============================ -->
+<!-- ====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <!-- Texto -->
+
+        <div class="hero-text">
+
+            <h1>
+                <span>CONSERVA</span>
+                <span>TUS</span>
+                <strong>RECUERDOS</strong>
+            </h1>
+
+        </div>
+
+        <!-- Mascota -->
+
+        <div class="hero-image">
+
+            <img src="aoi.png" alt="Mascota MOI">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- ==================== PAQUETES ========================= -->
+<!-- ====================================================== -->
+
+<section class="packages">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>PAQUETES DE GRADUACIÓN</h2>
+
+<p>
+Conserva uno de los momentos más importantes de tu vida con una cobertura profesional, fotografías editadas y recuerdos que durarán para siempre.
+</p>
+
+</div>
+
+<div class="package-grid">
+
+<!-- ================== PAQUETE 1 =================== -->
+
+<div class="package-card">
+
+<h3>ESENCIAL</h3>
+
+<div class="price">
+Q300<span>/persona</span>
+</div>
+
+<div class="package-content">
+
+<p class="package-description">
+Ideal para quienes desean conservar los momentos más importantes de su graduación con una cobertura profesional.
+</p>
+
+<h4>¿Qué incluye?</h4>
+
+<ul class="package-list">
+
+<li>Cobertura durante el acto de graduación.</li>
+
+<li>Mínimo 15 fotografías completamente editadas.</li>
+
+<li>Entrega digital en alta resolución.</li>
+
+<li>Corrección profesional de color e iluminación.</li>
+
+<li>Normalmente entregamos fotografías adicionales sin costo cuando el evento lo permite.</li>
+
+</ul> 
+
+<div class="package-target">
+
+<strong>Ideal para:</strong>
+
+Quienes desean documentar únicamente su ceremonia de graduación.
+
+</div>
+
+</div>
+
+<img src="img/graduaciones/esencial.webp" alt="Paquete Esencial">
+
+<a href="#" class="btn-package">
+
+Reservar este paquete
+
+</a>
+
+<p class="package-note">
+
+✔ Todas las fotografías se entregan editadas profesionalmente.
+
+</p>
+
+</div>
+
+<!-- ================== PAQUETE 2 =================== -->
+
+<div class="package-card">
+
+<h3>RECUERDO</h3>
+
+<div class="price">
+Q500<span>/persona</span>
+</div>
+
+<div class="package-content">
+
+<p class="package-description">
+
+Incluye todo lo del paquete Esencial y añade una sesión fotográfica personal para que puedas presumir este gran logro.
+
+</p>
+
+<h4>¿Qué incluye?</h4>
+
+<ul class="package-list">
+
+<li>Todo lo del paquete Esencial.</li>
+
+<li>Sesión fotográfica personal.</li>
+
+<li>Fotografías individuales con toga y birrete.</li>
+
+<li>Fotografías con familiares y amigos.</li>
+
+<li>Mínimo 35 fotografías editadas.</li>
+
+</ul>
+
+<div class="package-target">
+
+<strong>Ideal para:</strong>
+
+Graduandos que desean recuerdos más completos.
+
+</div>
+
+</div>
+
+<img src="img/graduaciones/recuerdo.webp" alt="Paquete Recuerdo">
+
+<a href="#" class="btn-package">
+
+Reservar este paquete
+
+</a>
+
+<p class="package-note">
+
+🎁 La sesión personal está incluida sin costo adicional.
+
+</p>
+
+</div>
+
+<!-- ================== PAQUETE 3 =================== -->
+
+<div class="package-card destacado">
+
+<span class="badge">
+
+MÁS SOLICITADO
+
+</span>
+
+<h3>PRESTIGIO</h3>
+
+<div class="price">
+Q650<span>/persona</span>
+</div>
+
+<div class="package-content">
+
+<p class="package-description">
+
+Incluye todos los beneficios del paquete Recuerdo con una cobertura mucho más completa.
+
+</p>
+
+<h4>¿Qué incluye?</h4>
+
+<ul class="package-list">
+
+<li>Todo lo del paquete Recuerdo.</li>
+
+<li>Mayor tiempo de cobertura.</li>
+
+<li>Fotografías grupales.</li>
+
+<li>Fotografías espontáneas.</li>
+
+<li>Mínimo 60 fotografías editadas.</li>
+
+</ul>
+
+<div class="package-target">
+
+<strong>Ideal para:</strong>
+
+Quienes desean una cobertura fotográfica completa.
+
+</div>
+
+</div>
+
+<img src="img/graduaciones/prestigio.webp" alt="Paquete Prestigio">
+
+<a href="#" class="btn-package">
+
+Reservar este paquete
+
+</a>
+
+<p class="package-note">
+
+🎁 Incluye sesión personal sin costo adicional.
+
+</p>
+
+</div>
+
+<!-- ================== PAQUETE 4 =================== -->
+
+<div class="package-card">
+
+<h3>FOTOGRAFÍA + VIDEO</h3>
+
+<div class="price">
+Q1,000<span>/persona</span>
+</div>
+
+<div class="package-content">
+
+<p class="package-description">
+
+Además de una cobertura fotográfica completa, recibirás un video resumen de tu graduación.
+
+</p>
+
+<h4>¿Qué incluye?</h4>
+
+<ul class="package-list">
+
+<li>Todo lo del paquete Prestigio.</li>
+
+<li>Video resumen editado.</li>
+
+<li>Tomas durante la ceremonia.</li>
+
+<li>Tomas personales.</li>
+
+<li>Música libre de derechos.</li>
+
+</ul>
+
+<div class="package-target">
+
+<strong>Ideal para:</strong>
+
+Quienes desean revivir su graduación en fotografías y video.
+
+</div>
+
+</div>
+
+<img src="img/graduaciones/fotovideo.webp" alt="Fotografía y Video">
+
+<a href="#" class="btn-package">
+
+Reservar este paquete
+
+</a>
+
+<p class="package-note">
+
+🎁 Incluye sesión personal.
+
+</p>
+
+</div>
+
+<!-- ================== PAQUETE 5 =================== -->
+
+<div class="package-card">
+
+<h3>FOTOGRAFÍA + RECEPCIÓN</h3>
+
+<div class="price">
+Q1,450<span>/persona</span>
+</div>
+
+<div class="package-content">
+
+<p class="package-description">
+
+Amplía la cobertura incluyendo la celebración posterior a la ceremonia.
+
+</p>
+
+<h4>¿Qué incluye?</h4>
+
+<ul class="package-list">
+
+<li>Todo lo del paquete Prestigio.</li>
+
+<li>Cobertura durante la recepción.</li>
+
+<li>Fotografías con invitados.</li>
+
+<li>Decoración y detalles.</li>
+
+<li>Momentos espontáneos.</li>
+
+</ul>
+
+<div class="package-target">
+
+<strong>Ideal para:</strong>
+
+Quienes desean conservar toda la celebración.
+
+</div>
+
+</div>
+
+<img src="img/graduaciones/recepcion.webp" alt="Fotografía y Recepción">
+
+<a href="#" class="btn-package">
+
+Reservar este paquete
+
+</a>
+
+<p class="package-note">
+
+🎁 Incluye sesión personal.
+
+</p>
+
+</div>
+
+<!-- ================== PAQUETE 6 =================== -->
+
+<div class="package-card destacado">
+
+<span class="badge">
+
+PREMIUM
+
+</span>
+
+<h3>EXPERIENCIA COMPLETA</h3>
+
+<div class="price">
+Q1,900<span>/persona</span>
+</div>
+
+<div class="package-content">
+
+<p class="package-description">
+
+La cobertura más completa para recordar cada instante de tu graduación desde el inicio hasta la celebración.
+
+</p>
+
+<h4>¿Qué incluye?</h4>
+
+<ul class="package-list">
+
+<li>Todo lo del paquete Prestigio.</li>
+
+<li>Video resumen profesional.</li>
+
+<li>Cobertura de la recepción.</li>
+
+<li>Sesión personal incluida.</li>
+
+<li>Máxima cantidad de fotografías editadas.</li>
+
+</ul>
+
+<div class="package-target">
+
+<strong>Ideal para:</strong>
+
+Quienes no desean perder ningún recuerdo de ese día.
+
+</div>
+
+</div>
+
+<img src="img/graduaciones/completo.webp" alt="Experiencia Completa">
+
+<a href="#" class="btn-package">
+
+Reservar este paquete
+
+</a>
+
+<p class="package-note">
+
+🎁 Sesión personal incluida y fotografías adicionales cuando el evento lo permita.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+<script src="patrocinio.js"></script>
+
+<script src="../footer.js"></script>
+
+<div id="footer"></div>
+
+<script>
+fetch("https://moidg.online/footer.html")
+.then(res => res.text())
+.then(data => {
+document.getElementById("footer").innerHTML = data;
+});
+</script>
+
+</body>
+
+</html>
