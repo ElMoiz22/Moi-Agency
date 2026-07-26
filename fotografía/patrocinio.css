@@ -405,7 +405,7 @@ position: relative;
 
     font-size:clamp(34px,4vw,54px);
 
-    font-weight:700;
+    font-weight:900;
 
     margin-bottom:12px;
         font-weight:900;
@@ -605,7 +605,7 @@ position: relative;
 
     margin-bottom:20px;
 
-    font-weight:700;
+    font-weight:900;
 
 }
 
@@ -613,7 +613,7 @@ position: relative;
 
 .price{
 
-    width:50%;
+    width:75%;
 
     margin:0 auto 25px;
 
@@ -629,7 +629,7 @@ position: relative;
 
     font-size:38px;
 
-    font-weight:700;
+    font-weight:900;
 
 
 }
@@ -806,7 +806,7 @@ position: relative;
 
     font-size:13px;
 
-    font-weight:700;
+    font-weight:900;
 
     letter-spacing:1px;
 
@@ -836,7 +836,7 @@ position: relative;
 
     transition:var(--transition);
 
-    font-weight:700;
+    font-weight:900;
 
     letter-spacing:.5px;
 
@@ -1074,7 +1074,7 @@ position: relative;
 
     font-size:18px;
 
-    font-weight:700;
+    font-weight:900;
 
     transition:var(--transition);
 
@@ -1204,7 +1204,7 @@ font-size:28px;
 
 .price{
 
-width:50%;
+width:70%;
 
 font-size:32px;
 
@@ -1304,7 +1304,7 @@ font-size:24px;
 
 .price{
 
-width:50%;
+width:75%;
 
 font-size:28px;
 
