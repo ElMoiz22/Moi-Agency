@@ -940,7 +940,7 @@ position: relative;
 
     flex-direction:column;
 
-    gap:18px;
+    gap:5px;
 
     margin:0;
 
@@ -1396,5 +1396,75 @@ transition:all .8s ease;
 opacity:1;
 
 transform:translateY(0);
+
+}
+
+/* ======================================
+   FILOSOFÍA
+====================================== */
+
+.philosophy-box{
+   
+    margin:0 auto;
+    border-radius:18px;
+    padding:40px;
+    border:1px solid #ececec;
+    text-align:center;
+}
+
+.philosophy-box h2{
+    margin:0 0 25px;
+    font-size:2rem;
+    font-weight:800;
+    line-height:1.2;
+    color:#ffd11a;
+}
+
+.philosophy-box p{
+    margin:18px 0;
+    color:#fff;
+    font-size:1.08rem;
+    line-height:1.8;
+}
+
+.philosophy-box p:last-child{
+    margin-bottom:0;
+}
+
+/* Línea decorativa */
+
+.philosophy-box h2::after{
+    content:"";
+    display:block;
+    width:70px;
+    height:4px;
+    margin:18px auto 0;
+    border-radius:10px;
+    background:var(--primary);
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width:768px){
+
+    .philosophy{
+        padding:50px 15px 20px;
+    }
+
+    .philosophy-box{
+        padding:30px 22px;
+        border-radius:15px;
+    }
+
+    .philosophy-box h2{
+        font-size:1.6rem;
+    }
+
+    .philosophy-box p{
+        font-size:1rem;
+        line-height:1.7;
+    }
 
 }
