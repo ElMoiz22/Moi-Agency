@@ -28,7 +28,8 @@
 
     --transition:.35s ease;
 
-    --max-width:1281px;
+    --max-width:1280px;
+
 }
 
 
@@ -612,7 +613,7 @@ position: relative;
 
 .price{
 
-    width:50%;
+    width:75%;
 
     margin:0 auto 25px;
 
@@ -1203,7 +1204,7 @@ font-size:28px;
 
 .price{
 
-width:50%;
+width:70%;
 
 font-size:32px;
 
@@ -1303,7 +1304,7 @@ font-size:24px;
 
 .price{
 
-width:50%;
+width:75%;
 
 font-size:28px;
 
@@ -1396,5 +1397,173 @@ transition:all .8s ease;
 opacity:1;
 
 transform:translateY(0);
+
+}
+
+/*==================================================
+                COTIZADOR
+==================================================*/
+
+
+.quote-box h4{
+
+    color:#FFD11A;
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+    font-size:22px;
+
+}
+
+/*==========================
+    CONTADOR
+==========================*/
+
+.counter{
+
+    display:grid;
+
+    grid-template-columns:60px 1fr 60px;
+
+    width:100%;
+
+    height:58px;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    margin-bottom:10px;
+
+    background:#FFF;
+
+}
+
+.counter button{
+
+    border:none;
+
+    background:#fff;
+
+    color:#00113F;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.counter button:hover{
+
+    background:#f0c200;
+
+}
+
+.counter input{
+
+    border:none;
+
+    outline:none;
+
+    text-align:center;
+
+    width:100%;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    background:#FFF;
+
+}
+
+/* Oculta flechas del input */
+
+.counter input::-webkit-outer-spin-button,
+.counter input::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+.counter input[type=number]{
+
+    -moz-appearance:textfield;
+
+}
+
+.counter-label{
+
+    text-align:center;
+
+    color:#DDD;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+}
+
+/*==========================
+    DATOS
+==========================*/
+
+.quote-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+.quote-info div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#FFF;
+
+}
+
+.quote-info span{
+
+    opacity:.8;
+
+}
+
+.quote-info strong{
+
+    color:#FFD11A;
+
+}
+
+.quote-total{
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    padding-top:15px;
+
+    margin-top:5px;
+
+    font-size:20px;
+
+}
+
+.quote-total strong{
+
+    font-size:30px;
 
 }
