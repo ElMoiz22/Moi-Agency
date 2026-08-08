@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAQUETES DE XV AÑOS</title>
+  <link rel="stylesheet" href="https://moidg.online/headerstyles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+  <!-- CSS exclusivo -->
+  <link rel="stylesheet" href="foto.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <script>
+    fetch("https://moidg.online/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      subMenuParents.forEach(span => {
+        span.addEventListener("click", function(e){
+          if(window.innerWidth <= 1200){
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            subMenuParents.forEach(other => {
+              if(other != this){
+                other.parentElement.classList.remove("open");
+              }
+            });
+            parentLi.classList.toggle("open");
+          }
+        });
+      });
+
+      document.querySelectorAll(".submenu a").forEach(link=>{
+        link.addEventListener("click",function(){
+          if(window.innerWidth <=1200){
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            subMenuParents.forEach(span=>span.parentElement.classList.remove("open"));
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>
+          <span>TÚ DÍA</span>
+          <strong>ESPECIAL</strong>
+        </h1>
+      </div>
+      <div class="hero-image">
+        <img src="aoigraduado.png" alt="Mascota MOI">
+      </div>
+    </div>
+  </section>
+
+ <!-- PAQUETES -->
+<section class="packages">
+  <div class="container">
+    <div class="section-title">
+      <h2>PAQUETES DE XV AÑOS</h2>
+      <p>Tus XV años pasan en un día, pero los recuerdos pueden acompañarte para siempre. Un momento tan especial merece ser recordado de la mejor manera.</p>
+    </div>
+
+    <div class="package-grid">
+
+      <!-- ====================================================== -->
+      <!-- ================= PAQUETE ESENCIAL =================== -->
+      <!-- ====================================================== -->
+      <div class="package-card">
+        <h3>ESENCIAL</h3>
+        <div class="price">Q1,800<span>evento</span></div>
+
+        <div class="package-content">
+          <p class="package-description">Ideal para quienes desean conservar los momentos más importantes de la celebración de sus XV años, concentrando la cobertura en la fiesta.</p>
+
+          <h4>¿Qué incluye?</h4>
+          <ul class="package-list">
+            <li>Cobertura fotográfica de hasta 3 horas.</li>
+            <li>Fotografías de la llegada y entrada de la quinceañera.</li>
+            <li>Cobertura del vals y baile.</li>
+            <li>Fotografías del pastel, brindis y momentos especiales.</li>
+            <li>Fotografías familiares.</li>
+            <li>Fotografías con amigos e invitados.</li>
+            <li>Mínimo 150 fotografías digitales completamente editadas.</li>
+            <li>Entrega digital en alta resolución.</li>
+            <li>Fotografías optimizadas para compartir en redes sociales.</li>
+            <li>Edición profesional de todas las fotografías entregadas.</li>
+            <li>Cuando el evento lo permite, entregamos fotografías adicionales sin costo.</li>
+          </ul>
+
+          <div class="package-target">
+            <strong>Ideal para:</strong> Quinceañeras que desean documentar los momentos principales de su fiesta sin contratar una cobertura de jornada completa.
+          </div>
+        </div>
+
+        <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20reservar%20el%20Paquete%20ESENCIAL%20para%20mis%20XV%20a%C3%B1os%20(Q1%2C800).%20%F0%9F%91%91%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Reservar este paquete</a>
+        <p class="package-note">✔ Todas las fotografías se entregan editadas profesionalmente.</p>
+      </div>
+
+      <!-- ====================================================== -->
+      <!-- ================= PAQUETE CELEBRACIÓN =============== -->
+      <!-- ====================================================== -->
+      <div class="package-card">
+        <h3>CELEBRACIÓN</h3>
+        <div class="price">Q2,800<span>evento</span></div>
+
+        <div class="package-content">
+          <p class="package-description">Una experiencia que combina una sesión especial para la quinceañera con la cobertura de los momentos más importantes de su celebración.</p>
+
+          <h4>¿Qué incluye?</h4>
+          <ul class="package-list">
+            <li>Cobertura fotográfica de hasta 5 horas.</li>
+            <li>Sesión personal pre-fiesta de hasta 1 hora.</li>
+            <li>Dirección de poses durante la sesión.</li>
+            <li>Fotografías individuales pensadas para presumir en redes sociales.</li>
+            <li>Fotografías de la llegada y entrada de la quinceañera.</li>
+            <li>Cobertura del vals, baile y momentos especiales.</li>
+            <li>Fotografías del pastel y brindis.</li>
+            <li>Fotografías familiares.</li>
+            <li>Fotografías con amigos e invitados.</li>
+            <li>Mínimo 250 fotografías digitales completamente editadas.</li>
+            <li>Galería digital privada en alta resolución.</li>
+            <li>Fotografías optimizadas para redes sociales.</li>
+            <li>Cuando el evento lo permite, entregamos fotografías adicionales sin costo.</li>
+          </ul>
+
+          <div class="package-target">
+            <strong>Ideal para:</strong> Quinceañeras que desean tener una sesión personal antes de la fiesta y conservar los momentos principales de su celebración.
+          </div>
+
+          <div class="package-note">
+            <strong>📍 Sobre la sesión pre-fiesta:</strong><br>
+            La locación es elegida por la quinceañera o su familia. MOI Agency no proporciona ni incluye una locación dentro del paquete. El traslado y cualquier costo de ingreso o reserva de la locación serán responsabilidad del cliente.
+          </div>
+        </div>
+
+        <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20reservar%20el%20Paquete%20CELEBRACI%C3%93N%20para%20mis%20XV%20a%C3%B1os%20(Q2%2C800).%20%F0%9F%91%91%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Reservar este paquete</a>
+        <p class="package-note">✔ Todas las fotografías se entregan editadas profesionalmente.</p>
+      </div>
+
+      <!-- ====================================================== -->
+      <!-- ================= PAQUETE XV COMPLETO ================ -->
+      <!-- ====================================================== -->
+      <div class="package-card destacado">
+        <span class="badge">RECOMENDADO</span>
+        <h3>XV COMPLETO</h3>
+        <div class="price">Q3,900<span>evento</span></div>
+
+        <div class="package-content">
+          <p class="package-description">La cobertura ideal para quienes desean conservar la historia completa de sus XV años: sesión previa, ceremonia religiosa y celebración.</p>
+
+          <h4>Sesión pre-fiesta</h4>
+          <ul class="package-list">
+            <li>Sesión personal de hasta 1.5 horas.</li>
+            <li>Dirección de poses y composición.</li>
+            <li>Hasta 2 cambios de vestuario.</li>
+            <li>Fotografías individuales y familiares.</li>
+            <li>Fotografías pensadas para redes sociales.</li>
+          </ul>
+
+          <div class="package-note">
+            <strong>📍 Locación de la sesión:</strong><br>
+            La quinceañera o su familia eligen la locación. MOI Agency no proporciona ni incluye el lugar de la sesión. Cualquier costo de ingreso, reserva o permiso será responsabilidad del cliente.
+          </div>
+
+          <h4>Ceremonia religiosa</h4>
+          <ul class="package-list">
+            <li>Cobertura de hasta 1.5 horas.</li>
+            <li>Entrada y momentos importantes de la ceremonia.</li>
+            <li>Salida de la quinceañera.</li>
+            <li>Fotografías familiares.</li>
+            <li>Fotografías especiales posteriores a la ceremonia.</li>
+          </ul>
+
+          <h4>Recepción</h4>
+          <ul class="package-list">
+            <li>Hasta 6 horas de cobertura fotográfica.</li>
+            <li>Entrada de la quinceañera.</li>
+            <li>Vals.</li>
+            <li>Brindis.</li>
+            <li>Pastel.</li>
+            <li>Fotografías familiares.</li>
+            <li>Fotografías con amigos e invitados.</li>
+            <li>Baile y momentos espontáneos.</li>
+          </ul>
+
+          <h4>Entrega</h4>
+          <ul class="package-list">
+            <li>Mínimo 400 fotografías digitales completamente editadas.</li>
+            <li>Galería digital privada.</li>
+            <li>Fotografías en alta resolución.</li>
+            <li>Fotografías optimizadas para redes sociales.</li>
+            <li>Edición profesional de todas las fotografías entregadas.</li>
+            <li>Normalmente entregamos fotografías adicionales cuando la cobertura y los momentos del evento lo permiten.</li>
+          </ul>
+
+          <div class="package-target">
+            <strong>Ideal para:</strong> Familias que desean documentar prácticamente toda la experiencia de los XV años, desde la sesión previa y ceremonia hasta la celebración.
+          </div>
+        </div>
+
+        <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20reservar%20el%20Paquete%20XV%20COMPLETO%20para%20mis%20XV%20a%C3%B1os%20(Q3%2C900).%20%F0%9F%91%91%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Reservar este paquete</a>
+        <p class="package-note">✔ Todas las fotografías se entregan editadas profesionalmente.</p>
+      </div>
+
+      <!-- ====================================================== -->
+      <!-- ================= PAQUETE XV SIGNATURE =============== -->
+      <!-- ====================================================== -->
+      <div class="package-card">
+        <h3>XV SIGNATURE</h3>
+        <div class="price">Q5,500<span>evento</span></div>
+
+        <div class="package-content">
+          <p class="package-description">Nuestra experiencia más completa para contar la historia de los XV años desde los preparativos hasta el cierre de la celebración, incorporando fotografía y video resumen.</p>
+
+          <h4>Sesión pre-XV</h4>
+          <ul class="package-list">
+            <li>Sesión artística de hasta 2 horas.</li>
+            <li>Hasta 2 locaciones.</li>
+            <li>Hasta 3 cambios de vestuario.</li>
+            <li>Dirección de poses.</li>
+            <li>Fotografías individuales.</li>
+            <li>Fotografías familiares.</li>
+            <li>Fotografías con amigos.</li>
+            <li>Fotografías especiales para redes sociales.</li>
+          </ul>
+
+          <div class="package-note">
+            <strong>📍 Locaciones:</strong><br>
+            Las locaciones son elegidas por la quinceañera o su familia. MOI Agency no proporciona ni incluye las locaciones dentro del paquete. Los costos de ingreso, reserva, permisos o similares serán responsabilidad del cliente.
+          </div>
+
+          <h4>Preparativos</h4>
+          <ul class="package-list">
+            <li>Cobertura de los preparativos de la quinceañera.</li>
+            <li>Maquillaje y peinado.</li>
+            <li>Vestido y accesorios.</li>
+            <li>Zapatos y detalles especiales.</li>
+            <li>Momentos con familiares.</li>
+          </ul>
+
+          <h4>Ceremonia religiosa</h4>
+          <ul class="package-list">
+            <li>Cobertura completa de la ceremonia.</li>
+            <li>Entrada.</li>
+            <li>Momentos importantes.</li>
+            <li>Salida.</li>
+            <li>Fotografías familiares.</li>
+            <li>Fotografías especiales con la quinceañera.</li>
+          </ul>
+
+          <h4>Recepción</h4>
+          <ul class="package-list">
+            <li>Cobertura completa de la celebración.</li>
+            <li>Entrada de la quinceañera.</li>
+            <li>Vals.</li>
+            <li>Brindis.</li>
+            <li>Pastel.</li>
+            <li>Fotografías familiares.</li>
+            <li>Fotografías con amigos.</li>
+            <li>Baile.</li>
+            <li>Hora loca y momentos espontáneos.</li>
+            <li>Cobertura hasta el cierre de la celebración.</li>
+          </ul>
+
+          <h4>Fotografía + Video</h4>
+          <ul class="package-list">
+            <li>Mínimo 600 fotografías digitales completamente editadas.</li>
+            <li>Video resumen profesional de 3 a 5 minutos.</li>
+            <li>Selección de los momentos más importantes del evento.</li>
+            <li>Edición de video con música.</li>
+            <li>Galería digital privada.</li>
+            <li>Fotografías en alta resolución.</li>
+            <li>Fotografías optimizadas para redes sociales.</li>
+          </ul>
+
+          <div class="package-target">
+            <strong>Ideal para:</strong> Quinceañeras que desean conservar una experiencia completa de sus XV años mediante fotografías y un video que permita volver a vivir los momentos más importantes.
+          </div>
+        </div>
+
+        <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20reservar%20el%20Paquete%20XV%20SIGNATURE%20para%20mis%20XV%20a%C3%B1os%20(Q5%2C500).%20%F0%9F%91%91%F0%9F%8E%A5%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Reservar este paquete</a>
+        <p class="package-note">✔ Todas las fotografías se entregan editadas profesionalmente.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <script src="foto.js"></script>
+  <script src="cotizador.js"></script>
+  <script src="../footer.js"></script>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch("https://moidg.online/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
+
+</body>
+</html>
