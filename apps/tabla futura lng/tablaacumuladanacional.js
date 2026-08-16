@@ -3,18 +3,18 @@
 ===================== */
 // Mantenemos los datos del Apertura en una constante para no perderlos al resetear
 const DATOS_APERTURA = [
-  { equipo: 'municipal', j: 22, gf: 41, gc: 14, pts: 48, v: 14, e: 6, d: 2 },
-  { equipo: 'mixco', j: 22, gf: 33, gc: 20, pts: 44, v: 13, e: 5, d: 4 },
-  { equipo: 'antigua', j: 22, gf: 39, gc: 23, pts: 42, v: 12, e: 6, d: 4 },
-  { equipo: 'aurora', j: 22, gf: 31, gc: 28, pts: 39, v: 11, e: 6, d: 5 },
-  { equipo: 'malacateco', j: 22, gf: 26, gc: 31, pts: 31, v: 8, e: 7, d: 7 },
-  { equipo: 'xelaju', j: 22, gf: 32, gc: 29, pts: 28, v: 7, e: 7, d: 8 },
-  { equipo: 'achuapa', j: 22, gf: 22, gc: 29, pts: 25, v: 6, e: 7, d: 9 },
-  { equipo: 'mictlan', j: 22, gf: 21, gc: 23, pts: 24, v: 6, e: 6, d: 10 },
-  { equipo: 'coban', j: 22, gf: 21, gc: 26, pts: 23, v: 5, e: 8, d: 9 },
-  { equipo: 'marquense', j: 22, gf: 17, gc: 35, pts: 23, v: 6, e: 5, d: 11 },
-  { equipo: 'guastatoya', j: 22, gf: 23, gc: 37, pts: 22, v: 5, e: 7, d: 10 },
-  { equipo: 'comunicaciones', j: 22, gf: 15, gc: 26, pts: 20, v: 4, e: 8, d: 10 }
+  { equipo: 'municipal', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'mixco', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'antigua', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'aurora', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'malacateco', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'xelaju', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'San Pedro', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'suchi', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'coban', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'marquense', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'guastatoya', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 },
+  { equipo: 'comunicaciones', j: 0, gf: 0, gc: 0, pts: 0, v: 0, e: 0, d: 0 }
 ];
 
 // === POSICIÓN FINAL DEL APERTURA (DESEMPATE) ===

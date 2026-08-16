@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAQUETES DE BODAS</title>
+  <link rel="stylesheet" href="https://moidg.online/headerstyles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+  <!-- CSS exclusivo -->
+  <link rel="stylesheet" href="foto.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <script>
+    fetch("https://moidg.online/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      subMenuParents.forEach(span => {
+        span.addEventListener("click", function(e){
+          if(window.innerWidth <= 1200){
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            subMenuParents.forEach(other => {
+              if(other != this){
+                other.parentElement.classList.remove("open");
+              }
+            });
+            parentLi.classList.toggle("open");
+          }
+        });
+      });
+
+      document.querySelectorAll(".submenu a").forEach(link=>{
+        link.addEventListener("click",function(){
+          if(window.innerWidth <=1200){
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            subMenuParents.forEach(span=>span.parentElement.classList.remove("open"));
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>
+          <span>UN</span>
+          <span>MOMENTO</span>
+          <strong>ÚNICO</strong>
+        </h1>
+      </div>
+      <div class="hero-image">
+        <img src="aoigraduado.png" alt="Mascota MOI">
+      </div>
+    </div>
+  </section>
+
+ <!-- PAQUETES -->
+<section class="packages">
+  <div class="container">
+ <div class="section-title">
+
+    <h2>PAQUETES DE BODAS</h2>
+    <p>
+        Su boda sucede una sola vez, pero su historia puede revivirse para siempre.
+        Elijan la cobertura que mejor se adapte a su celebración y conservemos juntos
+        cada mirada, cada abrazo, cada sonrisa y cada momento que hizo especial este día.
+    </p>
+</div>
+
+    <div class="package-grid">
+
+<!-- ====================================================== -->
+<!-- ================= PAQUETE ESENCIAL =================== -->
+<!-- ====================================================== -->
+
+<div class="package-card">
+  <h3>ESENCIAL</h3>
+  <div class="price">Q2,500<span>evento</span></div>
+  <div class="package-content">
+    <p class="package-description">La opción ideal para quienes desean conservar los momentos más importantes de su boda mediante una cobertura fotográfica profesional y una entrega digital completa.</p>
+    <h4>Ceremonia</h4>
+    <ul class="package-list">
+      <li>Cobertura completa de la ceremonia civil o religiosa.</li>
+      <li>Entrada de los novios.</li>
+      <li>Intercambio de anillos.</li>
+      <li>Votos y momentos importantes.</li>
+      <li>Beso y salida de los novios.</li>
+      <li>Fotografías familiares.</li>
+    </ul>
+    <h4>Recepción</h4>
+    <ul class="package-list">
+      <li>Entrada de los novios.</li>
+      <li>Fotografías con familiares e invitados.</li>
+      <li>Sesión breve de pareja durante el evento.</li>
+      <li>Primer baile.</li>
+      <li>Brindis.</li>
+      <li>Pastel.</li>
+      <li>Momentos espontáneos de la celebración.</li>
+    </ul>
+    <h4>Entrega</h4>
+    <ul class="package-list">
+      <li>Hasta 4 horas de cobertura.</li>
+      <li>Mínimo 300 fotografías digitales completamente editadas.</li>
+      <li>Galería digital privada.</li>
+      <li>Fotografías en alta resolución.</li>
+      <li>Fotografías optimizadas para redes sociales.</li>
+      <li>Edición profesional de todas las fotografías entregadas.</li>
+      <li>Fotografías adicionales cuando la cobertura y los momentos del evento lo permiten.</li>
+    </ul>
+    <div class="package-target">
+      <strong>Ideal para:</strong> Parejas que desean documentar los momentos esenciales de su ceremonia y recepción sin contratar una cobertura extensa.
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20cotizar%20el%20Paquete%20ESENCIAL%20para%20mi%20boda%20(Q2%2C500).%20%F0%9F%92%8D%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Solicitar este paquete</a>
+  <p class="package-note">✔ Todas las fotografías se entregan editadas profesionalmente.</p>
+</div>
+
+<!-- ====================================================== -->
+<!-- ============== ESENCIAL + VIDEO ===================== -->
+<!-- ====================================================== -->
+
+<div class="package-card">
+  <h3>ESENCIAL + VIDEO</h3>
+  <div class="price">Q3,300<span>evento</span></div>
+  <div class="package-content">
+    <p class="package-description">La opción ideal para quienes desean conservar los momentos principales de su boda tanto en fotografías como en un video resumen que permita volver a vivir la celebración.</p>
+    <h4>Fotografía</h4>
+    <ul class="package-list">
+      <li>Todo lo incluido en el paquete Esencial.</li>
+      <li>Cobertura de ceremonia.</li>
+      <li>Fotografías familiares.</li>
+      <li>Fotografías con invitados.</li>
+      <li>Sesión breve de pareja.</li>
+      <li>Entrada, baile, brindis y pastel.</li>
+    </ul>
+    <h4>Video resumen</h4>
+    <ul class="package-list">
+      <li>Cobertura audiovisual durante el evento.</li>
+      <li>Selección de los momentos más importantes.</li>
+      <li>Video resumen de aproximadamente 3 a 5 minutos.</li>
+      <li>Edición profesional.</li>
+      <li>Música.</li>
+      <li>Entrega digital.</li>
+    </ul>
+    <h4>Entrega fotográfica</h4>
+    <ul class="package-list">
+      <li>Hasta 5 horas de cobertura.</li>
+      <li>Mínimo 300 fotografías digitales completamente editadas.</li>
+      <li>Galería digital privada.</li>
+      <li>Fotografías en alta resolución.</li>
+      <li>Fotografías optimizadas para redes sociales.</li>
+      <li>Fotografías adicionales cuando la cobertura lo permite.</li>
+    </ul>
+    <div class="package-target">
+      <strong>Ideal para:</strong> Parejas que desean fotografía y video de su boda sin contratar una cobertura de jornada completa.
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20cotizar%20el%20Paquete%20ESENCIAL%20%2B%20VIDEO%20para%20mi%20boda%20(Q3%2C300).%20%F0%9F%92%8D%F0%9F%8E%A5%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Solicitar este paquete</a>
+  <p class="package-note">✔ Todas las fotografías se entregan editadas profesionalmente.</p>
+</div>
+
+<!-- ====================================================== -->
+<!-- ================= PAQUETE HISTORIA ================== -->
+<!-- ====================================================== -->
+
+<div class="package-card destacado">
+  <span class="badge">RECOMENDADO</span>
+  <h3>HISTORIA</h3>
+  <div class="price">Q4,500<span>evento</span></div>
+  <div class="package-content">
+    <p class="package-description">Más que cubrir una boda, contamos la historia del día: desde los preparativos y la ceremonia hasta la celebración, combinando fotografía y video para conservar cada etapa importante.</p>
+    <h4>Preparativos</h4>
+    <ul class="package-list">
+      <li>Cobertura de hasta 1.5 horas.</li>
+      <li>Vestido y accesorios.</li>
+      <li>Anillos e invitaciones.</li>
+      <li>Maquillaje y peinado.</li>
+      <li>Novia preparándose.</li>
+      <li>Familia y momentos espontáneos.</li>
+    </ul>
+    <h4>Ceremonia</h4>
+    <ul class="package-list">
+      <li>Cobertura completa.</li>
+      <li>Entrada de los novios.</li>
+      <li>Anillos y votos.</li>
+      <li>Beso.</li>
+      <li>Salida.</li>
+      <li>Fotografías familiares.</li>
+    </ul>
+    <h4>Sesión de pareja</h4>
+    <ul class="package-list">
+      <li>Sesión especial de los novios.</li>
+      <li>Dirección de poses.</li>
+      <li>Fotografías románticas.</li>
+      <li>Fotografías espontáneas.</li>
+      <li>Fotografías con detalles del lugar.</li>
+    </ul>
+    <h4>Recepción</h4>
+    <ul class="package-list">
+      <li>Entrada de los novios.</li>
+      <li>Primer baile.</li>
+      <li>Brindis.</li>
+      <li>Pastel.</li>
+      <li>Fotografías familiares.</li>
+      <li>Fotografías con amigos e invitados.</li>
+      <li>Baile.</li>
+      <li>Momentos espontáneos.</li>
+    </ul>
+    <h4>Video</h4>
+    <ul class="package-list">
+      <li>Video resumen de 3 a 5 minutos.</li>
+      <li>Selección de los momentos más importantes.</li>
+      <li>Edición profesional.</li>
+      <li>Música.</li>
+    </ul>
+    <h4>Entrega</h4>
+    <ul class="package-list">
+      <li>Hasta 7 horas de cobertura.</li>
+      <li>Mínimo 500 fotografías digitales editadas.</li>
+      <li>Galería digital privada.</li>
+      <li>Fotografías en alta resolución.</li>
+      <li>Fotografías optimizadas para redes sociales.</li>
+      <li>Video resumen en formato digital.</li>
+      <li>Fotografías adicionales cuando la cobertura lo permite.</li>
+    </ul>
+    <div class="package-target">
+      <strong>Ideal para:</strong> Parejas que desean conservar la historia completa de su boda desde los preparativos hasta la celebración.
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20cotizar%20el%20Paquete%20HISTORIA%20para%20mi%20boda%20(Q4%2C500).%20%F0%9F%92%8D%F0%9F%92%8D%F0%9F%8E%A5%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Solicitar este paquete</a>
+  <p class="package-note">✔ Todas las fotografías se entregan editadas profesionalmente.</p>
+</div>
+
+<!-- ====================================================== -->
+<!-- ================= PAQUETE LEGACY ===================== -->
+<!-- ====================================================== -->
+
+<div class="package-card">
+  <h3>LEGACY</h3>
+  <div class="price">Q6,000<span>evento</span></div>
+  <div class="package-content">
+    <p class="package-description">Nuestra cobertura más completa para contar la historia de la boda desde los preparativos hasta el cierre de la celebración, combinando fotografía y video.</p>
+    <h4>Preparativos</h4>
+    <ul class="package-list">
+      <li>Cobertura de hasta 2 horas.</li>
+      <li>Novia y novio.</li>
+      <li>Vestuario.</li>
+      <li>Maquillaje y peinado.</li>
+      <li>Accesorios y detalles.</li>
+      <li>Ambientación.</li>
+      <li>Familia.</li>
+      <li>Momentos espontáneos antes de la ceremonia.</li>
+    </ul>
+    <h4>First Look</h4>
+    <ul class="package-list">
+      <li>Cobertura del primer encuentro de los novios, si deciden realizarlo.</li>
+      <li>Fotografías espontáneas.</li>
+      <li>Retratos de pareja.</li>
+    </ul>
+    <h4>Ceremonia</h4>
+    <ul class="package-list">
+      <li>Cobertura completa.</li>
+      <li>Entrada.</li>
+      <li>Votos.</li>
+      <li>Anillos.</li>
+      <li>Beso.</li>
+      <li>Salida.</li>
+      <li>Fotografías familiares.</li>
+    </ul>
+    <h4>Sesión de pareja</h4>
+    <ul class="package-list">
+      <li>Sesión dedicada de los novios.</li>
+      <li>Dirección de poses.</li>
+      <li>Fotografías artísticas.</li>
+      <li>Fotografías espontáneas.</li>
+      <li>Fotografías con detalles del lugar.</li>
+    </ul>
+    <h4>Recepción</h4>
+    <ul class="package-list">
+      <li>Entrada de los novios.</li>
+      <li>Primer baile.</li>
+      <li>Brindis.</li>
+      <li>Pastel.</li>
+      <li>Fotografías familiares.</li>
+      <li>Fotografías con amigos.</li>
+      <li>Baile.</li>
+      <li>Lanzamiento del ramo.</li>
+      <li>Hora loca, cuando aplique.</li>
+      <li>Momentos espontáneos.</li>
+      <li>Cobertura hasta el cierre de la celebración.</li>
+    </ul>
+    <h4>Video</h4>
+    <ul class="package-list">
+      <li>Video resumen de 5 a 7 minutos.</li>
+      <li>Selección de los momentos más importantes.</li>
+      <li>Edición profesional.</li>
+      <li>Música.</li>
+      <li>Entrega digital.</li>
+    </ul>
+    <h4>Entrega</h4>
+    <ul class="package-list">
+      <li>Hasta 9 horas de cobertura.</li>
+      <li>Mínimo 700 fotografías digitales editadas.</li>
+      <li>Galería digital privada.</li>
+      <li>Fotografías en alta resolución.</li>
+      <li>Fotografías optimizadas para redes sociales.</li>
+      <li>Video resumen profesional.</li>
+      <li>Fotografías adicionales cuando la cobertura lo permite.</li>
+    </ul>
+    <div class="package-target">
+      <strong>Ideal para:</strong> Parejas que desean conservar prácticamente toda la historia de su boda, desde los preparativos hasta el cierre de la celebración.
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20cotizar%20el%20Paquete%20LEGACY%20para%20mi%20boda%20(Q6%2C000).%20%F0%9F%92%8D%F0%9F%92%8E%F0%9F%8E%A5%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Solicitar este paquete</a>
+  <p class="package-note">✔ Todas las fotografías se entregan editadas profesionalmente.</p>
+</div>
+
+<!-- ====================================================== -->
+<!-- ============== ESENCIAL IMPRESO ====================== -->
+<!-- ====================================================== -->
+
+<div class="package-card">
+  <h3>ESENCIAL IMPRESO</h3>
+  <div class="price">Q2,900<span>evento</span></div>
+  <div class="package-content">
+    <p class="package-description">La opción ideal para quienes desean conservar los momentos principales de su boda tanto en formato digital como mediante fotografías impresas.</p>
+    <h4>Ceremonia</h4>
+    <ul class="package-list">
+      <li>Cobertura completa de ceremonia.</li>
+      <li>Entrada de los novios.</li>
+      <li>Anillos y momentos importantes.</li>
+      <li>Beso y salida.</li>
+      <li>Fotografías familiares.</li>
+    </ul>
+    <h4>Recepción</h4>
+    <ul class="package-list">
+      <li>Entrada de los novios.</li>
+      <li>Fotografías con familiares e invitados.</li>
+      <li>Sesión breve de pareja.</li>
+      <li>Primer baile.</li>
+      <li>Brindis.</li>
+      <li>Pastel.</li>
+      <li>Momentos espontáneos.</li>
+    </ul>
+    <h4>Entrega digital</h4>
+    <ul class="package-list">
+      <li>Hasta 4 horas de cobertura.</li>
+      <li>Mínimo 300 fotografías digitales editadas.</li>
+      <li>Galería digital privada.</li>
+      <li>Alta resolución.</li>
+      <li>Fotografías optimizadas para redes sociales.</li>
+    </ul>
+    <h4>Entrega impresa</h4>
+    <ul class="package-list">
+      <li>30 fotografías impresas tamaño 4×6.</li>
+      <li>5 fotografías impresas tamaño 5×7.</li>
+      <li>1 fotografía ampliada tamaño 8×10.</li>
+    </ul>
+    <div class="package-target">
+      <strong>Ideal para:</strong> Parejas que desean una cobertura esencial y además quieren llevarse algunos de sus mejores recuerdos en formato físico.
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20cotizar%20el%20Paquete%20ESENCIAL%20IMPRESO%20para%20mi%20boda%20(Q2%2C900).%20%F0%9F%92%8D%F0%9F%96%BC%EF%B8%8F%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Solicitar este paquete</a>
+  <p class="package-note">✔ Todas las fotografías digitales se entregan editadas profesionalmente.</p>
+</div>
+
+<!-- ====================================================== -->
+<!-- ========== ESENCIAL + VIDEO + IMPRESO =============== -->
+<!-- ====================================================== -->
+
+<div class="package-card">
+  <h3>ESENCIAL + VIDEO + IMPRESO</h3>
+  <div class="price">Q3,700<span>evento</span></div>
+  <div class="package-content">
+    <p class="package-description">Una alternativa completa para quienes desean fotografías digitales, un video resumen y recuerdos impresos de los momentos principales de su boda.</p>
+    <h4>Fotografía</h4>
+    <ul class="package-list">
+      <li>Cobertura de ceremonia.</li>
+      <li>Entrada de los novios.</li>
+      <li>Anillos, votos y momentos importantes.</li>
+      <li>Fotografías familiares.</li>
+      <li>Fotografías con invitados.</li>
+      <li>Sesión breve de pareja.</li>
+      <li>Entrada, baile, brindis y pastel.</li>
+    </ul>
+    <h4>Video resumen</h4>
+    <ul class="package-list">
+      <li>Cobertura audiovisual durante el evento.</li>
+      <li>Video resumen de aproximadamente 3 a 5 minutos.</li>
+      <li>Selección de momentos importantes.</li>
+      <li>Edición profesional.</li>
+      <li>Música.</li>
+      <li>Entrega digital.</li>
+    </ul>
+    <h4>Fotografías impresas</h4>
+    <ul class="package-list">
+      <li>30 fotografías impresas tamaño 4×6.</li>
+      <li>5 fotografías impresas tamaño 5×7.</li>
+      <li>1 fotografía ampliada tamaño 8×10.</li>
+    </ul>
+    <h4>Entrega digital</h4>
+    <ul class="package-list">
+      <li>Hasta 5 horas de cobertura.</li>
+      <li>Mínimo 300 fotografías digitales completamente editadas.</li>
+      <li>Galería digital privada.</li>
+      <li>Fotografías en alta resolución.</li>
+      <li>Fotografías optimizadas para redes sociales.</li>
+      <li>Video resumen profesional.</li>
+    </ul>
+    <div class="package-target">
+      <strong>Ideal para:</strong> Parejas que desean fotografía, video y recuerdos impresos sin contratar una cobertura de jornada completa.
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%20MOI%20Agency%20%F0%9F%91%8B%20Quiero%20cotizar%20el%20Paquete%20ESENCIAL%20%2B%20VIDEO%20%2B%20IMPRESO%20para%20mi%20boda%20(Q3%2C700).%20%F0%9F%92%8D%F0%9F%8E%A5%F0%9F%96%BC%EF%B8%8F%F0%9F%93%B8" class="btn-package" target="_blank" rel="noopener noreferrer">Solicitar este paquete</a>
+  <p class="package-note">✔ Todas las fotografías digitales se entregan editadas profesionalmente.</p>
+</div>
+
+    </div>
+  </div>
+</section>
+
+  <script src="foto.js"></script>
+  <script src="cotizador.js"></script>
+  <script src="../footer.js"></script>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch("https://moidg.online/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
+
+</body>
+</html>

@@ -11,7 +11,7 @@ display: flex;
 display: flex;
   align-items: center;
   justify-content: space-between;
-background-color: #17062d;
+background-color: #0f3372;
       border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   padding: 10px 10px;
@@ -148,8 +148,7 @@ display: flex;
   padding: 10px 14px;
   margin-bottom: 8px;
 
-  background: #fff;
-  border: 1px solid #e5e5e5;
+  background: #020d42;
   border-radius: 10px;
 }
 
@@ -189,7 +188,7 @@ display: flex;
 /* SEPARADOR */
 .partido span {
   font-size: 14px;
-  color: #777;
+  color: #fff;
   user-select: none;
 }
 
@@ -278,7 +277,7 @@ th {
   font-weight: 600;
   background-color: transparent; /* Hacer que el encabezado sea transparente para que se vea el degradado */
   width: 35px;
-  color: #153f87;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -287,13 +286,13 @@ td {
   padding: 9px;
   text-align: center;
   font-size: 25px;
-  color: #153f87; /* El texto en blanco para contrastar */
+  color: #fff; /* El texto en blanco para contrastar */
   transition: background-color 0.3s ease;
 vertical-align: middle;
 }
 
 tr:nth-child(even) {
-  background-color: #bdf1f8;
+  background-color: #020d3f;
 }
 
 /* Estilo para el nombre del equipo */
