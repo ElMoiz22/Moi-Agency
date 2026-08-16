@@ -1399,3 +1399,305 @@ opacity:1;
 transform:translateY(0);
 
 }
+
+/* ==========================================================
+   SELECTOR DE NIVEL EDUCATIVO
+   ========================================================== */
+
+.graduation-selector{
+
+    width:100%;
+
+    margin:0 auto 30px;
+
+    padding:20px 25px;
+
+    background:linear-gradient(
+        135deg,
+        #00163f 0%,
+        #00102e 100%
+    );
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:20px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+    box-sizing:border-box;
+
+}
+
+
+/* ==========================================================
+   TITULO
+   ========================================================== */
+
+.selector-title{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+    color:#FFF;
+
+}
+
+.selector-title > span{
+
+    font-size:26px;
+
+}
+
+.selector-title div{
+
+    text-align:left;
+
+}
+
+.selector-title strong{
+
+    display:block;
+
+    color:#FFD11A;
+
+    font-size:19px;
+
+    font-weight:900;
+
+    line-height:1.2;
+    text-align:center;
+
+}
+
+.selector-title p{
+
+    margin:3px 0 0;
+
+    color:rgba(255,255,255,.70);
+
+    font-size:13px;
+
+}
+
+
+/* ==========================================================
+   OPCIONES
+   ========================================================== */
+
+.selector-options{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.level-option{
+
+    border:1px solid rgba(255,255,255,.20);
+
+    background:#00102e;
+
+    color:#FFF;
+
+    padding:11px 20px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.level-option:hover{
+
+    background:#030f33;
+
+    border-color:#FFD11A;
+
+    color:#FFD11A;
+
+    transform:translateY(-2px);
+
+}
+
+
+.level-option.active{
+
+    background:#FFD11A;
+
+    color:#00113f;
+
+    border-color:#FFD11A;
+
+    box-shadow:0 5px 15px rgba(255,209,26,.20);
+
+}
+
+
+/* ==========================================================
+   NIVEL SELECCIONADO
+   ========================================================== */
+
+.selected-level{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    color:rgba(255,255,255,.65);
+
+    font-size:13px;
+
+}
+
+
+.selected-level strong{
+
+    color:#FFD11A;
+
+    font-weight:900;
+
+}
+
+
+/* ==========================================================
+   EFECTO AL CAMBIAR NIVEL
+   ========================================================== */
+
+.package-card.price-update{
+
+    animation:priceUpdate .35s ease;
+
+}
+
+
+@keyframes priceUpdate{
+
+    0%{
+
+        transform:scale(.98);
+
+        opacity:.65;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media(max-width:700px){
+
+    .graduation-selector{
+
+        margin-bottom:25px;
+
+        padding:18px 15px;
+
+        border-radius:16px;
+
+    }
+
+
+    .selector-title{
+
+        justify-content:center;
+
+        margin-bottom:15px;
+
+    }
+
+
+    .selector-title > span{
+
+        font-size:23px;
+
+    }
+
+
+    .selector-title strong{
+
+        font-size:16px;
+        text-align:center;
+
+    }
+
+
+    .selector-title p{
+
+        font-size:12px;
+
+    }
+
+
+    .selector-options{
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+
+        gap:8px;
+
+    }
+
+
+    .level-option{
+
+        width:100%;
+
+        padding:11px 7px;
+
+        font-size:12px;
+
+        border-radius:12px;
+
+    }
+
+
+    .level-option:last-child{
+
+        grid-column:1 / -1;
+
+    }
+
+
+    .selected-level{
+
+        margin-top:12px;
+
+        font-size:12px;
+
+    }
+
+}

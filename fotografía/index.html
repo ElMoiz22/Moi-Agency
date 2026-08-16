@@ -134,14 +134,50 @@ subMenuParents.forEach(span=>span.parentElement.classList.remove("open"));
 
 <div class="section-title">
 
-<h2>PAQUETES DE GRADUACIÓN</h2>
-<h2>DIVERSIFICADO / UNIVERSITARIO</h2>
+<h2>PAQUETES DE GRADUACIÓN INDIVIDUAL</h2>
 
 <p>
 Conserva uno de los momentos más importantes de tu vida con una cobertura profesional, fotografías editadas y recuerdos que durarán para siempre.
 </p>
 
 
+
+</div>
+
+<!-- ================== SELECTOR DE NIVEL =================== -->
+
+<div class="graduation-selector">
+
+    <div class="selector-title">
+        <div>
+            <strong>Selecciona tu nivel educativo / Fotografía Digital</strong>
+            <p>Los precios se actualizarán automáticamente.</p>
+        </div>
+    </div>
+
+    <div class="selector-options">
+
+        <button class="level-option" data-level="parvulos">
+            Párvulos
+        </button>
+
+        <button class="level-option" data-level="primaria">
+            Primaria
+        </button>
+
+        <button class="level-option" data-level="basico">
+            Básico
+        </button>
+
+        <button class="level-option active" data-level="diversificado">
+            Diversificado / Universidad
+        </button>
+
+    </div>
+
+    <div class="selected-level">
+        Precios para: <strong id="selectedLevelText">Párvulos</strong>
+    </div>
 
 </div>
 
@@ -177,7 +213,7 @@ Ideal para quienes desean conservar los momentos más importantes de su graduaci
 
 <li>Normalmente entregamos fotografías adicionales sin costo cuando el evento lo permite.</li>
 
-</ul> 
+</ul>
 
 <div class="package-target">
 
@@ -189,15 +225,14 @@ Quienes desean documentar únicamente su ceremonia de graduación.
 
 </div>
 
-
-<a href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20ESENCIAL%20de%20Graduaci%C3%B3n%20(Q300)%20%F0%9F%8E%93%F0%9F%93%B8" class="btn-package">
-    Reservar este paquete
+<a target="_blank" href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20ESENCIAL%20de%20Graduaci%C3%B3n%20(Q300)%20%F0%9F%8E%93%F0%9F%93%B8"
+class="btn-package whatsapp-package"
+data-package="ESENCIAL">
+Reservar este paquete
 </a>
 
 <p class="package-note">
-
 ✔ Todas las fotografías se entregan editadas profesionalmente.
-
 </p>
 
 </div>
@@ -215,9 +250,7 @@ Q500<span>/persona</span>
 <div class="package-content">
 
 <p class="package-description">
-
 Incluye todo lo del paquete Esencial y añade una sesión fotográfica personal para que puedas presumir este gran logro.
-
 </p>
 
 <h4>¿Qué incluye?</h4>
@@ -246,15 +279,14 @@ Graduandos que desean recuerdos más completos.
 
 </div>
 
-
-<a href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20RECUERDO%20de%20Graduaci%C3%B3n%20(Q500)%20%F0%9F%8E%93%F0%9F%93%B8" class="btn-package">
-    Reservar este paquete
+<a target="_blank" href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20RECUERDO%20de%20Graduaci%C3%B3n%20(Q500)%20%F0%9F%8E%93%F0%9F%93%B8"
+class="btn-package whatsapp-package"
+data-package="RECUERDO">
+Reservar este paquete
 </a>
 
 <p class="package-note">
-
 🎁 La sesión personal está incluida sin costo adicional.
-
 </p>
 
 </div>
@@ -264,9 +296,7 @@ Graduandos que desean recuerdos más completos.
 <div class="package-card destacado">
 
 <span class="badge">
-
 MÁS SOLICITADO
-
 </span>
 
 <h3>PRESTIGIO</h3>
@@ -278,9 +308,7 @@ Q750<span>/persona</span>
 <div class="package-content">
 
 <p class="package-description">
-
 Incluye todos los beneficios del paquete Recuerdo con una cobertura mucho más completa.
-
 </p>
 
 <h4>¿Qué incluye?</h4>
@@ -309,16 +337,14 @@ Quienes desean una cobertura fotográfica completa.
 
 </div>
 
-
-<!-- PAQUETE PRESTIGIO -->
-<a href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20PRESTIGIO%20de%20Graduaci%C3%B3n%20(Q750)%20%F0%9F%8E%93%F0%9F%93%B8" class="btn-package">
-    Reservar este paquete
+<a target="_blank" href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20PRESTIGIO%20de%20Graduaci%C3%B3n%20(Q750)%20%F0%9F%8E%93%F0%9F%93%B8"
+class="btn-package whatsapp-package"
+data-package="PRESTIGIO">
+Reservar este paquete
 </a>
 
 <p class="package-note">
-
 🎁 Incluye sesión personal sin costo adicional.
-
 </p>
 
 </div>
@@ -336,9 +362,7 @@ Q1,000<span>/persona</span>
 <div class="package-content">
 
 <p class="package-description">
-
 Además de una cobertura fotográfica completa, recibirás un video resumen de tu graduación.
-
 </p>
 
 <h4>¿Qué incluye?</h4>
@@ -367,15 +391,14 @@ Quienes desean revivir su graduación en fotografías y video.
 
 </div>
 
-
-<a href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20FOTOGRAF%C3%8DA%20%2B%20VIDEO%20de%20Graduaci%C3%B3n%20(Q1000)%20%F0%9F%8E%A5%F0%9F%93%B8" class="btn-package">
-    Reservar este paquete
+<a target="_blank" href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20FOTOGRAF%C3%8DA%20%2B%20VIDEO%20de%20Graduaci%C3%B3n%20(Q1000)%20%F0%9F%8E%A5%F0%9F%93%B8"
+class="btn-package whatsapp-package"
+data-package="FOTOGRAFÍA + VIDEO">
+Reservar este paquete
 </a>
 
 <p class="package-note">
-
 🎁 Incluye sesión personal.
-
 </p>
 
 </div>
@@ -393,9 +416,7 @@ Q1,450<span>/persona</span>
 <div class="package-content">
 
 <p class="package-description">
-
 Amplía la cobertura incluyendo la celebración posterior a la ceremonia.
-
 </p>
 
 <h4>¿Qué incluye?</h4>
@@ -424,15 +445,14 @@ Quienes desean conservar toda la celebración.
 
 </div>
 
-
-<a href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20FOTOGRAF%C3%8DA%20%2B%20RECEPCI%C3%93N%20de%20Graduaci%C3%B3n%20(Q1450)%20%F0%9F%8E%89%F0%9F%93%B8" class="btn-package">
-    Reservar este paquete
+<a target="_blank" href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20FOTOGRAF%C3%8DA%20%2B%20RECEPCI%C3%93N%20de%20Graduaci%C3%B3n%20(Q1450)%20%F0%9F%8E%89%F0%9F%93%B8"
+class="btn-package whatsapp-package"
+data-package="FOTOGRAFÍA + RECEPCIÓN">
+Reservar este paquete
 </a>
 
 <p class="package-note">
-
 🎁 Incluye sesión personal.
-
 </p>
 
 </div>
@@ -442,9 +462,7 @@ Quienes desean conservar toda la celebración.
 <div class="package-card destacado">
 
 <span class="badge">
-
 PREMIUM + VIDEO
-
 </span>
 
 <h3>EXPERIENCIA</h3>
@@ -457,9 +475,7 @@ Q1,900<span>/persona</span>
 <div class="package-content">
 
 <p class="package-description">
-
 La cobertura más completa para recordar cada instante de tu graduación desde el inicio hasta la celebración.
-
 </p>
 
 <h4>¿Qué incluye?</h4>
@@ -488,15 +504,14 @@ Quienes no desean perder ningún recuerdo de ese día.
 
 </div>
 
-
-<a href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20EXPERIENCIA%20COMPLETA%20de%20Graduaci%C3%B3n%20(Q1900)%20%F0%9F%8C%9F%F0%9F%93%B8%F0%9F%8E%A5" class="btn-package">
-    Reservar este paquete
+<a target="_blank" href="https://api.whatsapp.com/send?phone=56952056&text=Quiero%20reservar%20el%20Paquete%20EXPERIENCIA%20COMPLETA%20de%20Graduaci%C3%B3n%20(Q1900)%20%F0%9F%8C%9F%F0%9F%93%B8%F0%9F%8E%A5"
+class="btn-package whatsapp-package"
+data-package="EXPERIENCIA COMPLETA">
+Reservar este paquete
 </a>
 
 <p class="package-note">
-
 🎁 Sesión personal incluida y fotografías adicionales cuando el evento lo permita.
-
 </p>
 
 </div>
@@ -506,8 +521,6 @@ Quienes no desean perder ningún recuerdo de ese día.
 </div>
 
 </section>
-
-
 
 
 
@@ -524,6 +537,262 @@ fetch("https://moidg.online/footer.html")
 .then(data => {
 document.getElementById("footer").innerHTML = data;
 });
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const PHONE = "56952056";
+
+    /*
+    ==========================================================
+    PRECIOS POR NIVEL
+    ==========================================================
+    Orden:
+    1. Esencial
+    2. Recuerdo
+    3. Prestigio
+    4. Fotografía + Video
+    5. Fotografía + Recepción
+    6. Experiencia Completa
+    ==========================================================
+    */
+
+    const prices = {
+
+        parvulos: [
+            150,
+            250,
+            350,
+            500,
+            650,
+            850
+        ],
+
+        primaria: [
+            175,
+            300,
+            425,
+            600,
+            800,
+            1000
+        ],
+
+        basico: [
+            225,
+            350,
+            500,
+            700,
+            950,
+            1200
+        ],
+
+        diversificado: [
+            300,
+            500,
+            750,
+            1000,
+            1450,
+            1900
+        ]
+
+    };
+
+
+    /*
+    ==========================================================
+    NOMBRES DE LOS NIVELES
+    ==========================================================
+    */
+
+    const levelNames = {
+
+        parvulos: "Párvulos",
+
+        primaria: "Primaria",
+
+        basico: "Básico",
+
+        diversificado: "Diversificado / Universidad"
+
+    };
+
+
+    /*
+    ==========================================================
+    PAQUETES
+    ==========================================================
+    */
+
+    const packageNames = [
+
+        "ESENCIAL",
+
+        "RECUERDO",
+
+        "PRESTIGIO",
+
+        "FOTOGRAFÍA + VIDEO",
+
+        "FOTOGRAFÍA + RECEPCIÓN",
+
+        "EXPERIENCIA COMPLETA"
+
+    ];
+
+
+    /*
+    ==========================================================
+    SELECTOR
+    ==========================================================
+    */
+
+    const buttons = document.querySelectorAll(".level-option");
+
+    const cards = document.querySelectorAll(".package-card");
+
+    const selectedLevelText = document.getElementById("selectedLevelText");
+
+
+    /*
+    ==========================================================
+    ACTUALIZAR PRECIOS
+    ==========================================================
+    */
+
+    function updatePrices(level) {
+
+        const selectedPrices = prices[level];
+
+        cards.forEach(function (card, index) {
+
+            if (!selectedPrices[index]) return;
+
+
+            /*
+            Cambiar precio
+            */
+
+            const priceElement = card.querySelector(".price");
+
+            if (priceElement) {
+
+                priceElement.innerHTML =
+                    "Q" +
+                    selectedPrices[index].toLocaleString("es-GT") +
+                    "<span>/persona</span>";
+
+            }
+
+
+            /*
+            Actualizar enlace de WhatsApp
+            */
+
+            const whatsappButton =
+                card.querySelector(".whatsapp-package");
+
+
+            if (whatsappButton) {
+
+                const packageName =
+                    packageNames[index];
+
+                const price =
+                    selectedPrices[index];
+
+
+                const message =
+                    "Quiero reservar el Paquete " +
+                    packageName +
+                    " de Graduación (Q" +
+                    price +
+                    ") para " +
+                    levelNames[level] +
+                    " 🎓📸";
+
+
+                whatsappButton.href =
+                    "https://api.whatsapp.com/send?phone=" +
+                    PHONE +
+                    "&text=" +
+                    encodeURIComponent(message);
+
+            }
+
+        });
+
+
+        /*
+        ======================================================
+        CAMBIAR TEXTO DEL NIVEL
+        ======================================================
+        */
+
+        if (selectedLevelText) {
+
+            selectedLevelText.textContent =
+                levelNames[level];
+
+        }
+
+    }
+
+
+    /*
+    ==========================================================
+    CAMBIAR NIVEL
+    ==========================================================
+    */
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const level =
+                this.dataset.level;
+
+
+            /*
+            Quitar selección
+            */
+
+            buttons.forEach(function (btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            /*
+            Activar botón seleccionado
+            */
+
+            this.classList.add("active");
+
+
+            /*
+            Actualizar precios
+            */
+
+            updatePrices(level);
+
+        });
+
+    });
+
+
+    /*
+    ==========================================================
+    CARGA INICIAL
+    ==========================================================
+    */
+
+    updatePrices("diversificado");
+
+});
+
 </script>
 
 </body>
