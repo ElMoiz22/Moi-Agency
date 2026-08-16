@@ -93,10 +93,10 @@ ul {
 .gallery-grid {
     display: grid;
     /* Ajustado minmax para evitar desbordes en móviles pequeños (320px+) */
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); 
     gap: 2rem;
     padding: 1.5rem; 
-    max-width: 1600px; 
+    max-width: 100%; 
     height: 100%;
     margin: 0 auto;
     justify-items: center; 
