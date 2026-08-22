@@ -1,1 +1,0 @@
-comando en la terminal para crear las miniaturas: node crearMiniaturas.js
