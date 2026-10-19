@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RECUERDO DE LA QUINCEAÑERA</title>
+  <link rel="stylesheet" href="https://moidg.online/headerstyles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+  <!-- CSS exclusivo -->
+  <link rel="stylesheet" href="foto.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <script>
+    fetch("https://moidg.online/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      subMenuParents.forEach(span => {
+        span.addEventListener("click", function(e){
+          if(window.innerWidth <= 1200){
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            subMenuParents.forEach(other => {
+              if(other != this){
+                other.parentElement.classList.remove("open");
+              }
+            });
+            parentLi.classList.toggle("open");
+          }
+        });
+      });
+
+      document.querySelectorAll(".submenu a").forEach(link=>{
+        link.addEventListener("click",function(){
+          if(window.innerWidth <=1200){
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            subMenuParents.forEach(span=>span.parentElement.classList.remove("open"));
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>
+          <span>RECUERDOS</span>
+          <strong>DE QUINCEAÑERA</strong>
+        </h1>
+      </div>
+      <div class="hero-image">
+        <img src="aoigraduado.png" alt="Mascota MOI">
+      </div>
+    </div>
+  </section>
+
+ <!-- PAQUETES -->
+<section class="packages">
+  <div class="container">
+    <div class="section-title">
+      <h2>PAQUETES - RECUERDO DE LA QUINCEAÑERA</h2>
+      <p>Tus XV años pasan en un día, pero los recuerdos pueden acompañarte para siempre. Un momento tan especial merece ser recordado de la mejor manera.</p>
+    </div>
+
+    <div class="package-grid">
+
+     <!-- PAQUETE 1: ESENCIA -->
+<div class="package-card">
+    <h3>ESENCIA</h3>
+    <div class="price">Q560<span>por sesión</span></div>
+
+    <div class="package-content">
+        <p class="package-description">
+            Una sesión al aire libre para crear retratos juveniles,
+            naturales y elegantes que conserven la esencia de tus XV años.
+        </p>
+
+        <h4>¿Qué incluye?</h4>
+        <ul class="package-list">
+            <li>Hasta 45 minutos de sesión fotográfica.</li>
+            <li>7 fotografías digitales editadas profesionalmente.</li>
+            <li>Retratos individuales, cuerpo completo y primeros planos.</li>
+            <li>Diferentes poses y composiciones fotográficas.</li>
+            <li>Sesión en una locación al aire libre.</li>
+            <li>Entrega digital en alta resolución.</li>
+        </ul>
+
+        <div class="package-target">
+            <strong>Ideal para:</strong>
+            Una sesión juvenil, natural y elegante, con fotografías
+            digitales para compartir y conservar.
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%2C%20estoy%20interesado%2Fa%20en%20el%20paquete%20ESENCIA%20para%20sesion%20de%20XV%20años%20de%20Q560."
+       class="btn-package"
+       target="_blank"
+       rel="noopener noreferrer">
+        Solicitar este paquete
+    </a>
+
+    <p class="package-note">
+        ✔ Fotografías editadas profesionalmente.
+    </p>
+    <p class="package-note">
+        📍 La locación es elegida por el cliente. Entradas, permisos
+        y costos de acceso no están incluidos.
+    </p>
+</div>
+
+
+<!-- PAQUETE 2: RECUERDO -->
+<div class="package-card">
+    <h3>RECUERDO</h3>
+    <div class="price">Q880<span>por sesión</span></div>
+
+    <div class="package-content">
+        <p class="package-description">
+            Una experiencia para conservar tus retratos digitales
+            y llevar tus fotografías favoritas a casa en formato impreso.
+        </p>
+
+        <h4>¿Qué incluye?</h4>
+        <ul class="package-list">
+            <li>Hasta 1 hora y 30 minutos de sesión fotográfica.</li>
+            <li>15 fotografías digitales editadas profesionalmente.</li>
+            <li>5 fotografías impresas tamaño postal de 4 × 6 pulgadas.</li>
+            <li>1 impresión sencilla tamaño Oficio enmarcada.</li>
+            <li>Retratos individuales con variedad de poses.</li>
+            <li>Entrega digital en alta resolución.</li>
+        </ul>
+
+        <div class="package-target">
+            <strong>Ideal para:</strong>
+            Quienes desean una colección de fotografías digitales
+            y recuerdos impresos para conservar o regalar.
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%2C%20estoy%20interesado%2Fa%20en%20el%20paquete%20RECUERDO%20para%20sesion%20de%20XV%20años%20de%20Q880."
+       class="btn-package"
+       target="_blank"
+       rel="noopener noreferrer">
+        Solicitar este paquete
+    </a>
+
+    <p class="package-note">
+        ✔ Todas las fotografías digitales incluidas se entregan editadas profesionalmente.
+    </p>
+    <p class="package-note">
+        📍 La locación es elegida por el cliente. Entradas, permisos
+        y costos de acceso no están incluidos.
+    </p>
+</div>
+
+
+<!-- PAQUETE 3: ESPECIAL -->
+<div class="package-card destacado">
+    <span class="badge">RECOMENDADO</span>
+    <h3>ESPECIAL</h3>
+    <div class="price">Q1,200<span>por sesión</span></div>
+
+    <div class="package-content">
+        <p class="package-description">
+            Una sesión más completa que combina retratos personales
+            con fotografías familiares para conservar recuerdos especiales.
+        </p>
+
+        <h4>¿Qué incluye?</h4>
+        <ul class="package-list">
+            <li>Hasta 2 horas de sesión fotográfica.</li>
+            <li>20 fotografías digitales editadas profesionalmente.</li>
+            <li>10 fotografías impresas tamaño postal de 4 × 6 pulgadas.</li>
+            <li>1 impresión sencilla de 12 × 18 pulgadas enmarcada.</li>
+            <li>Retratos individuales y fotografías con padres y familiares cercaños.</li>
+            <li>Variedad de poses, planos y composiciones.</li>
+            <li>Tiempo adicional para realizar fotografías familiares sin apresurar la sesión.</li>
+            <li>Entrega digital en alta resolución.</li>
+        </ul>
+
+        <div class="package-target">
+            <strong>Ideal para:</strong>
+            Quinceañeras que desean una galería más amplia y recuerdos
+            individuales y familiares en formato digital e impreso.
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%2C%20estoy%20interesado%2Fa%20en%20el%20paquete%20ESPECIAL%20para%20sesion%20de%20XV%20años%20de%20Q1200."
+       class="btn-package"
+       target="_blank"
+       rel="noopener noreferrer">
+        Solicitar este paquete
+    </a>
+
+    <p class="package-note">
+        ✔ Todas las fotografías digitales incluidas se entregan editadas profesionalmente.
+    </p>
+    <p class="package-note">
+        🖼️ La impresión de 12 × 18 pulgadas es sencilla.
+        La impresión de estudio tiene un costo mayor y debe cotizarse por separado.
+    </p>
+    <p class="package-note">
+        👨‍👩‍👧 Las fotografías familiares se realizan dentro del tiempo contratado.
+        Para grupos numerosos, se recomienda coordinar previamente.
+    </p>
+    <p class="package-note">
+        📍 La locación es elegida por el cliente. Entradas, permisos
+        y costos de acceso no están incluidos.
+    </p>
+</div>
+
+
+<!-- PAQUETE 4: XV SIGNATURE -->
+<div class="package-card">
+    <h3>XV SIGNATURE</h3>
+    <div class="price">Q1,680<span>por sesión</span></div>
+
+    <div class="package-content">
+        <p class="package-description">
+            Nuestra experiencia fotográfica más completa, diseñada para
+            crear una colección variada de retratos con diferentes estilos,
+            vestuarios y escenarios.
+        </p>
+
+        <h4>¿Qué incluye?</h4>
+        <ul class="package-list">
+            <li>Hasta 3 horas de sesión fotográfica.</li>
+            <li>35 fotografías digitales editadas profesionalmente.</li>
+            <li>15 fotografías impresas tamaño postal de 4 × 6 pulgadas.</li>
+            <li>1 impresión sencilla de 12 × 18 pulgadas enmarcada.</li>
+            <li>Retratos individuales, creativos y fotografías familiares.</li>
+            <li>Posibilidad de cambio de vestuario, llevando las prendas preparadas.</li>
+            <li>Posibilidad de cambiar de locación, previa coordinación.</li>
+            <li>Mayor variedad de poses, fondos, encuadres y estilos fotográficos.</li>
+            <li>Galería digital en alta resolución.</li>
+        </ul>
+
+        <div class="package-target">
+            <strong>Ideal para:</strong>
+            Quinceañeras que buscan una experiencia más producida,
+            con variedad de vestuarios, escenarios y una galería fotográfica amplia.
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=50256952056&text=Hola%2C%20estoy%20interesado%2Fa%20en%20el%20paquete%20XV%20SIGNATURE%20para%20sesion%20de%20XV%20años%20de%20Q1680."
+       class="btn-package"
+       target="_blank"
+       rel="noopener noreferrer">
+        Solicitar este paquete
+    </a>
+
+    <p class="package-note">
+        ✔ Todas las fotografías digitales incluidas se entregan editadas profesionalmente.
+    </p>
+    <p class="package-note">
+        🖼️ La impresión de 12 × 18 pulgadas es sencilla.
+        La impresión de estudio tiene un costo mayor y debe cotizarse por separado.
+    </p>
+    <p class="package-note">
+        👗 Los cambios de vestuario deben prepararse con anticipación.
+        El vestuario, maquillaje y peinado no están incluidos.
+    </p>
+    <p class="package-note">
+        📍 Los cambios de locación están sujetos a distancia, tiempo disponible
+        y logística. Las entradas, permisos y costos de acceso no están incluidos.
+    </p>
+</div>
+    </div>
+    <div class="package-note">
+    <p>
+        🚗 Fuera de nuestra zona de servicio (San Pedro Sacatepéquez,
+        San Marcos), se aplican viáticos según la distancia.
+    </p>
+    <p>
+        📌 Los paquetes no incluyen maquillaje, peinado, vestuario,
+        transporte especial ni alquiler de locaciones, salvo acuerdo previo.
+    </p>
+    <p>
+        🖼️ Las impresiones de estudio, marcos y acabados especiales
+        tienen un costo adicional y se cotizan por separado.
+    </p>
+    <p>
+        📲 La disponibilidad y los detalles de cada sesión se confirman
+        al momento de reservar.
+    </p>
+</div>
+  </div>
+</section>
+
+  <script src="foto.js"></script>
+  <script src="cotizador.js"></script>
+  <script src="../footer.js"></script>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch("https://moidg.online/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
+
+</body>
+</html>
